@@ -1,0 +1,1907 @@
+{
+  "id": "chain:acmeair:4",
+  "fileName": "004-acme-air-configuration-count-bookings.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countBookings",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#countBookings",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "countBookings",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 133,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "countBookings",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 133
+    },
+    {
+      "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+      "kind": "method",
+      "className": "BookingServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+      "methodName": "count",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+      "line": 104
+    },
+    {
+      "id": "method:com.acmeair.service.BookingService#count",
+      "kind": "method",
+      "className": "BookingService",
+      "classFqn": "com.acmeair.service.BookingService",
+      "methodName": "count"
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "kind": "method",
+      "className": "BookingServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+      "methodName": "count",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+      "line": 208
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:Iterator<?>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<?>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:MapIndex#findAll",
+      "kind": "unknown_framework_target",
+      "className": "MapIndex",
+      "methodName": "findAll"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getMap",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#getIndex",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "getIndex"
+    },
+    {
+      "id": "unresolved:ObjectQuery#getSingleResult",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "getSingleResult"
+    },
+    {
+      "id": "unresolved:ObjectQuery#setPartition",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "setPartition"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+      "to": "method:com.acmeair.service.BookingService#count",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "countBookings",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 133
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.BookingService#count",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "count"
+      },
+      "callSite": "bs.count()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.morphia.services.BookingServiceImpl#count:998",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.BookingService#count",
+      "to": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+      "fromNode": {
+        "id": "method:com.acmeair.service.BookingService#count",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "count"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+      },
+      "callSite": "bs.count()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.BookingService#count",
+      "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "fromNode": {
+        "id": "method:com.acmeair.service.BookingService#count",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "count"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+      },
+      "callSite": "bs.count()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#count->unresolved:Datastore#find:406",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 104
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(BookingImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#count->external_endpoint:mongodb:407",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 104
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(BookingImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectGrid#getSession:614",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:615",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Session#getMap:616",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:617",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectMap#getIndex:618",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:ObjectMap#getIndex",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#getIndex",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "getIndex"
+      },
+      "callSite": "objectMap.getIndex(\"com.ibm.ws.objectgrid.builtin.map.KeyIndex\")"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:619",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getIndex",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "objectMap.getIndex(\"com.ibm.ws.objectgrid.builtin.map.KeyIndex\")"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:MapIndex#findAll:620",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:MapIndex#findAll",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:MapIndex#findAll",
+        "kind": "unknown_framework_target",
+        "className": "MapIndex",
+        "methodName": "findAll"
+      },
+      "callSite": "mapIndex.findAll()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Iterator<?>#hasNext:621",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:Iterator<?>#hasNext",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "keyIterator.hasNext()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Iterator<?>#next:622",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:Iterator<?>#next",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "keyIterator.next()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectGrid#getMap:623",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:ObjectGrid#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getMap",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getMap"
+      },
+      "callSite": "og.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:624",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectQuery#setPartition:625",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:ObjectQuery#setPartition",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#setPartition",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "setPartition"
+      },
+      "callSite": "query.setPartition(i)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectQuery#getSingleResult:626",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+      "to": "unresolved:ObjectQuery#getSingleResult",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 208
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#getSingleResult",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "getSingleResult"
+      },
+      "callSite": "query.getSingleResult()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.morphia.services.BookingServiceImpl#count:998",
+        "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#count->external_endpoint:mongodb:407"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.morphia.services.BookingServiceImpl#count:998",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#count->external_endpoint:mongodb:407",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 104
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(BookingImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:615"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:615",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:617"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:617",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:619"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:619",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getIndex",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "objectMap.getIndex(\"com.ibm.ws.objectgrid.builtin.map.KeyIndex\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:624"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#count->external_endpoint:websphere-extreme-scale:624",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.morphia.services.BookingServiceImpl#count:998",
+        "call:method:com.acmeair.morphia.services.BookingServiceImpl#count->unresolved:Datastore#find:406"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.morphia.services.BookingServiceImpl#count:998",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#count->unresolved:Datastore#find:406",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 104
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(BookingImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#count",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectGrid#getSession:614"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectGrid#getSession:614",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Session#getMap:616"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Session#getMap:616",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectMap#getIndex:618"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectMap#getIndex:618",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:ObjectMap#getIndex",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#getIndex",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "getIndex"
+          },
+          "callSite": "objectMap.getIndex(\"com.ibm.ws.objectgrid.builtin.map.KeyIndex\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:ObjectMap#getIndex"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:MapIndex#findAll:620"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:MapIndex#findAll:620",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:MapIndex#findAll",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:MapIndex#findAll",
+            "kind": "unknown_framework_target",
+            "className": "MapIndex",
+            "methodName": "findAll"
+          },
+          "callSite": "mapIndex.findAll()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:MapIndex#findAll"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Iterator<?>#hasNext:621"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Iterator<?>#hasNext:621",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:Iterator<?>#hasNext",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "keyIterator.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:Iterator<?>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Iterator<?>#next:622"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:Iterator<?>#next:622",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:Iterator<?>#next",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "keyIterator.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:Iterator<?>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectGrid#getMap:623"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectGrid#getMap:623",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:ObjectGrid#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getMap",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getMap"
+          },
+          "callSite": "og.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:ObjectGrid#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectQuery#setPartition:625"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectQuery#setPartition:625",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:ObjectQuery#setPartition",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#setPartition",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "setPartition"
+          },
+          "callSite": "query.setPartition(i)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:ObjectQuery#setPartition"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+        "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectQuery#getSingleResult:626"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countBookings->method:com.acmeair.service.BookingService#count:997",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+          "to": "method:com.acmeair.service.BookingService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countBookings",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 133
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#count->method:com.acmeair.wxs.service.BookingServiceImpl#count:999",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#count",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#count",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#count->unresolved:ObjectQuery#getSingleResult:626",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+          "to": "unresolved:ObjectQuery#getSingleResult",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 208
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#getSingleResult",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "getSingleResult"
+          },
+          "callSite": "query.getSingleResult()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+        "method:com.acmeair.service.BookingService#count",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#count",
+        "unresolved:ObjectQuery#getSingleResult"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2816 @@
+{
+  "id": "chain:cargotracker:1",
+  "fileName": "001-cargo-handled-consumer-on-message.json",
+  "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+  "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+  "reachedNodeCount": 25,
+  "reachedDataSources": [
+    "table:cargo",
+    "table:handlingevent"
+  ],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "CargoHandledConsumer",
+    "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+    "methodName": "onMessage",
+    "methodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+    "line": 34,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived",
+      "kind": "method",
+      "className": "ApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+      "methodName": "cargoHasArrived"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+      "kind": "method",
+      "className": "ApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+      "methodName": "cargoWasMisdirected"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+      "kind": "method",
+      "className": "CargoInspectionService",
+      "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+      "methodName": "inspectCargo"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "kind": "method",
+      "className": "DefaultCargoInspectionService",
+      "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "methodName": "inspectCargo",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+      "line": 21
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "deriveDeliveryProgress",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+      "line": 156
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "getDelivery"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "getItinerary",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "getRouteSpecification",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "getTrackingId"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "kind": "method",
+      "className": "CargoRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "methodName": "find"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+      "kind": "method",
+      "className": "CargoRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "methodName": "store"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "kind": "method",
+      "className": "HandlingEventRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "methodName": "lookupHandlingHistoryOfCargo"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+      "kind": "method",
+      "className": "CargoHandledConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+      "methodName": "onMessage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+      "line": 34
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+      "kind": "method",
+      "className": "JmsApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "methodName": "cargoHasArrived",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+      "line": 58
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+      "kind": "method",
+      "className": "JmsApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "methodName": "cargoWasMisdirected",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+      "line": 47
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "kind": "method",
+      "className": "JpaCargoRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "methodName": "find",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+      "line": 28
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "kind": "method",
+      "className": "JpaCargoRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "methodName": "store",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+      "line": 51
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "kind": "method",
+      "className": "JpaHandlingEventRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "methodName": "lookupHandlingHistoryOfCargo",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+      "line": 22
+    },
+    {
+      "id": "unresolved:EntityManager#createNamedQuery",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "createNamedQuery"
+    },
+    {
+      "id": "unresolved:EntityManager#persist",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "persist"
+    },
+    {
+      "id": "unresolved:Event<Cargo>#fireAsync",
+      "kind": "unknown_framework_target",
+      "className": "Event",
+      "methodName": "fireAsync"
+    },
+    {
+      "id": "unresolved:JMSContext#createProducer",
+      "kind": "unknown_framework_target",
+      "className": "JMSContext",
+      "methodName": "createProducer"
+    },
+    {
+      "id": "unresolved:Logger#log",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "log"
+    },
+    {
+      "id": "unresolved:return#getItinerary",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "getItinerary"
+    },
+    {
+      "id": "unresolved:TextMessage#getText",
+      "kind": "unknown_framework_target",
+      "className": "TextMessage",
+      "methodName": "getText"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->unresolved:TextMessage#getText:262",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+      "to": "unresolved:TextMessage#getText",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "kind": "method",
+        "className": "CargoHandledConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+        "line": 34
+      },
+      "toNode": {
+        "id": "unresolved:TextMessage#getText",
+        "kind": "unknown_framework_target",
+        "className": "TextMessage",
+        "methodName": "getText"
+      },
+      "callSite": "textMessage.getText()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+      "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "kind": "method",
+        "className": "CargoHandledConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+        "line": 34
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "CargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+        "methodName": "inspectCargo"
+      },
+      "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->unresolved:Logger#log:265",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "kind": "method",
+        "className": "CargoHandledConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+        "line": 34
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.SEVERE, \"Error procesing JMS message\", e)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "CargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+        "methodName": "inspectCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+      },
+      "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:32",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "find"
+      },
+      "callSite": "cargoRepository.find(trackingId)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->unresolved:Logger#log:33",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.WARNING, \"Can't inspect non-existing cargo {0}\", trackingId)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo:34",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress:36",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "deriveDeliveryProgress",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+        "line": 156
+      },
+      "callSite": "cargo.deriveDeliveryProgress(handlingHistory)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery:37",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "getDelivery"
+      },
+      "callSite": "cargo.getDelivery()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected:38",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+        "kind": "method",
+        "className": "ApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+        "methodName": "cargoWasMisdirected"
+      },
+      "callSite": "applicationEvents.cargoWasMisdirected(cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived:40",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived",
+        "kind": "method",
+        "className": "ApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+        "methodName": "cargoHasArrived"
+      },
+      "callSite": "applicationEvents.cargoHasArrived(cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "kind": "method",
+        "className": "DefaultCargoInspectionService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+        "methodName": "inspectCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+        "line": 21
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "store"
+      },
+      "callSite": "cargoRepository.store(cargo)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "callSite": "cargoRepository.find(trackingId)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:361",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java"
+      },
+      "callSite": "cargoRepository.find(new TrackingId(trackingId)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:35",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+        "line": 22
+      },
+      "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:90",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java"
+      },
+      "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId1)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:96",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java"
+      },
+      "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId2)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:103",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java"
+      },
+      "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId4)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:378",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java"
+      },
+      "callSite": "handlingEventRepository\n            .lookupHandlingHistoryOfCargo(trackingId)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:615",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java"
+      },
+      "callSite": "handlingEventRepository\n              .lookupHandlingHistoryOfCargo(new TrackingId(trackingId)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification:117",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "deriveDeliveryProgress",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+        "line": 156
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "getRouteSpecification",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java"
+      },
+      "callSite": "getRouteSpecification("
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary:118",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "deriveDeliveryProgress",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+        "line": 156
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "getItinerary",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java"
+      },
+      "callSite": "getItinerary("
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected:39",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+      "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+        "kind": "method",
+        "className": "ApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+        "methodName": "cargoWasMisdirected"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasMisdirected",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 47
+      },
+      "callSite": "applicationEvents.cargoWasMisdirected(cargo)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived:41",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived",
+      "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoHasArrived",
+        "kind": "method",
+        "className": "ApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+        "methodName": "cargoHasArrived"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoHasArrived",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 58
+      },
+      "callSite": "applicationEvents.cargoHasArrived(cargo)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "store"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 51
+      },
+      "callSite": "cargoRepository.store(cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:EntityManager#createNamedQuery:291",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#createNamedQuery",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "createNamedQuery"
+      },
+      "callSite": "entityManager\n              .createNamedQuery(\"Cargo.findByTrackingId\", Cargo.class)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:Logger#log:292",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.FINE, \"Find called on non-existant tracking ID.\", e)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->table:cargo:293",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "namedQuery:Cargo.findByTrackingId",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "to": "table:cargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "toNode": {
+        "id": "table:cargo",
+        "kind": "table",
+        "name": "cargo"
+      }
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo->unresolved:EntityManager#createNamedQuery:304",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+        "line": 22
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#createNamedQuery",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "createNamedQuery"
+      },
+      "callSite": "entityManager\n            .createNamedQuery(\"HandlingEvent.findByTrackingId\", HandlingEvent.class)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo->table:handlingevent:305",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "namedQuery:HandlingEvent.findByTrackingId",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+      "to": "table:handlingevent",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "lookupHandlingHistoryOfCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+        "line": 22
+      },
+      "toNode": {
+        "id": "table:handlingevent",
+        "kind": "table",
+        "name": "handlingevent"
+      }
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->unresolved:Logger#log:279",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasMisdirected",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 47
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.INFO, \"Cargo was misdirected {0}\", cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->unresolved:JMSContext#createProducer:280",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+      "to": "unresolved:JMSContext#createProducer",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasMisdirected",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 47
+      },
+      "toNode": {
+        "id": "unresolved:JMSContext#createProducer",
+        "kind": "unknown_framework_target",
+        "className": "JMSContext",
+        "methodName": "createProducer"
+      },
+      "callSite": "jmsContext\n        .createProducer()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:281",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasMisdirected",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 47
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "getTrackingId"
+      },
+      "callSite": "cargo.getTrackingId()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived->unresolved:Logger#log:282",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoHasArrived",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.INFO, \"Cargo has arrived {0}\", cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived->unresolved:JMSContext#createProducer:283",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+      "to": "unresolved:JMSContext#createProducer",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoHasArrived",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:JMSContext#createProducer",
+        "kind": "unknown_framework_target",
+        "className": "JMSContext",
+        "methodName": "createProducer"
+      },
+      "callSite": "jmsContext\n        .createProducer()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:284",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoHasArrived",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoHasArrived",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "getTrackingId"
+      },
+      "callSite": "cargo.getTrackingId()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:296",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "to": "unresolved:return#getItinerary",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 51
+      },
+      "toNode": {
+        "id": "unresolved:return#getItinerary",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "getItinerary"
+      },
+      "callSite": "cargo.getItinerary()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:297",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "to": "unresolved:EntityManager#persist",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 51
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#persist",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "persist"
+      },
+      "callSite": "entityManager.persist(leg)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:298",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "to": "unresolved:EntityManager#persist",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 51
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#persist",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "persist"
+      },
+      "callSite": "entityManager.persist(cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:299",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "to": "unresolved:Event<Cargo>#fireAsync",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 51
+      },
+      "toNode": {
+        "id": "unresolved:Event<Cargo>#fireAsync",
+        "kind": "unknown_framework_target",
+        "className": "Event",
+        "methodName": "fireAsync"
+      },
+      "callSite": "cargoUpdated.fireAsync(cargo)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:300",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "cargo",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+      "to": "table:cargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 51
+      },
+      "toNode": {
+        "id": "table:cargo",
+        "kind": "table",
+        "name": "cargo"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->unresolved:TextMessage#getText:262"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->unresolved:TextMessage#getText:262",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "unresolved:TextMessage#getText",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "unresolved:TextMessage#getText",
+            "kind": "unknown_framework_target",
+            "className": "TextMessage",
+            "methodName": "getText"
+          },
+          "callSite": "textMessage.getText()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "unresolved:TextMessage#getText"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->unresolved:Logger#log:265"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->unresolved:Logger#log:265",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "unresolved:Logger#log",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "unresolved:Logger#log",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "log"
+          },
+          "callSite": "logger.log(Level.SEVERE, \"Error procesing JMS message\", e)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "unresolved:Logger#log"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery:37"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery:37",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "getDelivery"
+          },
+          "callSite": "cargo.getDelivery()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getDelivery"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:32",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->table:cargo:293"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:32",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->table:cargo:293",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "namedQuery:Cargo.findByTrackingId",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "to": "table:cargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "toNode": {
+            "id": "table:cargo",
+            "kind": "table",
+            "name": "cargo"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "table:cargo"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo:34",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:35",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo->table:handlingevent:305"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo:34",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+            "kind": "method",
+            "className": "HandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+            "methodName": "lookupHandlingHistoryOfCargo"
+          },
+          "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo:35",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+            "kind": "method",
+            "className": "HandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+            "methodName": "lookupHandlingHistoryOfCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+            "kind": "method",
+            "className": "JpaHandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+            "methodName": "lookupHandlingHistoryOfCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+            "line": 22
+          },
+          "callSite": "handlingEventRepository.lookupHandlingHistoryOfCargo(trackingId)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo->table:handlingevent:305",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "namedQuery:HandlingEvent.findByTrackingId",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+          "to": "table:handlingevent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+            "kind": "method",
+            "className": "JpaHandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+            "methodName": "lookupHandlingHistoryOfCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+            "line": 22
+          },
+          "toNode": {
+            "id": "table:handlingevent",
+            "kind": "table",
+            "name": "handlingevent"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#lookupHandlingHistoryOfCargo",
+        "table:handlingevent"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress:36",
+        "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification:117"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress:36",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "deriveDeliveryProgress",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+            "line": 156
+          },
+          "callSite": "cargo.deriveDeliveryProgress(handlingHistory)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification:117",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "deriveDeliveryProgress",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+            "line": 156
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "getRouteSpecification",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java"
+          },
+          "callSite": "getRouteSpecification("
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getRouteSpecification"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress:36",
+        "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary:118"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress:36",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "deriveDeliveryProgress",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+            "line": 156
+          },
+          "callSite": "cargo.deriveDeliveryProgress(handlingHistory)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary:118",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "deriveDeliveryProgress",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+            "line": 156
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "getItinerary",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java"
+          },
+          "callSite": "getItinerary("
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#deriveDeliveryProgress",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getItinerary"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:300"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:300",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "cargo",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "to": "table:cargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "table:cargo",
+            "kind": "table",
+            "name": "cargo"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "table:cargo"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:32",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:EntityManager#createNamedQuery:291"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:32",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:EntityManager#createNamedQuery:291",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "to": "unresolved:EntityManager#createNamedQuery",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#createNamedQuery",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "createNamedQuery"
+          },
+          "callSite": "entityManager\n              .createNamedQuery(\"Cargo.findByTrackingId\", Cargo.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "unresolved:EntityManager#createNamedQuery"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected:38",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected:39",
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->unresolved:JMSContext#createProducer:280"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected:38",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasMisdirected"
+          },
+          "callSite": "applicationEvents.cargoWasMisdirected(cargo)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected:39",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+          "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasMisdirected"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasMisdirected",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 47
+          },
+          "callSite": "applicationEvents.cargoWasMisdirected(cargo)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->unresolved:JMSContext#createProducer:280",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+          "to": "unresolved:JMSContext#createProducer",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasMisdirected",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 47
+          },
+          "toNode": {
+            "id": "unresolved:JMSContext#createProducer",
+            "kind": "unknown_framework_target",
+            "className": "JMSContext",
+            "methodName": "createProducer"
+          },
+          "callSite": "jmsContext\n        .createProducer()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+        "unresolved:JMSContext#createProducer"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected:38",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected:39",
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:281"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected:38",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasMisdirected"
+          },
+          "callSite": "applicationEvents.cargoWasMisdirected(cargo)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected:39",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+          "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasMisdirected"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasMisdirected",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 47
+          },
+          "callSite": "applicationEvents.cargoWasMisdirected(cargo)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:281",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasMisdirected",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 47
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "getTrackingId"
+          },
+          "callSite": "cargo.getTrackingId()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasMisdirected",
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasMisdirected",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:296"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:296",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "to": "unresolved:return#getItinerary",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "unresolved:return#getItinerary",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "getItinerary"
+          },
+          "callSite": "cargo.getItinerary()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "unresolved:return#getItinerary"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:297"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:297",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "to": "unresolved:EntityManager#persist",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#persist",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "persist"
+          },
+          "callSite": "entityManager.persist(leg)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "unresolved:EntityManager#persist"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:299"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage->method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo:263",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+            "kind": "method",
+            "className": "CargoHandledConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/CargoHandledConsumer.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo:264",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "CargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService",
+            "methodName": "inspectCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java"
+          },
+          "callSite": "cargoInspectionService.inspectCargo(new TrackingId(trackingIdString)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:42",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+            "kind": "method",
+            "className": "DefaultCargoInspectionService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+            "methodName": "inspectCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultCargoInspectionService.java",
+            "line": 21
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "store"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "callSite": "cargoRepository.store(cargo)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:299",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+          "to": "unresolved:Event<Cargo>#fireAsync",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "unresolved:Event<Cargo>#fireAsync",
+            "kind": "unknown_framework_target",
+            "className": "Event",
+            "methodName": "fireAsync"
+          },
+          "callSite": "cargoUpdated.fireAsync(cargo)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.CargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService#inspectCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store",
+        "unresolved:Event<Cargo>#fireAsync"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2124 @@
+{
+  "id": "chain:acmeair:14",
+  "fileName": "014-bookings-rest-get-bookings-by-user.json",
+  "actionPointId": "action:com.acmeair.web.BookingsREST#getBookingsByUser",
+  "rootMethodId": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.web.BookingsREST#getBookingsByUser",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "BookingsREST",
+    "classFqn": "com.acmeair.web.BookingsREST",
+    "methodName": "getBookingsByUser",
+    "methodId": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+    "line": 85,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+      "kind": "method",
+      "className": "BookingServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+      "methodName": "getBookingsByUser",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+      "line": 80
+    },
+    {
+      "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+      "kind": "method",
+      "className": "BookingService",
+      "classFqn": "com.acmeair.service.BookingService",
+      "methodName": "getBookingsByUser"
+    },
+    {
+      "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+      "kind": "method",
+      "className": "BookingsREST",
+      "classFqn": "com.acmeair.web.BookingsREST",
+      "methodName": "getBookingsByUser",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+      "line": 85
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "kind": "method",
+      "className": "BookingServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+      "methodName": "getBookingsByUser",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+      "line": 173
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:List<BookingInfo>#add",
+      "kind": "unknown_framework_target",
+      "className": "List",
+      "methodName": "add"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#get",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "get"
+    },
+    {
+      "id": "unresolved:Query<BookingImpl>#asList",
+      "kind": "unknown_framework_target",
+      "className": "Query",
+      "methodName": "asList"
+    },
+    {
+      "id": "unresolved:return#add",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "add"
+    },
+    {
+      "id": "unresolved:Session#begin",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "begin"
+    },
+    {
+      "id": "unresolved:Session#commit",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "commit"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:Session#isTransactionActive",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "isTransactionActive"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+      "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+      "fromNode": {
+        "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingsREST",
+        "classFqn": "com.acmeair.web.BookingsREST",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+        "line": 85
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "getBookingsByUser"
+      },
+      "callSite": "bs.getBookingsByUser(user)"
+    },
+    {
+      "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->unresolved:List<BookingInfo>#add:1029",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+      "to": "unresolved:List<BookingInfo>#add",
+      "fromNode": {
+        "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingsREST",
+        "classFqn": "com.acmeair.web.BookingsREST",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+        "line": 85
+      },
+      "toNode": {
+        "id": "unresolved:List<BookingInfo>#add",
+        "kind": "unknown_framework_target",
+        "className": "List",
+        "methodName": "add"
+      },
+      "callSite": "newList.add(new BookingInfo(b)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+      "to": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+      "fromNode": {
+        "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "getBookingsByUser"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+      },
+      "callSite": "bs.getBookingsByUser(user)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+      "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "fromNode": {
+        "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "getBookingsByUser"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+      },
+      "callSite": "bs.getBookingsByUser(user)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:Datastore#find:400",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 80
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(BookingImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->external_endpoint:mongodb:401",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 80
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(BookingImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:Query<BookingImpl>#asList:402",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:Query<BookingImpl>#asList",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 80
+      },
+      "toNode": {
+        "id": "unresolved:Query<BookingImpl>#asList",
+        "kind": "unknown_framework_target",
+        "className": "Query",
+        "methodName": "asList"
+      },
+      "callSite": "q.asList()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:return#add:403",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:return#add",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 80
+      },
+      "toNode": {
+        "id": "unresolved:return#add",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "add"
+      },
+      "callSite": "bookings.add(b)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:ObjectGrid#getSession:601",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:602",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#isTransactionActive:603",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:Session#isTransactionActive",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:Session#isTransactionActive",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "isTransactionActive"
+      },
+      "callSite": "session.isTransactionActive()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:604",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "isTransactionActive",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.isTransactionActive()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#begin:605",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:Session#begin",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:Session#begin",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "begin"
+      },
+      "callSite": "session.begin()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:606",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "begin",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.begin()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#getMap:607",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:608",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:ObjectMap#get:609",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:ObjectMap#get",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#get",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "get"
+      },
+      "callSite": "bookingMap.get(user)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:610",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "get",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "bookingMap.get(user)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:return#add:611",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:return#add",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:return#add",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "add"
+      },
+      "callSite": "bookingsList.add(b)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#commit:612",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "unresolved:Session#commit",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "unresolved:Session#commit",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "commit"
+      },
+      "callSite": "session.commit()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:613",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "commit",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "getBookingsByUser",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 173
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.commit()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->unresolved:List<BookingInfo>#add:1029"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->unresolved:List<BookingInfo>#add:1029",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "unresolved:List<BookingInfo>#add",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "unresolved:List<BookingInfo>#add",
+            "kind": "unknown_framework_target",
+            "className": "List",
+            "methodName": "add"
+          },
+          "callSite": "newList.add(new BookingInfo(b)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "unresolved:List<BookingInfo>#add"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+        "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->external_endpoint:mongodb:401"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->external_endpoint:mongodb:401",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 80
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(BookingImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:602"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:602",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:604"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:604",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "isTransactionActive",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.isTransactionActive()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:606"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:606",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "begin",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.begin()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:608"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:608",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:610"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:610",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "get",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "bookingMap.get(user)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:613"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->external_endpoint:websphere-extreme-scale:613",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "commit",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.commit()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+        "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:Datastore#find:400"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:Datastore#find:400",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 80
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(BookingImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+        "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:Query<BookingImpl>#asList:402"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:Query<BookingImpl>#asList:402",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:Query<BookingImpl>#asList",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 80
+          },
+          "toNode": {
+            "id": "unresolved:Query<BookingImpl>#asList",
+            "kind": "unknown_framework_target",
+            "className": "Query",
+            "methodName": "asList"
+          },
+          "callSite": "q.asList()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "unresolved:Query<BookingImpl>#asList"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+        "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:return#add:403"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser:1027",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser->unresolved:return#add:403",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:return#add",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 80
+          },
+          "toNode": {
+            "id": "unresolved:return#add",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "add"
+          },
+          "callSite": "bookings.add(b)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#getBookingsByUser",
+        "unresolved:return#add"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:ObjectGrid#getSession:601"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:ObjectGrid#getSession:601",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#isTransactionActive:603"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#isTransactionActive:603",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:Session#isTransactionActive",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "unresolved:Session#isTransactionActive",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "isTransactionActive"
+          },
+          "callSite": "session.isTransactionActive()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "unresolved:Session#isTransactionActive"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#begin:605"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#begin:605",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:Session#begin",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "unresolved:Session#begin",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "begin"
+          },
+          "callSite": "session.begin()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "unresolved:Session#begin"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#getMap:607"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#getMap:607",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:ObjectMap#get:609"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:ObjectMap#get:609",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:ObjectMap#get",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#get",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "get"
+          },
+          "callSite": "bookingMap.get(user)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "unresolved:ObjectMap#get"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+        "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#commit:612"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#getBookingsByUser->method:com.acmeair.service.BookingService#getBookingsByUser:1026",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+          "to": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 85
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#getBookingsByUser->method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser:1028",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#getBookingsByUser",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "getBookingsByUser"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.getBookingsByUser(user)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser->unresolved:Session#commit:612",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+          "to": "unresolved:Session#commit",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "getBookingsByUser",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 173
+          },
+          "toNode": {
+            "id": "unresolved:Session#commit",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "commit"
+          },
+          "callSite": "session.commit()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+        "method:com.acmeair.service.BookingService#getBookingsByUser",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#getBookingsByUser",
+        "unresolved:Session#commit"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "id": "chain:sample.plantsbywebsphere:3",
+  "fileName": "003-account-bean-perform-checkout-final.json",
+  "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+  "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+  "reachedNodeCount": 4,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+    "benchmark": "sample.plantsbywebsphere",
+    "framework": "jsf-cdi-servlet-ejb",
+    "kind": "action_point",
+    "className": "AccountBean",
+    "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+    "methodName": "performCheckoutFinal",
+    "methodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+    "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+    "line": 100,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+      "kind": "method",
+      "className": "AccountBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+      "methodName": "performCheckoutFinal",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+      "line": 100
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost",
+      "kind": "method",
+      "className": "ShoppingBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.ShoppingBean",
+      "methodName": "setShippingCost"
+    },
+    {
+      "id": "unresolved:Application#createValueBinding",
+      "kind": "unknown_framework_target",
+      "className": "Application",
+      "methodName": "createValueBinding"
+    },
+    {
+      "id": "unresolved:FacesContext#getApplication",
+      "kind": "unknown_framework_target",
+      "className": "FacesContext",
+      "methodName": "getApplication"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->unresolved:FacesContext#getApplication:369",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+      "to": "unresolved:FacesContext#getApplication",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performCheckoutFinal",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 100
+      },
+      "toNode": {
+        "id": "unresolved:FacesContext#getApplication",
+        "kind": "unknown_framework_target",
+        "className": "FacesContext",
+        "methodName": "getApplication"
+      },
+      "callSite": "context.getApplication()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->unresolved:Application#createValueBinding:370",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+      "to": "unresolved:Application#createValueBinding",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performCheckoutFinal",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 100
+      },
+      "toNode": {
+        "id": "unresolved:Application#createValueBinding",
+        "kind": "unknown_framework_target",
+        "className": "Application",
+        "methodName": "createValueBinding"
+      },
+      "callSite": "app.createValueBinding(\"#{shopping}\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost:371",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+      "to": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performCheckoutFinal",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 100
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost",
+        "kind": "method",
+        "className": "ShoppingBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ShoppingBean",
+        "methodName": "setShippingCost"
+      },
+      "callSite": "shopping.setShippingCost(Util.getShippingMethodPrice(orderInfo.getShippingMethod()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->unresolved:FacesContext#getApplication:369"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->unresolved:FacesContext#getApplication:369",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+          "to": "unresolved:FacesContext#getApplication",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performCheckoutFinal",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 100
+          },
+          "toNode": {
+            "id": "unresolved:FacesContext#getApplication",
+            "kind": "unknown_framework_target",
+            "className": "FacesContext",
+            "methodName": "getApplication"
+          },
+          "callSite": "context.getApplication()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+        "unresolved:FacesContext#getApplication"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->unresolved:Application#createValueBinding:370"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->unresolved:Application#createValueBinding:370",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+          "to": "unresolved:Application#createValueBinding",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performCheckoutFinal",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 100
+          },
+          "toNode": {
+            "id": "unresolved:Application#createValueBinding",
+            "kind": "unknown_framework_target",
+            "className": "Application",
+            "methodName": "createValueBinding"
+          },
+          "callSite": "app.createValueBinding(\"#{shopping}\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+        "unresolved:Application#createValueBinding"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost:371"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal->method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost:371",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performCheckoutFinal",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 100
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost",
+            "kind": "method",
+            "className": "ShoppingBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ShoppingBean",
+            "methodName": "setShippingCost"
+          },
+          "callSite": "shopping.setShippingCost(Util.getShippingMethodPrice(orderInfo.getShippingMethod()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+        "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#setShippingCost"
+      ]
+    }
+  ]
+}

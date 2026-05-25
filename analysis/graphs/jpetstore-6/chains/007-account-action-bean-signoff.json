@@ -1,0 +1,107 @@
+{
+  "id": "chain:jpetstore-6:7",
+  "fileName": "007-account-action-bean-signoff.json",
+  "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+  "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+    "benchmark": "jpetstore-6",
+    "framework": "Stripes",
+    "kind": "action_point",
+    "className": "AccountActionBean",
+    "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+    "methodName": "signoff",
+    "methodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+    "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+    "line": 183,
+    "annotations": [],
+    "routeHint": "/actions/Account.action?signoff",
+    "detectionSource": "tree-sitter/regex-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear",
+      "kind": "method",
+      "className": "AccountActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+      "methodName": "clear",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+      "kind": "method",
+      "className": "AccountActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+      "methodName": "signoff",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+      "line": 183
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff->method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear:139",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+      "to": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+        "kind": "method",
+        "className": "AccountActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+        "methodName": "signoff",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+        "line": 183
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear",
+        "kind": "method",
+        "className": "AccountActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+        "methodName": "clear",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java"
+      },
+      "callSite": "clear("
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff->method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear:139"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff->method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear:139",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+          "to": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "signoff",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 183
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "clear",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java"
+          },
+          "callSite": "clear("
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#clear"
+      ]
+    }
+  ]
+}

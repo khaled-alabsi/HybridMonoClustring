@@ -1,0 +1,128 @@
+{
+  "id": "chain:cargotracker:5",
+  "fileName": "005-rejected-registration-attempts-consumer-on-message.json",
+  "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+  "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "RejectedRegistrationAttemptsConsumer",
+    "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+    "methodName": "onMessage",
+    "methodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/RejectedRegistrationAttemptsConsumer.java",
+    "line": 23,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+      "kind": "method",
+      "className": "RejectedRegistrationAttemptsConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+      "methodName": "onMessage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/RejectedRegistrationAttemptsConsumer.java",
+      "line": 23
+    },
+    {
+      "id": "unresolved:Logger#log",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "log"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage->unresolved:Logger#log:289",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+        "kind": "method",
+        "className": "RejectedRegistrationAttemptsConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/RejectedRegistrationAttemptsConsumer.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(\n          Level.INFO,\n          \"Rejected registration attempt of cargo with tracking ID {0}.\",\n          message.getBody(String.class)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage->unresolved:Logger#log:290",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+        "kind": "method",
+        "className": "RejectedRegistrationAttemptsConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/RejectedRegistrationAttemptsConsumer.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.WARNING, \"Error processing message.\", ex)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage->unresolved:Logger#log:289"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage->unresolved:Logger#log:289",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+          "to": "unresolved:Logger#log",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+            "kind": "method",
+            "className": "RejectedRegistrationAttemptsConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/RejectedRegistrationAttemptsConsumer.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "unresolved:Logger#log",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "log"
+          },
+          "callSite": "logger.log(\n          Level.INFO,\n          \"Rejected registration attempt of cargo with tracking ID {0}.\",\n          message.getBody(String.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer#onMessage",
+        "unresolved:Logger#log"
+      ]
+    }
+  ]
+}

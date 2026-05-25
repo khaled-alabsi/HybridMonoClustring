@@ -1,0 +1,102 @@
+{
+  "id": "chain:sample.plantsbywebsphere:5",
+  "fileName": "005-account-bean-perform-login.json",
+  "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+  "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+    "benchmark": "sample.plantsbywebsphere",
+    "framework": "jsf-cdi-servlet-ejb",
+    "kind": "action_point",
+    "className": "AccountBean",
+    "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+    "methodName": "performLogin",
+    "methodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+    "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+    "line": 158,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+      "kind": "method",
+      "className": "AccountBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+      "methodName": "performLogin",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+      "line": 158
+    },
+    {
+      "id": "unresolved:return#setMessage",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setMessage"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin->unresolved:return#setMessage:403",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+      "to": "unresolved:return#setMessage",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performLogin",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 158
+      },
+      "toNode": {
+        "id": "unresolved:return#setMessage",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setMessage"
+      },
+      "callSite": "loginInfo.setMessage(\"\")"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin->unresolved:return#setMessage:403"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin->unresolved:return#setMessage:403",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+          "to": "unresolved:return#setMessage",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performLogin",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "unresolved:return#setMessage",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setMessage"
+          },
+          "callSite": "loginInfo.setMessage(\"\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+        "unresolved:return#setMessage"
+      ]
+    }
+  ]
+}

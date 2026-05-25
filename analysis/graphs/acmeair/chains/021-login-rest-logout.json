@@ -1,0 +1,1391 @@
+{
+  "id": "chain:acmeair:21",
+  "fileName": "021-login-rest-logout.json",
+  "actionPointId": "action:com.acmeair.web.LoginREST#logout",
+  "rootMethodId": "method:com.acmeair.web.LoginREST#logout",
+  "reachedNodeCount": 10,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.web.LoginREST#logout",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "LoginREST",
+    "classFqn": "com.acmeair.web.LoginREST",
+    "methodName": "logout",
+    "methodId": "method:com.acmeair.web.LoginREST#logout",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+    "line": 59,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+      "methodName": "invalidateSession",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+      "line": 106
+    },
+    {
+      "id": "method:com.acmeair.service.CustomerService#invalidateAllUserSessions",
+      "kind": "method",
+      "className": "CustomerService",
+      "classFqn": "com.acmeair.service.CustomerService",
+      "methodName": "invalidateAllUserSessions"
+    },
+    {
+      "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+      "kind": "method",
+      "className": "CustomerService",
+      "classFqn": "com.acmeair.service.CustomerService",
+      "methodName": "invalidateSession"
+    },
+    {
+      "id": "method:com.acmeair.web.LoginREST#logout",
+      "kind": "method",
+      "className": "LoginREST",
+      "classFqn": "com.acmeair.web.LoginREST",
+      "methodName": "logout",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+      "line": 59
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+      "methodName": "invalidateSession",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+      "line": 231
+    },
+    {
+      "id": "unresolved:Datastore#delete",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "delete"
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#remove",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "remove"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.web.LoginREST#logout",
+      "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+      "fromNode": {
+        "id": "method:com.acmeair.web.LoginREST#logout",
+        "kind": "method",
+        "className": "LoginREST",
+        "classFqn": "com.acmeair.web.LoginREST",
+        "methodName": "logout",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+        "line": 59
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "invalidateSession"
+      },
+      "callSite": "customerService.invalidateSession(sessionid)"
+    },
+    {
+      "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateAllUserSessions:1124",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.web.LoginREST#logout",
+      "to": "method:com.acmeair.service.CustomerService#invalidateAllUserSessions",
+      "fromNode": {
+        "id": "method:com.acmeair.web.LoginREST#logout",
+        "kind": "method",
+        "className": "LoginREST",
+        "classFqn": "com.acmeair.web.LoginREST",
+        "methodName": "logout",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+        "line": 59
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.CustomerService#invalidateAllUserSessions",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "invalidateAllUserSessions"
+      },
+      "callSite": "customerService.invalidateAllUserSessions(login)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+      "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "invalidateSession"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.invalidateSession(sessionid)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+      "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "invalidateSession"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.invalidateSession(sessionid)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->unresolved:Datastore#find:430",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 106
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(CustomerSessionImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->external_endpoint:mongodb:431",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 106
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(CustomerSessionImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->unresolved:Datastore#delete:432",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+      "to": "unresolved:Datastore#delete",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 106
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#delete",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "delete"
+      },
+      "callSite": "datastore.delete(q)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->external_endpoint:mongodb:433",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "delete",
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 106
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.delete(q)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:ObjectGrid#getSession:690",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 231
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:691",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 231
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:Session#getMap:692",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 231
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:693",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 231
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:ObjectMap#remove:694",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "to": "unresolved:ObjectMap#remove",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 231
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#remove",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "remove"
+      },
+      "callSite": "customerSessionMap.remove(sessionid)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:695",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "remove",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "invalidateSession",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 231
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "customerSessionMap.remove(sessionid)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateAllUserSessions:1124"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateAllUserSessions:1124",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateAllUserSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateAllUserSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateAllUserSessions"
+          },
+          "callSite": "customerService.invalidateAllUserSessions(login)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateAllUserSessions"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+        "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->external_endpoint:mongodb:431"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->external_endpoint:mongodb:431",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 106
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(CustomerSessionImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+        "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->external_endpoint:mongodb:433"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->external_endpoint:mongodb:433",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "delete",
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 106
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.delete(q)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:691"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:691",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 231
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:693"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:693",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 231
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:695"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->external_endpoint:websphere-extreme-scale:695",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "remove",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 231
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "customerSessionMap.remove(sessionid)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->unresolved:Datastore#find:430"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->unresolved:Datastore#find:430",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 106
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(CustomerSessionImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->unresolved:Datastore#delete:432"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession:1122",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession->unresolved:Datastore#delete:432",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+          "to": "unresolved:Datastore#delete",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 106
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#delete",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "delete"
+          },
+          "callSite": "datastore.delete(q)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#invalidateSession",
+        "unresolved:Datastore#delete"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:ObjectGrid#getSession:690"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:ObjectGrid#getSession:690",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 231
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:Session#getMap:692"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:Session#getMap:692",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 231
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:ObjectMap#remove:694"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.LoginREST#logout->method:com.acmeair.service.CustomerService#invalidateSession:1121",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.LoginREST#logout",
+          "to": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.web.LoginREST#logout",
+            "kind": "method",
+            "className": "LoginREST",
+            "classFqn": "com.acmeair.web.LoginREST",
+            "methodName": "logout",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/LoginREST.java",
+            "line": 59
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#invalidateSession->method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession:1123",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#invalidateSession",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#invalidateSession",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "invalidateSession"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.invalidateSession(sessionid)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession->unresolved:ObjectMap#remove:694",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+          "to": "unresolved:ObjectMap#remove",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "invalidateSession",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 231
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#remove",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "remove"
+          },
+          "callSite": "customerSessionMap.remove(sessionid)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.LoginREST#logout",
+        "method:com.acmeair.service.CustomerService#invalidateSession",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#invalidateSession",
+        "unresolved:ObjectMap#remove"
+      ]
+    }
+  ]
+}

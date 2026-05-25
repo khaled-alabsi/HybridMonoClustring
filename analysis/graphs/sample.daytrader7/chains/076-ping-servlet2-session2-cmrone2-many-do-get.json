@@ -1,0 +1,1069 @@
+{
+  "id": "chain:sample.daytrader7:76",
+  "fileName": "076-ping-servlet2-session2-cmrone2-many-do-get.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+  "reachedNodeCount": 13,
+  "reachedDataSources": [
+    "table:accountprofileejb"
+  ],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "PingServlet2Session2CMROne2Many",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+    "methodName": "doGet",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+    "line": 56,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+      "kind": "method",
+      "className": "TradeSLSBBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "methodName": "getOrders",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+      "line": 343
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+      "kind": "method",
+      "className": "AccountProfileDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+      "methodName": "getAccount"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "kind": "method",
+      "className": "PingServlet2Session2CMROne2Many",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+      "line": 56
+    },
+    {
+      "id": "unresolved:Collection<?>#iterator",
+      "kind": "unknown_framework_target",
+      "className": "Collection",
+      "methodName": "iterator"
+    },
+    {
+      "id": "unresolved:EntityManager#find",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getWriter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getWriter"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#sendError",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "sendError"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:Iterator<?>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<?>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:java.io.PrintWriter#println",
+      "kind": "unknown_framework_target",
+      "className": "PrintWriter",
+      "methodName": "println"
+    },
+    {
+      "id": "unresolved:return#getOrders",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "getOrders"
+    },
+    {
+      "id": "unresolved:StringBuffer#append",
+      "kind": "unknown_framework_target",
+      "className": "StringBuffer",
+      "methodName": "append"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#setContentType:1756",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "res.setContentType(\"text/html\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#getWriter:1757",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:HttpServletResponse#getWriter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getWriter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getWriter"
+      },
+      "callSite": "res.getWriter()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1758",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "output.append(\"<html><head><title>Servlet2Session2CMROne20ne</title></head>\"\r\n                + \"<body><HR><FONT size=\\\"+2\\\" color=\\\"#000066\\\">PingServlet2Session2CMROne2Many<BR></FONT>\"\r\n                + \"<FONT size=\\\"-1\\\" color=\\\"#000066\\\"><BR>PingServlet2Session2CMROne2Many uses the Trade Session EJB\"\r\n                + \" to get the orders for a user using an EJB 3.0 Entity CMR one to many relationship\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "getOrders"
+      },
+      "callSite": "tradeSLSBLocal.getOrders(userID)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1760",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "output.append(\"<HR>initTime: \" + initTime + \"<BR>Hit Count: \")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1761",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "output.append(\"<HR>One to Many CMR access of Account Orders from Account Entity<BR> \")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1762",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "output.append(\"<HR>User: \" + userID + \" currently has \" + orderDataBeans.size()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Collection<?>#iterator:1763",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:Collection<?>#iterator",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:Collection<?>#iterator",
+        "kind": "unknown_framework_target",
+        "className": "Collection",
+        "methodName": "iterator"
+      },
+      "callSite": "orderDataBeans.iterator()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Iterator<?>#hasNext:1764",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:Iterator<?>#hasNext",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "it.hasNext()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Iterator<?>#next:1765",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:Iterator<?>#next",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "it.next()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1766",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "output.append(\"<BR>\" + orderData.toHTML()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1767",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "output.append(\"</font><HR></body></html>\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:java.io.PrintWriter#println:1768",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:java.io.PrintWriter#println",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:java.io.PrintWriter#println",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "println"
+      },
+      "callSite": "out.println(output.toString()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#sendError:1769",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+      "to": "unresolved:HttpServletResponse#sendError",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "kind": "method",
+        "className": "PingServlet2Session2CMROne2Many",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#sendError",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "sendError"
+      },
+      "callSite": "res.sendError(500, \"PingServlet2Session2CMROne2Many.doGet(...)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->unresolved:EntityManager#find:505",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+      "to": "unresolved:EntityManager#find",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "getOrders",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 343
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#find",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "find"
+      },
+      "callSite": "entityManager.find(AccountProfileDataBean.class, userID)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount:506",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+      "to": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "getOrders",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 343
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+        "kind": "method",
+        "className": "AccountProfileDataBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+        "methodName": "getAccount"
+      },
+      "callSite": "profile.getAccount()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->unresolved:return#getOrders:507",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+      "to": "unresolved:return#getOrders",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "getOrders",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 343
+      },
+      "toNode": {
+        "id": "unresolved:return#getOrders",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "getOrders"
+      },
+      "callSite": "account.getOrders()"
+    },
+    {
+      "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->table:accountprofileejb:508",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "find",
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+      "to": "table:accountprofileejb",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "getOrders",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 343
+      },
+      "toNode": {
+        "id": "table:accountprofileejb",
+        "kind": "table",
+        "name": "accountprofileejb"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#setContentType:1756"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#setContentType:1756",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "res.setContentType(\"text/html\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#getWriter:1757"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#getWriter:1757",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:HttpServletResponse#getWriter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getWriter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getWriter"
+          },
+          "callSite": "res.getWriter()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:HttpServletResponse#getWriter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1758"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:StringBuffer#append:1758",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:StringBuffer#append",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:StringBuffer#append",
+            "kind": "unknown_framework_target",
+            "className": "StringBuffer",
+            "methodName": "append"
+          },
+          "callSite": "output.append(\"<html><head><title>Servlet2Session2CMROne20ne</title></head>\"\r\n                + \"<body><HR><FONT size=\\\"+2\\\" color=\\\"#000066\\\">PingServlet2Session2CMROne2Many<BR></FONT>\"\r\n                + \"<FONT size=\\\"-1\\\" color=\\\"#000066\\\"><BR>PingServlet2Session2CMROne2Many uses the Trade Session EJB\"\r\n                + \" to get the orders for a user using an EJB 3.0 Entity CMR one to many relationship\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:StringBuffer#append"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+        "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->table:accountprofileejb:508"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders"
+          },
+          "callSite": "tradeSLSBLocal.getOrders(userID)"
+        },
+        {
+          "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->table:accountprofileejb:508",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "find",
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "to": "table:accountprofileejb",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 343
+          },
+          "toNode": {
+            "id": "table:accountprofileejb",
+            "kind": "table",
+            "name": "accountprofileejb"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "table:accountprofileejb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Collection<?>#iterator:1763"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Collection<?>#iterator:1763",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:Collection<?>#iterator",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:Collection<?>#iterator",
+            "kind": "unknown_framework_target",
+            "className": "Collection",
+            "methodName": "iterator"
+          },
+          "callSite": "orderDataBeans.iterator()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:Collection<?>#iterator"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Iterator<?>#hasNext:1764"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Iterator<?>#hasNext:1764",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:Iterator<?>#hasNext",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "it.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:Iterator<?>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Iterator<?>#next:1765"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:Iterator<?>#next:1765",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:Iterator<?>#next",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "it.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:Iterator<?>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:java.io.PrintWriter#println:1768"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:java.io.PrintWriter#println:1768",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:java.io.PrintWriter#println",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:java.io.PrintWriter#println",
+            "kind": "unknown_framework_target",
+            "className": "PrintWriter",
+            "methodName": "println"
+          },
+          "callSite": "out.println(output.toString()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:java.io.PrintWriter#println"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#sendError:1769"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->unresolved:HttpServletResponse#sendError:1769",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "unresolved:HttpServletResponse#sendError",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#sendError",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "sendError"
+          },
+          "callSite": "res.sendError(500, \"PingServlet2Session2CMROne2Many.doGet(...)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "unresolved:HttpServletResponse#sendError"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->unresolved:EntityManager#find:505"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders"
+          },
+          "callSite": "tradeSLSBLocal.getOrders(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->unresolved:EntityManager#find:505",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "to": "unresolved:EntityManager#find",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 343
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#find",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "find"
+          },
+          "callSite": "entityManager.find(AccountProfileDataBean.class, userID)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "unresolved:EntityManager#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount:506"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders"
+          },
+          "callSite": "tradeSLSBLocal.getOrders(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount:506",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "to": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 343
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+            "kind": "method",
+            "className": "AccountProfileDataBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+            "methodName": "getAccount"
+          },
+          "callSite": "profile.getAccount()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->unresolved:return#getOrders:507"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders:1759",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+            "kind": "method",
+            "className": "PingServlet2Session2CMROne2Many",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ejb3/PingServlet2Session2CMROne2Many.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders"
+          },
+          "callSite": "tradeSLSBLocal.getOrders(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders->unresolved:return#getOrders:507",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+          "to": "unresolved:return#getOrders",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "getOrders",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 343
+          },
+          "toNode": {
+            "id": "unresolved:return#getOrders",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "getOrders"
+          },
+          "callSite": "account.getOrders()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#getOrders",
+        "unresolved:return#getOrders"
+      ]
+    }
+  ]
+}

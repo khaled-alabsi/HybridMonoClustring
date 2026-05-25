@@ -11,3 +11,9 @@
 2. Clone them locally under `benchmarks/`.
 
 3. Begin with `benchmarks/jpetstore-6`, complete one full decomposition run, then generalize the extraction and scoring pipeline to the remaining benchmarks.
+
+4. Exaract and validate graph for each app, see GRAPH_REQUIREMENTS.md and CHAIN_VALIDATION_SKILL.md
+
+5. Generate a context file for each monolith under `analysis/contexts/<benchmark-name>.md`.
+   Use the template at `resources/templates/monolith-context.md`.
+   The context file must give any agent an instant orientation: what the app does, its architecture layers, where key classes live, entry points, data sources, and domain vocabulary — without reading source code.

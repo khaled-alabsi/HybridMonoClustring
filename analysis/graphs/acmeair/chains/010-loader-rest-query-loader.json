@@ -1,0 +1,573 @@
+{
+  "id": "chain:acmeair:10",
+  "fileName": "010-loader-rest-query-loader.json",
+  "actionPointId": "action:com.acmeair.config.LoaderREST#queryLoader",
+  "rootMethodId": "method:com.acmeair.config.LoaderREST#queryLoader",
+  "reachedNodeCount": 7,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.LoaderREST#queryLoader",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "LoaderREST",
+    "classFqn": "com.acmeair.config.LoaderREST",
+    "methodName": "queryLoader",
+    "methodId": "method:com.acmeair.config.LoaderREST#queryLoader",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/LoaderREST.java",
+    "line": 20,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.LoaderREST#queryLoader",
+      "kind": "method",
+      "className": "LoaderREST",
+      "classFqn": "com.acmeair.config.LoaderREST",
+      "methodName": "queryLoader",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/LoaderREST.java",
+      "line": 20
+    },
+    {
+      "id": "method:com.acmeair.loader.Loader#getProperties",
+      "kind": "method",
+      "className": "Loader",
+      "classFqn": "com.acmeair.loader.Loader",
+      "methodName": "getProperties",
+      "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+      "line": 96
+    },
+    {
+      "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+      "kind": "method",
+      "className": "Loader",
+      "classFqn": "com.acmeair.loader.Loader",
+      "methodName": "lookupDefaults",
+      "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+      "line": 88
+    },
+    {
+      "id": "method:com.acmeair.loader.Loader#queryLoader",
+      "kind": "method",
+      "className": "Loader",
+      "classFqn": "com.acmeair.loader.Loader",
+      "methodName": "queryLoader",
+      "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+      "line": 27
+    },
+    {
+      "id": "unresolved:Logger#info",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "info"
+    },
+    {
+      "id": "unresolved:Properties#getProperty",
+      "kind": "unknown_framework_target",
+      "className": "Properties",
+      "methodName": "getProperty"
+    },
+    {
+      "id": "unresolved:Properties#load",
+      "kind": "unknown_framework_target",
+      "className": "Properties",
+      "methodName": "load"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.config.LoaderREST#queryLoader",
+      "to": "method:com.acmeair.loader.Loader#queryLoader",
+      "fromNode": {
+        "id": "method:com.acmeair.config.LoaderREST#queryLoader",
+        "kind": "method",
+        "className": "LoaderREST",
+        "classFqn": "com.acmeair.config.LoaderREST",
+        "methodName": "queryLoader",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/LoaderREST.java",
+        "line": 20
+      },
+      "toNode": {
+        "id": "method:com.acmeair.loader.Loader#queryLoader",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "queryLoader"
+      },
+      "callSite": "loader.queryLoader()"
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#queryLoader->unresolved:Logger#info:49",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.loader.Loader#queryLoader",
+      "to": "unresolved:Logger#info",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#queryLoader",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "queryLoader",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 27
+      },
+      "toNode": {
+        "id": "unresolved:Logger#info",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "info"
+      },
+      "callSite": "logger.info(\"The system property 'loader.numCustomers' has not been set yet. Looking up the default properties.\")"
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#queryLoader->method:com.acmeair.loader.Loader#lookupDefaults:50",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.loader.Loader#queryLoader",
+      "to": "method:com.acmeair.loader.Loader#lookupDefaults",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#queryLoader",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "queryLoader",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 27
+      },
+      "toNode": {
+        "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "lookupDefaults",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 88
+      },
+      "callSite": "lookupDefaults("
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#lookupDefaults->unresolved:Properties#getProperty:60",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.loader.Loader#lookupDefaults",
+      "to": "unresolved:Properties#getProperty",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "lookupDefaults",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 88
+      },
+      "toNode": {
+        "id": "unresolved:Properties#getProperty",
+        "kind": "unknown_framework_target",
+        "className": "Properties",
+        "methodName": "getProperty"
+      },
+      "callSite": "props.getProperty(\"loader.numCustomers\",\"100\")"
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#lookupDefaults->method:com.acmeair.loader.Loader#getProperties:61",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.loader.Loader#lookupDefaults",
+      "to": "method:com.acmeair.loader.Loader#getProperties",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "lookupDefaults",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 88
+      },
+      "toNode": {
+        "id": "method:com.acmeair.loader.Loader#getProperties",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "getProperties",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 96
+      },
+      "callSite": "getProperties("
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#getProperties->unresolved:Properties#load:62",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.loader.Loader#getProperties",
+      "to": "unresolved:Properties#load",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#getProperties",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "getProperties",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 96
+      },
+      "toNode": {
+        "id": "unresolved:Properties#load",
+        "kind": "unknown_framework_target",
+        "className": "Properties",
+        "methodName": "load"
+      },
+      "callSite": "props.load(propFileStream)"
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#getProperties->unresolved:Properties#load:63",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.loader.Loader#getProperties",
+      "to": "unresolved:Properties#load",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#getProperties",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "getProperties",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 96
+      },
+      "toNode": {
+        "id": "unresolved:Properties#load",
+        "kind": "unknown_framework_target",
+        "className": "Properties",
+        "methodName": "load"
+      },
+      "callSite": "props.load(new FileInputStream(propFileName)"
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#getProperties->unresolved:Logger#info:64",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.loader.Loader#getProperties",
+      "to": "unresolved:Logger#info",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#getProperties",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "getProperties",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 96
+      },
+      "toNode": {
+        "id": "unresolved:Logger#info",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "info"
+      },
+      "callSite": "logger.info(\"Property file \" + propFileName + \" not found.\")"
+    },
+    {
+      "id": "call:method:com.acmeair.loader.Loader#getProperties->unresolved:Logger#info:65",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.loader.Loader#getProperties",
+      "to": "unresolved:Logger#info",
+      "fromNode": {
+        "id": "method:com.acmeair.loader.Loader#getProperties",
+        "kind": "method",
+        "className": "Loader",
+        "classFqn": "com.acmeair.loader.Loader",
+        "methodName": "getProperties",
+        "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+        "line": 96
+      },
+      "toNode": {
+        "id": "unresolved:Logger#info",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "info"
+      },
+      "callSite": "logger.info(\"IOException - Property file \" + propFileName + \" not found.\")"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+        "call:method:com.acmeair.loader.Loader#queryLoader->unresolved:Logger#info:49"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.LoaderREST#queryLoader",
+          "to": "method:com.acmeair.loader.Loader#queryLoader",
+          "fromNode": {
+            "id": "method:com.acmeair.config.LoaderREST#queryLoader",
+            "kind": "method",
+            "className": "LoaderREST",
+            "classFqn": "com.acmeair.config.LoaderREST",
+            "methodName": "queryLoader",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/LoaderREST.java",
+            "line": 20
+          },
+          "toNode": {
+            "id": "method:com.acmeair.loader.Loader#queryLoader",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "queryLoader"
+          },
+          "callSite": "loader.queryLoader()"
+        },
+        {
+          "id": "call:method:com.acmeair.loader.Loader#queryLoader->unresolved:Logger#info:49",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.loader.Loader#queryLoader",
+          "to": "unresolved:Logger#info",
+          "fromNode": {
+            "id": "method:com.acmeair.loader.Loader#queryLoader",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "queryLoader",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 27
+          },
+          "toNode": {
+            "id": "unresolved:Logger#info",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "info"
+          },
+          "callSite": "logger.info(\"The system property 'loader.numCustomers' has not been set yet. Looking up the default properties.\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.LoaderREST#queryLoader",
+        "method:com.acmeair.loader.Loader#queryLoader",
+        "unresolved:Logger#info"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+        "call:method:com.acmeair.loader.Loader#queryLoader->method:com.acmeair.loader.Loader#lookupDefaults:50",
+        "call:method:com.acmeair.loader.Loader#lookupDefaults->unresolved:Properties#getProperty:60"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.LoaderREST#queryLoader",
+          "to": "method:com.acmeair.loader.Loader#queryLoader",
+          "fromNode": {
+            "id": "method:com.acmeair.config.LoaderREST#queryLoader",
+            "kind": "method",
+            "className": "LoaderREST",
+            "classFqn": "com.acmeair.config.LoaderREST",
+            "methodName": "queryLoader",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/LoaderREST.java",
+            "line": 20
+          },
+          "toNode": {
+            "id": "method:com.acmeair.loader.Loader#queryLoader",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "queryLoader"
+          },
+          "callSite": "loader.queryLoader()"
+        },
+        {
+          "id": "call:method:com.acmeair.loader.Loader#queryLoader->method:com.acmeair.loader.Loader#lookupDefaults:50",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.loader.Loader#queryLoader",
+          "to": "method:com.acmeair.loader.Loader#lookupDefaults",
+          "fromNode": {
+            "id": "method:com.acmeair.loader.Loader#queryLoader",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "queryLoader",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 27
+          },
+          "toNode": {
+            "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "lookupDefaults",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 88
+          },
+          "callSite": "lookupDefaults("
+        },
+        {
+          "id": "call:method:com.acmeair.loader.Loader#lookupDefaults->unresolved:Properties#getProperty:60",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.loader.Loader#lookupDefaults",
+          "to": "unresolved:Properties#getProperty",
+          "fromNode": {
+            "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "lookupDefaults",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 88
+          },
+          "toNode": {
+            "id": "unresolved:Properties#getProperty",
+            "kind": "unknown_framework_target",
+            "className": "Properties",
+            "methodName": "getProperty"
+          },
+          "callSite": "props.getProperty(\"loader.numCustomers\",\"100\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.LoaderREST#queryLoader",
+        "method:com.acmeair.loader.Loader#queryLoader",
+        "method:com.acmeair.loader.Loader#lookupDefaults",
+        "unresolved:Properties#getProperty"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+        "call:method:com.acmeair.loader.Loader#queryLoader->method:com.acmeair.loader.Loader#lookupDefaults:50",
+        "call:method:com.acmeair.loader.Loader#lookupDefaults->method:com.acmeair.loader.Loader#getProperties:61",
+        "call:method:com.acmeair.loader.Loader#getProperties->unresolved:Properties#load:62"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.LoaderREST#queryLoader->method:com.acmeair.loader.Loader#queryLoader:1015",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.LoaderREST#queryLoader",
+          "to": "method:com.acmeair.loader.Loader#queryLoader",
+          "fromNode": {
+            "id": "method:com.acmeair.config.LoaderREST#queryLoader",
+            "kind": "method",
+            "className": "LoaderREST",
+            "classFqn": "com.acmeair.config.LoaderREST",
+            "methodName": "queryLoader",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/LoaderREST.java",
+            "line": 20
+          },
+          "toNode": {
+            "id": "method:com.acmeair.loader.Loader#queryLoader",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "queryLoader"
+          },
+          "callSite": "loader.queryLoader()"
+        },
+        {
+          "id": "call:method:com.acmeair.loader.Loader#queryLoader->method:com.acmeair.loader.Loader#lookupDefaults:50",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.loader.Loader#queryLoader",
+          "to": "method:com.acmeair.loader.Loader#lookupDefaults",
+          "fromNode": {
+            "id": "method:com.acmeair.loader.Loader#queryLoader",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "queryLoader",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 27
+          },
+          "toNode": {
+            "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "lookupDefaults",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 88
+          },
+          "callSite": "lookupDefaults("
+        },
+        {
+          "id": "call:method:com.acmeair.loader.Loader#lookupDefaults->method:com.acmeair.loader.Loader#getProperties:61",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.loader.Loader#lookupDefaults",
+          "to": "method:com.acmeair.loader.Loader#getProperties",
+          "fromNode": {
+            "id": "method:com.acmeair.loader.Loader#lookupDefaults",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "lookupDefaults",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 88
+          },
+          "toNode": {
+            "id": "method:com.acmeair.loader.Loader#getProperties",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "getProperties",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 96
+          },
+          "callSite": "getProperties("
+        },
+        {
+          "id": "call:method:com.acmeair.loader.Loader#getProperties->unresolved:Properties#load:62",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.loader.Loader#getProperties",
+          "to": "unresolved:Properties#load",
+          "fromNode": {
+            "id": "method:com.acmeair.loader.Loader#getProperties",
+            "kind": "method",
+            "className": "Loader",
+            "classFqn": "com.acmeair.loader.Loader",
+            "methodName": "getProperties",
+            "file": "benchmarks/acmeair/acmeair-loader/src/main/java/com/acmeair/loader/Loader.java",
+            "line": 96
+          },
+          "toNode": {
+            "id": "unresolved:Properties#load",
+            "kind": "unknown_framework_target",
+            "className": "Properties",
+            "methodName": "load"
+          },
+          "callSite": "props.load(propFileStream)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.LoaderREST#queryLoader",
+        "method:com.acmeair.loader.Loader#queryLoader",
+        "method:com.acmeair.loader.Loader#lookupDefaults",
+        "method:com.acmeair.loader.Loader#getProperties",
+        "unresolved:Properties#load"
+      ]
+    }
+  ]
+}

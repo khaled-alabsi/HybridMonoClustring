@@ -1,0 +1,212 @@
+{
+  "benchmark": "sample.plantsbywebsphere",
+  "tables": [
+    {
+      "id": "table:backorder",
+      "kind": "table",
+      "name": "backorder"
+    },
+    {
+      "id": "table:customer",
+      "kind": "table",
+      "name": "customer"
+    },
+    {
+      "id": "table:inventory",
+      "kind": "table",
+      "name": "inventory"
+    },
+    {
+      "id": "table:order1",
+      "kind": "table",
+      "name": "order1"
+    },
+    {
+      "id": "table:orderitem",
+      "kind": "table",
+      "name": "orderitem"
+    },
+    {
+      "id": "table:supplier",
+      "kind": "table",
+      "name": "supplier"
+    }
+  ],
+  "entities": [
+    {
+      "id": "entity:com.ibm.websphere.samples.pbw.jpa.BackOrder",
+      "kind": "entity",
+      "className": "BackOrder",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.BackOrder",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/BackOrder.java",
+      "table": "backorder",
+      "tableId": "table:backorder",
+      "entityName": "BackOrder",
+      "namedQueries": [
+        "findAllBackOrders",
+        "findByInventoryID",
+        "removeAllBackOrder"
+      ]
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.pbw.jpa.Customer",
+      "kind": "entity",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+      "table": "customer",
+      "tableId": "table:customer",
+      "entityName": "Customer",
+      "namedQueries": [
+        "removeAllCustomers"
+      ]
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "kind": "entity",
+      "className": "Inventory",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Inventory.java",
+      "table": "inventory",
+      "tableId": "table:inventory",
+      "entityName": "Inventory",
+      "namedQueries": [
+        "getItemsByCategory",
+        "getItemsLikeName",
+        "removeAllInventory"
+      ]
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.pbw.jpa.Order",
+      "kind": "entity",
+      "className": "Order",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Order",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Order.java",
+      "table": "order1",
+      "tableId": "table:order1",
+      "entityName": "Order",
+      "namedQueries": [
+        "removeAllOrders"
+      ]
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.pbw.jpa.OrderItem",
+      "kind": "entity",
+      "className": "OrderItem",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.OrderItem",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/OrderItem.java",
+      "table": "orderitem",
+      "tableId": "table:orderitem",
+      "entityName": "OrderItem",
+      "namedQueries": [
+        "removeAllOrderItem"
+      ]
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.pbw.jpa.Supplier",
+      "kind": "entity",
+      "className": "Supplier",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Supplier",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Supplier.java",
+      "table": "supplier",
+      "tableId": "table:supplier",
+      "entityName": "Supplier",
+      "namedQueries": [
+        "findAllSuppliers",
+        "removeAllSupplier"
+      ]
+    }
+  ],
+  "namedQueries": [
+    {
+      "name": "findAllBackOrders",
+      "query": "select b from BackOrder b",
+      "entities": [
+        "BackOrder"
+      ],
+      "tableId": "table:backorder"
+    },
+    {
+      "name": "findByInventoryID",
+      "query": "select b from BackOrder b where ((b.inventory.inventoryId = :id) and (b.status = 'Order Stock'))",
+      "entities": [
+        "BackOrder"
+      ],
+      "tableId": "table:backorder"
+    },
+    {
+      "name": "removeAllBackOrder",
+      "query": "delete from BackOrder",
+      "entities": [
+        "BackOrder"
+      ],
+      "tableId": "table:backorder"
+    },
+    {
+      "name": "removeAllCustomers",
+      "query": "delete from Customer",
+      "entities": [
+        "Customer"
+      ],
+      "tableId": "table:customer"
+    },
+    {
+      "name": "getItemsByCategory",
+      "query": "select i from Inventory i where i.category = :category ORDER BY i.inventoryId",
+      "entities": [
+        "Inventory"
+      ],
+      "tableId": "table:inventory"
+    },
+    {
+      "name": "getItemsLikeName",
+      "query": "select i from Inventory i where i.name like :name",
+      "entities": [
+        "Inventory"
+      ],
+      "tableId": "table:inventory"
+    },
+    {
+      "name": "removeAllInventory",
+      "query": "delete from Inventory",
+      "entities": [
+        "Inventory"
+      ],
+      "tableId": "table:inventory"
+    },
+    {
+      "name": "removeAllOrders",
+      "query": "delete from Order",
+      "entities": [
+        "Order"
+      ],
+      "tableId": "table:order1"
+    },
+    {
+      "name": "removeAllOrderItem",
+      "query": "delete from OrderItem",
+      "entities": [
+        "OrderItem"
+      ],
+      "tableId": "table:orderitem"
+    },
+    {
+      "name": "findAllSuppliers",
+      "query": "select s from Supplier s",
+      "entities": [
+        "Supplier"
+      ],
+      "tableId": "table:supplier"
+    },
+    {
+      "name": "removeAllSupplier",
+      "query": "delete from Supplier",
+      "entities": [
+        "Supplier"
+      ],
+      "tableId": "table:supplier"
+    }
+  ],
+  "externalEndpoints": [],
+  "mappers": []
+}

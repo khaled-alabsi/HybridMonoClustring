@@ -1,0 +1,3157 @@
+{
+  "id": "chain:cargotracker:3",
+  "fileName": "003-handling-event-registration-attempt-consumer-on-message.json",
+  "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+  "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+  "reachedNodeCount": 29,
+  "reachedDataSources": [
+    "table:cargo",
+    "table:handlingevent",
+    "table:location",
+    "table:voyage"
+  ],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "HandlingEventRegistrationAttemptConsumer",
+    "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+    "methodName": "onMessage",
+    "methodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+    "line": 26,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+      "kind": "method",
+      "className": "ApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+      "methodName": "cargoWasHandled"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+      "kind": "method",
+      "className": "HandlingEventService",
+      "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+      "methodName": "registerHandlingEvent"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+      "kind": "method",
+      "className": "DefaultHandlingEventService",
+      "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "methodName": "registerHandlingEvent",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+      "line": 23
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "getTrackingId"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "kind": "method",
+      "className": "CargoRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "methodName": "find"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo",
+      "kind": "method",
+      "className": "HandlingEvent",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "methodName": "getCargo"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+      "kind": "method",
+      "className": "HandlingEventFactory",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "methodName": "createHandlingEvent",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+      "line": 38
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+      "kind": "method",
+      "className": "HandlingEventFactory",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "methodName": "findCargo",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+      "line": 60
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+      "kind": "method",
+      "className": "HandlingEventFactory",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "methodName": "findLocation",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+      "line": 84
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+      "kind": "method",
+      "className": "HandlingEventFactory",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "methodName": "findVoyage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+      "line": 70
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+      "kind": "method",
+      "className": "HandlingEventRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "methodName": "store"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "kind": "method",
+      "className": "LocationRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "methodName": "find"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+      "kind": "method",
+      "className": "VoyageRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "methodName": "find"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "kind": "method",
+      "className": "HandlingEventRegistrationAttemptConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+      "methodName": "onMessage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+      "line": 26
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+      "kind": "method",
+      "className": "JmsApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "methodName": "cargoWasHandled",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+      "line": 35
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "kind": "method",
+      "className": "JpaCargoRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "methodName": "find",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+      "line": 28
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+      "kind": "method",
+      "className": "JpaHandlingEventRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "methodName": "store",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+      "line": 17
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "kind": "method",
+      "className": "JpaLocationRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+      "methodName": "find",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java",
+      "line": 17
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+      "kind": "method",
+      "className": "JpaVoyageRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+      "methodName": "find",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java",
+      "line": 17
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId",
+      "kind": "method",
+      "className": "HandlingEventRegistrationAttempt",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "methodName": "getTrackingId"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType",
+      "kind": "method",
+      "className": "HandlingEventRegistrationAttempt",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "methodName": "getType"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode",
+      "kind": "method",
+      "className": "HandlingEventRegistrationAttempt",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "methodName": "getUnLocode"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber",
+      "kind": "method",
+      "className": "HandlingEventRegistrationAttempt",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "methodName": "getVoyageNumber"
+    },
+    {
+      "id": "unresolved:EntityManager#createNamedQuery",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "createNamedQuery"
+    },
+    {
+      "id": "unresolved:EntityManager#persist",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "persist"
+    },
+    {
+      "id": "unresolved:JMSContext#createProducer",
+      "kind": "unknown_framework_target",
+      "className": "JMSContext",
+      "methodName": "createProducer"
+    },
+    {
+      "id": "unresolved:Logger#info",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "info"
+    },
+    {
+      "id": "unresolved:Logger#log",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "log"
+    },
+    {
+      "id": "unresolved:ObjectMessage#getObject",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMessage",
+      "methodName": "getObject"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->unresolved:ObjectMessage#getObject:268",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "to": "unresolved:ObjectMessage#getObject",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttemptConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+        "line": 26
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMessage#getObject",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMessage",
+        "methodName": "getObject"
+      },
+      "callSite": "objectMessage.getObject()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttemptConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+        "line": 26
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "HandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+        "methodName": "registerHandlingEvent"
+      },
+      "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId:271",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttemptConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+        "line": 26
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttempt",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+        "methodName": "getTrackingId"
+      },
+      "callSite": "attempt.getTrackingId()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber:272",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttemptConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+        "line": 26
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttempt",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+        "methodName": "getVoyageNumber"
+      },
+      "callSite": "attempt.getVoyageNumber()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode:273",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttemptConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+        "line": 26
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttempt",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+        "methodName": "getUnLocode"
+      },
+      "callSite": "attempt.getUnLocode()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType:274",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+      "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttemptConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+        "line": 26
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType",
+        "kind": "method",
+        "className": "HandlingEventRegistrationAttempt",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+        "methodName": "getType"
+      },
+      "callSite": "attempt.getType()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "HandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+        "methodName": "registerHandlingEvent"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "DefaultHandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+        "methodName": "registerHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+      },
+      "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "DefaultHandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+        "methodName": "registerHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "createHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 38
+      },
+      "callSite": "handlingEventFactory.createHandlingEvent(\n            registrationTime, completionTime, trackingId, voyageNumber, unLocode, type)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store:44",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "DefaultHandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+        "methodName": "registerHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "store"
+      },
+      "callSite": "handlingEventRepository.store(event)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "DefaultHandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+        "methodName": "registerHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "ApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+        "methodName": "cargoWasHandled"
+      },
+      "callSite": "applicationEvents.cargoWasHandled(event)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->unresolved:Logger#info:48",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+      "to": "unresolved:Logger#info",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "kind": "method",
+        "className": "DefaultHandlingEventService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+        "methodName": "registerHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#info",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "info"
+      },
+      "callSite": "logger.info(\"Registered handling event\")"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo:211",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "createHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "findCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 60
+      },
+      "callSite": "findCargo("
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage:212",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "createHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "findVoyage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 70
+      },
+      "callSite": "findVoyage("
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation:213",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "createHandlingEvent",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "findLocation",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 84
+      },
+      "callSite": "findLocation("
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store:45",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+        "kind": "method",
+        "className": "HandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+        "methodName": "store"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+        "line": 17
+      },
+      "callSite": "handlingEventRepository.store(event)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+      "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "ApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+        "methodName": "cargoWasHandled"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasHandled",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 35
+      },
+      "callSite": "applicationEvents.cargoWasHandled(event)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:214",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "findCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 60
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "find"
+      },
+      "callSite": "cargoRepository.find(trackingId)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage->method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find:215",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+      "to": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "findVoyage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 70
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+        "kind": "method",
+        "className": "VoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+        "methodName": "find"
+      },
+      "callSite": "voyageRepository.find(voyageNumber)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:217",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+      "to": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+        "kind": "method",
+        "className": "HandlingEventFactory",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+        "methodName": "findLocation",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+        "line": 84
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "callSite": "locationRepository.find(unlocode)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store->unresolved:EntityManager#persist:302",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+      "to": "unresolved:EntityManager#persist",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+        "line": 17
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#persist",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "persist"
+      },
+      "callSite": "entityManager.persist(event)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store->table:handlingevent:303",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "event",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+      "to": "table:handlingevent",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+        "kind": "method",
+        "className": "JpaHandlingEventRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+        "methodName": "store",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+        "line": 17
+      },
+      "toNode": {
+        "id": "table:handlingevent",
+        "kind": "table",
+        "name": "handlingevent"
+      }
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo:275",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+      "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasHandled",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo",
+        "kind": "method",
+        "className": "HandlingEvent",
+        "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+        "methodName": "getCargo"
+      },
+      "callSite": "event.getCargo()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->unresolved:Logger#log:276",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasHandled",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.INFO, \"Cargo was handled {0}\", cargo)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->unresolved:JMSContext#createProducer:277",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+      "to": "unresolved:JMSContext#createProducer",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasHandled",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "unresolved:JMSContext#createProducer",
+        "kind": "unknown_framework_target",
+        "className": "JMSContext",
+        "methodName": "createProducer"
+      },
+      "callSite": "jmsContext\n        .createProducer()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:278",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "kind": "method",
+        "className": "JmsApplicationEvents",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+        "methodName": "cargoWasHandled",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "getTrackingId"
+      },
+      "callSite": "cargo.getTrackingId()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "callSite": "cargoRepository.find(trackingId)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:361",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java"
+      },
+      "callSite": "cargoRepository.find(new TrackingId(trackingId)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find:216",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+        "kind": "method",
+        "className": "VoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+        "kind": "method",
+        "className": "JpaVoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java",
+        "line": 17
+      },
+      "callSite": "voyageRepository.find(voyageNumber)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find:324",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+        "kind": "method",
+        "className": "VoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+        "kind": "method",
+        "className": "JpaVoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java"
+      },
+      "callSite": "voyageRepository.find(new VoyageNumber(edge.getVoyageNumber()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java",
+        "line": 17
+      },
+      "callSite": "locationRepository.find(originUnLocode)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:5",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(destinationUnLocode)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:20",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(unLocode)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:218",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(unlocode)"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:326",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(new UnLocode(edge.getFromUnLocode()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:328",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(new UnLocode(edge.getToUnLocode()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:422",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(new UnLocode(legDTO.getFromUnLocode()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:424",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "kind": "method",
+        "className": "LocationRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+        "methodName": "find"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java"
+      },
+      "callSite": "locationRepository.find(new UnLocode(legDTO.getToUnLocode()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:EntityManager#createNamedQuery:291",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#createNamedQuery",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "createNamedQuery"
+      },
+      "callSite": "entityManager\n              .createNamedQuery(\"Cargo.findByTrackingId\", Cargo.class)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:Logger#log:292",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.FINE, \"Find called on non-existant tracking ID.\", e)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->table:cargo:293",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "namedQuery:Cargo.findByTrackingId",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+      "to": "table:cargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 28
+      },
+      "toNode": {
+        "id": "table:cargo",
+        "kind": "table",
+        "name": "cargo"
+      }
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find->unresolved:EntityManager#createNamedQuery:310",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+        "kind": "method",
+        "className": "JpaVoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java",
+        "line": 17
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#createNamedQuery",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "createNamedQuery"
+      },
+      "callSite": "entityManager\n        .createNamedQuery(\"Voyage.findByVoyageNumber\", Voyage.class)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find->table:voyage:311",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "namedQuery:Voyage.findByVoyageNumber",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+      "to": "table:voyage",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+        "kind": "method",
+        "className": "JpaVoyageRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java",
+        "line": 17
+      },
+      "toNode": {
+        "id": "table:voyage",
+        "kind": "table",
+        "name": "voyage"
+      }
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:306",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java",
+        "line": 17
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#createNamedQuery",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "createNamedQuery"
+      },
+      "callSite": "entityManager\n        .createNamedQuery(\"Location.findByUnLocode\", Location.class)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:307",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "namedQuery:Location.findByUnLocode",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+      "to": "table:location",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "kind": "method",
+        "className": "JpaLocationRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+        "methodName": "find",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java",
+        "line": 17
+      },
+      "toNode": {
+        "id": "table:location",
+        "kind": "table",
+        "name": "location"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->unresolved:ObjectMessage#getObject:268"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->unresolved:ObjectMessage#getObject:268",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "unresolved:ObjectMessage#getObject",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMessage#getObject",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMessage",
+            "methodName": "getObject"
+          },
+          "callSite": "objectMessage.getObject()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "unresolved:ObjectMessage#getObject"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId:271"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId:271",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttempt",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+            "methodName": "getTrackingId"
+          },
+          "callSite": "attempt.getTrackingId()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getTrackingId"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber:272"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber:272",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttempt",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+            "methodName": "getVoyageNumber"
+          },
+          "callSite": "attempt.getVoyageNumber()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getVoyageNumber"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode:273"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode:273",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttempt",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+            "methodName": "getUnLocode"
+          },
+          "callSite": "attempt.getUnLocode()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getUnLocode"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType:274"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType:274",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttempt",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+            "methodName": "getType"
+          },
+          "callSite": "attempt.getType()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt#getType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->unresolved:Logger#info:48"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->unresolved:Logger#info:48",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "unresolved:Logger#info",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "unresolved:Logger#info",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "info"
+          },
+          "callSite": "logger.info(\"Registered handling event\")"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "unresolved:Logger#info"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store:44",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store:45",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store->table:handlingevent:303"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store:44",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+            "kind": "method",
+            "className": "HandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+            "methodName": "store"
+          },
+          "callSite": "handlingEventRepository.store(event)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store:45",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+            "kind": "method",
+            "className": "HandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+            "methodName": "store"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+            "kind": "method",
+            "className": "JpaHandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+            "line": 17
+          },
+          "callSite": "handlingEventRepository.store(event)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store->table:handlingevent:303",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "event",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+          "to": "table:handlingevent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+            "kind": "method",
+            "className": "JpaHandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+            "line": 17
+          },
+          "toNode": {
+            "id": "table:handlingevent",
+            "kind": "table",
+            "name": "handlingevent"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+        "table:handlingevent"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store:44",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store:45",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store->unresolved:EntityManager#persist:302"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store:44",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+            "kind": "method",
+            "className": "HandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+            "methodName": "store"
+          },
+          "callSite": "handlingEventRepository.store(event)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store:45",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+            "kind": "method",
+            "className": "HandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+            "methodName": "store"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+            "kind": "method",
+            "className": "JpaHandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+            "line": 17
+          },
+          "callSite": "handlingEventRepository.store(event)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store->unresolved:EntityManager#persist:302",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+          "to": "unresolved:EntityManager#persist",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+            "kind": "method",
+            "className": "JpaHandlingEventRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+            "methodName": "store",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaHandlingEventRepository.java",
+            "line": 17
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#persist",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "persist"
+          },
+          "callSite": "entityManager.persist(event)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository#store",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository#store",
+        "unresolved:EntityManager#persist"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo:275"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo:275",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo",
+            "kind": "method",
+            "className": "HandlingEvent",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+            "methodName": "getCargo"
+          },
+          "callSite": "event.getCargo()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEvent#getCargo"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->unresolved:Logger#log:276"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->unresolved:Logger#log:276",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "to": "unresolved:Logger#log",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "unresolved:Logger#log",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "log"
+          },
+          "callSite": "logger.log(Level.INFO, \"Cargo was handled {0}\", cargo)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "unresolved:Logger#log"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->unresolved:JMSContext#createProducer:277"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->unresolved:JMSContext#createProducer:277",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "to": "unresolved:JMSContext#createProducer",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "unresolved:JMSContext#createProducer",
+            "kind": "unknown_framework_target",
+            "className": "JMSContext",
+            "methodName": "createProducer"
+          },
+          "callSite": "jmsContext\n        .createProducer()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "unresolved:JMSContext#createProducer"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:278"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled:46",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled:47",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+          "to": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "ApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents",
+            "methodName": "cargoWasHandled"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "callSite": "applicationEvents.cargoWasHandled(event)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:278",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+            "kind": "method",
+            "className": "JmsApplicationEvents",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+            "methodName": "cargoWasHandled",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/JmsApplicationEvents.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "getTrackingId"
+          },
+          "callSite": "cargo.getTrackingId()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.ApplicationEvents#cargoWasHandled",
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents#cargoWasHandled",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo:211",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:214",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->table:cargo:293"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "callSite": "handlingEventFactory.createHandlingEvent(\n            registrationTime, completionTime, trackingId, voyageNumber, unLocode, type)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo:211",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 60
+          },
+          "callSite": "findCargo("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:214",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 60
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->table:cargo:293",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "namedQuery:Cargo.findByTrackingId",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "to": "table:cargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "toNode": {
+            "id": "table:cargo",
+            "kind": "table",
+            "name": "cargo"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "table:cargo"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage:212",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage->method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find:215",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find:216",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find->table:voyage:311"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "callSite": "handlingEventFactory.createHandlingEvent(\n            registrationTime, completionTime, trackingId, voyageNumber, unLocode, type)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage:212",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findVoyage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 70
+          },
+          "callSite": "findVoyage("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage->method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find:215",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+          "to": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findVoyage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 70
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+            "kind": "method",
+            "className": "VoyageRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+            "methodName": "find"
+          },
+          "callSite": "voyageRepository.find(voyageNumber)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find:216",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+            "kind": "method",
+            "className": "VoyageRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+            "methodName": "find"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+            "kind": "method",
+            "className": "JpaVoyageRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java",
+            "line": 17
+          },
+          "callSite": "voyageRepository.find(voyageNumber)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find->table:voyage:311",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "namedQuery:Voyage.findByVoyageNumber",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+          "to": "table:voyage",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+            "kind": "method",
+            "className": "JpaVoyageRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaVoyageRepository.java",
+            "line": 17
+          },
+          "toNode": {
+            "id": "table:voyage",
+            "kind": "table",
+            "name": "voyage"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findVoyage",
+        "method:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository#find",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository#find",
+        "table:voyage"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation:213",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:217",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:307"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "callSite": "handlingEventFactory.createHandlingEvent(\n            registrationTime, completionTime, trackingId, voyageNumber, unLocode, type)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation:213",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findLocation",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 84
+          },
+          "callSite": "findLocation("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:217",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+          "to": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findLocation",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 84
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+            "kind": "method",
+            "className": "LocationRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+            "methodName": "find"
+          },
+          "callSite": "locationRepository.find(unlocode)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+            "kind": "method",
+            "className": "LocationRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
+            "methodName": "find"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+            "kind": "method",
+            "className": "JpaLocationRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java",
+            "line": 17
+          },
+          "callSite": "locationRepository.find(originUnLocode)"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:307",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "namedQuery:Location.findByUnLocode",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+          "to": "table:location",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+            "kind": "method",
+            "className": "JpaLocationRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaLocationRepository.java",
+            "line": 17
+          },
+          "toNode": {
+            "id": "table:location",
+            "kind": "table",
+            "name": "location"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findLocation",
+        "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find",
+        "table:location"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo:211",
+        "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:214",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:EntityManager#createNamedQuery:291"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage->method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent:269",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+          "to": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+            "kind": "method",
+            "className": "HandlingEventRegistrationAttemptConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/HandlingEventRegistrationAttemptConsumer.java",
+            "line": 26
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent:270",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.HandlingEventService",
+            "methodName": "registerHandlingEvent"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java"
+          },
+          "callSite": "handlingEventService.registerHandlingEvent(\n          attempt.getCompletionTime()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent:43",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+            "kind": "method",
+            "className": "DefaultHandlingEventService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+            "methodName": "registerHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultHandlingEventService.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "callSite": "handlingEventFactory.createHandlingEvent(\n            registrationTime, completionTime, trackingId, voyageNumber, unLocode, type)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent->method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo:211",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+          "to": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "createHandlingEvent",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 60
+          },
+          "callSite": "findCargo("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find:214",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+            "kind": "method",
+            "className": "HandlingEventFactory",
+            "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+            "methodName": "findCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEventFactory.java",
+            "line": 60
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find:11",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "find"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "callSite": "cargoRepository.find(trackingId)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find->unresolved:EntityManager#createNamedQuery:291",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+          "to": "unresolved:EntityManager#createNamedQuery",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "find",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 28
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#createNamedQuery",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "createNamedQuery"
+          },
+          "callSite": "entityManager\n              .createNamedQuery(\"Cargo.findByTrackingId\", Cargo.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
+        "method:org.eclipse.cargotracker.application.HandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService#registerHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#createHandlingEvent",
+        "method:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory#findCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#find",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#find",
+        "unresolved:EntityManager#createNamedQuery"
+      ]
+    }
+  ]
+}

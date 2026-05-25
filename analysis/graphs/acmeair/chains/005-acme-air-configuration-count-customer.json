@@ -1,0 +1,1907 @@
+{
+  "id": "chain:acmeair:5",
+  "fileName": "005-acme-air-configuration-count-customer.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "countCustomer",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 147,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "countCustomer",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 147
+    },
+    {
+      "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+      "methodName": "count",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+      "line": 36
+    },
+    {
+      "id": "method:com.acmeair.service.CustomerService#count",
+      "kind": "method",
+      "className": "CustomerService",
+      "classFqn": "com.acmeair.service.CustomerService",
+      "methodName": "count"
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+      "methodName": "count",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+      "line": 77
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:Iterator<?>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<?>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:MapIndex#findAll",
+      "kind": "unknown_framework_target",
+      "className": "MapIndex",
+      "methodName": "findAll"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getMap",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#getIndex",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "getIndex"
+    },
+    {
+      "id": "unresolved:ObjectQuery#getSingleResult",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "getSingleResult"
+    },
+    {
+      "id": "unresolved:ObjectQuery#setPartition",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "setPartition"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+      "to": "method:com.acmeair.service.CustomerService#count",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "countCustomer",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 147
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.CustomerService#count",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "count"
+      },
+      "callSite": "customerService.count()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.morphia.services.CustomerServiceImpl#count:1001",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#count",
+      "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#count",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "count"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.count()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#count",
+      "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#count",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "count"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.count()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#count->unresolved:Datastore#find:408",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 36
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(CustomerImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#count->external_endpoint:mongodb:409",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 36
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(CustomerImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectGrid#getSession:628",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:629",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Session#getMap:630",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:631",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectMap#getIndex:632",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:ObjectMap#getIndex",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#getIndex",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "getIndex"
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:633",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getIndex",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:MapIndex#findAll:634",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:MapIndex#findAll",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:MapIndex#findAll",
+        "kind": "unknown_framework_target",
+        "className": "MapIndex",
+        "methodName": "findAll"
+      },
+      "callSite": "mapIndex.findAll()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Iterator<?>#hasNext:635",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:Iterator<?>#hasNext",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "keyIterator.hasNext()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Iterator<?>#next:636",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:Iterator<?>#next",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "keyIterator.next()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectGrid#getMap:637",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:ObjectGrid#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getMap",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getMap"
+      },
+      "callSite": "og.getMap(CUSTOMER_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:638",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getMap(CUSTOMER_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectQuery#setPartition:639",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:ObjectQuery#setPartition",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#setPartition",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "setPartition"
+      },
+      "callSite": "query.setPartition(i)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectQuery#getSingleResult:640",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+      "to": "unresolved:ObjectQuery#getSingleResult",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "count",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#getSingleResult",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "getSingleResult"
+      },
+      "callSite": "query.getSingleResult()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.morphia.services.CustomerServiceImpl#count:1001",
+        "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#count->external_endpoint:mongodb:409"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.morphia.services.CustomerServiceImpl#count:1001",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#count->external_endpoint:mongodb:409",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 36
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(CustomerImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:629"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:629",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:631"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:631",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:633"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:633",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getIndex",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:638"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#count->external_endpoint:websphere-extreme-scale:638",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getMap(CUSTOMER_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.morphia.services.CustomerServiceImpl#count:1001",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#count->unresolved:Datastore#find:408"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.morphia.services.CustomerServiceImpl#count:1001",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#count->unresolved:Datastore#find:408",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 36
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(CustomerImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#count",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectGrid#getSession:628"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectGrid#getSession:628",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Session#getMap:630"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Session#getMap:630",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectMap#getIndex:632"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectMap#getIndex:632",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:ObjectMap#getIndex",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#getIndex",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "getIndex"
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:ObjectMap#getIndex"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:MapIndex#findAll:634"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:MapIndex#findAll:634",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:MapIndex#findAll",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:MapIndex#findAll",
+            "kind": "unknown_framework_target",
+            "className": "MapIndex",
+            "methodName": "findAll"
+          },
+          "callSite": "mapIndex.findAll()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:MapIndex#findAll"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Iterator<?>#hasNext:635"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Iterator<?>#hasNext:635",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:Iterator<?>#hasNext",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "keyIterator.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:Iterator<?>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Iterator<?>#next:636"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:Iterator<?>#next:636",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:Iterator<?>#next",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "keyIterator.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:Iterator<?>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectGrid#getMap:637"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectGrid#getMap:637",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:ObjectGrid#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getMap",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getMap"
+          },
+          "callSite": "og.getMap(CUSTOMER_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:ObjectGrid#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectQuery#setPartition:639"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectQuery#setPartition:639",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:ObjectQuery#setPartition",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#setPartition",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "setPartition"
+          },
+          "callSite": "query.setPartition(i)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:ObjectQuery#setPartition"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectQuery#getSingleResult:640"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomer->method:com.acmeair.service.CustomerService#count:1000",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+          "to": "method:com.acmeair.service.CustomerService#count",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 147
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#count->method:com.acmeair.wxs.service.CustomerServiceImpl#count:1002",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#count",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#count",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "count"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.count()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#count->unresolved:ObjectQuery#getSingleResult:640",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+          "to": "unresolved:ObjectQuery#getSingleResult",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "count",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#getSingleResult",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "getSingleResult"
+          },
+          "callSite": "query.getSingleResult()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+        "method:com.acmeair.service.CustomerService#count",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#count",
+        "unresolved:ObjectQuery#getSingleResult"
+      ]
+    }
+  ]
+}

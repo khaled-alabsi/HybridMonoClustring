@@ -1,0 +1,388 @@
+{
+  "id": "chain:cargotracker:9",
+  "fileName": "009-event-logger-on-flow-process.json",
+  "actionPointId": "action:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+  "rootMethodId": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "EventLogger",
+    "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+    "methodName": "onFlowProcess",
+    "methodId": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+    "line": 166,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+      "kind": "method",
+      "className": "EventLogger",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "methodName": "onFlowProcess",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+      "line": 166
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+      "kind": "method",
+      "className": "EventLogger",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "methodName": "validate",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+      "line": 178
+    },
+    {
+      "id": "unresolved:FacesContext#addMessage",
+      "kind": "unknown_framework_target",
+      "className": "FacesContext",
+      "methodName": "addMessage"
+    },
+    {
+      "id": "unresolved:FlowEvent#getNewStep",
+      "kind": "unknown_framework_target",
+      "className": "FlowEvent",
+      "methodName": "getNewStep"
+    },
+    {
+      "id": "unresolved:FlowEvent#getOldStep",
+      "kind": "unknown_framework_target",
+      "className": "FlowEvent",
+      "methodName": "getOldStep"
+    },
+    {
+      "id": "unresolved:HandlingEvent.Type#requiresVoyage",
+      "kind": "unknown_framework_target",
+      "className": "Type",
+      "methodName": "requiresVoyage"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->unresolved:FlowEvent#getOldStep:571",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+      "to": "unresolved:FlowEvent#getOldStep",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "kind": "method",
+        "className": "EventLogger",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+        "methodName": "onFlowProcess",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+        "line": 166
+      },
+      "toNode": {
+        "id": "unresolved:FlowEvent#getOldStep",
+        "kind": "unknown_framework_target",
+        "className": "FlowEvent",
+        "methodName": "getOldStep"
+      },
+      "callSite": "event.getOldStep()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->unresolved:FlowEvent#getNewStep:572",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+      "to": "unresolved:FlowEvent#getNewStep",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "kind": "method",
+        "className": "EventLogger",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+        "methodName": "onFlowProcess",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+        "line": 166
+      },
+      "toNode": {
+        "id": "unresolved:FlowEvent#getNewStep",
+        "kind": "unknown_framework_target",
+        "className": "FlowEvent",
+        "methodName": "getNewStep"
+      },
+      "callSite": "event.getNewStep()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate:573",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+      "to": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "kind": "method",
+        "className": "EventLogger",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+        "methodName": "onFlowProcess",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+        "line": 166
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+        "kind": "method",
+        "className": "EventLogger",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+        "methodName": "validate",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+        "line": 178
+      },
+      "callSite": "validate("
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate->unresolved:HandlingEvent.Type#requiresVoyage:574",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+      "to": "unresolved:HandlingEvent.Type#requiresVoyage",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+        "kind": "method",
+        "className": "EventLogger",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+        "methodName": "validate",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "unresolved:HandlingEvent.Type#requiresVoyage",
+        "kind": "unknown_framework_target",
+        "className": "Type",
+        "methodName": "requiresVoyage"
+      },
+      "callSite": "eventType.requiresVoyage()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate->unresolved:FacesContext#addMessage:575",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+      "to": "unresolved:FacesContext#addMessage",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+        "kind": "method",
+        "className": "EventLogger",
+        "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+        "methodName": "validate",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "unresolved:FacesContext#addMessage",
+        "kind": "unknown_framework_target",
+        "className": "FacesContext",
+        "methodName": "addMessage"
+      },
+      "callSite": "context.addMessage(null, message)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->unresolved:FlowEvent#getOldStep:571"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->unresolved:FlowEvent#getOldStep:571",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+          "to": "unresolved:FlowEvent#getOldStep",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "onFlowProcess",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 166
+          },
+          "toNode": {
+            "id": "unresolved:FlowEvent#getOldStep",
+            "kind": "unknown_framework_target",
+            "className": "FlowEvent",
+            "methodName": "getOldStep"
+          },
+          "callSite": "event.getOldStep()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "unresolved:FlowEvent#getOldStep"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->unresolved:FlowEvent#getNewStep:572"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->unresolved:FlowEvent#getNewStep:572",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+          "to": "unresolved:FlowEvent#getNewStep",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "onFlowProcess",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 166
+          },
+          "toNode": {
+            "id": "unresolved:FlowEvent#getNewStep",
+            "kind": "unknown_framework_target",
+            "className": "FlowEvent",
+            "methodName": "getNewStep"
+          },
+          "callSite": "event.getNewStep()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "unresolved:FlowEvent#getNewStep"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate:573",
+        "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate->unresolved:HandlingEvent.Type#requiresVoyage:574"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate:573",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+          "to": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "onFlowProcess",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 166
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "validate",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 178
+          },
+          "callSite": "validate("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate->unresolved:HandlingEvent.Type#requiresVoyage:574",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+          "to": "unresolved:HandlingEvent.Type#requiresVoyage",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "validate",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "unresolved:HandlingEvent.Type#requiresVoyage",
+            "kind": "unknown_framework_target",
+            "className": "Type",
+            "methodName": "requiresVoyage"
+          },
+          "callSite": "eventType.requiresVoyage()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+        "unresolved:HandlingEvent.Type#requiresVoyage"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate:573",
+        "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate->unresolved:FacesContext#addMessage:575"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess->method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate:573",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+          "to": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "onFlowProcess",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 166
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "validate",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 178
+          },
+          "callSite": "validate("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate->unresolved:FacesContext#addMessage:575",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+          "to": "unresolved:FacesContext#addMessage",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+            "kind": "method",
+            "className": "EventLogger",
+            "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+            "methodName": "validate",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/handling/mobile/EventLogger.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "unresolved:FacesContext#addMessage",
+            "kind": "unknown_framework_target",
+            "className": "FacesContext",
+            "methodName": "addMessage"
+          },
+          "callSite": "context.addMessage(null, message)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#onFlowProcess",
+        "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#validate",
+        "unresolved:FacesContext#addMessage"
+      ]
+    }
+  ]
+}

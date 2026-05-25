@@ -1,0 +1,228 @@
+{
+  "benchmark": "sample.daytrader7",
+  "tables": [
+    {
+      "id": "table:accountejb",
+      "kind": "table",
+      "name": "accountejb"
+    },
+    {
+      "id": "table:accountprofileejb",
+      "kind": "table",
+      "name": "accountprofileejb"
+    },
+    {
+      "id": "table:holdingejb",
+      "kind": "table",
+      "name": "holdingejb"
+    },
+    {
+      "id": "table:orderejb",
+      "kind": "table",
+      "name": "orderejb"
+    },
+    {
+      "id": "table:quoteejb",
+      "kind": "table",
+      "name": "quoteejb"
+    }
+  ],
+  "entities": [
+    {
+      "id": "entity:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "kind": "entity",
+      "className": "AccountDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/entities/AccountDataBean.java",
+      "table": "accountejb",
+      "tableId": "table:accountejb",
+      "entityName": "accountejb",
+      "namedQueries": []
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+      "kind": "entity",
+      "className": "AccountProfileDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/entities/AccountProfileDataBean.java",
+      "table": "accountprofileejb",
+      "tableId": "table:accountprofileejb",
+      "entityName": "accountprofileejb",
+      "namedQueries": []
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "kind": "entity",
+      "className": "HoldingDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/entities/HoldingDataBean.java",
+      "table": "holdingejb",
+      "tableId": "table:holdingejb",
+      "entityName": "holdingejb",
+      "namedQueries": []
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
+      "kind": "entity",
+      "className": "OrderDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/entities/OrderDataBean.java",
+      "table": "orderejb",
+      "tableId": "table:orderejb",
+      "entityName": "orderejb",
+      "namedQueries": [
+        "orderejb.findByOrderfee",
+        "orderejb.findByCompletiondate",
+        "orderejb.findByOrdertype",
+        "orderejb.findByOrderstatus",
+        "orderejb.findByPrice",
+        "orderejb.findByQuantity",
+        "orderejb.findByOpendate",
+        "orderejb.findByOrderid",
+        "orderejb.findByAccountAccountid",
+        "orderejb.findByQuoteSymbol",
+        "orderejb.findByHoldingHoldingid",
+        "orderejb.closedOrders",
+        "orderejb.completeClosedOrders"
+      ]
+    },
+    {
+      "id": "entity:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "kind": "entity",
+      "className": "QuoteDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/entities/QuoteDataBean.java",
+      "table": "quoteejb",
+      "tableId": "table:quoteejb",
+      "entityName": "quoteejb",
+      "namedQueries": [
+        "quoteejb.allQuotes",
+        "quoteejb.quoteForUpdate"
+      ]
+    }
+  ],
+  "namedQueries": [
+    {
+      "name": "orderejb.findByOrderfee",
+      "query": "SELECT o FROM orderejb o WHERE o.orderFee = :orderfee",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByCompletiondate",
+      "query": "SELECT o FROM orderejb o WHERE o.completionDate = :completiondate",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByOrdertype",
+      "query": "SELECT o FROM orderejb o WHERE o.orderType = :ordertype",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByOrderstatus",
+      "query": "SELECT o FROM orderejb o WHERE o.orderStatus = :orderstatus",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByPrice",
+      "query": "SELECT o FROM orderejb o WHERE o.price = :price",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByQuantity",
+      "query": "SELECT o FROM orderejb o WHERE o.quantity = :quantity",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByOpendate",
+      "query": "SELECT o FROM orderejb o WHERE o.openDate = :opendate",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByOrderid",
+      "query": "SELECT o FROM orderejb o WHERE o.orderID = :orderid",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByAccountAccountid",
+      "query": "SELECT o FROM orderejb o WHERE o.account.accountID = :accountAccountid",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByQuoteSymbol",
+      "query": "SELECT o FROM orderejb o WHERE o.quote.symbol = :quoteSymbol",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.findByHoldingHoldingid",
+      "query": "SELECT o FROM orderejb o WHERE o.holding.holdingID = :holdingHoldingid",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.closedOrders",
+      "query": "SELECT o FROM orderejb o WHERE o.orderStatus = 'closed' AND o.account.profile.userID  = :userID",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "orderejb.completeClosedOrders",
+      "query": "UPDATE orderejb o SET o.orderStatus = 'completed' WHERE o.orderStatus = 'closed' AND o.account.profile.userID  = :userID",
+      "entities": [
+        "orderejb"
+      ],
+      "tableId": "table:orderejb"
+    },
+    {
+      "name": "quoteejb.allQuotes",
+      "query": "SELECT q FROM quoteejb q",
+      "entities": [
+        "quoteejb"
+      ],
+      "tableId": "table:quoteejb"
+    },
+    {
+      "name": "quoteejb.quoteForUpdate",
+      "query": "select * from quoteejb q where q.symbol=? for update",
+      "entities": [
+        "quoteejb"
+      ],
+      "tableId": "table:quoteejb"
+    }
+  ],
+  "externalEndpoints": [],
+  "mappers": []
+}

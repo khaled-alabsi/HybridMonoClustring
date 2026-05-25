@@ -1,0 +1,247 @@
+{
+  "benchmark": "acmeair",
+  "dataSourceCount": 6,
+  "chainCount": 21,
+  "chains": [
+    {
+      "id": "chain:acmeair:1",
+      "file": "001-acme-air-configuration-get-data-service-info.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+      "reachedNodeCount": 4,
+      "reachedDataSources": [],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:acmeair:2",
+      "file": "002-acme-air-configuration-get-active-data-service-info.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+      "reachedNodeCount": 2,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:acmeair:3",
+      "file": "003-acme-air-configuration-get-runtime-info.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+      "reachedNodeCount": 3,
+      "reachedDataSources": [],
+      "pathCount": 2
+    },
+    {
+      "id": "chain:acmeair:4",
+      "file": "004-acme-air-configuration-count-bookings.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countBookings",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countBookings",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 15
+    },
+    {
+      "id": "chain:acmeair:5",
+      "file": "005-acme-air-configuration-count-customer.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countCustomer",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 15
+    },
+    {
+      "id": "chain:acmeair:6",
+      "file": "006-acme-air-configuration-count-customer-sessions.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 15
+    },
+    {
+      "id": "chain:acmeair:7",
+      "file": "007-acme-air-configuration-count-flights.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countFlights",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 15
+    },
+    {
+      "id": "chain:acmeair:8",
+      "file": "008-acme-air-configuration-count-flight-segments.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 15
+    },
+    {
+      "id": "chain:acmeair:9",
+      "file": "009-acme-air-configuration-count-airports.json",
+      "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countAirports",
+      "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countAirports",
+      "reachedNodeCount": 11,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 11
+    },
+    {
+      "id": "chain:acmeair:10",
+      "file": "010-loader-rest-query-loader.json",
+      "actionPointId": "action:com.acmeair.config.LoaderREST#queryLoader",
+      "rootMethodId": "method:com.acmeair.config.LoaderREST#queryLoader",
+      "reachedNodeCount": 7,
+      "reachedDataSources": [],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:acmeair:11",
+      "file": "011-loader-rest-load-db.json",
+      "actionPointId": "action:com.acmeair.config.LoaderREST#loadDB",
+      "rootMethodId": "method:com.acmeair.config.LoaderREST#loadDB",
+      "reachedNodeCount": 60,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 55
+    },
+    {
+      "id": "chain:acmeair:12",
+      "file": "012-bookings-rest-book-flights.json",
+      "actionPointId": "action:com.acmeair.web.BookingsREST#bookFlights",
+      "rootMethodId": "method:com.acmeair.web.BookingsREST#bookFlights",
+      "reachedNodeCount": 42,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 39
+    },
+    {
+      "id": "chain:acmeair:13",
+      "file": "013-bookings-rest-get-booking-by-number.json",
+      "actionPointId": "action:com.acmeair.web.BookingsREST#getBookingByNumber",
+      "rootMethodId": "method:com.acmeair.web.BookingsREST#getBookingByNumber",
+      "reachedNodeCount": 9,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 10
+    },
+    {
+      "id": "chain:acmeair:14",
+      "file": "014-bookings-rest-get-bookings-by-user.json",
+      "actionPointId": "action:com.acmeair.web.BookingsREST#getBookingsByUser",
+      "rootMethodId": "method:com.acmeair.web.BookingsREST#getBookingsByUser",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 17
+    },
+    {
+      "id": "chain:acmeair:15",
+      "file": "015-bookings-rest-cancel-bookings-by-number.json",
+      "actionPointId": "action:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+      "rootMethodId": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 11
+    },
+    {
+      "id": "chain:acmeair:16",
+      "file": "016-customer-rest-get-customer.json",
+      "actionPointId": "action:com.acmeair.web.CustomerREST#getCustomer",
+      "rootMethodId": "method:com.acmeair.web.CustomerREST#getCustomer",
+      "reachedNodeCount": 16,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 14
+    },
+    {
+      "id": "chain:acmeair:17",
+      "file": "017-customer-rest-put-customer.json",
+      "actionPointId": "action:com.acmeair.web.CustomerREST#putCustomer",
+      "rootMethodId": "method:com.acmeair.web.CustomerREST#putCustomer",
+      "reachedNodeCount": 55,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 42
+    },
+    {
+      "id": "chain:acmeair:18",
+      "file": "018-flights-rest-get-trip-flights.json",
+      "actionPointId": "action:com.acmeair.web.FlightsREST#getTripFlights",
+      "rootMethodId": "method:com.acmeair.web.FlightsREST#getTripFlights",
+      "reachedNodeCount": 40,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 44
+    },
+    {
+      "id": "chain:acmeair:19",
+      "file": "019-flights-rest-browse-flights.json",
+      "actionPointId": "action:com.acmeair.web.FlightsREST#browseFlights",
+      "rootMethodId": "method:com.acmeair.web.FlightsREST#browseFlights",
+      "reachedNodeCount": 29,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 34
+    },
+    {
+      "id": "chain:acmeair:20",
+      "file": "020-login-rest-login.json",
+      "actionPointId": "action:com.acmeair.web.LoginREST#login",
+      "rootMethodId": "method:com.acmeair.web.LoginREST#login",
+      "reachedNodeCount": 23,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 22
+    },
+    {
+      "id": "chain:acmeair:21",
+      "file": "021-login-rest-logout.json",
+      "actionPointId": "action:com.acmeair.web.LoginREST#logout",
+      "rootMethodId": "method:com.acmeair.web.LoginREST#logout",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "external_endpoint:mongodb",
+        "external_endpoint:websphere-extreme-scale"
+      ],
+      "pathCount": 11
+    }
+  ]
+}

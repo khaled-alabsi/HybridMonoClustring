@@ -1,0 +1,1907 @@
+{
+  "id": "chain:acmeair:6",
+  "fileName": "006-acme-air-configuration-count-customer-sessions.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "countCustomerSessions",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 162,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "countCustomerSessions",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 162
+    },
+    {
+      "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+      "methodName": "countSessions",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+      "line": 41
+    },
+    {
+      "id": "method:com.acmeair.service.CustomerService#countSessions",
+      "kind": "method",
+      "className": "CustomerService",
+      "classFqn": "com.acmeair.service.CustomerService",
+      "methodName": "countSessions"
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+      "methodName": "countSessions",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+      "line": 108
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:Iterator<?>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<?>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:MapIndex#findAll",
+      "kind": "unknown_framework_target",
+      "className": "MapIndex",
+      "methodName": "findAll"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getMap",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#getIndex",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "getIndex"
+    },
+    {
+      "id": "unresolved:ObjectQuery#getSingleResult",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "getSingleResult"
+    },
+    {
+      "id": "unresolved:ObjectQuery#setPartition",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "setPartition"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+      "to": "method:com.acmeair.service.CustomerService#countSessions",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "countCustomerSessions",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 162
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.CustomerService#countSessions",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "countSessions"
+      },
+      "callSite": "customerService.countSessions()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions:1004",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#countSessions",
+      "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#countSessions",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "countSessions"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.countSessions()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#countSessions",
+      "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#countSessions",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "countSessions"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.countSessions()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions->unresolved:Datastore#find:410",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 41
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(CustomerSessionImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions->external_endpoint:mongodb:411",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 41
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(CustomerSessionImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectGrid#getSession:641",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:642",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Session#getMap:643",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:644",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectMap#getIndex:645",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:ObjectMap#getIndex",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#getIndex",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "getIndex"
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:646",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getIndex",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:MapIndex#findAll:647",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:MapIndex#findAll",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:MapIndex#findAll",
+        "kind": "unknown_framework_target",
+        "className": "MapIndex",
+        "methodName": "findAll"
+      },
+      "callSite": "mapIndex.findAll()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Iterator<?>#hasNext:648",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:Iterator<?>#hasNext",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "keyIterator.hasNext()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Iterator<?>#next:649",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:Iterator<?>#next",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "keyIterator.next()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectGrid#getMap:650",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:ObjectGrid#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getMap",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getMap"
+      },
+      "callSite": "og.getMap(CUSTOMER_SESSION_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:651",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getMap(CUSTOMER_SESSION_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectQuery#setPartition:652",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:ObjectQuery#setPartition",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#setPartition",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "setPartition"
+      },
+      "callSite": "query.setPartition(i)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectQuery#getSingleResult:653",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+      "to": "unresolved:ObjectQuery#getSingleResult",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "countSessions",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 108
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#getSingleResult",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "getSingleResult"
+      },
+      "callSite": "query.getSingleResult()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions:1004",
+        "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions->external_endpoint:mongodb:411"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions:1004",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions->external_endpoint:mongodb:411",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(CustomerSessionImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:642"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:642",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:644"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:644",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:646"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:646",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getIndex",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:651"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->external_endpoint:websphere-extreme-scale:651",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getMap(CUSTOMER_SESSION_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions:1004",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions->unresolved:Datastore#find:410"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions:1004",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions->unresolved:Datastore#find:410",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(CustomerSessionImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#countSessions",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectGrid#getSession:641"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectGrid#getSession:641",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Session#getMap:643"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Session#getMap:643",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(CUSTOMER_SESSION_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectMap#getIndex:645"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectMap#getIndex:645",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:ObjectMap#getIndex",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#getIndex",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "getIndex"
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:ObjectMap#getIndex"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:MapIndex#findAll:647"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:MapIndex#findAll:647",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:MapIndex#findAll",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:MapIndex#findAll",
+            "kind": "unknown_framework_target",
+            "className": "MapIndex",
+            "methodName": "findAll"
+          },
+          "callSite": "mapIndex.findAll()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:MapIndex#findAll"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Iterator<?>#hasNext:648"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Iterator<?>#hasNext:648",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:Iterator<?>#hasNext",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "keyIterator.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:Iterator<?>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Iterator<?>#next:649"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:Iterator<?>#next:649",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:Iterator<?>#next",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "keyIterator.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:Iterator<?>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectGrid#getMap:650"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectGrid#getMap:650",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:ObjectGrid#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getMap",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getMap"
+          },
+          "callSite": "og.getMap(CUSTOMER_SESSION_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:ObjectGrid#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectQuery#setPartition:652"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectQuery#setPartition:652",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:ObjectQuery#setPartition",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#setPartition",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "setPartition"
+          },
+          "callSite": "query.setPartition(i)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:ObjectQuery#setPartition"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectQuery#getSingleResult:653"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions->method:com.acmeair.service.CustomerService#countSessions:1003",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+          "to": "method:com.acmeair.service.CustomerService#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countCustomerSessions",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 162
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#countSessions->method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions:1005",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#countSessions",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#countSessions",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "countSessions"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "customerService.countSessions()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions->unresolved:ObjectQuery#getSingleResult:653",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+          "to": "unresolved:ObjectQuery#getSingleResult",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "countSessions",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 108
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#getSingleResult",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "getSingleResult"
+          },
+          "callSite": "query.getSingleResult()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countCustomerSessions",
+        "method:com.acmeair.service.CustomerService#countSessions",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#countSessions",
+        "unresolved:ObjectQuery#getSingleResult"
+      ]
+    }
+  ]
+}

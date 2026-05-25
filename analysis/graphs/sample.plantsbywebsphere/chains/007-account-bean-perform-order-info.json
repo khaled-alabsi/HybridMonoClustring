@@ -1,0 +1,630 @@
+{
+  "id": "chain:sample.plantsbywebsphere:7",
+  "fileName": "007-account-bean-perform-order-info.json",
+  "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+  "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+  "reachedNodeCount": 10,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+    "benchmark": "sample.plantsbywebsphere",
+    "framework": "jsf-cdi-servlet-ejb",
+    "kind": "action_point",
+    "className": "AccountBean",
+    "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+    "methodName": "performOrderInfo",
+    "methodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+    "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+    "line": 199,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getAddr1"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getAddr2"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getAddrCity"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getAddrState"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getAddrZip"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getFirstName"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getLastName"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "getPhone"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "kind": "method",
+      "className": "AccountBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+      "methodName": "performOrderInfo",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+      "line": 199
+    },
+    {
+      "id": "unresolved:return#setMessage",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setMessage"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->unresolved:return#setMessage:410",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "unresolved:return#setMessage",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "unresolved:return#setMessage",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setMessage"
+      },
+      "callSite": "loginInfo.setMessage(\"You must log in first.\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName:411",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getFirstName"
+      },
+      "callSite": "customer.getFirstName()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName:412",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getLastName"
+      },
+      "callSite": "customer.getLastName()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1:413",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getAddr1"
+      },
+      "callSite": "customer.getAddr1()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2:414",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getAddr2"
+      },
+      "callSite": "customer.getAddr2()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity:415",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getAddrCity"
+      },
+      "callSite": "customer.getAddrCity()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState:416",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getAddrState"
+      },
+      "callSite": "customer.getAddrState()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip:417",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getAddrZip"
+      },
+      "callSite": "customer.getAddrZip()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone:418",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performOrderInfo",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 199
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "getPhone"
+      },
+      "callSite": "customer.getPhone()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->unresolved:return#setMessage:410"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->unresolved:return#setMessage:410",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "unresolved:return#setMessage",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "unresolved:return#setMessage",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setMessage"
+          },
+          "callSite": "loginInfo.setMessage(\"You must log in first.\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "unresolved:return#setMessage"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName:411"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName:411",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getFirstName"
+          },
+          "callSite": "customer.getFirstName()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getFirstName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName:412"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName:412",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getLastName"
+          },
+          "callSite": "customer.getLastName()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getLastName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1:413"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1:413",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getAddr1"
+          },
+          "callSite": "customer.getAddr1()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr1"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2:414"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2:414",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getAddr2"
+          },
+          "callSite": "customer.getAddr2()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddr2"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity:415"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity:415",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getAddrCity"
+          },
+          "callSite": "customer.getAddrCity()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrCity"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState:416"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState:416",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getAddrState"
+          },
+          "callSite": "customer.getAddrState()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrState"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip:417"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip:417",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getAddrZip"
+          },
+          "callSite": "customer.getAddrZip()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getAddrZip"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone:418"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo->method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone:418",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performOrderInfo",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 199
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "getPhone"
+          },
+          "callSite": "customer.getPhone()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#getPhone"
+      ]
+    }
+  ]
+}

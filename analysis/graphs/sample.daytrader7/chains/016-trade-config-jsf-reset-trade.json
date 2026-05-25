@@ -1,0 +1,419 @@
+{
+  "id": "chain:sample.daytrader7:16",
+  "fileName": "016-trade-config-jsf-reset-trade.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "TradeConfigJSF",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+    "methodName": "resetTrade",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+    "line": 177,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade",
+      "kind": "method",
+      "className": "TradeSLSBBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "methodName": "resetTrade",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+      "kind": "method",
+      "className": "TradeAction",
+      "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+      "methodName": "resetTrade",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+      "line": 657
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+      "kind": "method",
+      "className": "TradeServices",
+      "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+      "methodName": "resetTrade"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "kind": "method",
+      "className": "TradeConfigJSF",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+      "methodName": "resetTrade",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+      "line": 177
+    },
+    {
+      "id": "unresolved:ExternalContext#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ExternalContext",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:HttpSession#setAttribute",
+      "kind": "unknown_framework_target",
+      "className": "HttpSession",
+      "methodName": "setAttribute"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:ExternalContext#getSession:1372",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "to": "unresolved:ExternalContext#getSession",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 177
+      },
+      "toNode": {
+        "id": "unresolved:ExternalContext#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ExternalContext",
+        "methodName": "getSession"
+      },
+      "callSite": "facesExternalContext.getSession(true)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade:1373",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 177
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "resetTrade"
+      },
+      "callSite": "tradeAction.resetTrade(false)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:HttpSession#setAttribute:1374",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "to": "unresolved:HttpSession#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 177
+      },
+      "toNode": {
+        "id": "unresolved:HttpSession#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpSession",
+        "methodName": "setAttribute"
+      },
+      "callSite": "session.setAttribute(\"runStatsData\", runStatsData)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:HttpSession#setAttribute:1375",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "to": "unresolved:HttpSession#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 177
+      },
+      "toNode": {
+        "id": "unresolved:HttpSession#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpSession",
+        "methodName": "setAttribute"
+      },
+      "callSite": "session.setAttribute(\"tradeConfig\", currentConfig)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:HttpSession#setAttribute:1376",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "to": "unresolved:HttpSession#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 177
+      },
+      "toNode": {
+        "id": "unresolved:HttpSession#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpSession",
+        "methodName": "setAttribute"
+      },
+      "callSite": "session.setAttribute(\"result\", result)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade:67",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+        "line": 657
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "resetTrade"
+      },
+      "callSite": "trade.resetTrade(deleteAll)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade:68",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "resetTrade"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java"
+      },
+      "callSite": "trade.resetTrade(deleteAll)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade:69",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+      "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "resetTrade"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "resetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java"
+      },
+      "callSite": "trade.resetTrade(deleteAll)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:ExternalContext#getSession:1372"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:ExternalContext#getSession:1372",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+          "to": "unresolved:ExternalContext#getSession",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+            "kind": "method",
+            "className": "TradeConfigJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+            "methodName": "resetTrade",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+            "line": 177
+          },
+          "toNode": {
+            "id": "unresolved:ExternalContext#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ExternalContext",
+            "methodName": "getSession"
+          },
+          "callSite": "facesExternalContext.getSession(true)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "unresolved:ExternalContext#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:HttpSession#setAttribute:1374"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->unresolved:HttpSession#setAttribute:1374",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+          "to": "unresolved:HttpSession#setAttribute",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+            "kind": "method",
+            "className": "TradeConfigJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+            "methodName": "resetTrade",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+            "line": 177
+          },
+          "toNode": {
+            "id": "unresolved:HttpSession#setAttribute",
+            "kind": "unknown_framework_target",
+            "className": "HttpSession",
+            "methodName": "setAttribute"
+          },
+          "callSite": "session.setAttribute(\"runStatsData\", runStatsData)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "unresolved:HttpSession#setAttribute"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade:1373",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade:67",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade:69"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade:1373",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+            "kind": "method",
+            "className": "TradeConfigJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+            "methodName": "resetTrade",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+            "line": 177
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "resetTrade"
+          },
+          "callSite": "tradeAction.resetTrade(false)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade->method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade:67",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "resetTrade",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 657
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "resetTrade"
+          },
+          "callSite": "trade.resetTrade(deleteAll)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade:69",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "resetTrade"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "resetTrade",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java"
+          },
+          "callSite": "trade.resetTrade(deleteAll)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#resetTrade",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#resetTrade",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#resetTrade"
+      ]
+    }
+  ]
+}

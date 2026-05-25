@@ -67,7 +67,8 @@ analysis/graphs/<benchmark>/action-points.json
 analysis/graphs/<benchmark>/method-graph.json
 analysis/graphs/<benchmark>/class-graph.json
 analysis/graphs/<benchmark>/data-sources.json
-analysis/graphs/<benchmark>/chains.json
+analysis/graphs/<benchmark>/chains/index.json
+analysis/graphs/<benchmark>/chains/<action-point-slug>.json
 analysis/graphs/<benchmark>/extraction-report.md
 ```
 
@@ -89,8 +90,9 @@ Use the benchmark directory name as `<benchmark>`:
   - Class-level aggregation of the method graph plus framework/config edges.
 - `data-sources.json`
   - Tables, entities, mapper methods, repositories, queues, external endpoints, and other persistence/exchange endpoints detected statically.
-- `chains.json`
-  - Per-action-point downstream closures through business logic and data-source nodes.
+- `chains/`
+  - One JSON file per action point containing the full downstream closure through business logic and data-source nodes.
+  - `chains/index.json` summarizes all per-action files for navigation.
 - `extraction-report.md`
   - Coverage notes, unsupported patterns, warnings, and per-app extractor tweaks applied.
 
@@ -276,7 +278,7 @@ Before considering graph extraction complete for a benchmark:
 - `method-graph.json` contains CodeQL-derived call edges.
 - `class-graph.json` contains class-level aggregation.
 - `data-sources.json` contains detected data-source or persistence nodes, or the report explains why none were found.
-- `chains.json` contains at least one chain rooted at an action point.
+- `chains/` contains `index.json` and at least one per-action-point chain file.
 - `extraction-report.md` lists unsupported patterns and per-app tweaks.
 
 ## Implementation Order

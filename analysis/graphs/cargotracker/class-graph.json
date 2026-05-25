@@ -1,0 +1,2852 @@
+{
+  "benchmark": "cargotracker",
+  "nodes": [
+    {
+      "id": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "kind": "class",
+      "className": "DefaultBookingService",
+      "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "kind": "class",
+      "className": "CargoRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "kind": "class",
+      "className": "JpaCargoRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "kind": "class",
+      "className": "LocationRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+      "kind": "class",
+      "className": "JpaLocationRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "kind": "class",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.service.RoutingService",
+      "kind": "class",
+      "className": "RoutingService",
+      "classFqn": "org.eclipse.cargotracker.domain.service.RoutingService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "kind": "class",
+      "className": "ExternalRoutingService",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "kind": "class",
+      "className": "DefaultCargoInspectionService",
+      "classFqn": "org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "kind": "class",
+      "className": "HandlingEventRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "kind": "class",
+      "className": "JpaHandlingEventRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "kind": "class",
+      "className": "ApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.application.ApplicationEvents"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "kind": "class",
+      "className": "JmsApplicationEvents",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "kind": "class",
+      "className": "DefaultHandlingEventService",
+      "classFqn": "org.eclipse.cargotracker.application.internal.DefaultHandlingEventService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "kind": "class",
+      "className": "HandlingEventFactory",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.util.DateConverter",
+      "kind": "class",
+      "className": "DateConverter",
+      "classFqn": "org.eclipse.cargotracker.application.util.DateConverter"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.util.RestConfiguration",
+      "kind": "class",
+      "className": "RestConfiguration",
+      "classFqn": "org.eclipse.cargotracker.application.util.RestConfiguration"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "kind": "class",
+      "className": "SampleDataGenerator",
+      "classFqn": "org.eclipse.cargotracker.application.util.SampleDataGenerator"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.util.ApplicationSettings",
+      "kind": "class",
+      "className": "ApplicationSettings",
+      "classFqn": "org.eclipse.cargotracker.application.util.ApplicationSettings"
+    },
+    {
+      "id": "table:applicationsettings",
+      "kind": "table",
+      "name": "applicationsettings"
+    },
+    {
+      "id": "table:cargo",
+      "kind": "table",
+      "name": "cargo"
+    },
+    {
+      "id": "table:handlingevent",
+      "kind": "table",
+      "name": "handlingevent"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "kind": "class",
+      "className": "RouteSpecification",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "kind": "class",
+      "className": "Delivery",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Delivery"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "kind": "class",
+      "className": "TrackingId",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.TrackingId"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "kind": "class",
+      "className": "HandlingHistory",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingHistory"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "kind": "class",
+      "className": "HandlingEvent",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEvent"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "kind": "class",
+      "className": "Itinerary",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Itinerary"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "kind": "class",
+      "className": "Leg",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.RoutingStatus",
+      "kind": "class",
+      "className": "RoutingStatus",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RoutingStatus"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.HandlingActivity",
+      "kind": "class",
+      "className": "HandlingActivity",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.HandlingActivity"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.Leg",
+      "kind": "class",
+      "className": "Leg",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Leg"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.cargo.TransportStatus",
+      "kind": "class",
+      "className": "TransportStatus",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.TransportStatus"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "kind": "class",
+      "className": "Location",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.dto.Location"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "kind": "class",
+      "className": "Voyage",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.Voyage"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "kind": "class",
+      "className": "VoyageRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+      "kind": "class",
+      "className": "JpaVoyageRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.UnknownCargoException",
+      "kind": "class",
+      "className": "UnknownCargoException",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.UnknownCargoException"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.UnknownLocationException",
+      "kind": "class",
+      "className": "UnknownLocationException",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.UnknownLocationException"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "kind": "class",
+      "className": "UnLocode",
+      "classFqn": "org.eclipse.cargotracker.domain.model.location.UnLocode"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.handling.UnknownVoyageException",
+      "kind": "class",
+      "className": "UnknownVoyageException",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.UnknownVoyageException"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "kind": "class",
+      "className": "VoyageNumber",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.VoyageNumber"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.location.Location",
+      "kind": "class",
+      "className": "Location",
+      "classFqn": "org.eclipse.cargotracker.domain.model.location.Location"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.voyage.CarrierMovement",
+      "kind": "class",
+      "className": "CarrierMovement",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.CarrierMovement"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages",
+      "kind": "class",
+      "className": "SampleVoyages",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.SampleVoyages"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.model.voyage.Schedule",
+      "kind": "class",
+      "className": "Schedule",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.Schedule"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.shared.AndSpecification",
+      "kind": "class",
+      "className": "AndSpecification",
+      "classFqn": "org.eclipse.cargotracker.domain.shared.AndSpecification"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.shared.Specification",
+      "kind": "class",
+      "className": "Specification",
+      "classFqn": "org.eclipse.cargotracker.domain.shared.Specification"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.shared.NotSpecification",
+      "kind": "class",
+      "className": "NotSpecification",
+      "classFqn": "org.eclipse.cargotracker.domain.shared.NotSpecification"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.domain.shared.OrSpecification",
+      "kind": "class",
+      "className": "OrSpecification",
+      "classFqn": "org.eclipse.cargotracker.domain.shared.OrSpecification"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.logging.LoggerProducer",
+      "kind": "class",
+      "className": "LoggerProducer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.logging.LoggerProducer"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+      "kind": "class",
+      "className": "CargoHandledConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.CargoInspectionService",
+      "kind": "class",
+      "className": "CargoInspectionService",
+      "classFqn": "org.eclipse.cargotracker.application.CargoInspectionService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+      "kind": "class",
+      "className": "DeliveredCargoConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+      "kind": "class",
+      "className": "HandlingEventRegistrationAttemptConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.HandlingEventService",
+      "kind": "class",
+      "className": "HandlingEventService",
+      "classFqn": "org.eclipse.cargotracker.application.HandlingEventService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "kind": "class",
+      "className": "HandlingEventRegistrationAttempt",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+      "kind": "class",
+      "className": "MisdirectedCargoConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+      "kind": "class",
+      "className": "RejectedRegistrationAttemptsConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer"
+    },
+    {
+      "id": "table:location",
+      "kind": "table",
+      "name": "location"
+    },
+    {
+      "id": "table:voyage",
+      "kind": "table",
+      "name": "voyage"
+    },
+    {
+      "id": "class:org.eclipse.pathfinder.api.TransitPath",
+      "kind": "class",
+      "className": "TransitPath",
+      "classFqn": "org.eclipse.pathfinder.api.TransitPath"
+    },
+    {
+      "id": "class:org.eclipse.pathfinder.api.TransitEdge",
+      "kind": "class",
+      "className": "TransitEdge",
+      "classFqn": "org.eclipse.pathfinder.api.TransitEdge"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.CoordinatesFactory",
+      "kind": "class",
+      "className": "CoordinatesFactory",
+      "classFqn": "org.eclipse.cargotracker.interfaces.CoordinatesFactory"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute",
+      "kind": "class",
+      "className": "CargoRoute",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoStatus",
+      "kind": "class",
+      "className": "CargoStatus",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoStatus"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "kind": "class",
+      "className": "DefaultBookingServiceFacade",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "kind": "class",
+      "className": "LocationDtoAssembler",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.application.BookingService",
+      "kind": "class",
+      "className": "BookingService",
+      "classFqn": "org.eclipse.cargotracker.application.BookingService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler",
+      "kind": "class",
+      "className": "CargoRouteDtoAssembler",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "kind": "class",
+      "className": "ItineraryCandidateDtoAssembler",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "kind": "class",
+      "className": "CargoStatusDtoAssembler",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler",
+      "kind": "class",
+      "className": "TrackingEventsDtoAssembler",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.RouteCandidate",
+      "kind": "class",
+      "className": "RouteCandidate",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.dto.RouteCandidate"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.sse.LocationViewAdapter",
+      "kind": "class",
+      "className": "LocationViewAdapter",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.LocationViewAdapter"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "kind": "class",
+      "className": "RealtimeCargoTrackingService",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter",
+      "kind": "class",
+      "className": "RealtimeCargoTrackingViewAdapter",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "kind": "class",
+      "className": "Booking",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.Booking"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "kind": "class",
+      "className": "BookingServiceFacade",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.CargoDetails",
+      "kind": "class",
+      "className": "CargoDetails",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.CargoDetails"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadline",
+      "kind": "class",
+      "className": "ChangeArrivalDeadline",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadline"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog",
+      "kind": "class",
+      "className": "ChangeArrivalDeadlineDialog",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination",
+      "kind": "class",
+      "className": "ChangeDestination",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog",
+      "kind": "class",
+      "className": "ChangeDestinationDialog",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection",
+      "kind": "class",
+      "className": "ItinerarySelection",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.ListCargo",
+      "kind": "class",
+      "className": "ListCargo",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.ListCargo"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.booking.web.Track",
+      "kind": "class",
+      "className": "Track",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.Track"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint",
+      "kind": "class",
+      "className": "EventFilesCheckpoint",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "kind": "class",
+      "className": "EventItemReader",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.file.EventItemReader"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "kind": "class",
+      "className": "EventItemWriter",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.file.FileProcessorJobListener",
+      "kind": "class",
+      "className": "FileProcessorJobListener",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.file.FileProcessorJobListener"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "kind": "class",
+      "className": "LineParseExceptionListener",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.file.UploadDirectoryScanner",
+      "kind": "class",
+      "className": "UploadDirectoryScanner",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.file.UploadDirectoryScanner"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "kind": "class",
+      "className": "EventLogger",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService",
+      "kind": "class",
+      "className": "HandlingReportService",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReport",
+      "kind": "class",
+      "className": "HandlingReport",
+      "classFqn": "org.eclipse.cargotracker.interfaces.handling.rest.HandlingReport"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "kind": "class",
+      "className": "CargoTrackingViewAdapter",
+      "classFqn": "org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter"
+    },
+    {
+      "id": "class:org.eclipse.cargotracker.interfaces.tracking.web.Track",
+      "kind": "class",
+      "className": "Track",
+      "classFqn": "org.eclipse.cargotracker.interfaces.tracking.web.Track"
+    },
+    {
+      "id": "class:org.eclipse.pathfinder.api.GraphTraversalService",
+      "kind": "class",
+      "className": "GraphTraversalService",
+      "classFqn": "org.eclipse.pathfinder.api.GraphTraversalService"
+    },
+    {
+      "id": "class:org.eclipse.pathfinder.internal.GraphDao",
+      "kind": "class",
+      "className": "GraphDao",
+      "classFqn": "org.eclipse.pathfinder.internal.GraphDao"
+    },
+    {
+      "id": "table:leg",
+      "kind": "table",
+      "name": "leg"
+    },
+    {
+      "id": "table:carrier_movement",
+      "kind": "table",
+      "name": "carrier_movement"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultBookingService->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 9
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository->class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "to": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "weight": 6
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultBookingService->class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "weight": 3
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.domain.model.location.LocationRepository->class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "to": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+      "weight": 9
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultBookingService->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "to": "unresolved:Logger#log",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultBookingService->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 8
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultBookingService->class:org.eclipse.cargotracker.domain.service.RoutingService",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "to": "class:org.eclipse.cargotracker.domain.service.RoutingService",
+      "weight": 1
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.domain.service.RoutingService->class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.domain.service.RoutingService",
+      "to": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "to": "unresolved:Logger#log",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "weight": 1
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository->class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "to": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "weight": 7
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService->class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "to": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "weight": 2
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.application.ApplicationEvents->class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "to": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService->class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "to": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService->unresolved:Logger#info",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "to": "unresolved:Logger#info",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.DateConverter->unresolved:LocalDateTime#format",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.DateConverter",
+      "to": "unresolved:LocalDateTime#format",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.DateConverter->unresolved:LocalDate#format",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.DateConverter",
+      "to": "unresolved:LocalDate#format",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.RestConfiguration->unresolved:Map<String, Object>#put",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.RestConfiguration",
+      "to": "unresolved:Map<String, Object>#put",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->unresolved:Logger#info",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "unresolved:Logger#info",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->unresolved:EntityManager#find",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "unresolved:EntityManager#find",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->class:org.eclipse.cargotracker.application.util.ApplicationSettings",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "class:org.eclipse.cargotracker.application.util.ApplicationSettings",
+      "weight": 2
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->table:applicationsettings",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "table:applicationsettings",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->unresolved:EntityManager#persist",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "unresolved:EntityManager#persist",
+      "weight": 27
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 6
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "weight": 3
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->table:cargo",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "table:cargo",
+      "weight": 4
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.application.util.SampleDataGenerator->table:handlingevent",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.application.util.SampleDataGenerator",
+      "to": "table:handlingevent",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Cargo->class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Cargo->class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Cargo->class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "weight": 6
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "weight": 7
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->unresolved:Iterator<Leg>#hasNext",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "unresolved:Iterator<Leg>#hasNext",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->unresolved:Iterator<Leg>#next",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "unresolved:Iterator<Leg>#next",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Delivery->class:org.eclipse.cargotracker.domain.model.cargo.RoutingStatus",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.RoutingStatus",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->unresolved:List<Leg>#isEmpty",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "unresolved:List<Leg>#isEmpty",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->unresolved:List<Leg>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "unresolved:List<Leg>#get",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->unresolved:List<Leg>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "unresolved:List<Leg>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->unresolved:List<Leg>#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "unresolved:List<Leg>#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Itinerary->unresolved:List<Leg>#hashCode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "to": "unresolved:List<Leg>#hashCode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.Leg->unresolved:LocalDateTime#truncatedTo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Leg",
+      "to": "unresolved:LocalDateTime#truncatedTo",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification->class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.TrackingId->unresolved:String#hashCode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "to": "unresolved:String#hashCode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.cargo.TrackingId->unresolved:String#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "to": "unresolved:String#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->unresolved:Type#prohibitsVoyage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "unresolved:Type#prohibitsVoyage",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->unresolved:LocalDateTime#truncatedTo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "unresolved:LocalDateTime#truncatedTo",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->unresolved:Type#requiresVoyage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "unresolved:Type#requiresVoyage",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->unresolved:StringBuilder#append",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "unresolved:StringBuilder#append",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->unresolved:StringBuilder#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "unresolved:StringBuilder#toString",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory->class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "weight": 1
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository->class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "to": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory->class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventFactory",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory->unresolved:List<HandlingEvent>#sort",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "to": "unresolved:List<HandlingEvent>#sort",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory->unresolved:List<HandlingEvent>#isEmpty",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "to": "unresolved:List<HandlingEvent>#isEmpty",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory->unresolved:List<HandlingEvent>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "to": "unresolved:List<HandlingEvent>#get",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory->unresolved:List<HandlingEvent>#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "to": "unresolved:List<HandlingEvent>#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory->unresolved:List<HandlingEvent>#hashCode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingHistory",
+      "to": "unresolved:List<HandlingEvent>#hashCode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.UnknownCargoException->class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.UnknownCargoException",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.UnknownLocationException->class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.UnknownLocationException",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.handling.UnknownVoyageException->class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.UnknownVoyageException",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.location.Location->class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.location.Location",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.location.UnLocode->unresolved:String#toUpperCase",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "to": "unresolved:String#toUpperCase",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.location.UnLocode->unresolved:String#hashCode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "to": "unresolved:String#hashCode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.location.UnLocode->unresolved:String#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "to": "unresolved:String#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.CarrierMovement->unresolved:LocalDateTime#truncatedTo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.CarrierMovement",
+      "to": "unresolved:LocalDateTime#truncatedTo",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages->unresolved:Map<VoyageNumber, Voyage>#put",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages",
+      "to": "unresolved:Map<VoyageNumber, Voyage>#put",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages->unresolved:Map<VoyageNumber, Voyage>#values",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages",
+      "to": "unresolved:Map<VoyageNumber, Voyage>#values",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages->unresolved:Map<VoyageNumber, Voyage>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.SampleVoyages",
+      "to": "unresolved:Map<VoyageNumber, Voyage>#get",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.Schedule->unresolved:List<CarrierMovement>#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.Schedule",
+      "to": "unresolved:List<CarrierMovement>#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.Voyage->class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.Voyage->unresolved:List<CarrierMovement>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "to": "unresolved:List<CarrierMovement>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber->unresolved:String#hashCode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "to": "unresolved:String#hashCode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber->unresolved:String#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "to": "unresolved:String#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.shared.AndSpecification->class:org.eclipse.cargotracker.domain.shared.Specification",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.shared.AndSpecification",
+      "to": "class:org.eclipse.cargotracker.domain.shared.Specification",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.shared.NotSpecification->class:org.eclipse.cargotracker.domain.shared.Specification",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.shared.NotSpecification",
+      "to": "class:org.eclipse.cargotracker.domain.shared.Specification",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.domain.shared.OrSpecification->class:org.eclipse.cargotracker.domain.shared.Specification",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.domain.shared.OrSpecification",
+      "to": "class:org.eclipse.cargotracker.domain.shared.Specification",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.logging.LoggerProducer->unresolved:InjectionPoint#getBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.logging.LoggerProducer",
+      "to": "unresolved:InjectionPoint#getBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.logging.LoggerProducer->unresolved:InjectionPoint#getMember",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.logging.LoggerProducer",
+      "to": "unresolved:InjectionPoint#getMember",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer->unresolved:TextMessage#getText",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+      "to": "unresolved:TextMessage#getText",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer->class:org.eclipse.cargotracker.application.CargoInspectionService",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+      "to": "class:org.eclipse.cargotracker.application.CargoInspectionService",
+      "weight": 1
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.application.CargoInspectionService->class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.application.CargoInspectionService",
+      "to": "class:org.eclipse.cargotracker.application.internal.DefaultCargoInspectionService",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer",
+      "to": "unresolved:Logger#log",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+      "to": "unresolved:Logger#log",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer->unresolved:ObjectMessage#getObject",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+      "to": "unresolved:ObjectMessage#getObject",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer->class:org.eclipse.cargotracker.application.HandlingEventService",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+      "to": "class:org.eclipse.cargotracker.application.HandlingEventService",
+      "weight": 1
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.application.HandlingEventService->class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.application.HandlingEventService",
+      "to": "class:org.eclipse.cargotracker.application.internal.DefaultHandlingEventService",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer->class:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer",
+      "to": "class:org.eclipse.cargotracker.interfaces.handling.HandlingEventRegistrationAttempt",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents->class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "to": "unresolved:Logger#log",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents->unresolved:JMSContext#createProducer",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "to": "unresolved:JMSContext#createProducer",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.JmsApplicationEvents",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+      "to": "unresolved:Logger#log",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.messaging.jms.RejectedRegistrationAttemptsConsumer",
+      "to": "unresolved:Logger#log",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->unresolved:EntityManager#createNamedQuery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "unresolved:Logger#log",
+      "weight": 1
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->table:cargo",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "table:cargo",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->unresolved:return#getItinerary",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "unresolved:return#getItinerary",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->unresolved:EntityManager#persist",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "unresolved:EntityManager#persist",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->unresolved:Event<Cargo>#fireAsync",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "unresolved:Event<Cargo>#fireAsync",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository->unresolved:String#substring",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "to": "unresolved:String#substring",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository->unresolved:EntityManager#persist",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "to": "unresolved:EntityManager#persist",
+      "weight": 1
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository->table:handlingevent",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "to": "table:handlingevent",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository->unresolved:EntityManager#createNamedQuery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaHandlingEventRepository",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository->unresolved:EntityManager#createNamedQuery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "weight": 2
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository->table:location",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository",
+      "to": "table:location",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository->unresolved:EntityManager#createNamedQuery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "weight": 2
+    },
+    {
+      "id": "data_access:class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository->table:voyage",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaVoyageRepository",
+      "to": "table:voyage",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "unresolved:Logger#log",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->unresolved:WebTarget#queryParam",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "unresolved:WebTarget#queryParam",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->unresolved:List<TransitPath>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "unresolved:List<TransitPath>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->unresolved:return#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "unresolved:return#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->class:org.eclipse.pathfinder.api.TransitPath",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "class:org.eclipse.pathfinder.api.TransitPath",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService->class:org.eclipse.pathfinder.api.TransitEdge",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.infrastructure.routing.ExternalRoutingService",
+      "to": "class:org.eclipse.pathfinder.api.TransitEdge",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.CoordinatesFactory->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.CoordinatesFactory",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.CoordinatesFactory->class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.CoordinatesFactory",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.CoordinatesFactory->unresolved:Map<String, Coordinates>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.CoordinatesFactory",
+      "to": "unresolved:Map<String, Coordinates>#get",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "weight": 9
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute->unresolved:List<Leg>#isEmpty",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute",
+      "to": "unresolved:List<Leg>#isEmpty",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoStatus->unresolved:List<TrackingEvents>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoStatus",
+      "to": "unresolved:List<TrackingEvents>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoStatus->unresolved:List<TrackingEvents>#addAll",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoStatus",
+      "to": "unresolved:List<TrackingEvents>#addAll",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "weight": 8
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.application.BookingService",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.application.BookingService",
+      "weight": 5
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.application.BookingService->class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.application.BookingService",
+      "to": "class:org.eclipse.cargotracker.application.internal.DefaultBookingService",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->unresolved:List<Cargo>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "unresolved:List<Cargo>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->unresolved:return#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "unresolved:return#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade->unresolved:List<Itinerary>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "to": "unresolved:List<Itinerary>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoRouteDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->unresolved:List<HandlingEvent>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "unresolved:List<HandlingEvent>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 6
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->class:org.eclipse.cargotracker.domain.model.cargo.HandlingActivity",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.HandlingActivity",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->unresolved:HandlingEvent.Type#sameValueAs",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "unresolved:HandlingEvent.Type#sameValueAs",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler->unresolved:HandlingEvent.Type#name",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.CargoStatusDtoAssembler",
+      "to": "unresolved:HandlingEvent.Type#name",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Itinerary",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Leg",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.RouteCandidate",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.RouteCandidate",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler->unresolved:List<Leg>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.ItineraryCandidateDtoAssembler",
+      "to": "unresolved:List<Leg>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler->unresolved:List<Location>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.LocationDtoAssembler",
+      "to": "unresolved:List<Location>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler->class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler->class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.assembler.TrackingEventsDtoAssembler",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.LocationViewAdapter->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.LocationViewAdapter",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.Location",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->unresolved:Sse#newBroadcaster",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "unresolved:Sse#newBroadcaster",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "unresolved:Logger#log",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->unresolved:SseBroadcaster#register",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "unresolved:SseBroadcaster#register",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->unresolved:SseBroadcaster#close",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "unresolved:SseBroadcaster#close",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->unresolved:SseBroadcaster#broadcast",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "unresolved:SseBroadcaster#broadcast",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService->unresolved:Sse#newEventBuilder",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "to": "unresolved:Sse#newEventBuilder",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 7
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter->unresolved:Map<RoutingStatus, String>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter",
+      "to": "unresolved:Map<RoutingStatus, String>#get",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter->unresolved:Map<TransportStatus, String>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter",
+      "to": "unresolved:Map<TransportStatus, String>#get",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter->class:org.eclipse.cargotracker.domain.model.cargo.RoutingStatus",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingViewAdapter",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.RoutingStatus",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 2
+    },
+    {
+      "id": "polymorphic_call:class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade->class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+      "weight": 10
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->unresolved:FacesContext#getViewRoot",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "unresolved:FacesContext#getViewRoot",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->unresolved:return#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "unresolved:return#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->unresolved:List<Location>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "unresolved:List<Location>#stream",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->unresolved:String#equals",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "unresolved:String#equals",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->unresolved:FacesMessage#setSeverity",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "unresolved:FacesMessage#setSeverity",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Booking->unresolved:FacesContext#addMessage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Booking",
+      "to": "unresolved:FacesContext#addMessage",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.CargoDetails->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.CargoDetails",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadline->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadline",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog->unresolved:Map<String, Object>#put",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog",
+      "to": "unresolved:Map<String, Object>#put",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog->unresolved:List<String>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog",
+      "to": "unresolved:List<String>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog->unresolved:Map<String, List<String>>#put",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeArrivalDeadlineDialog",
+      "to": "unresolved:Map<String, List<String>>#put",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination->unresolved:return#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination",
+      "to": "unresolved:return#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination->class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.dto.CargoRoute",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination->unresolved:return#removeAll",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination",
+      "to": "unresolved:return#removeAll",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestination",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog->unresolved:Map<String, Object>#put",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog",
+      "to": "unresolved:Map<String, Object>#put",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog->unresolved:List<String>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog",
+      "to": "unresolved:List<String>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog->unresolved:Map<String, List<String>>#put",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ChangeDestinationDialog",
+      "to": "unresolved:Map<String, List<String>>#put",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection->unresolved:List<RouteCandidate>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection",
+      "to": "unresolved:List<RouteCandidate>#get",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ListCargo->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ListCargo",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.ListCargo->unresolved:List<CargoRoute>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.ListCargo",
+      "to": "unresolved:List<CargoRoute>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.booking.web.Track->class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.booking.web.Track",
+      "to": "class:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint->unresolved:List<File>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint",
+      "to": "unresolved:List<File>#size",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint->unresolved:List<File>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint",
+      "to": "unresolved:List<File>#get",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:JobContext#getProperties",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:JobContext#getProperties",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:Logger#log",
+      "weight": 8
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:File#exists",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:File#exists",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:File#mkdirs",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:File#mkdirs",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "class:org.eclipse.cargotracker.interfaces.handling.file.EventFilesCheckpoint",
+      "weight": 5
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:RandomAccessFile#seek",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:RandomAccessFile#seek",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:RandomAccessFile#readLine",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:RandomAccessFile#readLine",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:RandomAccessFile#close",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:RandomAccessFile#close",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader->unresolved:String#split",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemReader",
+      "to": "unresolved:String#split",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:JobContext#getProperties",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:JobContext#getProperties",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:File#exists",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:File#exists",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:File#mkdirs",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:File#mkdirs",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:JobContext#getJobName",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:JobContext#getJobName",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:JobContext#getInstanceId",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:JobContext#getInstanceId",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:List<Object>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:List<Object>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.EventItemWriter",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.FileProcessorJobListener->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.FileProcessorJobListener",
+      "to": "unresolved:Logger#log",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:JobContext#getProperties",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:JobContext#getProperties",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:File#exists",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:File#exists",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:File#mkdirs",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:File#mkdirs",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:Logger#log",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:JobContext#getJobName",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:JobContext#getJobName",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:JobContext#getInstanceId",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:JobContext#getInstanceId",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.LineParseExceptionListener",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.file.UploadDirectoryScanner->unresolved:JobOperator#start",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.file.UploadDirectoryScanner",
+      "to": "unresolved:JobOperator#start",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Cargo>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Cargo>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Cargo>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Cargo>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<SelectItem>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<SelectItem>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "class:org.eclipse.cargotracker.domain.model.location.LocationRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Location>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Location>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Location>#forEach",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Location>#forEach",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Location>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Location>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Voyage>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Voyage>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:List<Voyage>#forEach",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:List<Voyage>#forEach",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "class:org.eclipse.cargotracker.domain.model.voyage.VoyageNumber",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:FlowEvent#getOldStep",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:FlowEvent#getOldStep",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:FlowEvent#getNewStep",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:FlowEvent#getNewStep",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:HandlingEvent.Type#requiresVoyage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:HandlingEvent.Type#requiresVoyage",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->unresolved:FacesContext#addMessage",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "unresolved:FacesContext#addMessage",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger->class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger",
+      "to": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService->class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReport",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService",
+      "to": "class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReport",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService->class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService",
+      "to": "class:org.eclipse.cargotracker.application.ApplicationEvents",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->unresolved:List<HandlingEvent>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "unresolved:List<HandlingEvent>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->unresolved:List<HandlingEvent>#stream",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "unresolved:List<HandlingEvent>#stream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "weight": 15
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.Delivery",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->class:org.eclipse.cargotracker.domain.model.cargo.HandlingActivity",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.HandlingActivity",
+      "weight": 4
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->unresolved:HandlingEvent.Type#sameValueAs",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "unresolved:HandlingEvent.Type#sameValueAs",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->unresolved:HandlingEvent.Type#name",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "unresolved:HandlingEvent.Type#name",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter->class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.CargoTrackingViewAdapter",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "weight": 3
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.Track->unresolved:String#trim",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.Track",
+      "to": "unresolved:String#trim",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.Track->unresolved:Logger#log",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.Track",
+      "to": "unresolved:Logger#log",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.Track->class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.Track",
+      "to": "class:org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.cargotracker.interfaces.tracking.web.Track->class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.cargotracker.interfaces.tracking.web.Track",
+      "to": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEventRepository",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.pathfinder.api.GraphTraversalService->unresolved:LocalDateTime#plus",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.pathfinder.api.GraphTraversalService",
+      "to": "unresolved:LocalDateTime#plus",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.pathfinder.api.GraphTraversalService->unresolved:Random#nextInt",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.pathfinder.api.GraphTraversalService",
+      "to": "unresolved:Random#nextInt",
+      "weight": 2
+    },
+    {
+      "id": "call:class:org.eclipse.pathfinder.api.GraphTraversalService->unresolved:List<String>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.pathfinder.api.GraphTraversalService",
+      "to": "unresolved:List<String>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.pathfinder.api.GraphTraversalService->unresolved:List<String>#subList",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.pathfinder.api.GraphTraversalService",
+      "to": "unresolved:List<String>#subList",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.eclipse.pathfinder.internal.GraphDao->unresolved:Random#nextInt",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.eclipse.pathfinder.internal.GraphDao",
+      "to": "unresolved:Random#nextInt",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.application.util.ApplicationSettings->table:applicationsettings",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.application.util.ApplicationSettings",
+      "to": "table:applicationsettings",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.domain.model.cargo.Cargo->table:cargo",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "to": "table:cargo",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.domain.model.cargo.Leg->table:leg",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.domain.model.cargo.Leg",
+      "to": "table:leg",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent->table:handlingevent",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "to": "table:handlingevent",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.domain.model.location.Location->table:location",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.domain.model.location.Location",
+      "to": "table:location",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.domain.model.voyage.CarrierMovement->table:carrier_movement",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.CarrierMovement",
+      "to": "table:carrier_movement",
+      "weight": 1
+    },
+    {
+      "id": "entity_table:class:org.eclipse.cargotracker.domain.model.voyage.Voyage->table:voyage",
+      "type": "entity_table",
+      "source": "jpa-annotation",
+      "from": "class:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "to": "table:voyage",
+      "weight": 1
+    }
+  ]
+}

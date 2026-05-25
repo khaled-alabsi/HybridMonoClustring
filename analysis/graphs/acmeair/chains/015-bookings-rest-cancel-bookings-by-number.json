@@ -1,0 +1,1444 @@
+{
+  "id": "chain:acmeair:15",
+  "fileName": "015-bookings-rest-cancel-bookings-by-number.json",
+  "actionPointId": "action:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+  "rootMethodId": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+  "reachedNodeCount": 10,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "BookingsREST",
+    "classFqn": "com.acmeair.web.BookingsREST",
+    "methodName": "cancelBookingsByNumber",
+    "methodId": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+    "line": 103,
+    "annotations": [
+      "POST",
+      "Consumes",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+      "kind": "method",
+      "className": "BookingServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+      "methodName": "cancelBooking",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+      "line": 95
+    },
+    {
+      "id": "method:com.acmeair.service.BookingService#cancelBooking",
+      "kind": "method",
+      "className": "BookingService",
+      "classFqn": "com.acmeair.service.BookingService",
+      "methodName": "cancelBooking"
+    },
+    {
+      "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+      "kind": "method",
+      "className": "BookingsREST",
+      "classFqn": "com.acmeair.web.BookingsREST",
+      "methodName": "cancelBookingsByNumber",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+      "line": 103
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "kind": "method",
+      "className": "BookingServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+      "methodName": "cancelBooking",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+      "line": 142
+    },
+    {
+      "id": "unresolved:Datastore#delete",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "delete"
+    },
+    {
+      "id": "unresolved:HashSet<Booking>#add",
+      "kind": "unknown_framework_target",
+      "className": "HashSet",
+      "methodName": "add"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#get",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "get"
+    },
+    {
+      "id": "unresolved:ObjectMap#upsert",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "upsert"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+      "to": "method:com.acmeair.service.BookingService#cancelBooking",
+      "fromNode": {
+        "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "kind": "method",
+        "className": "BookingsREST",
+        "classFqn": "com.acmeair.web.BookingsREST",
+        "methodName": "cancelBookingsByNumber",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+        "line": 103
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.BookingService#cancelBooking",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "cancelBooking"
+      },
+      "callSite": "bs.cancelBooking(userid, number)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking:1031",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.BookingService#cancelBooking",
+      "to": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+      "fromNode": {
+        "id": "method:com.acmeair.service.BookingService#cancelBooking",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "cancelBooking"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+      },
+      "callSite": "bs.cancelBooking(userid, number)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.BookingService#cancelBooking",
+      "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "fromNode": {
+        "id": "method:com.acmeair.service.BookingService#cancelBooking",
+        "kind": "method",
+        "className": "BookingService",
+        "classFqn": "com.acmeair.service.BookingService",
+        "methodName": "cancelBooking"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+      },
+      "callSite": "bs.cancelBooking(userid, number)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking->unresolved:Datastore#delete:404",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+      "to": "unresolved:Datastore#delete",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 95
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#delete",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "delete"
+      },
+      "callSite": "datastore.delete(BookingImpl.class, bookingId)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking->external_endpoint:mongodb:405",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "delete",
+      "from": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+        "line": 95
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.delete(BookingImpl.class, bookingId)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectGrid#getSession:592",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:593",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:Session#getMap:594",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:595",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(BOOKING_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectMap#get:596",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "unresolved:ObjectMap#get",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#get",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "get"
+      },
+      "callSite": "bookingMap.get(user)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:597",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "get",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "bookingMap.get(user)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:HashSet<Booking>#add:598",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "unresolved:HashSet<Booking>#add",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "unresolved:HashSet<Booking>#add",
+        "kind": "unknown_framework_target",
+        "className": "HashSet",
+        "methodName": "add"
+      },
+      "callSite": "newBookings.add(b)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectMap#upsert:599",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "unresolved:ObjectMap#upsert",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#upsert",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "upsert"
+      },
+      "callSite": "bookingMap.upsert(user, newBookings)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:600",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "upsert",
+      "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "kind": "method",
+        "className": "BookingServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+        "methodName": "cancelBooking",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+        "line": 142
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "bookingMap.upsert(user, newBookings)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking:1031",
+        "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking->external_endpoint:mongodb:405"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking:1031",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking->external_endpoint:mongodb:405",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "delete",
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 95
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.delete(BookingImpl.class, bookingId)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:593"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:593",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:595"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:595",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:597"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:597",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "get",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "bookingMap.get(user)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:600"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->external_endpoint:websphere-extreme-scale:600",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "upsert",
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "bookingMap.upsert(user, newBookings)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking:1031",
+        "call:method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking->unresolved:Datastore#delete:404"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking:1031",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking->unresolved:Datastore#delete:404",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+          "to": "unresolved:Datastore#delete",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/BookingServiceImpl.java",
+            "line": 95
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#delete",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "delete"
+          },
+          "callSite": "datastore.delete(BookingImpl.class, bookingId)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.morphia.services.BookingServiceImpl#cancelBooking",
+        "unresolved:Datastore#delete"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectGrid#getSession:592"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectGrid#getSession:592",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:Session#getMap:594"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:Session#getMap:594",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(BOOKING_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectMap#get:596"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectMap#get:596",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "unresolved:ObjectMap#get",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#get",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "get"
+          },
+          "callSite": "bookingMap.get(user)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "unresolved:ObjectMap#get"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:HashSet<Booking>#add:598"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:HashSet<Booking>#add:598",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "unresolved:HashSet<Booking>#add",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "unresolved:HashSet<Booking>#add",
+            "kind": "unknown_framework_target",
+            "className": "HashSet",
+            "methodName": "add"
+          },
+          "callSite": "newBookings.add(b)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "unresolved:HashSet<Booking>#add"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+        "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+        "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectMap#upsert:599"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.BookingsREST#cancelBookingsByNumber->method:com.acmeair.service.BookingService#cancelBooking:1030",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+          "to": "method:com.acmeair.service.BookingService#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+            "kind": "method",
+            "className": "BookingsREST",
+            "classFqn": "com.acmeair.web.BookingsREST",
+            "methodName": "cancelBookingsByNumber",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/BookingsREST.java",
+            "line": 103
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.BookingService#cancelBooking->method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking:1032",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.BookingService#cancelBooking",
+          "to": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "fromNode": {
+            "id": "method:com.acmeair.service.BookingService#cancelBooking",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "com.acmeair.service.BookingService",
+            "methodName": "cancelBooking"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java"
+          },
+          "callSite": "bs.cancelBooking(userid, number)"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking->unresolved:ObjectMap#upsert:599",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+          "to": "unresolved:ObjectMap#upsert",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+            "kind": "method",
+            "className": "BookingServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.BookingServiceImpl",
+            "methodName": "cancelBooking",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/BookingServiceImpl.java",
+            "line": 142
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#upsert",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "upsert"
+          },
+          "callSite": "bookingMap.upsert(user, newBookings)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.BookingsREST#cancelBookingsByNumber",
+        "method:com.acmeair.service.BookingService#cancelBooking",
+        "method:com.acmeair.wxs.service.BookingServiceImpl#cancelBooking",
+        "unresolved:ObjectMap#upsert"
+      ]
+    }
+  ]
+}

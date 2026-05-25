@@ -1,0 +1,236 @@
+{
+  "id": "chain:acmeair:1",
+  "fileName": "001-acme-air-configuration-get-data-service-info.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+  "reachedNodeCount": 4,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "getDataServiceInfo",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 58,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "getDataServiceInfo",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 58
+    },
+    {
+      "id": "unresolved:Logger#fine",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "fine"
+    },
+    {
+      "id": "unresolved:Map<String, String>#entrySet",
+      "kind": "unknown_framework_target",
+      "className": "Map",
+      "methodName": "entrySet"
+    },
+    {
+      "id": "unresolved:return#add",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "add"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:Logger#fine:991",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+      "to": "unresolved:Logger#fine",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "getDataServiceInfo",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:Logger#fine",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "fine"
+      },
+      "callSite": "logger.fine(\"Get data service configuration info\")"
+    },
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:Map<String, String>#entrySet:992",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+      "to": "unresolved:Map<String, String>#entrySet",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "getDataServiceInfo",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:Map<String, String>#entrySet",
+        "kind": "unknown_framework_target",
+        "className": "Map",
+        "methodName": "entrySet"
+      },
+      "callSite": "services.entrySet()"
+    },
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:return#add:993",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+      "to": "unresolved:return#add",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "getDataServiceInfo",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:return#add",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "add"
+      },
+      "callSite": "list.add(data)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:Logger#fine:991"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:Logger#fine:991",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+          "to": "unresolved:Logger#fine",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "getDataServiceInfo",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "unresolved:Logger#fine",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "fine"
+          },
+          "callSite": "logger.fine(\"Get data service configuration info\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+        "unresolved:Logger#fine"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:Map<String, String>#entrySet:992"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:Map<String, String>#entrySet:992",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+          "to": "unresolved:Map<String, String>#entrySet",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "getDataServiceInfo",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "unresolved:Map<String, String>#entrySet",
+            "kind": "unknown_framework_target",
+            "className": "Map",
+            "methodName": "entrySet"
+          },
+          "callSite": "services.entrySet()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+        "unresolved:Map<String, String>#entrySet"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:return#add:993"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo->unresolved:return#add:993",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+          "to": "unresolved:return#add",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "getDataServiceInfo",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "unresolved:return#add",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "add"
+          },
+          "callSite": "list.add(data)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#getDataServiceInfo",
+        "unresolved:return#add"
+      ]
+    }
+  ]
+}

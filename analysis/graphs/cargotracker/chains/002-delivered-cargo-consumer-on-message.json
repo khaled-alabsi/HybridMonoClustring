@@ -1,0 +1,128 @@
+{
+  "id": "chain:cargotracker:2",
+  "fileName": "002-delivered-cargo-consumer-on-message.json",
+  "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+  "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "DeliveredCargoConsumer",
+    "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+    "methodName": "onMessage",
+    "methodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/DeliveredCargoConsumer.java",
+    "line": 23,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+      "kind": "method",
+      "className": "DeliveredCargoConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+      "methodName": "onMessage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/DeliveredCargoConsumer.java",
+      "line": 23
+    },
+    {
+      "id": "unresolved:Logger#log",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "log"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage->unresolved:Logger#log:266",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+        "kind": "method",
+        "className": "DeliveredCargoConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/DeliveredCargoConsumer.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(\n          Level.INFO, \"Cargo with tracking ID {0} delivered.\", message.getBody(String.class)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage->unresolved:Logger#log:267",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+        "kind": "method",
+        "className": "DeliveredCargoConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/DeliveredCargoConsumer.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.WARNING, \"Error processing message.\", ex)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage->unresolved:Logger#log:266"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage->unresolved:Logger#log:266",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+          "to": "unresolved:Logger#log",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+            "kind": "method",
+            "className": "DeliveredCargoConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/DeliveredCargoConsumer.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "unresolved:Logger#log",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "log"
+          },
+          "callSite": "logger.log(\n          Level.INFO, \"Cargo with tracking ID {0} delivered.\", message.getBody(String.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.DeliveredCargoConsumer#onMessage",
+        "unresolved:Logger#log"
+      ]
+    }
+  ]
+}

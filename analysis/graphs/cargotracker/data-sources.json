@@ -1,0 +1,190 @@
+{
+  "benchmark": "cargotracker",
+  "tables": [
+    {
+      "id": "table:applicationsettings",
+      "kind": "table",
+      "name": "applicationsettings"
+    },
+    {
+      "id": "table:cargo",
+      "kind": "table",
+      "name": "cargo"
+    },
+    {
+      "id": "table:carrier_movement",
+      "kind": "table",
+      "name": "carrier_movement"
+    },
+    {
+      "id": "table:handlingevent",
+      "kind": "table",
+      "name": "handlingevent"
+    },
+    {
+      "id": "table:leg",
+      "kind": "table",
+      "name": "leg"
+    },
+    {
+      "id": "table:location",
+      "kind": "table",
+      "name": "location"
+    },
+    {
+      "id": "table:voyage",
+      "kind": "table",
+      "name": "voyage"
+    }
+  ],
+  "entities": [
+    {
+      "id": "entity:org.eclipse.cargotracker.application.util.ApplicationSettings",
+      "kind": "entity",
+      "className": "ApplicationSettings",
+      "classFqn": "org.eclipse.cargotracker.application.util.ApplicationSettings",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/util/ApplicationSettings.java",
+      "table": "applicationsettings",
+      "tableId": "table:applicationsettings",
+      "entityName": "ApplicationSettings",
+      "namedQueries": []
+    },
+    {
+      "id": "entity:org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "kind": "entity",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+      "table": "cargo",
+      "tableId": "table:cargo",
+      "entityName": "Cargo",
+      "namedQueries": [
+        "Cargo.findAll",
+        "Cargo.findByTrackingId"
+      ]
+    },
+    {
+      "id": "entity:org.eclipse.cargotracker.domain.model.cargo.Leg",
+      "kind": "entity",
+      "className": "Leg",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Leg",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Leg.java",
+      "table": "leg",
+      "tableId": "table:leg",
+      "entityName": "Leg",
+      "namedQueries": []
+    },
+    {
+      "id": "entity:org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "kind": "entity",
+      "className": "HandlingEvent",
+      "classFqn": "org.eclipse.cargotracker.domain.model.handling.HandlingEvent",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/handling/HandlingEvent.java",
+      "table": "handlingevent",
+      "tableId": "table:handlingevent",
+      "entityName": "HandlingEvent",
+      "namedQueries": [
+        "HandlingEvent.findByTrackingId"
+      ]
+    },
+    {
+      "id": "entity:org.eclipse.cargotracker.domain.model.location.Location",
+      "kind": "entity",
+      "className": "Location",
+      "classFqn": "org.eclipse.cargotracker.domain.model.location.Location",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/location/Location.java",
+      "table": "location",
+      "tableId": "table:location",
+      "entityName": "Location",
+      "namedQueries": [
+        "Location.findAll",
+        "Location.findByUnLocode"
+      ]
+    },
+    {
+      "id": "entity:org.eclipse.cargotracker.domain.model.voyage.CarrierMovement",
+      "kind": "entity",
+      "className": "CarrierMovement",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.CarrierMovement",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/voyage/CarrierMovement.java",
+      "table": "carrier_movement",
+      "tableId": "table:carrier_movement",
+      "entityName": "CarrierMovement",
+      "namedQueries": []
+    },
+    {
+      "id": "entity:org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "kind": "entity",
+      "className": "Voyage",
+      "classFqn": "org.eclipse.cargotracker.domain.model.voyage.Voyage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/voyage/Voyage.java",
+      "table": "voyage",
+      "tableId": "table:voyage",
+      "entityName": "Voyage",
+      "namedQueries": [
+        "Voyage.findByVoyageNumber",
+        "Voyage.findAll"
+      ]
+    }
+  ],
+  "namedQueries": [
+    {
+      "name": "Cargo.findAll",
+      "query": "Select c from Cargo c",
+      "entities": [
+        "Cargo"
+      ],
+      "tableId": "table:cargo"
+    },
+    {
+      "name": "Cargo.findByTrackingId",
+      "query": "Select c from Cargo c where c.trackingId = :trackingId",
+      "entities": [
+        "Cargo"
+      ],
+      "tableId": "table:cargo"
+    },
+    {
+      "name": "HandlingEvent.findByTrackingId",
+      "query": "Select e from HandlingEvent e where e.cargo.trackingId = :trackingId",
+      "entities": [
+        "HandlingEvent"
+      ],
+      "tableId": "table:handlingevent"
+    },
+    {
+      "name": "Location.findAll",
+      "query": "Select l from Location l",
+      "entities": [
+        "Location"
+      ],
+      "tableId": "table:location"
+    },
+    {
+      "name": "Location.findByUnLocode",
+      "query": "Select l from Location l where l.unLocode = :unLocode",
+      "entities": [
+        "Location"
+      ],
+      "tableId": "table:location"
+    },
+    {
+      "name": "Voyage.findByVoyageNumber",
+      "query": "Select v from Voyage v where v.voyageNumber = :voyageNumber",
+      "entities": [
+        "Voyage"
+      ],
+      "tableId": "table:voyage"
+    },
+    {
+      "name": "Voyage.findAll",
+      "query": "Select v from Voyage v order by v.voyageNumber",
+      "entities": [
+        "Voyage"
+      ],
+      "tableId": "table:voyage"
+    }
+  ],
+  "externalEndpoints": [],
+  "mappers": []
+}

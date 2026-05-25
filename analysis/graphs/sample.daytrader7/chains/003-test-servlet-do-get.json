@@ -1,0 +1,542 @@
+{
+  "id": "chain:sample.daytrader7:3",
+  "fileName": "003-test-servlet-do-get.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "TestServlet",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+    "methodName": "doGet",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+    "line": 49,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+      "kind": "method",
+      "className": "TestServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+      "line": 49
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "kind": "method",
+      "className": "TestServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+      "methodName": "performTask",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+      "line": 75
+    },
+    {
+      "id": "unresolved:HttpServletRequest#setAttribute",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "setAttribute"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getWriter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getWriter"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:PrintWriter#write",
+      "kind": "unknown_framework_target",
+      "className": "PrintWriter",
+      "methodName": "write"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 49
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "callSite": "performTask("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletResponse#getWriter:880",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:HttpServletResponse#getWriter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getWriter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getWriter"
+      },
+      "callSite": "resp.getWriter()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletResponse#setContentType:881",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "resp.setContentType(\"text/html\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:PrintWriter#write:882",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:PrintWriter#write",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:PrintWriter#write",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "write"
+      },
+      "callSite": "out.write(\"<HEAD></HEAD><BODY><BR><BR>\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:PrintWriter#write:883",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:PrintWriter#write",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:PrintWriter#write",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "write"
+      },
+      "callSite": "out.write(accountData.toString()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletRequest#setAttribute:884",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"results\", \"Success\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletRequest#setAttribute:885",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"accountData\", accountData)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletRequest#setAttribute:886",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"holdingDataBeans\", holdingDataBeans)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:PrintWriter#write:887",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+      "to": "unresolved:PrintWriter#write",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "kind": "method",
+        "className": "TestServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+        "line": 75
+      },
+      "toNode": {
+        "id": "unresolved:PrintWriter#write",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "write"
+      },
+      "callSite": "out.write(\"<BR><BR>done.</BODY>\")"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletResponse#getWriter:880"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 49
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletResponse#getWriter:880",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "to": "unresolved:HttpServletResponse#getWriter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getWriter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getWriter"
+          },
+          "callSite": "resp.getWriter()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "unresolved:HttpServletResponse#getWriter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletResponse#setContentType:881"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 49
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletResponse#setContentType:881",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "resp.setContentType(\"text/html\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:PrintWriter#write:882"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 49
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:PrintWriter#write:882",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "to": "unresolved:PrintWriter#write",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "toNode": {
+            "id": "unresolved:PrintWriter#write",
+            "kind": "unknown_framework_target",
+            "className": "PrintWriter",
+            "methodName": "write"
+          },
+          "callSite": "out.write(\"<HEAD></HEAD><BODY><BR><BR>\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "unresolved:PrintWriter#write"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+        "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletRequest#setAttribute:884"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet->method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask:878",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 49
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask->unresolved:HttpServletRequest#setAttribute:884",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+          "to": "unresolved:HttpServletRequest#setAttribute",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+            "kind": "method",
+            "className": "TestServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TestServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TestServlet.java",
+            "line": 75
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#setAttribute",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "setAttribute"
+          },
+          "callSite": "req.setAttribute(\"results\", \"Success\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.TestServlet#performTask",
+        "unresolved:HttpServletRequest#setAttribute"
+      ]
+    }
+  ]
+}

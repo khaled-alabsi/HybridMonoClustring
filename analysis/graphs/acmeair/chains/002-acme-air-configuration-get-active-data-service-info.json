@@ -1,0 +1,106 @@
+{
+  "id": "chain:acmeair:2",
+  "fileName": "002-acme-air-configuration-get-active-data-service-info.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "getActiveDataServiceInfo",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 82,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "getActiveDataServiceInfo",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 82
+    },
+    {
+      "id": "unresolved:Logger#fine",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "fine"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo->unresolved:Logger#fine:994",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+      "to": "unresolved:Logger#fine",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "getActiveDataServiceInfo",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 82
+      },
+      "toNode": {
+        "id": "unresolved:Logger#fine",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "fine"
+      },
+      "callSite": "logger.fine(\"Get active Data Service info\")"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo->unresolved:Logger#fine:994"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo->unresolved:Logger#fine:994",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+          "to": "unresolved:Logger#fine",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "getActiveDataServiceInfo",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 82
+          },
+          "toNode": {
+            "id": "unresolved:Logger#fine",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "fine"
+          },
+          "callSite": "logger.fine(\"Get active Data Service info\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#getActiveDataServiceInfo",
+        "unresolved:Logger#fine"
+      ]
+    }
+  ]
+}

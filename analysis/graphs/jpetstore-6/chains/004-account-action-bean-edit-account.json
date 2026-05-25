@@ -1,0 +1,1541 @@
+{
+  "id": "chain:jpetstore-6:4",
+  "fileName": "004-account-action-bean-edit-account.json",
+  "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+  "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+  "reachedNodeCount": 10,
+  "reachedDataSources": [
+    "table:account",
+    "table:bannerdata",
+    "table:product",
+    "table:profile",
+    "table:signon"
+  ],
+  "actionPoint": {
+    "id": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+    "benchmark": "jpetstore-6",
+    "framework": "Stripes",
+    "kind": "action_point",
+    "className": "AccountActionBean",
+    "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+    "methodName": "editAccount",
+    "methodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+    "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+    "line": 136,
+    "annotations": [],
+    "routeHint": "/actions/Account.action?editAccount",
+    "detectionSource": "tree-sitter/regex-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+      "kind": "method",
+      "className": "AccountMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+      "methodName": "getAccountByUsername"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+      "kind": "method",
+      "className": "AccountMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+      "methodName": "getAccountByUsernameAndPassword"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+      "kind": "method",
+      "className": "AccountMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+      "methodName": "updateAccount"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+      "kind": "method",
+      "className": "AccountMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+      "methodName": "updateProfile"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+      "kind": "method",
+      "className": "AccountMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+      "methodName": "updateSignon"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+      "kind": "method",
+      "className": "ProductMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.ProductMapper",
+      "methodName": "getProductListByCategory"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+      "kind": "method",
+      "className": "AccountService",
+      "classFqn": "org.mybatis.jpetstore.service.AccountService",
+      "methodName": "getAccount",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+      "line": 41
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+      "kind": "method",
+      "className": "AccountService",
+      "classFqn": "org.mybatis.jpetstore.service.AccountService",
+      "methodName": "updateAccount",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+      "line": 65
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+      "kind": "method",
+      "className": "CatalogService",
+      "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+      "methodName": "getProductListByCategory",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+      "line": 57
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+      "kind": "method",
+      "className": "AccountActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+      "methodName": "editAccount",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+      "line": 136
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+      "to": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "kind": "method",
+        "className": "AccountActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+        "methodName": "editAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "updateAccount"
+      },
+      "callSite": "accountService.updateAccount(account)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+      "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "kind": "method",
+        "className": "AccountActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+        "methodName": "editAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "getAccount"
+      },
+      "callSite": "accountService.getAccount(account.getUsername()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:131",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+      "to": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "kind": "method",
+        "className": "AccountActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+        "methodName": "editAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+        "kind": "method",
+        "className": "CatalogService",
+        "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+        "methodName": "getProductListByCategory"
+      },
+      "callSite": "catalogService.getProductListByCategory(account.getFavouriteCategoryId()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount:68",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+      "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "updateAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+        "kind": "method",
+        "className": "AccountMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "methodName": "updateAccount"
+      },
+      "callSite": "accountMapper.updateAccount(account)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile:70",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+      "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "updateAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+        "kind": "method",
+        "className": "AccountMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "methodName": "updateProfile"
+      },
+      "callSite": "accountMapper.updateProfile(account)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon:72",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+      "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "updateAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+        "kind": "method",
+        "className": "AccountMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "methodName": "updateSignon"
+      },
+      "callSite": "accountMapper.updateSignon(account)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+      "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "getAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+        "line": 41
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "kind": "method",
+        "className": "AccountMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "methodName": "getAccountByUsername"
+      },
+      "callSite": "accountMapper.getAccountByUsername(username)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+      "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "kind": "method",
+        "className": "AccountService",
+        "classFqn": "org.mybatis.jpetstore.service.AccountService",
+        "methodName": "getAccount",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+        "line": 41
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "kind": "method",
+        "className": "AccountMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "methodName": "getAccountByUsernameAndPassword"
+      },
+      "callSite": "accountMapper.getAccountByUsernameAndPassword(username, password)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:80",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+      "to": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+        "kind": "method",
+        "className": "CatalogService",
+        "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+        "methodName": "getProductListByCategory",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+        "line": 57
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+        "kind": "method",
+        "className": "ProductMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.ProductMapper",
+        "methodName": "getProductListByCategory"
+      },
+      "callSite": "productMapper.getProductListByCategory(categoryId)"
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount->table:account:69",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "update",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+      "to": "table:account",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "updateAccount"
+      },
+      "toNode": {
+        "id": "table:account",
+        "kind": "table",
+        "name": "account"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile->table:profile:71",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "update",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+      "to": "table:profile",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "updateProfile"
+      },
+      "toNode": {
+        "id": "table:profile",
+        "kind": "table",
+        "name": "profile"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon->table:signon:73",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "update",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+      "to": "table:signon",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "updateSignon"
+      },
+      "toNode": {
+        "id": "table:signon",
+        "kind": "table",
+        "name": "signon"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:account:53",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+      "to": "table:account",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsername"
+      },
+      "toNode": {
+        "id": "table:account",
+        "kind": "table",
+        "name": "account"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:bannerdata:54",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+      "to": "table:bannerdata",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsername"
+      },
+      "toNode": {
+        "id": "table:bannerdata",
+        "kind": "table",
+        "name": "bannerdata"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:profile:55",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+      "to": "table:profile",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsername"
+      },
+      "toNode": {
+        "id": "table:profile",
+        "kind": "table",
+        "name": "profile"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:signon:56",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+      "to": "table:signon",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsername"
+      },
+      "toNode": {
+        "id": "table:signon",
+        "kind": "table",
+        "name": "signon"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:account:58",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+      "to": "table:account",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsernameAndPassword"
+      },
+      "toNode": {
+        "id": "table:account",
+        "kind": "table",
+        "name": "account"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:bannerdata:59",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+      "to": "table:bannerdata",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsernameAndPassword"
+      },
+      "toNode": {
+        "id": "table:bannerdata",
+        "kind": "table",
+        "name": "bannerdata"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:profile:60",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+      "to": "table:profile",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsernameAndPassword"
+      },
+      "toNode": {
+        "id": "table:profile",
+        "kind": "table",
+        "name": "profile"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:signon:61",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+      "to": "table:signon",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "kind": "method",
+        "className": "AccountMapper",
+        "methodName": "getAccountByUsernameAndPassword"
+      },
+      "toNode": {
+        "id": "table:signon",
+        "kind": "table",
+        "name": "signon"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:81",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+      "to": "table:product",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+        "kind": "method",
+        "className": "ProductMapper",
+        "methodName": "getProductListByCategory"
+      },
+      "toNode": {
+        "id": "table:product",
+        "kind": "table",
+        "name": "product"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+        "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount:68",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount->table:account:69"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "updateAccount"
+          },
+          "callSite": "accountService.updateAccount(account)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount:68",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "updateAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "updateAccount"
+          },
+          "callSite": "accountMapper.updateAccount(account)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount->table:account:69",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "update",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+          "to": "table:account",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "updateAccount"
+          },
+          "toNode": {
+            "id": "table:account",
+            "kind": "table",
+            "name": "account"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#updateAccount",
+        "table:account"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+        "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile:70",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile->table:profile:71"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "updateAccount"
+          },
+          "callSite": "accountService.updateAccount(account)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile:70",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "updateAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "updateProfile"
+          },
+          "callSite": "accountMapper.updateProfile(account)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile->table:profile:71",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "update",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+          "to": "table:profile",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "updateProfile"
+          },
+          "toNode": {
+            "id": "table:profile",
+            "kind": "table",
+            "name": "profile"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#updateProfile",
+        "table:profile"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+        "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon:72",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon->table:signon:73"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#updateAccount:129",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "updateAccount"
+          },
+          "callSite": "accountService.updateAccount(account)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#updateAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon:72",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "updateAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "updateSignon"
+          },
+          "callSite": "accountMapper.updateSignon(account)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon->table:signon:73",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "update",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+          "to": "table:signon",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "updateSignon"
+          },
+          "toNode": {
+            "id": "table:signon",
+            "kind": "table",
+            "name": "signon"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#updateAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon",
+        "table:signon"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:account:53"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "callSite": "accountMapper.getAccountByUsername(username)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:account:53",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "to": "table:account",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "toNode": {
+            "id": "table:account",
+            "kind": "table",
+            "name": "account"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "table:account"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:bannerdata:54"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "callSite": "accountMapper.getAccountByUsername(username)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:bannerdata:54",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "to": "table:bannerdata",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "toNode": {
+            "id": "table:bannerdata",
+            "kind": "table",
+            "name": "bannerdata"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "table:bannerdata"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:profile:55"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "callSite": "accountMapper.getAccountByUsername(username)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:profile:55",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "to": "table:profile",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "toNode": {
+            "id": "table:profile",
+            "kind": "table",
+            "name": "profile"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "table:profile"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:signon:56"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername:52",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "callSite": "accountMapper.getAccountByUsername(username)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername->table:signon:56",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+          "to": "table:signon",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsername"
+          },
+          "toNode": {
+            "id": "table:signon",
+            "kind": "table",
+            "name": "signon"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsername",
+        "table:signon"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:account:58"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "callSite": "accountMapper.getAccountByUsernameAndPassword(username, password)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:account:58",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "to": "table:account",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "toNode": {
+            "id": "table:account",
+            "kind": "table",
+            "name": "account"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "table:account"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:bannerdata:59"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "callSite": "accountMapper.getAccountByUsernameAndPassword(username, password)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:bannerdata:59",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "to": "table:bannerdata",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "toNode": {
+            "id": "table:bannerdata",
+            "kind": "table",
+            "name": "bannerdata"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "table:bannerdata"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:profile:60"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "callSite": "accountMapper.getAccountByUsernameAndPassword(username, password)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:profile:60",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "to": "table:profile",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "toNode": {
+            "id": "table:profile",
+            "kind": "table",
+            "name": "profile"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "table:profile"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+        "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+        "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:signon:61"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.AccountService#getAccount:130",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountService.getAccount(account.getUsername()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.AccountService#getAccount->method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword:57",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+          "to": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+            "kind": "method",
+            "className": "AccountService",
+            "classFqn": "org.mybatis.jpetstore.service.AccountService",
+            "methodName": "getAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "callSite": "accountMapper.getAccountByUsernameAndPassword(username, password)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword->table:signon:61",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+          "to": "table:signon",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+            "kind": "method",
+            "className": "AccountMapper",
+            "methodName": "getAccountByUsernameAndPassword"
+          },
+          "toNode": {
+            "id": "table:signon",
+            "kind": "table",
+            "name": "signon"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.AccountService#getAccount",
+        "method:org.mybatis.jpetstore.mapper.AccountMapper#getAccountByUsernameAndPassword",
+        "table:signon"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:131",
+        "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:80",
+        "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:81"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:131",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+          "to": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "editAccount",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getProductListByCategory"
+          },
+          "callSite": "catalogService.getProductListByCategory(account.getFavouriteCategoryId()"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:80",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+          "to": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getProductListByCategory",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+            "line": 57
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+            "kind": "method",
+            "className": "ProductMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.ProductMapper",
+            "methodName": "getProductListByCategory"
+          },
+          "callSite": "productMapper.getProductListByCategory(categoryId)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:81",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+          "to": "table:product",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+            "kind": "method",
+            "className": "ProductMapper",
+            "methodName": "getProductListByCategory"
+          },
+          "toNode": {
+            "id": "table:product",
+            "kind": "table",
+            "name": "product"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+        "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
+        "method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory",
+        "table:product"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "id": "chain:cargotracker:6",
+  "fileName": "006-realtime-cargo-tracking-service-tracking.json",
+  "actionPointId": "action:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+  "rootMethodId": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [
+    "table:cargo"
+  ],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "RealtimeCargoTrackingService",
+    "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+    "methodName": "tracking",
+    "methodId": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+    "line": 38,
+    "annotations": [
+      "GET",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+      "kind": "method",
+      "className": "CargoRepository",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+      "methodName": "findAll"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+      "kind": "method",
+      "className": "JpaCargoRepository",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+      "methodName": "findAll",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+      "line": 46
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+      "kind": "method",
+      "className": "RealtimeCargoTrackingService",
+      "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+      "methodName": "tracking",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+      "line": 38
+    },
+    {
+      "id": "unresolved:EntityManager#createNamedQuery",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "createNamedQuery"
+    },
+    {
+      "id": "unresolved:Logger#log",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "log"
+    },
+    {
+      "id": "unresolved:SseBroadcaster#register",
+      "kind": "unknown_framework_target",
+      "className": "SseBroadcaster",
+      "methodName": "register"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "kind": "method",
+        "className": "RealtimeCargoTrackingService",
+        "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+        "methodName": "tracking",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "findAll"
+      },
+      "callSite": "cargoRepository.findAll()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:442",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+      "to": "unresolved:SseBroadcaster#register",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "kind": "method",
+        "className": "RealtimeCargoTrackingService",
+        "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+        "methodName": "tracking",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "unresolved:SseBroadcaster#register",
+        "kind": "unknown_framework_target",
+        "className": "SseBroadcaster",
+        "methodName": "register"
+      },
+      "callSite": "broadcaster.register(eventSink)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:443",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "kind": "method",
+        "className": "RealtimeCargoTrackingService",
+        "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+        "methodName": "tracking",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.FINEST, \"SSE event sink registered.\")"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "findAll"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "findAll",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java"
+      },
+      "callSite": "cargoRepository.findAll()"
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:374",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+      "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+        "kind": "method",
+        "className": "CargoRepository",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+        "methodName": "findAll"
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "findAll",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java"
+      },
+      "callSite": "cargoRepository\n        .findAll()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:294",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+      "to": "unresolved:EntityManager#createNamedQuery",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "findAll",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 46
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#createNamedQuery",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "createNamedQuery"
+      },
+      "callSite": "entityManager.createNamedQuery(\"Cargo.findAll\", Cargo.class)"
+    },
+    {
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:295",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "namedQuery:Cargo.findAll",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+      "to": "table:cargo",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "findAll",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 46
+      },
+      "toNode": {
+        "id": "table:cargo",
+        "kind": "table",
+        "name": "cargo"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:442"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:442",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+          "to": "unresolved:SseBroadcaster#register",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+            "kind": "method",
+            "className": "RealtimeCargoTrackingService",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+            "methodName": "tracking",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "unresolved:SseBroadcaster#register",
+            "kind": "unknown_framework_target",
+            "className": "SseBroadcaster",
+            "methodName": "register"
+          },
+          "callSite": "broadcaster.register(eventSink)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "unresolved:SseBroadcaster#register"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:443"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:443",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+          "to": "unresolved:Logger#log",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+            "kind": "method",
+            "className": "RealtimeCargoTrackingService",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+            "methodName": "tracking",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "unresolved:Logger#log",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "log"
+          },
+          "callSite": "logger.log(Level.FINEST, \"SSE event sink registered.\")"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "unresolved:Logger#log"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:295"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+            "kind": "method",
+            "className": "RealtimeCargoTrackingService",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+            "methodName": "tracking",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "findAll"
+          },
+          "callSite": "cargoRepository.findAll()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "findAll"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "findAll",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java"
+          },
+          "callSite": "cargoRepository.findAll()"
+        },
+        {
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:295",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "namedQuery:Cargo.findAll",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+          "to": "table:cargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "findAll",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 46
+          },
+          "toNode": {
+            "id": "table:cargo",
+            "kind": "table",
+            "name": "cargo"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+        "table:cargo"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:294"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+            "kind": "method",
+            "className": "RealtimeCargoTrackingService",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService",
+            "methodName": "tracking",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/sse/RealtimeCargoTrackingService.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "findAll"
+          },
+          "callSite": "cargoRepository.findAll()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "findAll"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "findAll",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java"
+          },
+          "callSite": "cargoRepository.findAll()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:294",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+          "to": "unresolved:EntityManager#createNamedQuery",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "findAll",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 46
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#createNamedQuery",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "createNamedQuery"
+          },
+          "callSite": "entityManager.createNamedQuery(\"Cargo.findAll\", Cargo.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll",
+        "unresolved:EntityManager#createNamedQuery"
+      ]
+    }
+  ]
+}

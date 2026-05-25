@@ -1,0 +1,2091 @@
+{
+  "id": "chain:acmeair:16",
+  "fileName": "016-customer-rest-get-customer.json",
+  "actionPointId": "action:com.acmeair.web.CustomerREST#getCustomer",
+  "rootMethodId": "method:com.acmeair.web.CustomerREST#getCustomer",
+  "reachedNodeCount": 16,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.web.CustomerREST#getCustomer",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "CustomerREST",
+    "classFqn": "com.acmeair.web.CustomerREST",
+    "methodName": "getCustomer",
+    "methodId": "method:com.acmeair.web.CustomerREST#getCustomer",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+    "line": 41,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+      "methodName": "getCustomer",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+      "line": 71
+    },
+    {
+      "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+      "methodName": "getCustomerByUsername",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+      "line": 78
+    },
+    {
+      "id": "method:com.acmeair.service.CustomerService#getCustomer",
+      "kind": "method",
+      "className": "CustomerService",
+      "classFqn": "com.acmeair.service.CustomerService",
+      "methodName": "getCustomer",
+      "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+    },
+    {
+      "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+      "kind": "method",
+      "className": "CustomerService",
+      "classFqn": "com.acmeair.service.CustomerService",
+      "methodName": "getCustomerByUsername",
+      "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+      "line": 45
+    },
+    {
+      "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+      "kind": "method",
+      "className": "CustomerREST",
+      "classFqn": "com.acmeair.web.CustomerREST",
+      "methodName": "getCustomer",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+      "line": 41
+    },
+    {
+      "id": "method:com.acmeair.web.CustomerREST#validate",
+      "kind": "method",
+      "className": "CustomerREST",
+      "classFqn": "com.acmeair.web.CustomerREST",
+      "methodName": "validate",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+      "line": 35
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "kind": "method",
+      "className": "CustomerServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+      "methodName": "getCustomer",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+      "line": 178
+    },
+    {
+      "id": "unresolved:Calendar#setPassword",
+      "kind": "unknown_framework_target",
+      "className": "Calendar",
+      "methodName": "setPassword"
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getAttribute",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getAttribute"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#get",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "get"
+    },
+    {
+      "id": "unresolved:Query<CustomerSessionImpl>#get",
+      "kind": "unknown_framework_target",
+      "className": "Query",
+      "methodName": "get"
+    },
+    {
+      "id": "unresolved:return#setPassword",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setPassword"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:String#equals",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "equals"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+      "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+      "fromNode": {
+        "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+        "kind": "method",
+        "className": "CustomerREST",
+        "classFqn": "com.acmeair.web.CustomerREST",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+        "line": 41
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomerByUsername"
+      },
+      "callSite": "customerService.getCustomerByUsername(customerid)"
+    },
+    {
+      "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.web.CustomerREST#validate:1037",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+      "to": "method:com.acmeair.web.CustomerREST#validate",
+      "fromNode": {
+        "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+        "kind": "method",
+        "className": "CustomerREST",
+        "classFqn": "com.acmeair.web.CustomerREST",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+        "line": 41
+      },
+      "toNode": {
+        "id": "method:com.acmeair.web.CustomerREST#validate",
+        "kind": "method",
+        "className": "CustomerREST",
+        "classFqn": "com.acmeair.web.CustomerREST",
+        "methodName": "validate",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java"
+      },
+      "callSite": "validate("
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+      "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomerByUsername"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 78
+      },
+      "callSite": "customerService.getCustomerByUsername(customerId)"
+    },
+    {
+      "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->unresolved:Calendar#setPassword:891",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+      "to": "unresolved:Calendar#setPassword",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+        "line": 45
+      },
+      "toNode": {
+        "id": "unresolved:Calendar#setPassword",
+        "kind": "unknown_framework_target",
+        "className": "Calendar",
+        "methodName": "setPassword"
+      },
+      "callSite": "c.setPassword(null)"
+    },
+    {
+      "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+      "to": "method:com.acmeair.service.CustomerService#getCustomer",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+        "line": 45
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomer",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+      },
+      "callSite": "getCustomer("
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:1036",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+      "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomerByUsername"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+      },
+      "callSite": "customerService.getCustomerByUsername(customerid)"
+    },
+    {
+      "id": "call:method:com.acmeair.web.CustomerREST#validate->unresolved:HttpServletRequest#getAttribute:1033",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.web.CustomerREST#validate",
+      "to": "unresolved:HttpServletRequest#getAttribute",
+      "fromNode": {
+        "id": "method:com.acmeair.web.CustomerREST#validate",
+        "kind": "method",
+        "className": "CustomerREST",
+        "classFqn": "com.acmeair.web.CustomerREST",
+        "methodName": "validate",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getAttribute"
+      },
+      "callSite": "request.getAttribute(RESTCookieSessionFilter.LOGIN_USER)"
+    },
+    {
+      "id": "call:method:com.acmeair.web.CustomerREST#validate->unresolved:String#equals:1034",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.web.CustomerREST#validate",
+      "to": "unresolved:String#equals",
+      "fromNode": {
+        "id": "method:com.acmeair.web.CustomerREST#validate",
+        "kind": "method",
+        "className": "CustomerREST",
+        "classFqn": "com.acmeair.web.CustomerREST",
+        "methodName": "validate",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "unresolved:String#equals",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "equals"
+      },
+      "callSite": "customerid.equals(loginUser)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:Datastore#find:419",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 78
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(CustomerImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->external_endpoint:mongodb:420",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 78
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(CustomerImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:Query<CustomerSessionImpl>#get:421",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "to": "unresolved:Query<CustomerSessionImpl>#get",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 78
+      },
+      "toNode": {
+        "id": "unresolved:Query<CustomerSessionImpl>#get",
+        "kind": "unknown_framework_target",
+        "className": "Query",
+        "methodName": "get"
+      },
+      "callSite": "q.get()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:return#setPassword:422",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+      "to": "unresolved:return#setPassword",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomerByUsername",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 78
+      },
+      "toNode": {
+        "id": "unresolved:return#setPassword",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setPassword"
+      },
+      "callSite": "customer.setPassword(null)"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer:893",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#getCustomer",
+      "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomer",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+      },
+      "callSite": "getCustomer("
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.CustomerService#getCustomer",
+      "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "fromNode": {
+        "id": "method:com.acmeair.service.CustomerService#getCustomer",
+        "kind": "method",
+        "className": "CustomerService",
+        "classFqn": "com.acmeair.service.CustomerService",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+      },
+      "callSite": "getCustomer("
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer->unresolved:Datastore#find:416",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 71
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(CustomerImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer->external_endpoint:mongodb:417",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 71
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(CustomerImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer->unresolved:Query<CustomerSessionImpl>#get:418",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+      "to": "unresolved:Query<CustomerSessionImpl>#get",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+        "line": 71
+      },
+      "toNode": {
+        "id": "unresolved:Query<CustomerSessionImpl>#get",
+        "kind": "unknown_framework_target",
+        "className": "Query",
+        "methodName": "get"
+      },
+      "callSite": "q.get()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:ObjectGrid#getSession:666",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:667",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:Session#getMap:668",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:669",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:ObjectMap#get:670",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "to": "unresolved:ObjectMap#get",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#get",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "get"
+      },
+      "callSite": "customerMap.get(username)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:671",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "get",
+      "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "kind": "method",
+        "className": "CustomerServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+        "methodName": "getCustomer",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "customerMap.get(username)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+        "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->external_endpoint:mongodb:420"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "callSite": "customerService.getCustomerByUsername(customerId)"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->external_endpoint:mongodb:420",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(CustomerImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->unresolved:Calendar#setPassword:891"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->unresolved:Calendar#setPassword:891",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "unresolved:Calendar#setPassword",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "unresolved:Calendar#setPassword",
+            "kind": "unknown_framework_target",
+            "className": "Calendar",
+            "methodName": "setPassword"
+          },
+          "callSite": "c.setPassword(null)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "unresolved:Calendar#setPassword"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.web.CustomerREST#validate:1037",
+        "call:method:com.acmeair.web.CustomerREST#validate->unresolved:HttpServletRequest#getAttribute:1033"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.web.CustomerREST#validate:1037",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.web.CustomerREST#validate",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.web.CustomerREST#validate",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "validate",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java"
+          },
+          "callSite": "validate("
+        },
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#validate->unresolved:HttpServletRequest#getAttribute:1033",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.web.CustomerREST#validate",
+          "to": "unresolved:HttpServletRequest#getAttribute",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#validate",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "validate",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getAttribute",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getAttribute"
+          },
+          "callSite": "request.getAttribute(RESTCookieSessionFilter.LOGIN_USER)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.web.CustomerREST#validate",
+        "unresolved:HttpServletRequest#getAttribute"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.web.CustomerREST#validate:1037",
+        "call:method:com.acmeair.web.CustomerREST#validate->unresolved:String#equals:1034"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.web.CustomerREST#validate:1037",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.web.CustomerREST#validate",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.web.CustomerREST#validate",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "validate",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java"
+          },
+          "callSite": "validate("
+        },
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#validate->unresolved:String#equals:1034",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.web.CustomerREST#validate",
+          "to": "unresolved:String#equals",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#validate",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "validate",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "unresolved:String#equals",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "equals"
+          },
+          "callSite": "customerid.equals(loginUser)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.web.CustomerREST#validate",
+        "unresolved:String#equals"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:Datastore#find:419"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "callSite": "customerService.getCustomerByUsername(customerId)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:Datastore#find:419",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(CustomerImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:Query<CustomerSessionImpl>#get:421"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "callSite": "customerService.getCustomerByUsername(customerId)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:Query<CustomerSessionImpl>#get:421",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "to": "unresolved:Query<CustomerSessionImpl>#get",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "toNode": {
+            "id": "unresolved:Query<CustomerSessionImpl>#get",
+            "kind": "unknown_framework_target",
+            "className": "Query",
+            "methodName": "get"
+          },
+          "callSite": "q.get()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "unresolved:Query<CustomerSessionImpl>#get"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+        "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:return#setPassword:422"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername:390",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "callSite": "customerService.getCustomerByUsername(customerId)"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername->unresolved:return#setPassword:422",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+          "to": "unresolved:return#setPassword",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 78
+          },
+          "toNode": {
+            "id": "unresolved:return#setPassword",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setPassword"
+          },
+          "callSite": "customer.setPassword(null)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomerByUsername",
+        "unresolved:return#setPassword"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer:893",
+        "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer->external_endpoint:mongodb:417"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer:893",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer->external_endpoint:mongodb:417",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/CustomerServiceImpl.java",
+            "line": 71
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(CustomerImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.morphia.services.CustomerServiceImpl#getCustomer",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:667"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:667",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:669"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:669",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+        "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:671"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->external_endpoint:websphere-extreme-scale:671",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "get",
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "customerMap.get(username)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:ObjectGrid#getSession:666"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:ObjectGrid#getSession:666",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:Session#getMap:668"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:Session#getMap:668",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(CUSTOMER_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+        "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+        "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+        "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:ObjectMap#get:670"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.web.CustomerREST#getCustomer->method:com.acmeair.service.CustomerService#getCustomerByUsername:1035",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.web.CustomerREST#getCustomer",
+          "to": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "fromNode": {
+            "id": "method:com.acmeair.web.CustomerREST#getCustomer",
+            "kind": "method",
+            "className": "CustomerREST",
+            "classFqn": "com.acmeair.web.CustomerREST",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/web/CustomerREST.java",
+            "line": 41
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername"
+          },
+          "callSite": "customerService.getCustomerByUsername(customerid)"
+        },
+        {
+          "id": "call:method:com.acmeair.service.CustomerService#getCustomerByUsername->method:com.acmeair.service.CustomerService#getCustomer:892",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+          "to": "method:com.acmeair.service.CustomerService#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomerByUsername",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java",
+            "line": 45
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.CustomerService#getCustomer->method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer:894",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.CustomerService#getCustomer",
+          "to": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "fromNode": {
+            "id": "method:com.acmeair.service.CustomerService#getCustomer",
+            "kind": "method",
+            "className": "CustomerService",
+            "classFqn": "com.acmeair.service.CustomerService",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services/src/main/java/com/acmeair/service/CustomerService.java"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java"
+          },
+          "callSite": "getCustomer("
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer->unresolved:ObjectMap#get:670",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+          "to": "unresolved:ObjectMap#get",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+            "kind": "method",
+            "className": "CustomerServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.CustomerServiceImpl",
+            "methodName": "getCustomer",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/CustomerServiceImpl.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#get",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "get"
+          },
+          "callSite": "customerMap.get(username)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.web.CustomerREST#getCustomer",
+        "method:com.acmeair.service.CustomerService#getCustomerByUsername",
+        "method:com.acmeair.service.CustomerService#getCustomer",
+        "method:com.acmeair.wxs.service.CustomerServiceImpl#getCustomer",
+        "unresolved:ObjectMap#get"
+      ]
+    }
+  ]
+}

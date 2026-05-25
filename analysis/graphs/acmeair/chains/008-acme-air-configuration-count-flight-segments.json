@@ -1,0 +1,1907 @@
+{
+  "id": "chain:acmeair:8",
+  "fileName": "008-acme-air-configuration-count-flight-segments.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "countFlightSegments",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 193,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "countFlightSegments",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 193
+    },
+    {
+      "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+      "kind": "method",
+      "className": "FlightServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+      "methodName": "countFlightSegments",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+      "line": 62
+    },
+    {
+      "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+      "kind": "method",
+      "className": "FlightService",
+      "classFqn": "com.acmeair.service.FlightService",
+      "methodName": "countFlightSegments"
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "kind": "method",
+      "className": "FlightServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+      "methodName": "countFlightSegments",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+      "line": 136
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:Iterator<?>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<?>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:MapIndex#findAll",
+      "kind": "unknown_framework_target",
+      "className": "MapIndex",
+      "methodName": "findAll"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getMap",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#getIndex",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "getIndex"
+    },
+    {
+      "id": "unresolved:ObjectQuery#getSingleResult",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "getSingleResult"
+    },
+    {
+      "id": "unresolved:ObjectQuery#setPartition",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "setPartition"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+      "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 193
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+        "kind": "method",
+        "className": "FlightService",
+        "classFqn": "com.acmeair.service.FlightService",
+        "methodName": "countFlightSegments"
+      },
+      "callSite": "flightService.countFlightSegments()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments:1010",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+      "to": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+      "fromNode": {
+        "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+        "kind": "method",
+        "className": "FlightService",
+        "classFqn": "com.acmeair.service.FlightService",
+        "methodName": "countFlightSegments"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java"
+      },
+      "callSite": "flightService.countFlightSegments()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+      "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "fromNode": {
+        "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+        "kind": "method",
+        "className": "FlightService",
+        "classFqn": "com.acmeair.service.FlightService",
+        "methodName": "countFlightSegments"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+      },
+      "callSite": "flightService.countFlightSegments()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments->unresolved:Datastore#find:436",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+        "line": 62
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(FlightSegmentImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments->external_endpoint:mongodb:437",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+        "line": 62
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(FlightSegmentImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectGrid#getSession:719",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:720",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Session#getMap:721",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:722",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectMap#getIndex:723",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:ObjectMap#getIndex",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#getIndex",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "getIndex"
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:724",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getIndex",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:MapIndex#findAll:725",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:MapIndex#findAll",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:MapIndex#findAll",
+        "kind": "unknown_framework_target",
+        "className": "MapIndex",
+        "methodName": "findAll"
+      },
+      "callSite": "mapIndex.findAll()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Iterator<?>#hasNext:726",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:Iterator<?>#hasNext",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "keyIterator.hasNext()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Iterator<?>#next:727",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:Iterator<?>#next",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "keyIterator.next()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectGrid#getMap:728",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:ObjectGrid#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getMap",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getMap"
+      },
+      "callSite": "og.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:729",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectQuery#setPartition:730",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:ObjectQuery#setPartition",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#setPartition",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "setPartition"
+      },
+      "callSite": "query.setPartition(i)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectQuery#getSingleResult:731",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+      "to": "unresolved:ObjectQuery#getSingleResult",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlightSegments",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 136
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#getSingleResult",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "getSingleResult"
+      },
+      "callSite": "query.getSingleResult()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments:1010",
+        "data_access:method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments->external_endpoint:mongodb:437"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments:1010",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments->external_endpoint:mongodb:437",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+            "line": 62
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(FlightSegmentImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:720"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:720",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:722"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:722",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:724"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:724",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getIndex",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:729"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->external_endpoint:websphere-extreme-scale:729",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments:1010",
+        "call:method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments->unresolved:Datastore#find:436"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments:1010",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments->unresolved:Datastore#find:436",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+            "line": 62
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(FlightSegmentImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.morphia.services.FlightServiceImpl#countFlightSegments",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectGrid#getSession:719"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectGrid#getSession:719",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Session#getMap:721"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Session#getMap:721",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectMap#getIndex:723"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectMap#getIndex:723",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:ObjectMap#getIndex",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#getIndex",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "getIndex"
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:ObjectMap#getIndex"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:MapIndex#findAll:725"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:MapIndex#findAll:725",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:MapIndex#findAll",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:MapIndex#findAll",
+            "kind": "unknown_framework_target",
+            "className": "MapIndex",
+            "methodName": "findAll"
+          },
+          "callSite": "mapIndex.findAll()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:MapIndex#findAll"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Iterator<?>#hasNext:726"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Iterator<?>#hasNext:726",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:Iterator<?>#hasNext",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "keyIterator.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:Iterator<?>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Iterator<?>#next:727"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:Iterator<?>#next:727",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:Iterator<?>#next",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "keyIterator.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:Iterator<?>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectGrid#getMap:728"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectGrid#getMap:728",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:ObjectGrid#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getMap",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getMap"
+          },
+          "callSite": "og.getMap(FLIGHT_SEGMENT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:ObjectGrid#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectQuery#setPartition:730"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectQuery#setPartition:730",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:ObjectQuery#setPartition",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#setPartition",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "setPartition"
+          },
+          "callSite": "query.setPartition(i)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:ObjectQuery#setPartition"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectQuery#getSingleResult:731"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments->method:com.acmeair.service.FlightService#countFlightSegments:1009",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+          "to": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 193
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlightSegments->method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments:1011",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlightSegments",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlightSegments",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlightSegments"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlightSegments()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments->unresolved:ObjectQuery#getSingleResult:731",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+          "to": "unresolved:ObjectQuery#getSingleResult",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlightSegments",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 136
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#getSingleResult",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "getSingleResult"
+          },
+          "callSite": "query.getSingleResult()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlightSegments",
+        "method:com.acmeair.service.FlightService#countFlightSegments",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlightSegments",
+        "unresolved:ObjectQuery#getSingleResult"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1494 @@
+{
+  "id": "chain:sample.daytrader7:7",
+  "fileName": "007-trade-config-servlet-service.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "TradeConfigServlet",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+    "methodName": "service",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+    "line": 270,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+      "kind": "method",
+      "className": "TradeDirect",
+      "classFqn": "com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+      "methodName": "checkDBProductName"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+      "kind": "method",
+      "className": "TradeConfigServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+      "methodName": "doConfigDisplay",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+      "line": 56
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "kind": "method",
+      "className": "TradeConfigServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+      "methodName": "doConfigUpdate",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+      "line": 89
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+      "kind": "method",
+      "className": "TradeConfigServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+      "methodName": "doResetTrade",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+      "line": 64
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "kind": "method",
+      "className": "TradeConfigServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+      "methodName": "service",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+      "line": 270
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getParameter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getParameter"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#setAttribute",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "setAttribute"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getWriter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getWriter"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#sendError",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "sendError"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:String#equals",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "equals"
+    },
+    {
+      "id": "unresolved:String#length",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "length"
+    },
+    {
+      "id": "unresolved:String#startsWith",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "startsWith"
+    },
+    {
+      "id": "unresolved:throw#toString",
+      "kind": "unknown_framework_target",
+      "className": "throw",
+      "methodName": "toString"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#setContentType:1005",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "resp.setContentType(\"text/html\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletRequest#getParameter:1006",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"action\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#equals:1007",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#equals",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#equals",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "equals"
+      },
+      "callSite": "action.equals(\"updateConfig\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#equals:1008",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#equals",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#equals",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "equals"
+      },
+      "callSite": "action.equals(\"resetTrade\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#equals:1009",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#equals",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#equals",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "equals"
+      },
+      "callSite": "action.equals(\"buildDB\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#getWriter:1010",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:HttpServletResponse#getWriter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getWriter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getWriter"
+      },
+      "callSite": "resp.getWriter()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#equals:1011",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#equals",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#equals",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "equals"
+      },
+      "callSite": "action.equals(\"buildDBTables\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName:1012",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+        "kind": "method",
+        "className": "TradeDirect",
+        "classFqn": "com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+        "methodName": "checkDBProductName"
+      },
+      "callSite": "tradeDirect.checkDBProductName()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#startsWith:1013",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"DB2/\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#startsWith:1014",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"DB2 UDB for AS/400\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#startsWith:1015",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"Apache Derby\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#startsWith:1016",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"Oracle\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#sendError:1017",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:HttpServletResponse#sendError",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#sendError",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "sendError"
+      },
+      "callSite": "resp.sendError(500, \"TradeConfigServlet.service(...)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:throw#toString:1018",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "unresolved:throw#toString",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "unresolved:throw#toString",
+        "kind": "unknown_framework_target",
+        "className": "throw",
+        "methodName": "toString"
+      },
+      "callSite": "e.toString()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay:1019",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigDisplay",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java"
+      },
+      "callSite": "doConfigDisplay("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate:1020",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java"
+      },
+      "callSite": "doConfigUpdate("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade:1021",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "service",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 270
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doResetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java"
+      },
+      "callSite": "doResetTrade("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay->unresolved:HttpServletRequest#setAttribute:982",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigDisplay",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"tradeConfig\", currentConfig)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay->unresolved:HttpServletRequest#setAttribute:983",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigDisplay",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"status\", results)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:987",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"RunTimeMode\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:988",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"UseRemoteEJBInterface\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:989",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"OrderProcessingMode\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:990",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"WebInterface\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:991",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"CachingType\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:992",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"DistMapCacheSize\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:String#length:993",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:String#length",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:String#length",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "length"
+      },
+      "callSite": "distMapCacheSize.length()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:994",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"MaxUsers\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:String#length:995",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:String#length",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:String#length",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "length"
+      },
+      "callSite": "parm.length()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:996",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"MaxQuotes\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:997",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"marketSummaryInterval\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:998",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"primIterations\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:999",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"EnablePublishQuotePriceChange\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:1000",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"percentSentToWebsocket\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:1001",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"EnableLongRun\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:1002",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"DisplayOrderAlerts\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:1003",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"EnableTrace\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:HttpServletRequest#getParameter:1004",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doConfigUpdate",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"EnableActionTrace\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade->unresolved:HttpServletRequest#setAttribute:984",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doResetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 64
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"runStatsData\", runStatsData)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade->unresolved:HttpServletRequest#setAttribute:985",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doResetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 64
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"tradeConfig\", currentConfig)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade->unresolved:HttpServletRequest#setAttribute:986",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doResetTrade",
+        "kind": "method",
+        "className": "TradeConfigServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+        "methodName": "doResetTrade",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+        "line": 64
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute(\"status\", results)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#setContentType:1005"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#setContentType:1005",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "resp.setContentType(\"text/html\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletRequest#getParameter:1006"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletRequest#getParameter:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:HttpServletRequest#getParameter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getParameter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getParameter"
+          },
+          "callSite": "req.getParameter(\"action\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:HttpServletRequest#getParameter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#equals:1007"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#equals:1007",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:String#equals",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:String#equals",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "equals"
+          },
+          "callSite": "action.equals(\"updateConfig\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:String#equals"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#getWriter:1010"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#getWriter:1010",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:HttpServletResponse#getWriter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getWriter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getWriter"
+          },
+          "callSite": "resp.getWriter()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:HttpServletResponse#getWriter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName:1012"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName:1012",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+            "kind": "method",
+            "className": "TradeDirect",
+            "classFqn": "com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+            "methodName": "checkDBProductName"
+          },
+          "callSite": "tradeDirect.checkDBProductName()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#startsWith:1013"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:String#startsWith:1013",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:String#startsWith",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:String#startsWith",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "startsWith"
+          },
+          "callSite": "dbProductName.startsWith(\"DB2/\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:String#startsWith"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#sendError:1017"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:HttpServletResponse#sendError:1017",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:HttpServletResponse#sendError",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#sendError",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "sendError"
+          },
+          "callSite": "resp.sendError(500, \"TradeConfigServlet.service(...)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:HttpServletResponse#sendError"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:throw#toString:1018"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->unresolved:throw#toString:1018",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "unresolved:throw#toString",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "unresolved:throw#toString",
+            "kind": "unknown_framework_target",
+            "className": "throw",
+            "methodName": "toString"
+          },
+          "callSite": "e.toString()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "unresolved:throw#toString"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay:1019",
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay->unresolved:HttpServletRequest#setAttribute:982"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay:1019",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "doConfigDisplay",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java"
+          },
+          "callSite": "doConfigDisplay("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay->unresolved:HttpServletRequest#setAttribute:982",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+          "to": "unresolved:HttpServletRequest#setAttribute",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "doConfigDisplay",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#setAttribute",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "setAttribute"
+          },
+          "callSite": "req.setAttribute(\"tradeConfig\", currentConfig)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigDisplay",
+        "unresolved:HttpServletRequest#setAttribute"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate:1020",
+        "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:String#length:993"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service->method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate:1020",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "service",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 270
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "doConfigUpdate",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java"
+          },
+          "callSite": "doConfigUpdate("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate->unresolved:String#length:993",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+          "to": "unresolved:String#length",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+            "kind": "method",
+            "className": "TradeConfigServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
+            "methodName": "doConfigUpdate",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/TradeConfigServlet.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "unresolved:String#length",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "length"
+          },
+          "callSite": "distMapCacheSize.length()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
+        "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#doConfigUpdate",
+        "unresolved:String#length"
+      ]
+    }
+  ]
+}

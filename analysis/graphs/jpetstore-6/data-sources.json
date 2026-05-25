@@ -1,0 +1,335 @@
+{
+  "benchmark": "jpetstore-6",
+  "tables": [
+    {
+      "id": "table:account",
+      "kind": "table",
+      "name": "account"
+    },
+    {
+      "id": "table:bannerdata",
+      "kind": "table",
+      "name": "bannerdata"
+    },
+    {
+      "id": "table:category",
+      "kind": "table",
+      "name": "category"
+    },
+    {
+      "id": "table:inventory",
+      "kind": "table",
+      "name": "inventory"
+    },
+    {
+      "id": "table:item",
+      "kind": "table",
+      "name": "item"
+    },
+    {
+      "id": "table:lineitem",
+      "kind": "table",
+      "name": "lineitem"
+    },
+    {
+      "id": "table:orders",
+      "kind": "table",
+      "name": "orders"
+    },
+    {
+      "id": "table:orderstatus",
+      "kind": "table",
+      "name": "orderstatus"
+    },
+    {
+      "id": "table:product",
+      "kind": "table",
+      "name": "product"
+    },
+    {
+      "id": "table:profile",
+      "kind": "table",
+      "name": "profile"
+    },
+    {
+      "id": "table:sequence",
+      "kind": "table",
+      "name": "sequence"
+    },
+    {
+      "id": "table:signon",
+      "kind": "table",
+      "name": "signon"
+    },
+    {
+      "id": "table:supplier",
+      "kind": "table",
+      "name": "supplier"
+    }
+  ],
+  "entities": [],
+  "namedQueries": [],
+  "externalEndpoints": [],
+  "mappers": [
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.AccountMapper",
+      "interfaceName": "AccountMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml",
+      "statements": [
+        {
+          "id": "getAccountByUsername",
+          "operation": "select",
+          "tables": [
+            "account",
+            "bannerdata",
+            "profile",
+            "signon"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "getAccountByUsernameAndPassword",
+          "operation": "select",
+          "tables": [
+            "account",
+            "bannerdata",
+            "profile",
+            "signon"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "insertAccount",
+          "operation": "insert",
+          "tables": [
+            "account"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "insertProfile",
+          "operation": "insert",
+          "tables": [
+            "profile"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "insertSignon",
+          "operation": "insert",
+          "tables": [
+            "signon"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "updateAccount",
+          "operation": "update",
+          "tables": [
+            "account"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "updateProfile",
+          "operation": "update",
+          "tables": [
+            "profile"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        },
+        {
+          "id": "updateSignon",
+          "operation": "update",
+          "tables": [
+            "signon"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/AccountMapper.xml"
+        }
+      ]
+    },
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.CategoryMapper",
+      "interfaceName": "CategoryMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/CategoryMapper.xml",
+      "statements": [
+        {
+          "id": "getCategory",
+          "operation": "select",
+          "tables": [
+            "category"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/CategoryMapper.xml"
+        },
+        {
+          "id": "getCategoryList",
+          "operation": "select",
+          "tables": [
+            "category"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/CategoryMapper.xml"
+        }
+      ]
+    },
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.ItemMapper",
+      "interfaceName": "ItemMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ItemMapper.xml",
+      "statements": [
+        {
+          "id": "getItemListByProduct",
+          "operation": "select",
+          "tables": [
+            "item",
+            "product"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ItemMapper.xml"
+        },
+        {
+          "id": "getItem",
+          "operation": "select",
+          "tables": [
+            "inventory",
+            "item",
+            "product"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ItemMapper.xml"
+        },
+        {
+          "id": "getInventoryQuantity",
+          "operation": "select",
+          "tables": [
+            "inventory"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ItemMapper.xml"
+        },
+        {
+          "id": "updateInventoryQuantity",
+          "operation": "update",
+          "tables": [
+            "inventory"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ItemMapper.xml"
+        }
+      ]
+    },
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.LineItemMapper",
+      "interfaceName": "LineItemMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/LineItemMapper.xml",
+      "statements": [
+        {
+          "id": "getLineItemsByOrderId",
+          "operation": "select",
+          "tables": [
+            "lineitem"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/LineItemMapper.xml"
+        },
+        {
+          "id": "insertLineItem",
+          "operation": "insert",
+          "tables": [
+            "lineitem"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/LineItemMapper.xml"
+        }
+      ]
+    },
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.OrderMapper",
+      "interfaceName": "OrderMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/OrderMapper.xml",
+      "statements": [
+        {
+          "id": "getOrder",
+          "operation": "select",
+          "tables": [
+            "orders",
+            "orderstatus"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/OrderMapper.xml"
+        },
+        {
+          "id": "getOrdersByUsername",
+          "operation": "select",
+          "tables": [
+            "orders",
+            "orderstatus"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/OrderMapper.xml"
+        },
+        {
+          "id": "insertOrder",
+          "operation": "insert",
+          "tables": [
+            "orders"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/OrderMapper.xml"
+        },
+        {
+          "id": "insertOrderStatus",
+          "operation": "insert",
+          "tables": [
+            "orderstatus"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/OrderMapper.xml"
+        }
+      ]
+    },
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.ProductMapper",
+      "interfaceName": "ProductMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ProductMapper.xml",
+      "statements": [
+        {
+          "id": "getProduct",
+          "operation": "select",
+          "tables": [
+            "product"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ProductMapper.xml"
+        },
+        {
+          "id": "getProductListByCategory",
+          "operation": "select",
+          "tables": [
+            "product"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ProductMapper.xml"
+        },
+        {
+          "id": "searchProductList",
+          "operation": "select",
+          "tables": [
+            "product"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/ProductMapper.xml"
+        }
+      ]
+    },
+    {
+      "namespace": "org.mybatis.jpetstore.mapper.SequenceMapper",
+      "interfaceName": "SequenceMapper",
+      "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/SequenceMapper.xml",
+      "statements": [
+        {
+          "id": "getSequence",
+          "operation": "select",
+          "tables": [
+            "sequence"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/SequenceMapper.xml"
+        },
+        {
+          "id": "updateSequence",
+          "operation": "update",
+          "tables": [
+            "sequence"
+          ],
+          "file": "benchmarks/jpetstore-6/src/main/resources/org/mybatis/jpetstore/mapper/SequenceMapper.xml"
+        }
+      ]
+    }
+  ]
+}

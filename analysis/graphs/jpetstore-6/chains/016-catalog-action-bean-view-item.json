@@ -1,0 +1,476 @@
+{
+  "id": "chain:jpetstore-6:16",
+  "fileName": "016-catalog-action-bean-view-item.json",
+  "actionPointId": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+  "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+  "reachedNodeCount": 4,
+  "reachedDataSources": [
+    "table:inventory",
+    "table:item",
+    "table:product"
+  ],
+  "actionPoint": {
+    "id": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+    "benchmark": "jpetstore-6",
+    "framework": "Stripes",
+    "kind": "action_point",
+    "className": "CatalogActionBean",
+    "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "methodName": "viewItem",
+    "methodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+    "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+    "line": 178,
+    "annotations": [],
+    "routeHint": "/actions/Catalog.action?viewItem",
+    "detectionSource": "tree-sitter/regex-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.mybatis.jpetstore.domain.Item#getProduct",
+      "kind": "method",
+      "className": "Item",
+      "classFqn": "org.mybatis.jpetstore.domain.Item",
+      "methodName": "getProduct",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Item.java"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+      "kind": "method",
+      "className": "ItemMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+      "methodName": "getItem"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+      "kind": "method",
+      "className": "CatalogService",
+      "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+      "methodName": "getItem",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+      "line": 81
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+      "kind": "method",
+      "className": "CatalogActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+      "methodName": "viewItem",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+      "line": 178
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+      "to": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+        "kind": "method",
+        "className": "CatalogActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+        "methodName": "viewItem",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+        "kind": "method",
+        "className": "CatalogService",
+        "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+        "methodName": "getItem"
+      },
+      "callSite": "catalogService.getItem(itemId)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.domain.Item#getProduct:159",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+      "to": "method:org.mybatis.jpetstore.domain.Item#getProduct",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+        "kind": "method",
+        "className": "CatalogActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+        "methodName": "viewItem",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.domain.Item#getProduct",
+        "kind": "method",
+        "className": "Item",
+        "classFqn": "org.mybatis.jpetstore.domain.Item",
+        "methodName": "getProduct"
+      },
+      "callSite": "item.getProduct()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+      "to": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+        "kind": "method",
+        "className": "CatalogService",
+        "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+        "methodName": "getItem",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "kind": "method",
+        "className": "ItemMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "methodName": "getItem"
+      },
+      "callSite": "itemMapper.getItem(itemId)"
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:inventory:88",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+      "to": "table:inventory",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "kind": "method",
+        "className": "ItemMapper",
+        "methodName": "getItem"
+      },
+      "toNode": {
+        "id": "table:inventory",
+        "kind": "table",
+        "name": "inventory"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:item:89",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+      "to": "table:item",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "kind": "method",
+        "className": "ItemMapper",
+        "methodName": "getItem"
+      },
+      "toNode": {
+        "id": "table:item",
+        "kind": "table",
+        "name": "item"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:product:90",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+      "to": "table:product",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "kind": "method",
+        "className": "ItemMapper",
+        "methodName": "getItem"
+      },
+      "toNode": {
+        "id": "table:product",
+        "kind": "table",
+        "name": "product"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.domain.Item#getProduct:159"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.domain.Item#getProduct:159",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+          "to": "method:org.mybatis.jpetstore.domain.Item#getProduct",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+            "kind": "method",
+            "className": "CatalogActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+            "methodName": "viewItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Item#getProduct",
+            "kind": "method",
+            "className": "Item",
+            "classFqn": "org.mybatis.jpetstore.domain.Item",
+            "methodName": "getProduct"
+          },
+          "callSite": "item.getProduct()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+        "method:org.mybatis.jpetstore.domain.Item#getProduct"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+        "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+        "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:inventory:88"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+          "to": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+            "kind": "method",
+            "className": "CatalogActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+            "methodName": "viewItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getItem"
+          },
+          "callSite": "catalogService.getItem(itemId)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+          "to": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+            "kind": "method",
+            "className": "ItemMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+            "methodName": "getItem"
+          },
+          "callSite": "itemMapper.getItem(itemId)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:inventory:88",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+          "to": "table:inventory",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+            "kind": "method",
+            "className": "ItemMapper",
+            "methodName": "getItem"
+          },
+          "toNode": {
+            "id": "table:inventory",
+            "kind": "table",
+            "name": "inventory"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+        "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+        "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "table:inventory"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+        "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+        "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:item:89"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+          "to": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+            "kind": "method",
+            "className": "CatalogActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+            "methodName": "viewItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getItem"
+          },
+          "callSite": "catalogService.getItem(itemId)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+          "to": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+            "kind": "method",
+            "className": "ItemMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+            "methodName": "getItem"
+          },
+          "callSite": "itemMapper.getItem(itemId)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:item:89",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+          "to": "table:item",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+            "kind": "method",
+            "className": "ItemMapper",
+            "methodName": "getItem"
+          },
+          "toNode": {
+            "id": "table:item",
+            "kind": "table",
+            "name": "item"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+        "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+        "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "table:item"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+        "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+        "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:product:90"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem->method:org.mybatis.jpetstore.service.CatalogService#getItem:158",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+          "to": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+            "kind": "method",
+            "className": "CatalogActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+            "methodName": "viewItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getItem"
+          },
+          "callSite": "catalogService.getItem(itemId)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getItem->method:org.mybatis.jpetstore.mapper.ItemMapper#getItem:87",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+          "to": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+            "kind": "method",
+            "className": "CatalogService",
+            "classFqn": "org.mybatis.jpetstore.service.CatalogService",
+            "methodName": "getItem",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+            "kind": "method",
+            "className": "ItemMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+            "methodName": "getItem"
+          },
+          "callSite": "itemMapper.getItem(itemId)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#getItem->table:product:90",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+          "to": "table:product",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+            "kind": "method",
+            "className": "ItemMapper",
+            "methodName": "getItem"
+          },
+          "toNode": {
+            "id": "table:product",
+            "kind": "table",
+            "name": "product"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+        "method:org.mybatis.jpetstore.service.CatalogService#getItem",
+        "method:org.mybatis.jpetstore.mapper.ItemMapper#getItem",
+        "table:product"
+      ]
+    }
+  ]
+}

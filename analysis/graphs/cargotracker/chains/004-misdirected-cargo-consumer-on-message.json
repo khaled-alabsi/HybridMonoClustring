@@ -1,0 +1,128 @@
+{
+  "id": "chain:cargotracker:4",
+  "fileName": "004-misdirected-cargo-consumer-on-message.json",
+  "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+  "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+    "benchmark": "cargotracker",
+    "framework": "jakarta-jaxrs-jsf-batch-jms",
+    "kind": "action_point",
+    "className": "MisdirectedCargoConsumer",
+    "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+    "methodName": "onMessage",
+    "methodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+    "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/MisdirectedCargoConsumer.java",
+    "line": 23,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+      "kind": "method",
+      "className": "MisdirectedCargoConsumer",
+      "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+      "methodName": "onMessage",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/MisdirectedCargoConsumer.java",
+      "line": 23
+    },
+    {
+      "id": "unresolved:Logger#log",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "log"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage->unresolved:Logger#log:287",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+        "kind": "method",
+        "className": "MisdirectedCargoConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/MisdirectedCargoConsumer.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(\n          Level.INFO, \"Cargo with tracking ID {0} misdirected.\", message.getBody(String.class)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage->unresolved:Logger#log:288",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+      "to": "unresolved:Logger#log",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+        "kind": "method",
+        "className": "MisdirectedCargoConsumer",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+        "methodName": "onMessage",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/MisdirectedCargoConsumer.java",
+        "line": 23
+      },
+      "toNode": {
+        "id": "unresolved:Logger#log",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "log"
+      },
+      "callSite": "logger.log(Level.WARNING, \"Error processing message.\", ex)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage->unresolved:Logger#log:287"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage->unresolved:Logger#log:287",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+          "to": "unresolved:Logger#log",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+            "kind": "method",
+            "className": "MisdirectedCargoConsumer",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer",
+            "methodName": "onMessage",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/messaging/jms/MisdirectedCargoConsumer.java",
+            "line": 23
+          },
+          "toNode": {
+            "id": "unresolved:Logger#log",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "log"
+          },
+          "callSite": "logger.log(\n          Level.INFO, \"Cargo with tracking ID {0} misdirected.\", message.getBody(String.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.infrastructure.messaging.jms.MisdirectedCargoConsumer#onMessage",
+        "unresolved:Logger#log"
+      ]
+    }
+  ]
+}

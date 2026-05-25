@@ -1,0 +1,410 @@
+{
+  "id": "chain:jpetstore-6:9",
+  "fileName": "009-cart-action-bean-remove-item-from-cart.json",
+  "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+  "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+    "benchmark": "jpetstore-6",
+    "framework": "Stripes",
+    "kind": "action_point",
+    "className": "CartActionBean",
+    "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+    "methodName": "removeItemFromCart",
+    "methodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+    "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+    "line": 93,
+    "annotations": [],
+    "routeHint": "/actions/Cart.action?removeItemFromCart",
+    "detectionSource": "tree-sitter/regex-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+      "kind": "method",
+      "className": "Cart",
+      "classFqn": "org.mybatis.jpetstore.domain.Cart",
+      "methodName": "removeItemById",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+      "line": 87
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+      "kind": "method",
+      "className": "CartItem",
+      "classFqn": "org.mybatis.jpetstore.domain.CartItem",
+      "methodName": "getItem"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+      "kind": "method",
+      "className": "CartActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+      "methodName": "removeItemFromCart",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+      "line": 93
+    },
+    {
+      "id": "unresolved:List<CartItem>#remove",
+      "kind": "unknown_framework_target",
+      "className": "List",
+      "methodName": "remove"
+    },
+    {
+      "id": "unresolved:Map<String, CartItem>#remove",
+      "kind": "unknown_framework_target",
+      "className": "Map",
+      "methodName": "remove"
+    },
+    {
+      "id": "unresolved:String#trim",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "trim"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:147",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+      "to": "unresolved:String#trim",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "removeItemFromCart",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 93
+      },
+      "toNode": {
+        "id": "unresolved:String#trim",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "trim"
+      },
+      "callSite": "workingItemId.trim()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+      "to": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "removeItemFromCart",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 93
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "kind": "method",
+        "className": "Cart",
+        "classFqn": "org.mybatis.jpetstore.domain.Cart",
+        "methodName": "removeItemById"
+      },
+      "callSite": "cart.removeItemById(workingItemId)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:11",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+      "to": "unresolved:Map<String, CartItem>#remove",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "kind": "method",
+        "className": "Cart",
+        "classFqn": "org.mybatis.jpetstore.domain.Cart",
+        "methodName": "removeItemById",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:Map<String, CartItem>#remove",
+        "kind": "unknown_framework_target",
+        "className": "Map",
+        "methodName": "remove"
+      },
+      "callSite": "itemMap.remove(itemId)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:12",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+      "to": "unresolved:List<CartItem>#remove",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "kind": "method",
+        "className": "Cart",
+        "classFqn": "org.mybatis.jpetstore.domain.Cart",
+        "methodName": "removeItemById",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:List<CartItem>#remove",
+        "kind": "unknown_framework_target",
+        "className": "List",
+        "methodName": "remove"
+      },
+      "callSite": "itemList.remove(cartItem)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:13",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+      "to": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "kind": "method",
+        "className": "Cart",
+        "classFqn": "org.mybatis.jpetstore.domain.Cart",
+        "methodName": "removeItemById",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+        "kind": "method",
+        "className": "CartItem",
+        "classFqn": "org.mybatis.jpetstore.domain.CartItem",
+        "methodName": "getItem"
+      },
+      "callSite": "cartItem.getItem()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:147"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:147",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+          "to": "unresolved:String#trim",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "removeItemFromCart",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 93
+          },
+          "toNode": {
+            "id": "unresolved:String#trim",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "trim"
+          },
+          "callSite": "workingItemId.trim()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+        "unresolved:String#trim"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:11"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+          "to": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "removeItemFromCart",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 93
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+            "kind": "method",
+            "className": "Cart",
+            "classFqn": "org.mybatis.jpetstore.domain.Cart",
+            "methodName": "removeItemById"
+          },
+          "callSite": "cart.removeItemById(workingItemId)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:11",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+          "to": "unresolved:Map<String, CartItem>#remove",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+            "kind": "method",
+            "className": "Cart",
+            "classFqn": "org.mybatis.jpetstore.domain.Cart",
+            "methodName": "removeItemById",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "unresolved:Map<String, CartItem>#remove",
+            "kind": "unknown_framework_target",
+            "className": "Map",
+            "methodName": "remove"
+          },
+          "callSite": "itemMap.remove(itemId)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+        "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "unresolved:Map<String, CartItem>#remove"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:12"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+          "to": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "removeItemFromCart",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 93
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+            "kind": "method",
+            "className": "Cart",
+            "classFqn": "org.mybatis.jpetstore.domain.Cart",
+            "methodName": "removeItemById"
+          },
+          "callSite": "cart.removeItemById(workingItemId)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:12",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+          "to": "unresolved:List<CartItem>#remove",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+            "kind": "method",
+            "className": "Cart",
+            "classFqn": "org.mybatis.jpetstore.domain.Cart",
+            "methodName": "removeItemById",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "unresolved:List<CartItem>#remove",
+            "kind": "unknown_framework_target",
+            "className": "List",
+            "methodName": "remove"
+          },
+          "callSite": "itemList.remove(cartItem)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+        "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "unresolved:List<CartItem>#remove"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:13"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+          "to": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "removeItemFromCart",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 93
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+            "kind": "method",
+            "className": "Cart",
+            "classFqn": "org.mybatis.jpetstore.domain.Cart",
+            "methodName": "removeItemById"
+          },
+          "callSite": "cart.removeItemById(workingItemId)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:13",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+          "to": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+            "kind": "method",
+            "className": "Cart",
+            "classFqn": "org.mybatis.jpetstore.domain.Cart",
+            "methodName": "removeItemById",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+            "kind": "method",
+            "className": "CartItem",
+            "classFqn": "org.mybatis.jpetstore.domain.CartItem",
+            "methodName": "getItem"
+          },
+          "callSite": "cartItem.getItem()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+        "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
+        "method:org.mybatis.jpetstore.domain.CartItem#getItem"
+      ]
+    }
+  ]
+}

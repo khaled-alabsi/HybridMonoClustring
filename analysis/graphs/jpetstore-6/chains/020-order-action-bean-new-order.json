@@ -1,0 +1,1577 @@
+{
+  "id": "chain:jpetstore-6:20",
+  "fileName": "020-order-action-bean-new-order.json",
+  "actionPointId": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+  "rootMethodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+  "reachedNodeCount": 16,
+  "reachedDataSources": [
+    "table:inventory",
+    "table:lineitem",
+    "table:orders",
+    "table:orderstatus",
+    "table:sequence"
+  ],
+  "actionPoint": {
+    "id": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+    "benchmark": "jpetstore-6",
+    "framework": "Stripes",
+    "kind": "action_point",
+    "className": "OrderActionBean",
+    "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+    "methodName": "newOrder",
+    "methodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+    "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+    "line": 141,
+    "annotations": [],
+    "routeHint": "/actions/Order.action?newOrder",
+    "detectionSource": "tree-sitter/regex-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.mybatis.jpetstore.domain.Sequence#getNextId",
+      "kind": "method",
+      "className": "Sequence",
+      "classFqn": "org.mybatis.jpetstore.domain.Sequence",
+      "methodName": "getNextId"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+      "kind": "method",
+      "className": "ItemMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+      "methodName": "updateInventoryQuantity"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+      "kind": "method",
+      "className": "LineItemMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.LineItemMapper",
+      "methodName": "insertLineItem"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+      "kind": "method",
+      "className": "OrderMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
+      "methodName": "insertOrder"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+      "kind": "method",
+      "className": "OrderMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
+      "methodName": "insertOrderStatus"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+      "kind": "method",
+      "className": "SequenceMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.SequenceMapper",
+      "methodName": "getSequence"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+      "kind": "method",
+      "className": "SequenceMapper",
+      "classFqn": "org.mybatis.jpetstore.mapper.SequenceMapper",
+      "methodName": "updateSequence"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+      "kind": "method",
+      "className": "OrderService",
+      "classFqn": "org.mybatis.jpetstore.service.OrderService",
+      "methodName": "getNextId",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+      "line": 120
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "kind": "method",
+      "className": "OrderService",
+      "classFqn": "org.mybatis.jpetstore.service.OrderService",
+      "methodName": "insertOrder",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+      "line": 58
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#clear",
+      "kind": "method",
+      "className": "CartActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+      "methodName": "clear"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed",
+      "kind": "method",
+      "className": "OrderActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+      "methodName": "isConfirmed",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "kind": "method",
+      "className": "OrderActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+      "methodName": "newOrder",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+      "line": 141
+    },
+    {
+      "id": "unresolved:HttpSession#getAttribute",
+      "kind": "unknown_framework_target",
+      "className": "HttpSession",
+      "methodName": "getAttribute"
+    },
+    {
+      "id": "unresolved:Map<String, Object>#put",
+      "kind": "unknown_framework_target",
+      "className": "Map",
+      "methodName": "put"
+    },
+    {
+      "id": "unresolved:return#getLineItems",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "getLineItems"
+    },
+    {
+      "id": "unresolved:return#setOrderId",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setOrderId"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "kind": "method",
+        "className": "OrderActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+        "methodName": "newOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+        "line": 141
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder"
+      },
+      "callSite": "orderService.insertOrder(order)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->unresolved:HttpSession#getAttribute:173",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "to": "unresolved:HttpSession#getAttribute",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "kind": "method",
+        "className": "OrderActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+        "methodName": "newOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+        "line": 141
+      },
+      "toNode": {
+        "id": "unresolved:HttpSession#getAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpSession",
+        "methodName": "getAttribute"
+      },
+      "callSite": "session.getAttribute(\"/actions/Cart.action\")"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.web.actions.CartActionBean#clear:174",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "to": "method:org.mybatis.jpetstore.web.actions.CartActionBean#clear",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "kind": "method",
+        "className": "OrderActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+        "methodName": "newOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+        "line": 141
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#clear",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "clear"
+      },
+      "callSite": "cartBean.clear()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed:175",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "to": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "kind": "method",
+        "className": "OrderActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+        "methodName": "newOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+        "line": 141
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed",
+        "kind": "method",
+        "className": "OrderActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+        "methodName": "isConfirmed",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java"
+      },
+      "callSite": "isConfirmed("
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:return#setOrderId:93",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "unresolved:return#setOrderId",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:return#setOrderId",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setOrderId"
+      },
+      "callSite": "order.setOrderId(getNextId(\"ordernum\")"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:return#getLineItems:94",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "unresolved:return#getLineItems",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:return#getLineItems",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "getLineItems"
+      },
+      "callSite": "order.getLineItems()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:Map<String, Object>#put:95",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "unresolved:Map<String, Object>#put",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:Map<String, Object>#put",
+        "kind": "unknown_framework_target",
+        "className": "Map",
+        "methodName": "put"
+      },
+      "callSite": "param.put(\"itemId\", itemId)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:Map<String, Object>#put:96",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "unresolved:Map<String, Object>#put",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "unresolved:Map<String, Object>#put",
+        "kind": "unknown_framework_target",
+        "className": "Map",
+        "methodName": "put"
+      },
+      "callSite": "param.put(\"increment\", increment)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity:97",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+        "kind": "method",
+        "className": "ItemMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "methodName": "updateInventoryQuantity"
+      },
+      "callSite": "itemMapper.updateInventoryQuantity(param)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder:99",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+        "kind": "method",
+        "className": "OrderMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
+        "methodName": "insertOrder"
+      },
+      "callSite": "orderMapper.insertOrder(order)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus:101",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+        "kind": "method",
+        "className": "OrderMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
+        "methodName": "insertOrderStatus"
+      },
+      "callSite": "orderMapper.insertOrderStatus(order)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem:103",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+        "kind": "method",
+        "className": "LineItemMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.LineItemMapper",
+        "methodName": "insertLineItem"
+      },
+      "callSite": "lineItemMapper.insertLineItem(lineItem)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+      "to": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "insertOrder",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 58
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "getNextId",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 120
+      },
+      "callSite": "getNextId("
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity->table:inventory:98",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "update",
+      "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+      "to": "table:inventory",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+        "kind": "method",
+        "className": "ItemMapper",
+        "methodName": "updateInventoryQuantity"
+      },
+      "toNode": {
+        "id": "table:inventory",
+        "kind": "table",
+        "name": "inventory"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder->table:orders:100",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "insert",
+      "from": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+      "to": "table:orders",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+        "kind": "method",
+        "className": "OrderMapper",
+        "methodName": "insertOrder"
+      },
+      "toNode": {
+        "id": "table:orders",
+        "kind": "table",
+        "name": "orders"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus->table:orderstatus:102",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "insert",
+      "from": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+      "to": "table:orderstatus",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+        "kind": "method",
+        "className": "OrderMapper",
+        "methodName": "insertOrderStatus"
+      },
+      "toNode": {
+        "id": "table:orderstatus",
+        "kind": "table",
+        "name": "orderstatus"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem->table:lineitem:104",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "insert",
+      "from": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+      "to": "table:lineitem",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+        "kind": "method",
+        "className": "LineItemMapper",
+        "methodName": "insertLineItem"
+      },
+      "toNode": {
+        "id": "table:lineitem",
+        "kind": "table",
+        "name": "lineitem"
+      }
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence:116",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+      "to": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "getNextId",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 120
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+        "kind": "method",
+        "className": "SequenceMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.SequenceMapper",
+        "methodName": "getSequence"
+      },
+      "callSite": "sequenceMapper.getSequence(new Sequence(name, -1)"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.domain.Sequence#getNextId:118",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+      "to": "method:org.mybatis.jpetstore.domain.Sequence#getNextId",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "getNextId",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 120
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.domain.Sequence#getNextId",
+        "kind": "method",
+        "className": "Sequence",
+        "classFqn": "org.mybatis.jpetstore.domain.Sequence",
+        "methodName": "getNextId"
+      },
+      "callSite": "sequence.getNextId()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence:119",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+      "to": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "kind": "method",
+        "className": "OrderService",
+        "classFqn": "org.mybatis.jpetstore.service.OrderService",
+        "methodName": "getNextId",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+        "line": 120
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+        "kind": "method",
+        "className": "SequenceMapper",
+        "classFqn": "org.mybatis.jpetstore.mapper.SequenceMapper",
+        "methodName": "updateSequence"
+      },
+      "callSite": "sequenceMapper.updateSequence(parameterObject)"
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence->table:sequence:117",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "select",
+      "from": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+      "to": "table:sequence",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+        "kind": "method",
+        "className": "SequenceMapper",
+        "methodName": "getSequence"
+      },
+      "toNode": {
+        "id": "table:sequence",
+        "kind": "table",
+        "name": "sequence"
+      }
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence->table:sequence:120",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "operation": "update",
+      "from": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+      "to": "table:sequence",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+        "kind": "method",
+        "className": "SequenceMapper",
+        "methodName": "updateSequence"
+      },
+      "toNode": {
+        "id": "table:sequence",
+        "kind": "table",
+        "name": "sequence"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->unresolved:HttpSession#getAttribute:173"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->unresolved:HttpSession#getAttribute:173",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "unresolved:HttpSession#getAttribute",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "unresolved:HttpSession#getAttribute",
+            "kind": "unknown_framework_target",
+            "className": "HttpSession",
+            "methodName": "getAttribute"
+          },
+          "callSite": "session.getAttribute(\"/actions/Cart.action\")"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "unresolved:HttpSession#getAttribute"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.web.actions.CartActionBean#clear:174"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.web.actions.CartActionBean#clear:174",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.web.actions.CartActionBean#clear",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#clear",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "clear"
+          },
+          "callSite": "cartBean.clear()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#clear"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed:175"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed:175",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "isConfirmed",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java"
+          },
+          "callSite": "isConfirmed("
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#isConfirmed"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:return#setOrderId:93"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:return#setOrderId:93",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "unresolved:return#setOrderId",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "unresolved:return#setOrderId",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setOrderId"
+          },
+          "callSite": "order.setOrderId(getNextId(\"ordernum\")"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "unresolved:return#setOrderId"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:return#getLineItems:94"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:return#getLineItems:94",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "unresolved:return#getLineItems",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "unresolved:return#getLineItems",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "getLineItems"
+          },
+          "callSite": "order.getLineItems()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "unresolved:return#getLineItems"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:Map<String, Object>#put:95"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->unresolved:Map<String, Object>#put:95",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "unresolved:Map<String, Object>#put",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "unresolved:Map<String, Object>#put",
+            "kind": "unknown_framework_target",
+            "className": "Map",
+            "methodName": "put"
+          },
+          "callSite": "param.put(\"itemId\", itemId)"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "unresolved:Map<String, Object>#put"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity:97",
+        "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity->table:inventory:98"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity:97",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+            "kind": "method",
+            "className": "ItemMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.ItemMapper",
+            "methodName": "updateInventoryQuantity"
+          },
+          "callSite": "itemMapper.updateInventoryQuantity(param)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity->table:inventory:98",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "update",
+          "from": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+          "to": "table:inventory",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+            "kind": "method",
+            "className": "ItemMapper",
+            "methodName": "updateInventoryQuantity"
+          },
+          "toNode": {
+            "id": "table:inventory",
+            "kind": "table",
+            "name": "inventory"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity",
+        "table:inventory"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder:99",
+        "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder->table:orders:100"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder:99",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+            "kind": "method",
+            "className": "OrderMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderMapper.insertOrder(order)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder->table:orders:100",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "insert",
+          "from": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+          "to": "table:orders",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+            "kind": "method",
+            "className": "OrderMapper",
+            "methodName": "insertOrder"
+          },
+          "toNode": {
+            "id": "table:orders",
+            "kind": "table",
+            "name": "orders"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrder",
+        "table:orders"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus:101",
+        "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus->table:orderstatus:102"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus:101",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+            "kind": "method",
+            "className": "OrderMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
+            "methodName": "insertOrderStatus"
+          },
+          "callSite": "orderMapper.insertOrderStatus(order)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus->table:orderstatus:102",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "insert",
+          "from": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+          "to": "table:orderstatus",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+            "kind": "method",
+            "className": "OrderMapper",
+            "methodName": "insertOrderStatus"
+          },
+          "toNode": {
+            "id": "table:orderstatus",
+            "kind": "table",
+            "name": "orderstatus"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.mapper.OrderMapper#insertOrderStatus",
+        "table:orderstatus"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem:103",
+        "data_access:method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem->table:lineitem:104"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem:103",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+            "kind": "method",
+            "className": "LineItemMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.LineItemMapper",
+            "methodName": "insertLineItem"
+          },
+          "callSite": "lineItemMapper.insertLineItem(lineItem)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem->table:lineitem:104",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "insert",
+          "from": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+          "to": "table:lineitem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+            "kind": "method",
+            "className": "LineItemMapper",
+            "methodName": "insertLineItem"
+          },
+          "toNode": {
+            "id": "table:lineitem",
+            "kind": "table",
+            "name": "lineitem"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem",
+        "table:lineitem"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+        "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence:116",
+        "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence->table:sequence:117"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "getNextId",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 120
+          },
+          "callSite": "getNextId("
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence:116",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+          "to": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "getNextId",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 120
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+            "kind": "method",
+            "className": "SequenceMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.SequenceMapper",
+            "methodName": "getSequence"
+          },
+          "callSite": "sequenceMapper.getSequence(new Sequence(name, -1)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence->table:sequence:117",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "select",
+          "from": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+          "to": "table:sequence",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+            "kind": "method",
+            "className": "SequenceMapper",
+            "methodName": "getSequence"
+          },
+          "toNode": {
+            "id": "table:sequence",
+            "kind": "table",
+            "name": "sequence"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "method:org.mybatis.jpetstore.mapper.SequenceMapper#getSequence",
+        "table:sequence"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+        "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.domain.Sequence#getNextId:118"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "getNextId",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 120
+          },
+          "callSite": "getNextId("
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.domain.Sequence#getNextId:118",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+          "to": "method:org.mybatis.jpetstore.domain.Sequence#getNextId",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "getNextId",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 120
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.Sequence#getNextId",
+            "kind": "method",
+            "className": "Sequence",
+            "classFqn": "org.mybatis.jpetstore.domain.Sequence",
+            "methodName": "getNextId"
+          },
+          "callSite": "sequence.getNextId()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "method:org.mybatis.jpetstore.domain.Sequence#getNextId"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+        "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+        "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence:119",
+        "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence->table:sequence:120"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder->method:org.mybatis.jpetstore.service.OrderService#insertOrder:172",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "newOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 141
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder"
+          },
+          "callSite": "orderService.insertOrder(order)"
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#insertOrder->method:org.mybatis.jpetstore.service.OrderService#getNextId:105",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+          "to": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "insertOrder",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 58
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "getNextId",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 120
+          },
+          "callSite": "getNextId("
+        },
+        {
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getNextId->method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence:119",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+          "to": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+            "kind": "method",
+            "className": "OrderService",
+            "classFqn": "org.mybatis.jpetstore.service.OrderService",
+            "methodName": "getNextId",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java",
+            "line": 120
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+            "kind": "method",
+            "className": "SequenceMapper",
+            "classFqn": "org.mybatis.jpetstore.mapper.SequenceMapper",
+            "methodName": "updateSequence"
+          },
+          "callSite": "sequenceMapper.updateSequence(parameterObject)"
+        },
+        {
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence->table:sequence:120",
+          "type": "data_access",
+          "source": "mybatis-xml",
+          "operation": "update",
+          "from": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+          "to": "table:sequence",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+            "kind": "method",
+            "className": "SequenceMapper",
+            "methodName": "updateSequence"
+          },
+          "toNode": {
+            "id": "table:sequence",
+            "kind": "table",
+            "name": "sequence"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#insertOrder",
+        "method:org.mybatis.jpetstore.service.OrderService#getNextId",
+        "method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence",
+        "table:sequence"
+      ]
+    }
+  ]
+}

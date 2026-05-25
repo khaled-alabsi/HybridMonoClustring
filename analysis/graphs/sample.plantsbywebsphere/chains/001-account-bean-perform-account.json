@@ -1,0 +1,102 @@
+{
+  "id": "chain:sample.plantsbywebsphere:1",
+  "fileName": "001-account-bean-perform-account.json",
+  "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+  "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+  "reachedNodeCount": 2,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+    "benchmark": "sample.plantsbywebsphere",
+    "framework": "jsf-cdi-servlet-ejb",
+    "kind": "action_point",
+    "className": "AccountBean",
+    "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+    "methodName": "performAccount",
+    "methodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+    "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+    "line": 65,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+      "kind": "method",
+      "className": "AccountBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+      "methodName": "performAccount",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+      "line": 65
+    },
+    {
+      "id": "unresolved:return#setMessage",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setMessage"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount->unresolved:return#setMessage:349",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+      "to": "unresolved:return#setMessage",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performAccount",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "unresolved:return#setMessage",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setMessage"
+      },
+      "callSite": "loginInfo.setMessage(\"You must log in first.\")"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount->unresolved:return#setMessage:349"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount->unresolved:return#setMessage:349",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+          "to": "unresolved:return#setMessage",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performAccount",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "unresolved:return#setMessage",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setMessage"
+          },
+          "callSite": "loginInfo.setMessage(\"You must log in first.\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+        "unresolved:return#setMessage"
+      ]
+    }
+  ]
+}

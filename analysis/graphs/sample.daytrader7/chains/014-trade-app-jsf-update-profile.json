@@ -1,0 +1,1606 @@
+{
+  "id": "chain:sample.daytrader7:14",
+  "fileName": "014-trade-app-jsf-update-profile.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+  "reachedNodeCount": 13,
+  "reachedDataSources": [
+    "table:accountprofileejb"
+  ],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "TradeAppJSF",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+    "methodName": "updateProfile",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+    "line": 126,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "kind": "method",
+      "className": "TradeSLSBBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "methodName": "updateAccountProfile",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+      "line": 521
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+      "kind": "method",
+      "className": "TradeAction",
+      "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+      "methodName": "updateAccountProfile",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+      "line": 568
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+      "kind": "method",
+      "className": "TradeServices",
+      "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+      "methodName": "updateAccountProfile"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+      "kind": "method",
+      "className": "TradeAppJSF",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+      "methodName": "setResults",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+      "kind": "method",
+      "className": "TradeAppJSF",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+      "methodName": "updateProfile",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+      "line": 126
+    },
+    {
+      "id": "unresolved:EntityManager#find",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:EntityManager#merge",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "merge"
+    },
+    {
+      "id": "unresolved:return#equals",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "equals"
+    },
+    {
+      "id": "unresolved:return#setAddress",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setAddress"
+    },
+    {
+      "id": "unresolved:return#setCreditCard",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setCreditCard"
+    },
+    {
+      "id": "unresolved:return#setEmail",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setEmail"
+    },
+    {
+      "id": "unresolved:return#setFullName",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setFullName"
+    },
+    {
+      "id": "unresolved:return#setPassword",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "setPassword"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->unresolved:return#equals:1359",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+      "to": "unresolved:return#equals",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "updateProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 126
+      },
+      "toNode": {
+        "id": "unresolved:return#equals",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "equals"
+      },
+      "callSite": "password.equals(cpassword)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "updateProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 126
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "updateAccountProfile"
+      },
+      "callSite": "tAction.updateAccountProfile(accountProfileData)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults:1361",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "updateProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 126
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "setResults",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java"
+      },
+      "callSite": "setResults("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+        "line": 568
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "updateAccountProfile"
+      },
+      "callSite": "trade.updateAccountProfile(accountProfileData)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:56",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "updateAccountProfile"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java"
+      },
+      "callSite": "trade.updateAccountProfile(accountProfileData)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "updateAccountProfile"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "callSite": "trade.updateAccountProfile(accountProfileData)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1071",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "updateAccountProfile"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java"
+      },
+      "callSite": "tAction.updateAccountProfile(accountProfileData)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:1072",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+      "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "updateAccountProfile"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java"
+      },
+      "callSite": "tAction.updateAccountProfile(accountProfileData)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:EntityManager#find:566",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:EntityManager#find",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#find",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "find"
+      },
+      "callSite": "entityManager.find(AccountProfileDataBean.class, profileData.getUserID()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setAddress:567",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:return#setAddress",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:return#setAddress",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setAddress"
+      },
+      "callSite": "temp.setAddress(profileData.getAddress()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setPassword:568",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:return#setPassword",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:return#setPassword",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setPassword"
+      },
+      "callSite": "temp.setPassword(profileData.getPassword()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setFullName:569",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:return#setFullName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:return#setFullName",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setFullName"
+      },
+      "callSite": "temp.setFullName(profileData.getFullName()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setCreditCard:570",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:return#setCreditCard",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:return#setCreditCard",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setCreditCard"
+      },
+      "callSite": "temp.setCreditCard(profileData.getCreditCard()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setEmail:571",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:return#setEmail",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:return#setEmail",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "setEmail"
+      },
+      "callSite": "temp.setEmail(profileData.getEmail()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:EntityManager#merge:572",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "unresolved:EntityManager#merge",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#merge",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "merge"
+      },
+      "callSite": "entityManager.merge(temp)"
+    },
+    {
+      "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->table:accountprofileejb:573",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "find",
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "table:accountprofileejb",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "table:accountprofileejb",
+        "kind": "table",
+        "name": "accountprofileejb"
+      }
+    },
+    {
+      "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->table:accountprofileejb:574",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "temp",
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+      "to": "table:accountprofileejb",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "updateAccountProfile",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 521
+      },
+      "toNode": {
+        "id": "table:accountprofileejb",
+        "kind": "table",
+        "name": "accountprofileejb"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->unresolved:return#equals:1359"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->unresolved:return#equals:1359",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "unresolved:return#equals",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "unresolved:return#equals",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "equals"
+          },
+          "callSite": "password.equals(cpassword)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "unresolved:return#equals"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults:1361"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults:1361",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "setResults",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java"
+          },
+          "callSite": "setResults("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->table:accountprofileejb:573"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->table:accountprofileejb:573",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "find",
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "table:accountprofileejb",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "table:accountprofileejb",
+            "kind": "table",
+            "name": "accountprofileejb"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "table:accountprofileejb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->table:accountprofileejb:574"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->table:accountprofileejb:574",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "temp",
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "table:accountprofileejb",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "table:accountprofileejb",
+            "kind": "table",
+            "name": "accountprofileejb"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "table:accountprofileejb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:EntityManager#find:566"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:EntityManager#find:566",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:EntityManager#find",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#find",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "find"
+          },
+          "callSite": "entityManager.find(AccountProfileDataBean.class, profileData.getUserID()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:EntityManager#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setAddress:567"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setAddress:567",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:return#setAddress",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:return#setAddress",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setAddress"
+          },
+          "callSite": "temp.setAddress(profileData.getAddress()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:return#setAddress"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setPassword:568"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setPassword:568",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:return#setPassword",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:return#setPassword",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setPassword"
+          },
+          "callSite": "temp.setPassword(profileData.getPassword()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:return#setPassword"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setFullName:569"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setFullName:569",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:return#setFullName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:return#setFullName",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setFullName"
+          },
+          "callSite": "temp.setFullName(profileData.getFullName()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:return#setFullName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setCreditCard:570"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setCreditCard:570",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:return#setCreditCard",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:return#setCreditCard",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setCreditCard"
+          },
+          "callSite": "temp.setCreditCard(profileData.getCreditCard()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:return#setCreditCard"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setEmail:571"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:return#setEmail:571",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:return#setEmail",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:return#setEmail",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "setEmail"
+          },
+          "callSite": "temp.setEmail(profileData.getEmail()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:return#setEmail"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:EntityManager#merge:572"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile->method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile:1360",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "updateProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 126
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "tAction.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile:55",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 568
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile:57",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "updateAccountProfile"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "callSite": "trade.updateAccountProfile(accountProfileData)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile->unresolved:EntityManager#merge:572",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+          "to": "unresolved:EntityManager#merge",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "updateAccountProfile",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 521
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#merge",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "merge"
+          },
+          "callSite": "entityManager.merge(temp)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#updateAccountProfile",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#updateAccountProfile",
+        "unresolved:EntityManager#merge"
+      ]
+    }
+  ]
+}

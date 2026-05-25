@@ -1,0 +1,171 @@
+{
+  "id": "chain:acmeair:3",
+  "fileName": "003-acme-air-configuration-get-runtime-info.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+  "reachedNodeCount": 3,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "getRuntimeInfo",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 97,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "getRuntimeInfo",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 97
+    },
+    {
+      "id": "unresolved:Logger#fine",
+      "kind": "unknown_framework_target",
+      "className": "Logger",
+      "methodName": "fine"
+    },
+    {
+      "id": "unresolved:return#add",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "add"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo->unresolved:Logger#fine:995",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+      "to": "unresolved:Logger#fine",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "getRuntimeInfo",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 97
+      },
+      "toNode": {
+        "id": "unresolved:Logger#fine",
+        "kind": "unknown_framework_target",
+        "className": "Logger",
+        "methodName": "fine"
+      },
+      "callSite": "logger.fine(\"Getting Runtime info\")"
+    },
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo->unresolved:return#add:996",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+      "to": "unresolved:return#add",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "getRuntimeInfo",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 97
+      },
+      "toNode": {
+        "id": "unresolved:return#add",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "add"
+      },
+      "callSite": "list.add(data)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo->unresolved:Logger#fine:995"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo->unresolved:Logger#fine:995",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+          "to": "unresolved:Logger#fine",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "getRuntimeInfo",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 97
+          },
+          "toNode": {
+            "id": "unresolved:Logger#fine",
+            "kind": "unknown_framework_target",
+            "className": "Logger",
+            "methodName": "fine"
+          },
+          "callSite": "logger.fine(\"Getting Runtime info\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+        "unresolved:Logger#fine"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo->unresolved:return#add:996"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo->unresolved:return#add:996",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+          "to": "unresolved:return#add",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "getRuntimeInfo",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 97
+          },
+          "toNode": {
+            "id": "unresolved:return#add",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "add"
+          },
+          "callSite": "list.add(data)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#getRuntimeInfo",
+        "unresolved:return#add"
+      ]
+    }
+  ]
+}

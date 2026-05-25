@@ -1,0 +1,446 @@
+{
+  "id": "chain:sample.daytrader7:19",
+  "fileName": "019-explicit-gc-do-post.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "ExplicitGC",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+    "methodName": "doPost",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+    "line": 51,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+      "kind": "method",
+      "className": "ExplicitGC",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+      "line": 65
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+      "kind": "method",
+      "className": "ExplicitGC",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+      "methodName": "doPost",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+      "line": 51
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getOutputStream",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getOutputStream"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#sendError",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "sendError"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:ServletOutputStream#println",
+      "kind": "unknown_framework_target",
+      "className": "ServletOutputStream",
+      "methodName": "println"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+        "kind": "method",
+        "className": "ExplicitGC",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+        "line": 51
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "kind": "method",
+        "className": "ExplicitGC",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+        "line": 65
+      },
+      "callSite": "doGet("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#setContentType:1384",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "kind": "method",
+        "className": "ExplicitGC",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "res.setContentType(\"text/html\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#getOutputStream:1385",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+      "to": "unresolved:HttpServletResponse#getOutputStream",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "kind": "method",
+        "className": "ExplicitGC",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getOutputStream",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getOutputStream"
+      },
+      "callSite": "res.getOutputStream()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:ServletOutputStream#println:1386",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+      "to": "unresolved:ServletOutputStream#println",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "kind": "method",
+        "className": "ExplicitGC",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "unresolved:ServletOutputStream#println",
+        "kind": "unknown_framework_target",
+        "className": "ServletOutputStream",
+        "methodName": "println"
+      },
+      "callSite": "out.println(\"<html><head><title>ExplicitGC</title></head>\"\r\n                    + \"<body><HR><BR><FONT size=\\\"+2\\\" color=\\\"#000066\\\">Explicit Garbage Collection<BR></FONT><FONT size=\\\"+1\\\" color=\\\"#000066\\\">Init time : \"\r\n                    + initTime\r\n                    + \"<BR><BR></FONT>  <B>Hit Count: \"\r\n                    + hitCount\r\n                    + \"<br>\"\r\n                    + \"<table border=\\\"0\\\"><tr>\"\r\n                    + \"<td align=\\\"right\\\">Total Memory</td><td align=\\\"right\\\">\"\r\n                    + totalMemory\r\n                    + \"</td>\"\r\n                    + \"</tr></table>\"\r\n                    + \"<table width=\\\"350\\\"><tr><td colspan=\\\"2\\\" align=\\\"left\\\">\"\r\n                    + \"Statistics before GC</td></tr>\"\r\n                    + \"<tr><td align=\\\"right\\\">\"\r\n                    + \"Max Memory</td><td align=\\\"right\\\">\"\r\n                    + maxMemoryBeforeGC\r\n                    + \"</td></tr>\"\r\n                    + \"<tr><td align=\\\"right\\\">\"\r\n                    + \"Free Memory</td><td align=\\\"right\\\">\"\r\n                    + freeMemoryBeforeGC\r\n                    + \"</td></tr>\"\r\n                    + \"<tr><td align=\\\"right\\\">\"\r\n                    + \"Used Memory</td><td align=\\\"right\\\">\"\r\n                    + (totalMemory - freeMemoryBeforeGC)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#sendError:1387",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+      "to": "unresolved:HttpServletResponse#sendError",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "kind": "method",
+        "className": "ExplicitGC",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+        "line": 65
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#sendError",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "sendError"
+      },
+      "callSite": "res.sendError(500, e.toString()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#setContentType:1384"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#setContentType:1384",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "res.setContentType(\"text/html\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#getOutputStream:1385"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#getOutputStream:1385",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "to": "unresolved:HttpServletResponse#getOutputStream",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getOutputStream",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getOutputStream"
+          },
+          "callSite": "res.getOutputStream()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "unresolved:HttpServletResponse#getOutputStream"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:ServletOutputStream#println:1386"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:ServletOutputStream#println:1386",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "to": "unresolved:ServletOutputStream#println",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "unresolved:ServletOutputStream#println",
+            "kind": "unknown_framework_target",
+            "className": "ServletOutputStream",
+            "methodName": "println"
+          },
+          "callSite": "out.println(\"<html><head><title>ExplicitGC</title></head>\"\r\n                    + \"<body><HR><BR><FONT size=\\\"+2\\\" color=\\\"#000066\\\">Explicit Garbage Collection<BR></FONT><FONT size=\\\"+1\\\" color=\\\"#000066\\\">Init time : \"\r\n                    + initTime\r\n                    + \"<BR><BR></FONT>  <B>Hit Count: \"\r\n                    + hitCount\r\n                    + \"<br>\"\r\n                    + \"<table border=\\\"0\\\"><tr>\"\r\n                    + \"<td align=\\\"right\\\">Total Memory</td><td align=\\\"right\\\">\"\r\n                    + totalMemory\r\n                    + \"</td>\"\r\n                    + \"</tr></table>\"\r\n                    + \"<table width=\\\"350\\\"><tr><td colspan=\\\"2\\\" align=\\\"left\\\">\"\r\n                    + \"Statistics before GC</td></tr>\"\r\n                    + \"<tr><td align=\\\"right\\\">\"\r\n                    + \"Max Memory</td><td align=\\\"right\\\">\"\r\n                    + maxMemoryBeforeGC\r\n                    + \"</td></tr>\"\r\n                    + \"<tr><td align=\\\"right\\\">\"\r\n                    + \"Free Memory</td><td align=\\\"right\\\">\"\r\n                    + freeMemoryBeforeGC\r\n                    + \"</td></tr>\"\r\n                    + \"<tr><td align=\\\"right\\\">\"\r\n                    + \"Used Memory</td><td align=\\\"right\\\">\"\r\n                    + (totalMemory - freeMemoryBeforeGC)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "unresolved:ServletOutputStream#println"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#sendError:1387"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet:1383",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 51
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet->unresolved:HttpServletResponse#sendError:1387",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+          "to": "unresolved:HttpServletResponse#sendError",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+            "kind": "method",
+            "className": "ExplicitGC",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/ExplicitGC.java",
+            "line": 65
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#sendError",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "sendError"
+          },
+          "callSite": "res.sendError(500, e.toString()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
+        "unresolved:HttpServletResponse#sendError"
+      ]
+    }
+  ]
+}

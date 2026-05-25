@@ -1,0 +1,293 @@
+{
+  "benchmark": "sample.plantsbywebsphere",
+  "dataSourceCount": 6,
+  "chainCount": 25,
+  "chains": [
+    {
+      "id": "chain:sample.plantsbywebsphere:1",
+      "file": "001-account-bean-perform-account.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccount",
+      "reachedNodeCount": 2,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:2",
+      "file": "002-account-bean-perform-account-update.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performAccountUpdate",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performAccountUpdate",
+      "reachedNodeCount": 25,
+      "reachedDataSources": [
+        "table:customer"
+      ],
+      "pathCount": 24
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:3",
+      "file": "003-account-bean-perform-checkout-final.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCheckoutFinal",
+      "reachedNodeCount": 4,
+      "reachedDataSources": [],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:4",
+      "file": "004-account-bean-perform-complete-checkout.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performCompleteCheckout",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performCompleteCheckout",
+      "reachedNodeCount": 65,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:customer",
+        "table:inventory",
+        "table:order1"
+      ],
+      "pathCount": 65
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:5",
+      "file": "005-account-bean-perform-login.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLogin",
+      "reachedNodeCount": 2,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:6",
+      "file": "006-account-bean-perform-login-complete.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performLoginComplete",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performLoginComplete",
+      "reachedNodeCount": 18,
+      "reachedDataSources": [
+        "table:customer"
+      ],
+      "pathCount": 14
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:7",
+      "file": "007-account-bean-perform-order-info.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performOrderInfo",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [],
+      "pathCount": 9
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:8",
+      "file": "008-account-bean-perform-register.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:9",
+      "file": "009-account-servlet-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountServlet#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountServlet#doGet",
+      "reachedNodeCount": 34,
+      "reachedDataSources": [
+        "table:customer"
+      ],
+      "pathCount": 30
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:10",
+      "file": "010-account-servlet-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountServlet#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountServlet#doPost",
+      "reachedNodeCount": 34,
+      "reachedDataSources": [
+        "table:customer"
+      ],
+      "pathCount": 30
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:11",
+      "file": "011-admin-servlet-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AdminServlet#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AdminServlet#doGet",
+      "reachedNodeCount": 87,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:customer",
+        "table:inventory",
+        "table:order1",
+        "table:orderitem",
+        "table:supplier"
+      ],
+      "pathCount": 83
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:12",
+      "file": "012-admin-servlet-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AdminServlet#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AdminServlet#doPost",
+      "reachedNodeCount": 87,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:customer",
+        "table:inventory",
+        "table:order1",
+        "table:orderitem",
+        "table:supplier"
+      ],
+      "pathCount": 83
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:13",
+      "file": "013-admin-servlet-perform-task.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AdminServlet#performTask",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AdminServlet#performTask",
+      "reachedNodeCount": 86,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:customer",
+        "table:inventory",
+        "table:order1",
+        "table:orderitem",
+        "table:supplier"
+      ],
+      "pathCount": 83
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:14",
+      "file": "014-admin-servlet-perform-supplier-config.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AdminServlet#performSupplierConfig",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AdminServlet#performSupplierConfig",
+      "reachedNodeCount": 27,
+      "reachedDataSources": [
+        "table:supplier"
+      ],
+      "pathCount": 22
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:15",
+      "file": "015-admin-servlet-perform-populate.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AdminServlet#performPopulate",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AdminServlet#performPopulate",
+      "reachedNodeCount": 31,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:customer",
+        "table:inventory",
+        "table:order1",
+        "table:orderitem",
+        "table:supplier"
+      ],
+      "pathCount": 36
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:16",
+      "file": "016-admin-servlet-perform-back-order.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AdminServlet#performBackOrder",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AdminServlet#performBackOrder",
+      "reachedNodeCount": 47,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:inventory"
+      ],
+      "pathCount": 42
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:17",
+      "file": "017-help-bean-perform-help.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.HelpBean#performHelp",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.HelpBean#performHelp",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:18",
+      "file": "018-help-bean-perform-dbreset.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.HelpBean#performDBReset",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.HelpBean#performDBReset",
+      "reachedNodeCount": 30,
+      "reachedDataSources": [
+        "table:backorder",
+        "table:customer",
+        "table:inventory",
+        "table:order1",
+        "table:orderitem",
+        "table:supplier"
+      ],
+      "pathCount": 35
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:19",
+      "file": "019-image-servlet-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ImageServlet#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doGet",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "table:inventory"
+      ],
+      "pathCount": 7
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:20",
+      "file": "020-image-servlet-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "table:inventory"
+      ],
+      "pathCount": 7
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:21",
+      "file": "021-shopping-bean-perform-add-to-cart.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ShoppingBean#performAddToCart",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performAddToCart",
+      "reachedNodeCount": 8,
+      "reachedDataSources": [],
+      "pathCount": 5
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:22",
+      "file": "022-shopping-bean-perform-cart.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ShoppingBean#performCart",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performCart",
+      "reachedNodeCount": 4,
+      "reachedDataSources": [],
+      "pathCount": 2
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:23",
+      "file": "023-shopping-bean-perform-product-detail.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+      "reachedNodeCount": 5,
+      "reachedDataSources": [
+        "table:inventory"
+      ],
+      "pathCount": 4
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:24",
+      "file": "024-shopping-bean-perform-recalculate.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ShoppingBean#performRecalculate",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performRecalculate",
+      "reachedNodeCount": 6,
+      "reachedDataSources": [],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:sample.plantsbywebsphere:25",
+      "file": "025-shopping-bean-perform-shopping.json",
+      "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ShoppingBean#performShopping",
+      "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performShopping",
+      "reachedNodeCount": 9,
+      "reachedDataSources": [
+        "table:inventory"
+      ],
+      "pathCount": 8
+    }
+  ]
+}

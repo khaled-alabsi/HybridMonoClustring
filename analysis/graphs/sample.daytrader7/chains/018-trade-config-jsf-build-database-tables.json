@@ -1,0 +1,305 @@
+{
+  "id": "chain:sample.daytrader7:18",
+  "fileName": "018-trade-config-jsf-build-database-tables.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+  "reachedNodeCount": 4,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "TradeConfigJSF",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+    "methodName": "buildDatabaseTables",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+    "line": 214,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+      "kind": "method",
+      "className": "TradeDirect",
+      "classFqn": "com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+      "methodName": "checkDBProductName"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "kind": "method",
+      "className": "TradeConfigJSF",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+      "methodName": "buildDatabaseTables",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+      "line": 214
+    },
+    {
+      "id": "unresolved:ExternalContext#getResourceAsStream",
+      "kind": "unknown_framework_target",
+      "className": "ExternalContext",
+      "methodName": "getResourceAsStream"
+    },
+    {
+      "id": "unresolved:String#startsWith",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "startsWith"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName:1377",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "to": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "buildDatabaseTables",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 214
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+        "kind": "method",
+        "className": "TradeDirect",
+        "classFqn": "com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+        "methodName": "checkDBProductName"
+      },
+      "callSite": "tradeDirect.checkDBProductName()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:String#startsWith:1378",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "buildDatabaseTables",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 214
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"DB2/\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:String#startsWith:1379",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "buildDatabaseTables",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 214
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"DB2 UDB for AS/400\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:String#startsWith:1380",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "buildDatabaseTables",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 214
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"Apache Derby\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:String#startsWith:1381",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "to": "unresolved:String#startsWith",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "buildDatabaseTables",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 214
+      },
+      "toNode": {
+        "id": "unresolved:String#startsWith",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "startsWith"
+      },
+      "callSite": "dbProductName.startsWith(\"Oracle\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:ExternalContext#getResourceAsStream:1382",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "to": "unresolved:ExternalContext#getResourceAsStream",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "kind": "method",
+        "className": "TradeConfigJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+        "methodName": "buildDatabaseTables",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+        "line": 214
+      },
+      "toNode": {
+        "id": "unresolved:ExternalContext#getResourceAsStream",
+        "kind": "unknown_framework_target",
+        "className": "ExternalContext",
+        "methodName": "getResourceAsStream"
+      },
+      "callSite": "facesExternalContext.getResourceAsStream(ddlFile)"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName:1377"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName:1377",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+          "to": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+            "kind": "method",
+            "className": "TradeConfigJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+            "methodName": "buildDatabaseTables",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+            "line": 214
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName",
+            "kind": "method",
+            "className": "TradeDirect",
+            "classFqn": "com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+            "methodName": "checkDBProductName"
+          },
+          "callSite": "tradeDirect.checkDBProductName()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "method:com.ibm.websphere.samples.daytrader.direct.TradeDirect#checkDBProductName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:String#startsWith:1378"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:String#startsWith:1378",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+          "to": "unresolved:String#startsWith",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+            "kind": "method",
+            "className": "TradeConfigJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+            "methodName": "buildDatabaseTables",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+            "line": 214
+          },
+          "toNode": {
+            "id": "unresolved:String#startsWith",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "startsWith"
+          },
+          "callSite": "dbProductName.startsWith(\"DB2/\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "unresolved:String#startsWith"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:ExternalContext#getResourceAsStream:1382"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables->unresolved:ExternalContext#getResourceAsStream:1382",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+          "to": "unresolved:ExternalContext#getResourceAsStream",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+            "kind": "method",
+            "className": "TradeConfigJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
+            "methodName": "buildDatabaseTables",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeConfigJSF.java",
+            "line": 214
+          },
+          "toNode": {
+            "id": "unresolved:ExternalContext#getResourceAsStream",
+            "kind": "unknown_framework_target",
+            "className": "ExternalContext",
+            "methodName": "getResourceAsStream"
+          },
+          "callSite": "facesExternalContext.getResourceAsStream(ddlFile)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+        "unresolved:ExternalContext#getResourceAsStream"
+      ]
+    }
+  ]
+}

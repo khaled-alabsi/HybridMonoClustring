@@ -1,0 +1,243 @@
+{
+  "benchmark": "jpetstore-6",
+  "dataSourceCount": 13,
+  "chainCount": 21,
+  "chains": [
+    {
+      "id": "chain:jpetstore-6:1",
+      "file": "001-account-action-bean-new-account-form.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#newAccountForm",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#newAccountForm",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:2",
+      "file": "002-account-action-bean-new-account.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#newAccount",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#newAccount",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "table:account",
+        "table:bannerdata",
+        "table:product",
+        "table:profile",
+        "table:signon"
+      ],
+      "pathCount": 12
+    },
+    {
+      "id": "chain:jpetstore-6:3",
+      "file": "003-account-action-bean-edit-account-form.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccountForm",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccountForm",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:4",
+      "file": "004-account-action-bean-edit-account.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#editAccount",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "table:account",
+        "table:bannerdata",
+        "table:product",
+        "table:profile",
+        "table:signon"
+      ],
+      "pathCount": 12
+    },
+    {
+      "id": "chain:jpetstore-6:5",
+      "file": "005-account-action-bean-signon-form.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#signonForm",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signonForm",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:6",
+      "file": "006-account-action-bean-signon.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#signon",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signon",
+      "reachedNodeCount": 13,
+      "reachedDataSources": [
+        "table:account",
+        "table:bannerdata",
+        "table:product",
+        "table:profile",
+        "table:signon"
+      ],
+      "pathCount": 14
+    },
+    {
+      "id": "chain:jpetstore-6:7",
+      "file": "007-account-action-bean-signoff.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#signoff",
+      "reachedNodeCount": 2,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:8",
+      "file": "008-cart-action-bean-add-item-to-cart.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#addItemToCart",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#addItemToCart",
+      "reachedNodeCount": 18,
+      "reachedDataSources": [
+        "table:inventory",
+        "table:item",
+        "table:product"
+      ],
+      "pathCount": 11
+    },
+    {
+      "id": "chain:jpetstore-6:9",
+      "file": "009-cart-action-bean-remove-item-from-cart.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
+      "reachedNodeCount": 6,
+      "reachedDataSources": [],
+      "pathCount": 4
+    },
+    {
+      "id": "chain:jpetstore-6:10",
+      "file": "010-cart-action-bean-update-cart-quantities.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "reachedNodeCount": 6,
+      "reachedDataSources": [],
+      "pathCount": 5
+    },
+    {
+      "id": "chain:jpetstore-6:11",
+      "file": "011-cart-action-bean-view-cart.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#viewCart",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#viewCart",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:12",
+      "file": "012-cart-action-bean-check-out.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#checkOut",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#checkOut",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:13",
+      "file": "013-catalog-action-bean-view-main.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewMain",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewMain",
+      "reachedNodeCount": 1,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:jpetstore-6:14",
+      "file": "014-catalog-action-bean-view-category.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory",
+      "reachedNodeCount": 5,
+      "reachedDataSources": [
+        "table:category",
+        "table:product"
+      ],
+      "pathCount": 2
+    },
+    {
+      "id": "chain:jpetstore-6:15",
+      "file": "015-catalog-action-bean-view-product.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewProduct",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewProduct",
+      "reachedNodeCount": 5,
+      "reachedDataSources": [
+        "table:item",
+        "table:product"
+      ],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:jpetstore-6:16",
+      "file": "016-catalog-action-bean-view-item.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewItem",
+      "reachedNodeCount": 4,
+      "reachedDataSources": [
+        "table:inventory",
+        "table:item",
+        "table:product"
+      ],
+      "pathCount": 4
+    },
+    {
+      "id": "chain:jpetstore-6:17",
+      "file": "017-catalog-action-bean-search-products.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.CatalogActionBean#searchProducts",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#searchProducts",
+      "reachedNodeCount": 5,
+      "reachedDataSources": [],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:jpetstore-6:18",
+      "file": "018-order-action-bean-list-orders.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+      "reachedNodeCount": 4,
+      "reachedDataSources": [
+        "table:orders",
+        "table:orderstatus"
+      ],
+      "pathCount": 3
+    },
+    {
+      "id": "chain:jpetstore-6:19",
+      "file": "019-order-action-bean-new-order-form.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrderForm",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrderForm",
+      "reachedNodeCount": 26,
+      "reachedDataSources": [],
+      "pathCount": 20
+    },
+    {
+      "id": "chain:jpetstore-6:20",
+      "file": "020-order-action-bean-new-order.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#newOrder",
+      "reachedNodeCount": 16,
+      "reachedDataSources": [
+        "table:inventory",
+        "table:lineitem",
+        "table:orders",
+        "table:orderstatus",
+        "table:sequence"
+      ],
+      "pathCount": 13
+    },
+    {
+      "id": "chain:jpetstore-6:21",
+      "file": "021-order-action-bean-view-order.json",
+      "actionPointId": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#viewOrder",
+      "rootMethodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#viewOrder",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [
+        "table:inventory",
+        "table:item",
+        "table:orders",
+        "table:orderstatus",
+        "table:product"
+      ],
+      "pathCount": 11
+    }
+  ]
+}

@@ -1,0 +1,1032 @@
+{
+  "id": "chain:sample.daytrader7:15",
+  "fileName": "015-trade-app-jsf-logout.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+  "reachedNodeCount": 11,
+  "reachedDataSources": [
+    "table:accountprofileejb"
+  ],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "TradeAppJSF",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+    "methodName": "logout",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+    "line": 158,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "kind": "method",
+      "className": "TradeSLSBBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "methodName": "logout",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+      "line": 560
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+      "kind": "method",
+      "className": "AccountProfileDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+      "methodName": "getAccount"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+      "kind": "method",
+      "className": "TradeAction",
+      "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+      "methodName": "logout",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+      "line": 603
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+      "kind": "method",
+      "className": "TradeServices",
+      "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+      "methodName": "logout"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "kind": "method",
+      "className": "TradeAppJSF",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+      "methodName": "logout",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+      "line": 158
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+      "kind": "method",
+      "className": "TradeAppJSF",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+      "methodName": "setResults",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java"
+    },
+    {
+      "id": "unresolved:EntityManager#find",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:ExternalContext#getRequest",
+      "kind": "unknown_framework_target",
+      "className": "ExternalContext",
+      "methodName": "getRequest"
+    },
+    {
+      "id": "unresolved:ExternalContext#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ExternalContext",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:HttpSession#invalidate",
+      "kind": "unknown_framework_target",
+      "className": "HttpSession",
+      "methodName": "invalidate"
+    },
+    {
+      "id": "unresolved:return#logout",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "logout"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 158
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "logout"
+      },
+      "callSite": "tAction.logout(userID)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:ExternalContext#getSession:1363",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "to": "unresolved:ExternalContext#getSession",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 158
+      },
+      "toNode": {
+        "id": "unresolved:ExternalContext#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ExternalContext",
+        "methodName": "getSession"
+      },
+      "callSite": "facesExternalContext.getSession(false)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:HttpSession#invalidate:1364",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "to": "unresolved:HttpSession#invalidate",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 158
+      },
+      "toNode": {
+        "id": "unresolved:HttpSession#invalidate",
+        "kind": "unknown_framework_target",
+        "className": "HttpSession",
+        "methodName": "invalidate"
+      },
+      "callSite": "session.invalidate()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:ExternalContext#getRequest:1365",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "to": "unresolved:ExternalContext#getRequest",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 158
+      },
+      "toNode": {
+        "id": "unresolved:ExternalContext#getRequest",
+        "kind": "unknown_framework_target",
+        "className": "ExternalContext",
+        "methodName": "getRequest"
+      },
+      "callSite": "facesExternalContext.getRequest()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults:1366",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+        "line": 158
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+        "kind": "method",
+        "className": "TradeAppJSF",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+        "methodName": "setResults",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java"
+      },
+      "callSite": "setResults("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+        "line": 603
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "logout"
+      },
+      "callSite": "trade.logout(userID)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:62",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "logout"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java"
+      },
+      "callSite": "trade.logout(userID)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "logout"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 560
+      },
+      "callSite": "trade.logout(userID)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1109",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "logout"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "kind": "method",
+        "className": "TradeAction",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java"
+      },
+      "callSite": "tAction.logout(userID)"
+    },
+    {
+      "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:1110",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "kind": "method",
+        "className": "TradeServices",
+        "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+        "methodName": "logout"
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java"
+      },
+      "callSite": "tAction.logout(userID)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->unresolved:EntityManager#find:579",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "to": "unresolved:EntityManager#find",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 560
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#find",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "find"
+      },
+      "callSite": "entityManager.find(AccountProfileDataBean.class, userID)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount:580",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "to": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 560
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+        "kind": "method",
+        "className": "AccountProfileDataBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+        "methodName": "getAccount"
+      },
+      "callSite": "profile.getAccount()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->unresolved:return#logout:581",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "to": "unresolved:return#logout",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 560
+      },
+      "toNode": {
+        "id": "unresolved:return#logout",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "logout"
+      },
+      "callSite": "account.logout()"
+    },
+    {
+      "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->table:accountprofileejb:582",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "find",
+      "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+      "to": "table:accountprofileejb",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "kind": "method",
+        "className": "TradeSLSBBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+        "methodName": "logout",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+        "line": 560
+      },
+      "toNode": {
+        "id": "table:accountprofileejb",
+        "kind": "table",
+        "name": "accountprofileejb"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:ExternalContext#getSession:1363"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:ExternalContext#getSession:1363",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "unresolved:ExternalContext#getSession",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "unresolved:ExternalContext#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ExternalContext",
+            "methodName": "getSession"
+          },
+          "callSite": "facesExternalContext.getSession(false)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "unresolved:ExternalContext#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:HttpSession#invalidate:1364"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:HttpSession#invalidate:1364",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "unresolved:HttpSession#invalidate",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "unresolved:HttpSession#invalidate",
+            "kind": "unknown_framework_target",
+            "className": "HttpSession",
+            "methodName": "invalidate"
+          },
+          "callSite": "session.invalidate()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "unresolved:HttpSession#invalidate"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:ExternalContext#getRequest:1365"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->unresolved:ExternalContext#getRequest:1365",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "unresolved:ExternalContext#getRequest",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "unresolved:ExternalContext#getRequest",
+            "kind": "unknown_framework_target",
+            "className": "ExternalContext",
+            "methodName": "getRequest"
+          },
+          "callSite": "facesExternalContext.getRequest()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "unresolved:ExternalContext#getRequest"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults:1366"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults:1366",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "setResults",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java"
+          },
+          "callSite": "setResults("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#setResults"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+        "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->table:accountprofileejb:582"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout"
+          },
+          "callSite": "tAction.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 603
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "data_access:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->table:accountprofileejb:582",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "find",
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "to": "table:accountprofileejb",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "toNode": {
+            "id": "table:accountprofileejb",
+            "kind": "table",
+            "name": "accountprofileejb"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "table:accountprofileejb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->unresolved:EntityManager#find:579"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout"
+          },
+          "callSite": "tAction.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 603
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->unresolved:EntityManager#find:579",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "to": "unresolved:EntityManager#find",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#find",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "find"
+          },
+          "callSite": "entityManager.find(AccountProfileDataBean.class, userID)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "unresolved:EntityManager#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount:580"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout"
+          },
+          "callSite": "tAction.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 603
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount:580",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount",
+            "kind": "method",
+            "className": "AccountProfileDataBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+            "methodName": "getAccount"
+          },
+          "callSite": "profile.getAccount()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "method:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean#getAccount"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+        "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+        "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+        "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->unresolved:return#logout:581"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout->method:com.ibm.websphere.samples.daytrader.TradeAction#logout:1362",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+            "kind": "method",
+            "className": "TradeAppJSF",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/jsf/TradeAppJSF.java",
+            "line": 158
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout"
+          },
+          "callSite": "tAction.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.TradeAction#logout->method:com.ibm.websphere.samples.daytrader.TradeServices#logout:61",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+            "kind": "method",
+            "className": "TradeAction",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeAction",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/TradeAction.java",
+            "line": 603
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "polymorphic_call:method:com.ibm.websphere.samples.daytrader.TradeServices#logout->method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout:63",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+          "to": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+            "kind": "method",
+            "className": "TradeServices",
+            "classFqn": "com.ibm.websphere.samples.daytrader.TradeServices",
+            "methodName": "logout"
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "callSite": "trade.logout(userID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout->unresolved:return#logout:581",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+          "to": "unresolved:return#logout",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+            "kind": "method",
+            "className": "TradeSLSBBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+            "methodName": "logout",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-ejb/src/main/java/com/ibm/websphere/samples/daytrader/ejb3/TradeSLSBBean.java",
+            "line": 560
+          },
+          "toNode": {
+            "id": "unresolved:return#logout",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "logout"
+          },
+          "callSite": "account.logout()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeAction#logout",
+        "method:com.ibm.websphere.samples.daytrader.TradeServices#logout",
+        "method:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean#logout",
+        "unresolved:return#logout"
+      ]
+    }
+  ]
+}

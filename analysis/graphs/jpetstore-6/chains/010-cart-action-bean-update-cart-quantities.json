@@ -1,0 +1,368 @@
+{
+  "id": "chain:jpetstore-6:10",
+  "fileName": "010-cart-action-bean-update-cart-quantities.json",
+  "actionPointId": "action:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+  "rootMethodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+    "benchmark": "jpetstore-6",
+    "framework": "Stripes",
+    "kind": "action_point",
+    "className": "CartActionBean",
+    "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+    "methodName": "updateCartQuantities",
+    "methodId": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+    "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+    "line": 115,
+    "annotations": [],
+    "routeHint": "/actions/Cart.action?updateCartQuantities",
+    "detectionSource": "tree-sitter/regex-static"
+  },
+  "nodes": [
+    {
+      "id": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+      "kind": "method",
+      "className": "CartItem",
+      "classFqn": "org.mybatis.jpetstore.domain.CartItem",
+      "methodName": "getItem"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart",
+      "kind": "method",
+      "className": "CartActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+      "methodName": "getCart",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "kind": "method",
+      "className": "CartActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+      "methodName": "updateCartQuantities",
+      "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+      "line": 115
+    },
+    {
+      "id": "unresolved:Iterator<CartItem>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<CartItem>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:Iterator<CartItem>#remove",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "remove"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#hasNext:149",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "to": "unresolved:Iterator<CartItem>#hasNext",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "updateCartQuantities",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 115
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<CartItem>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "cartItems.hasNext()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#next:150",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "to": "unresolved:Iterator<CartItem>#next",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "updateCartQuantities",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 115
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<CartItem>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "cartItems.next()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->method:org.mybatis.jpetstore.domain.CartItem#getItem:151",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "to": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "updateCartQuantities",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 115
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+        "kind": "method",
+        "className": "CartItem",
+        "classFqn": "org.mybatis.jpetstore.domain.CartItem",
+        "methodName": "getItem"
+      },
+      "callSite": "cartItem.getItem()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#remove:152",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "to": "unresolved:Iterator<CartItem>#remove",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "updateCartQuantities",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 115
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<CartItem>#remove",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "remove"
+      },
+      "callSite": "cartItems.remove()"
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart:153",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+      "to": "method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "updateCartQuantities",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+        "line": 115
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart",
+        "kind": "method",
+        "className": "CartActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "methodName": "getCart",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java"
+      },
+      "callSite": "getCart("
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#hasNext:149"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#hasNext:149",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+          "to": "unresolved:Iterator<CartItem>#hasNext",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "updateCartQuantities",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 115
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<CartItem>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "cartItems.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "unresolved:Iterator<CartItem>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#next:150"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#next:150",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+          "to": "unresolved:Iterator<CartItem>#next",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "updateCartQuantities",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 115
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<CartItem>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "cartItems.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "unresolved:Iterator<CartItem>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->method:org.mybatis.jpetstore.domain.CartItem#getItem:151"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->method:org.mybatis.jpetstore.domain.CartItem#getItem:151",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+          "to": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "updateCartQuantities",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 115
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.domain.CartItem#getItem",
+            "kind": "method",
+            "className": "CartItem",
+            "classFqn": "org.mybatis.jpetstore.domain.CartItem",
+            "methodName": "getItem"
+          },
+          "callSite": "cartItem.getItem()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "method:org.mybatis.jpetstore.domain.CartItem#getItem"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#remove:152"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->unresolved:Iterator<CartItem>#remove:152",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+          "to": "unresolved:Iterator<CartItem>#remove",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "updateCartQuantities",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 115
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<CartItem>#remove",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "remove"
+          },
+          "callSite": "cartItems.remove()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "unresolved:Iterator<CartItem>#remove"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart:153"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities->method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart:153",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+          "to": "method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "updateCartQuantities",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java",
+            "line": 115
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart",
+            "kind": "method",
+            "className": "CartActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.CartActionBean",
+            "methodName": "getCart",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java"
+          },
+          "callSite": "getCart("
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#updateCartQuantities",
+        "method:org.mybatis.jpetstore.web.actions.CartActionBean#getCart"
+      ]
+    }
+  ]
+}

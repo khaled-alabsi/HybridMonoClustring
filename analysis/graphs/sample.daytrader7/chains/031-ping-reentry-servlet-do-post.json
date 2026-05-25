@@ -1,0 +1,1703 @@
+{
+  "id": "chain:sample.daytrader7:31",
+  "fileName": "031-ping-reentry-servlet-do-post.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+  "reachedNodeCount": 19,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "PingReentryServlet",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+    "methodName": "doPost",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+    "line": 35,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "kind": "method",
+      "className": "PingReentryServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+      "line": 50
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+      "kind": "method",
+      "className": "PingReentryServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+      "methodName": "doPost",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+      "line": 35
+    },
+    {
+      "id": "unresolved:BufferedReader#close",
+      "kind": "unknown_framework_target",
+      "className": "BufferedReader",
+      "methodName": "close"
+    },
+    {
+      "id": "unresolved:BufferedReader#readLine",
+      "kind": "unknown_framework_target",
+      "className": "BufferedReader",
+      "methodName": "readLine"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getContextPath",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getContextPath"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getParameter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getParameter"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getRequestURI",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getRequestURI"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getServerName",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getServerName"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getServerPort",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getServerPort"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getOutputStream",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getOutputStream"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getWriter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getWriter"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#sendError",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "sendError"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:HttpURLConnection#getInputStream",
+      "kind": "unknown_framework_target",
+      "className": "HttpURLConnection",
+      "methodName": "getInputStream"
+    },
+    {
+      "id": "unresolved:HttpURLConnection#setRequestMethod",
+      "kind": "unknown_framework_target",
+      "className": "HttpURLConnection",
+      "methodName": "setRequestMethod"
+    },
+    {
+      "id": "unresolved:HttpURLConnection#setRequestProperty",
+      "kind": "unknown_framework_target",
+      "className": "HttpURLConnection",
+      "methodName": "setRequestProperty"
+    },
+    {
+      "id": "unresolved:ServletOutputStream#println",
+      "kind": "unknown_framework_target",
+      "className": "ServletOutputStream",
+      "methodName": "println"
+    },
+    {
+      "id": "unresolved:StringBuffer#append",
+      "kind": "unknown_framework_target",
+      "className": "StringBuffer",
+      "methodName": "append"
+    },
+    {
+      "id": "unresolved:URL#openConnection",
+      "kind": "unknown_framework_target",
+      "className": "URL",
+      "methodName": "openConnection"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 35
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "callSite": "doGet("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#setContentType:1456",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "res.setContentType(\"text/html\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#getOutputStream:1457",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletResponse#getOutputStream",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getOutputStream",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getOutputStream"
+      },
+      "callSite": "res.getOutputStream()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#getWriter:1458",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletResponse#getWriter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getWriter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getWriter"
+      },
+      "callSite": "res.getWriter()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getParameter:1459",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"numReentries\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getParameter:1460",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"sleep\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:ServletOutputStream#println:1461",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:ServletOutputStream#println",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:ServletOutputStream#println",
+        "kind": "unknown_framework_target",
+        "className": "ServletOutputStream",
+        "methodName": "println"
+      },
+      "callSite": "out.println(numReentriesLeft)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getServerName:1462",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletRequest#getServerName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getServerName",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getServerName"
+      },
+      "callSite": "req.getServerName()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getServerPort:1463",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletRequest#getServerPort",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getServerPort",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getServerPort"
+      },
+      "callSite": "req.getServerPort()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getContextPath:1464",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletRequest#getContextPath",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getContextPath",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getContextPath"
+      },
+      "callSite": "req.getContextPath()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getRequestURI:1465",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletRequest#getRequestURI",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getRequestURI",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getRequestURI"
+      },
+      "callSite": "req.getRequestURI()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:URL#openConnection:1466",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:URL#openConnection",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:URL#openConnection",
+        "kind": "unknown_framework_target",
+        "className": "URL",
+        "methodName": "openConnection"
+      },
+      "callSite": "obj.openConnection()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#setRequestMethod:1467",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpURLConnection#setRequestMethod",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpURLConnection#setRequestMethod",
+        "kind": "unknown_framework_target",
+        "className": "HttpURLConnection",
+        "methodName": "setRequestMethod"
+      },
+      "callSite": "con.setRequestMethod(\"GET\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#setRequestProperty:1468",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpURLConnection#setRequestProperty",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpURLConnection#setRequestProperty",
+        "kind": "unknown_framework_target",
+        "className": "HttpURLConnection",
+        "methodName": "setRequestProperty"
+      },
+      "callSite": "con.setRequestProperty(\"User-Agent\", \"Mozilla/5.0\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#getInputStream:1469",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpURLConnection#getInputStream",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpURLConnection#getInputStream",
+        "kind": "unknown_framework_target",
+        "className": "HttpURLConnection",
+        "methodName": "getInputStream"
+      },
+      "callSite": "con.getInputStream()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:BufferedReader#readLine:1470",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:BufferedReader#readLine",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:BufferedReader#readLine",
+        "kind": "unknown_framework_target",
+        "className": "BufferedReader",
+        "methodName": "readLine"
+      },
+      "callSite": "in.readLine()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:StringBuffer#append:1471",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:StringBuffer#append",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:StringBuffer#append",
+        "kind": "unknown_framework_target",
+        "className": "StringBuffer",
+        "methodName": "append"
+      },
+      "callSite": "response.append(inputLine)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:BufferedReader#close:1472",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:BufferedReader#close",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:BufferedReader#close",
+        "kind": "unknown_framework_target",
+        "className": "BufferedReader",
+        "methodName": "close"
+      },
+      "callSite": "in.close()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:ServletOutputStream#println:1473",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:ServletOutputStream#println",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:ServletOutputStream#println",
+        "kind": "unknown_framework_target",
+        "className": "ServletOutputStream",
+        "methodName": "println"
+      },
+      "callSite": "out.println(saveNumReentriesLeft + response.toString()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#sendError:1474",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+      "to": "unresolved:HttpServletResponse#sendError",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "kind": "method",
+        "className": "PingReentryServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#sendError",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "sendError"
+      },
+      "callSite": "res.sendError(500, e.toString()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#setContentType:1456"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#setContentType:1456",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "res.setContentType(\"text/html\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#getOutputStream:1457"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#getOutputStream:1457",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletResponse#getOutputStream",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getOutputStream",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getOutputStream"
+          },
+          "callSite": "res.getOutputStream()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletResponse#getOutputStream"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#getWriter:1458"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#getWriter:1458",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletResponse#getWriter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getWriter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getWriter"
+          },
+          "callSite": "res.getWriter()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletResponse#getWriter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getParameter:1459"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getParameter:1459",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletRequest#getParameter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getParameter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getParameter"
+          },
+          "callSite": "req.getParameter(\"numReentries\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletRequest#getParameter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:ServletOutputStream#println:1461"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:ServletOutputStream#println:1461",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:ServletOutputStream#println",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:ServletOutputStream#println",
+            "kind": "unknown_framework_target",
+            "className": "ServletOutputStream",
+            "methodName": "println"
+          },
+          "callSite": "out.println(numReentriesLeft)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:ServletOutputStream#println"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getServerName:1462"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getServerName:1462",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletRequest#getServerName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getServerName",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getServerName"
+          },
+          "callSite": "req.getServerName()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletRequest#getServerName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getServerPort:1463"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getServerPort:1463",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletRequest#getServerPort",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getServerPort",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getServerPort"
+          },
+          "callSite": "req.getServerPort()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletRequest#getServerPort"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getContextPath:1464"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getContextPath:1464",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletRequest#getContextPath",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getContextPath",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getContextPath"
+          },
+          "callSite": "req.getContextPath()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletRequest#getContextPath"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getRequestURI:1465"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletRequest#getRequestURI:1465",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletRequest#getRequestURI",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getRequestURI",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getRequestURI"
+          },
+          "callSite": "req.getRequestURI()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletRequest#getRequestURI"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:URL#openConnection:1466"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:URL#openConnection:1466",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:URL#openConnection",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:URL#openConnection",
+            "kind": "unknown_framework_target",
+            "className": "URL",
+            "methodName": "openConnection"
+          },
+          "callSite": "obj.openConnection()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:URL#openConnection"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#setRequestMethod:1467"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#setRequestMethod:1467",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpURLConnection#setRequestMethod",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpURLConnection#setRequestMethod",
+            "kind": "unknown_framework_target",
+            "className": "HttpURLConnection",
+            "methodName": "setRequestMethod"
+          },
+          "callSite": "con.setRequestMethod(\"GET\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpURLConnection#setRequestMethod"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#setRequestProperty:1468"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#setRequestProperty:1468",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpURLConnection#setRequestProperty",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpURLConnection#setRequestProperty",
+            "kind": "unknown_framework_target",
+            "className": "HttpURLConnection",
+            "methodName": "setRequestProperty"
+          },
+          "callSite": "con.setRequestProperty(\"User-Agent\", \"Mozilla/5.0\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpURLConnection#setRequestProperty"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#getInputStream:1469"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpURLConnection#getInputStream:1469",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpURLConnection#getInputStream",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpURLConnection#getInputStream",
+            "kind": "unknown_framework_target",
+            "className": "HttpURLConnection",
+            "methodName": "getInputStream"
+          },
+          "callSite": "con.getInputStream()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpURLConnection#getInputStream"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:BufferedReader#readLine:1470"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:BufferedReader#readLine:1470",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:BufferedReader#readLine",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:BufferedReader#readLine",
+            "kind": "unknown_framework_target",
+            "className": "BufferedReader",
+            "methodName": "readLine"
+          },
+          "callSite": "in.readLine()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:BufferedReader#readLine"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:StringBuffer#append:1471"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:StringBuffer#append:1471",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:StringBuffer#append",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:StringBuffer#append",
+            "kind": "unknown_framework_target",
+            "className": "StringBuffer",
+            "methodName": "append"
+          },
+          "callSite": "response.append(inputLine)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:StringBuffer#append"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:BufferedReader#close:1472"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:BufferedReader#close:1472",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:BufferedReader#close",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:BufferedReader#close",
+            "kind": "unknown_framework_target",
+            "className": "BufferedReader",
+            "methodName": "close"
+          },
+          "callSite": "in.close()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:BufferedReader#close"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#sendError:1474"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet:1455",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 35
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet->unresolved:HttpServletResponse#sendError:1474",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+          "to": "unresolved:HttpServletResponse#sendError",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+            "kind": "method",
+            "className": "PingReentryServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingReentryServlet.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#sendError",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "sendError"
+          },
+          "callSite": "res.sendError(500, e.toString()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
+        "unresolved:HttpServletResponse#sendError"
+      ]
+    }
+  ]
+}

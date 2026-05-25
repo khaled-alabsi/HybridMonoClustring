@@ -1,0 +1,1907 @@
+{
+  "id": "chain:acmeair:7",
+  "fileName": "007-acme-air-configuration-count-flights.json",
+  "actionPointId": "action:com.acmeair.config.AcmeAirConfiguration#countFlights",
+  "rootMethodId": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+  "reachedNodeCount": 14,
+  "reachedDataSources": [
+    "external_endpoint:mongodb",
+    "external_endpoint:websphere-extreme-scale"
+  ],
+  "actionPoint": {
+    "id": "action:com.acmeair.config.AcmeAirConfiguration#countFlights",
+    "benchmark": "acmeair",
+    "framework": "jax-rs-gradle",
+    "kind": "action_point",
+    "className": "AcmeAirConfiguration",
+    "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+    "methodName": "countFlights",
+    "methodId": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+    "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+    "line": 178,
+    "annotations": [
+      "GET",
+      "Path",
+      "Produces"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+      "kind": "method",
+      "className": "AcmeAirConfiguration",
+      "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+      "methodName": "countFlights",
+      "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+      "line": 178
+    },
+    {
+      "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+      "kind": "method",
+      "className": "FlightServiceImpl",
+      "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+      "methodName": "countFlights",
+      "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+      "line": 56
+    },
+    {
+      "id": "method:com.acmeair.service.FlightService#countFlights",
+      "kind": "method",
+      "className": "FlightService",
+      "classFqn": "com.acmeair.service.FlightService",
+      "methodName": "countFlights"
+    },
+    {
+      "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "kind": "method",
+      "className": "FlightServiceImpl",
+      "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+      "methodName": "countFlights",
+      "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+      "line": 81
+    },
+    {
+      "id": "unresolved:Datastore#find",
+      "kind": "unknown_framework_target",
+      "className": "Datastore",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:Iterator<?>#hasNext",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "hasNext"
+    },
+    {
+      "id": "unresolved:Iterator<?>#next",
+      "kind": "unknown_framework_target",
+      "className": "Iterator",
+      "methodName": "next"
+    },
+    {
+      "id": "unresolved:MapIndex#findAll",
+      "kind": "unknown_framework_target",
+      "className": "MapIndex",
+      "methodName": "findAll"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getMap",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getMap"
+    },
+    {
+      "id": "unresolved:ObjectGrid#getSession",
+      "kind": "unknown_framework_target",
+      "className": "ObjectGrid",
+      "methodName": "getSession"
+    },
+    {
+      "id": "unresolved:ObjectMap#getIndex",
+      "kind": "unknown_framework_target",
+      "className": "ObjectMap",
+      "methodName": "getIndex"
+    },
+    {
+      "id": "unresolved:ObjectQuery#getSingleResult",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "getSingleResult"
+    },
+    {
+      "id": "unresolved:ObjectQuery#setPartition",
+      "kind": "unknown_framework_target",
+      "className": "ObjectQuery",
+      "methodName": "setPartition"
+    },
+    {
+      "id": "unresolved:Session#getMap",
+      "kind": "unknown_framework_target",
+      "className": "Session",
+      "methodName": "getMap"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+      "to": "method:com.acmeair.service.FlightService#countFlights",
+      "fromNode": {
+        "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "kind": "method",
+        "className": "AcmeAirConfiguration",
+        "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+        "line": 178
+      },
+      "toNode": {
+        "id": "method:com.acmeair.service.FlightService#countFlights",
+        "kind": "method",
+        "className": "FlightService",
+        "classFqn": "com.acmeair.service.FlightService",
+        "methodName": "countFlights"
+      },
+      "callSite": "flightService.countFlights()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.morphia.services.FlightServiceImpl#countFlights:1007",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.FlightService#countFlights",
+      "to": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+      "fromNode": {
+        "id": "method:com.acmeair.service.FlightService#countFlights",
+        "kind": "method",
+        "className": "FlightService",
+        "classFqn": "com.acmeair.service.FlightService",
+        "methodName": "countFlights"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java"
+      },
+      "callSite": "flightService.countFlights()"
+    },
+    {
+      "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+      "type": "polymorphic_call",
+      "source": "static-implementation-bridge",
+      "from": "method:com.acmeair.service.FlightService#countFlights",
+      "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "fromNode": {
+        "id": "method:com.acmeair.service.FlightService#countFlights",
+        "kind": "method",
+        "className": "FlightService",
+        "classFqn": "com.acmeair.service.FlightService",
+        "methodName": "countFlights"
+      },
+      "toNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+      },
+      "callSite": "flightService.countFlights()"
+    },
+    {
+      "id": "call:method:com.acmeair.morphia.services.FlightServiceImpl#countFlights->unresolved:Datastore#find:434",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+      "to": "unresolved:Datastore#find",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "unresolved:Datastore#find",
+        "kind": "unknown_framework_target",
+        "className": "Datastore",
+        "methodName": "find"
+      },
+      "callSite": "datastore.find(FlightImpl.class)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.morphia.services.FlightServiceImpl#countFlights->external_endpoint:mongodb:435",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "find",
+      "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+      "to": "external_endpoint:mongodb",
+      "fromNode": {
+        "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+        "line": 56
+      },
+      "toNode": {
+        "id": "external_endpoint:mongodb",
+        "kind": "external_endpoint",
+        "name": "MongoDB",
+        "technology": "mongodb",
+        "staticTypes": [
+          "Datastore",
+          "MongoClient",
+          "Morphia"
+        ]
+      },
+      "callSite": "datastore.find(FlightImpl.class)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectGrid#getSession:697",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:ObjectGrid#getSession",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getSession",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getSession"
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:698",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getSession",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getSession()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Session#getMap:699",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:Session#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:Session#getMap",
+        "kind": "unknown_framework_target",
+        "className": "Session",
+        "methodName": "getMap"
+      },
+      "callSite": "session.getMap(FLIGHT_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:700",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "session.getMap(FLIGHT_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectMap#getIndex:701",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:ObjectMap#getIndex",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:ObjectMap#getIndex",
+        "kind": "unknown_framework_target",
+        "className": "ObjectMap",
+        "methodName": "getIndex"
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:702",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getIndex",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:MapIndex#findAll:703",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:MapIndex#findAll",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:MapIndex#findAll",
+        "kind": "unknown_framework_target",
+        "className": "MapIndex",
+        "methodName": "findAll"
+      },
+      "callSite": "mapIndex.findAll()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Iterator<?>#hasNext:704",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:Iterator<?>#hasNext",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#hasNext",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "hasNext"
+      },
+      "callSite": "keyIterator.hasNext()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Iterator<?>#next:705",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:Iterator<?>#next",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:Iterator<?>#next",
+        "kind": "unknown_framework_target",
+        "className": "Iterator",
+        "methodName": "next"
+      },
+      "callSite": "keyIterator.next()"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectGrid#getMap:706",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:ObjectGrid#getMap",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:ObjectGrid#getMap",
+        "kind": "unknown_framework_target",
+        "className": "ObjectGrid",
+        "methodName": "getMap"
+      },
+      "callSite": "og.getMap(FLIGHT_MAP_NAME)"
+    },
+    {
+      "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:707",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "operation": "getMap",
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "external_endpoint:websphere-extreme-scale",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "external_endpoint:websphere-extreme-scale",
+        "kind": "external_endpoint",
+        "name": "WebSphere eXtreme Scale",
+        "technology": "wxs",
+        "staticTypes": [
+          "ObjectGrid",
+          "ObjectMap",
+          "Session",
+          "WXSSessionManager"
+        ]
+      },
+      "callSite": "og.getMap(FLIGHT_MAP_NAME)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectQuery#setPartition:708",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:ObjectQuery#setPartition",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#setPartition",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "setPartition"
+      },
+      "callSite": "query.setPartition(i)"
+    },
+    {
+      "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectQuery#getSingleResult:709",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+      "to": "unresolved:ObjectQuery#getSingleResult",
+      "fromNode": {
+        "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "kind": "method",
+        "className": "FlightServiceImpl",
+        "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+        "methodName": "countFlights",
+        "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+        "line": 81
+      },
+      "toNode": {
+        "id": "unresolved:ObjectQuery#getSingleResult",
+        "kind": "unknown_framework_target",
+        "className": "ObjectQuery",
+        "methodName": "getSingleResult"
+      },
+      "callSite": "query.getSingleResult()"
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.morphia.services.FlightServiceImpl#countFlights:1007",
+        "data_access:method:com.acmeair.morphia.services.FlightServiceImpl#countFlights->external_endpoint:mongodb:435"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.morphia.services.FlightServiceImpl#countFlights:1007",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.morphia.services.FlightServiceImpl#countFlights->external_endpoint:mongodb:435",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "find",
+          "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+          "to": "external_endpoint:mongodb",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "external_endpoint:mongodb",
+            "kind": "external_endpoint",
+            "name": "MongoDB",
+            "technology": "mongodb",
+            "staticTypes": [
+              "Datastore",
+              "MongoClient",
+              "Morphia"
+            ]
+          },
+          "callSite": "datastore.find(FlightImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+        "external_endpoint:mongodb"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:698"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:698",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getSession",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:700"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:700",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "session.getMap(FLIGHT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:702"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:702",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getIndex",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:707"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "data_access:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->external_endpoint:websphere-extreme-scale:707",
+          "type": "data_access",
+          "source": "static-external-resource-field",
+          "operation": "getMap",
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "external_endpoint:websphere-extreme-scale",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "external_endpoint:websphere-extreme-scale",
+            "kind": "external_endpoint",
+            "name": "WebSphere eXtreme Scale",
+            "technology": "wxs",
+            "staticTypes": [
+              "ObjectGrid",
+              "ObjectMap",
+              "Session",
+              "WXSSessionManager"
+            ]
+          },
+          "callSite": "og.getMap(FLIGHT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "external_endpoint:websphere-extreme-scale"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.morphia.services.FlightServiceImpl#countFlights:1007",
+        "call:method:com.acmeair.morphia.services.FlightServiceImpl#countFlights->unresolved:Datastore#find:434"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.morphia.services.FlightServiceImpl#countFlights:1007",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.morphia.services.FlightServiceImpl#countFlights->unresolved:Datastore#find:434",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+          "to": "unresolved:Datastore#find",
+          "fromNode": {
+            "id": "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.morphia.services.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-morphia/src/main/java/com/acmeair/morphia/services/FlightServiceImpl.java",
+            "line": 56
+          },
+          "toNode": {
+            "id": "unresolved:Datastore#find",
+            "kind": "unknown_framework_target",
+            "className": "Datastore",
+            "methodName": "find"
+          },
+          "callSite": "datastore.find(FlightImpl.class)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.morphia.services.FlightServiceImpl#countFlights",
+        "unresolved:Datastore#find"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectGrid#getSession:697"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectGrid#getSession:697",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:ObjectGrid#getSession",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getSession",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getSession"
+          },
+          "callSite": "og.getSession()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:ObjectGrid#getSession"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Session#getMap:699"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Session#getMap:699",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:Session#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:Session#getMap",
+            "kind": "unknown_framework_target",
+            "className": "Session",
+            "methodName": "getMap"
+          },
+          "callSite": "session.getMap(FLIGHT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:Session#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectMap#getIndex:701"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectMap#getIndex:701",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:ObjectMap#getIndex",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:ObjectMap#getIndex",
+            "kind": "unknown_framework_target",
+            "className": "ObjectMap",
+            "methodName": "getIndex"
+          },
+          "callSite": "objectMap.getIndex(MapIndexPlugin.SYSTEM_KEY_INDEX_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:ObjectMap#getIndex"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:MapIndex#findAll:703"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:MapIndex#findAll:703",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:MapIndex#findAll",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:MapIndex#findAll",
+            "kind": "unknown_framework_target",
+            "className": "MapIndex",
+            "methodName": "findAll"
+          },
+          "callSite": "mapIndex.findAll()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:MapIndex#findAll"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Iterator<?>#hasNext:704"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Iterator<?>#hasNext:704",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:Iterator<?>#hasNext",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#hasNext",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "hasNext"
+          },
+          "callSite": "keyIterator.hasNext()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:Iterator<?>#hasNext"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Iterator<?>#next:705"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:Iterator<?>#next:705",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:Iterator<?>#next",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:Iterator<?>#next",
+            "kind": "unknown_framework_target",
+            "className": "Iterator",
+            "methodName": "next"
+          },
+          "callSite": "keyIterator.next()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:Iterator<?>#next"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectGrid#getMap:706"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectGrid#getMap:706",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:ObjectGrid#getMap",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:ObjectGrid#getMap",
+            "kind": "unknown_framework_target",
+            "className": "ObjectGrid",
+            "methodName": "getMap"
+          },
+          "callSite": "og.getMap(FLIGHT_MAP_NAME)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:ObjectGrid#getMap"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectQuery#setPartition:708"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectQuery#setPartition:708",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:ObjectQuery#setPartition",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#setPartition",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "setPartition"
+          },
+          "callSite": "query.setPartition(i)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:ObjectQuery#setPartition"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+        "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+        "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectQuery#getSingleResult:709"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.acmeair.config.AcmeAirConfiguration#countFlights->method:com.acmeair.service.FlightService#countFlights:1006",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+          "to": "method:com.acmeair.service.FlightService#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+            "kind": "method",
+            "className": "AcmeAirConfiguration",
+            "classFqn": "com.acmeair.config.AcmeAirConfiguration",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-webapp/src/main/java/com/acmeair/config/AcmeAirConfiguration.java",
+            "line": 178
+          },
+          "toNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "polymorphic_call:method:com.acmeair.service.FlightService#countFlights->method:com.acmeair.wxs.service.FlightServiceImpl#countFlights:1008",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:com.acmeair.service.FlightService#countFlights",
+          "to": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "fromNode": {
+            "id": "method:com.acmeair.service.FlightService#countFlights",
+            "kind": "method",
+            "className": "FlightService",
+            "classFqn": "com.acmeair.service.FlightService",
+            "methodName": "countFlights"
+          },
+          "toNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java"
+          },
+          "callSite": "flightService.countFlights()"
+        },
+        {
+          "id": "call:method:com.acmeair.wxs.service.FlightServiceImpl#countFlights->unresolved:ObjectQuery#getSingleResult:709",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+          "to": "unresolved:ObjectQuery#getSingleResult",
+          "fromNode": {
+            "id": "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+            "kind": "method",
+            "className": "FlightServiceImpl",
+            "classFqn": "com.acmeair.wxs.service.FlightServiceImpl",
+            "methodName": "countFlights",
+            "file": "benchmarks/acmeair/acmeair-services-wxs/src/main/java/com/acmeair/wxs/service/FlightServiceImpl.java",
+            "line": 81
+          },
+          "toNode": {
+            "id": "unresolved:ObjectQuery#getSingleResult",
+            "kind": "unknown_framework_target",
+            "className": "ObjectQuery",
+            "methodName": "getSingleResult"
+          },
+          "callSite": "query.getSingleResult()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.acmeair.config.AcmeAirConfiguration#countFlights",
+        "method:com.acmeair.service.FlightService#countFlights",
+        "method:com.acmeair.wxs.service.FlightServiceImpl#countFlights",
+        "unresolved:ObjectQuery#getSingleResult"
+      ]
+    }
+  ]
+}

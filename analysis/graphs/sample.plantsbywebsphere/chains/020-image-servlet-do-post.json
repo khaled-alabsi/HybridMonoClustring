@@ -1,0 +1,933 @@
+{
+  "id": "chain:sample.plantsbywebsphere:20",
+  "fileName": "020-image-servlet-do-post.json",
+  "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+  "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+  "reachedNodeCount": 10,
+  "reachedDataSources": [
+    "table:inventory"
+  ],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+    "benchmark": "sample.plantsbywebsphere",
+    "framework": "jsf-cdi-servlet-ejb",
+    "kind": "action_point",
+    "className": "ImageServlet",
+    "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+    "methodName": "doPost",
+    "methodId": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+    "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+    "line": 74,
+    "annotations": [],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+      "kind": "method",
+      "className": "CatalogMgr",
+      "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+      "methodName": "getInv",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+      "line": 185
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+      "kind": "method",
+      "className": "CatalogMgr",
+      "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+      "methodName": "getItemImageBytes",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+      "line": 138
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+      "kind": "method",
+      "className": "ImageServlet",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+      "methodName": "doPost",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+      "line": 74
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "kind": "method",
+      "className": "ImageServlet",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+      "methodName": "performTask",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+      "line": 87
+    },
+    {
+      "id": "unresolved:EntityManager#find",
+      "kind": "unknown_framework_target",
+      "className": "EntityManager",
+      "methodName": "find"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getParameter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getParameter"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getOutputStream",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getOutputStream"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:return#getImgbytes",
+      "kind": "unknown_framework_target",
+      "className": "return",
+      "methodName": "getImgbytes"
+    },
+    {
+      "id": "unresolved:String#equals",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "equals"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+      "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 74
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+      },
+      "callSite": "performTask("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletRequest#getParameter:563",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"action\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:String#equals:564",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "to": "unresolved:String#equals",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:String#equals",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "equals"
+      },
+      "callSite": "action.equals(\"getimage\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletRequest#getParameter:565",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "to": "unresolved:HttpServletRequest#getParameter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getParameter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getParameter"
+      },
+      "callSite": "req.getParameter(\"inventoryID\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+        "kind": "method",
+        "className": "CatalogMgr",
+        "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+        "methodName": "getItemImageBytes"
+      },
+      "callSite": "catalog.getItemImageBytes(inventoryID)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletResponse#setContentType:567",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "resp.setContentType(\"image/jpeg\")"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletResponse#getOutputStream:568",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+      "to": "unresolved:HttpServletResponse#getOutputStream",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "kind": "method",
+        "className": "ImageServlet",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+        "methodName": "performTask",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+        "line": 87
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getOutputStream",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getOutputStream"
+      },
+      "callSite": "resp.getOutputStream()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->unresolved:return#getImgbytes:42",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+      "to": "unresolved:return#getImgbytes",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+        "kind": "method",
+        "className": "CatalogMgr",
+        "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+        "methodName": "getItemImageBytes",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+        "line": 138
+      },
+      "toNode": {
+        "id": "unresolved:return#getImgbytes",
+        "kind": "unknown_framework_target",
+        "className": "return",
+        "methodName": "getImgbytes"
+      },
+      "callSite": "inv.getImgbytes()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv:43",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+      "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+        "kind": "method",
+        "className": "CatalogMgr",
+        "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+        "methodName": "getItemImageBytes",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+        "line": 138
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+        "kind": "method",
+        "className": "CatalogMgr",
+        "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+        "methodName": "getInv",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+        "line": 185
+      },
+      "callSite": "getInv("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv->unresolved:EntityManager#find:48",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+      "to": "unresolved:EntityManager#find",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+        "kind": "method",
+        "className": "CatalogMgr",
+        "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+        "methodName": "getInv",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+        "line": 185
+      },
+      "toNode": {
+        "id": "unresolved:EntityManager#find",
+        "kind": "unknown_framework_target",
+        "className": "EntityManager",
+        "methodName": "find"
+      },
+      "callSite": "em.find(Inventory.class, inventoryID)"
+    },
+    {
+      "id": "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv->table:inventory:49",
+      "type": "data_access",
+      "source": "jpa-static",
+      "operation": "find",
+      "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+      "to": "table:inventory",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+        "kind": "method",
+        "className": "CatalogMgr",
+        "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+        "methodName": "getInv",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+        "line": 185
+      },
+      "toNode": {
+        "id": "table:inventory",
+        "kind": "table",
+        "name": "inventory"
+      }
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletRequest#getParameter:563"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletRequest#getParameter:563",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "unresolved:HttpServletRequest#getParameter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getParameter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getParameter"
+          },
+          "callSite": "req.getParameter(\"action\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "unresolved:HttpServletRequest#getParameter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:String#equals:564"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:String#equals:564",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "unresolved:String#equals",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "unresolved:String#equals",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "equals"
+          },
+          "callSite": "action.equals(\"getimage\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "unresolved:String#equals"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletResponse#setContentType:567"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletResponse#setContentType:567",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "resp.setContentType(\"image/jpeg\")"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletResponse#getOutputStream:568"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->unresolved:HttpServletResponse#getOutputStream:568",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "unresolved:HttpServletResponse#getOutputStream",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getOutputStream",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getOutputStream"
+          },
+          "callSite": "resp.getOutputStream()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "unresolved:HttpServletResponse#getOutputStream"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+        "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->unresolved:return#getImgbytes:42"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getItemImageBytes"
+          },
+          "callSite": "catalog.getItemImageBytes(inventoryID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->unresolved:return#getImgbytes:42",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+          "to": "unresolved:return#getImgbytes",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getItemImageBytes",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 138
+          },
+          "toNode": {
+            "id": "unresolved:return#getImgbytes",
+            "kind": "unknown_framework_target",
+            "className": "return",
+            "methodName": "getImgbytes"
+          },
+          "callSite": "inv.getImgbytes()"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+        "unresolved:return#getImgbytes"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+        "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv:43",
+        "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv->table:inventory:49"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getItemImageBytes"
+          },
+          "callSite": "catalog.getItemImageBytes(inventoryID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv:43",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+          "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getItemImageBytes",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 138
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getInv",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 185
+          },
+          "callSite": "getInv("
+        },
+        {
+          "id": "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv->table:inventory:49",
+          "type": "data_access",
+          "source": "jpa-static",
+          "operation": "find",
+          "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+          "to": "table:inventory",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getInv",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 185
+          },
+          "toNode": {
+            "id": "table:inventory",
+            "kind": "table",
+            "name": "inventory"
+          }
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+        "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+        "table:inventory"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+        "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+        "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv:43",
+        "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv->unresolved:EntityManager#find:48"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost->method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask:562",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 74
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java"
+          },
+          "callSite": "performTask("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes:566",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+          "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+            "kind": "method",
+            "className": "ImageServlet",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ImageServlet",
+            "methodName": "performTask",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ImageServlet.java",
+            "line": 87
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getItemImageBytes"
+          },
+          "callSite": "catalog.getItemImageBytes(inventoryID)"
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv:43",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+          "to": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getItemImageBytes",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 138
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getInv",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 185
+          },
+          "callSite": "getInv("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv->unresolved:EntityManager#find:48",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+          "to": "unresolved:EntityManager#find",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+            "kind": "method",
+            "className": "CatalogMgr",
+            "classFqn": "com.ibm.websphere.samples.pbw.bean.CatalogMgr",
+            "methodName": "getInv",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
+            "line": 185
+          },
+          "toNode": {
+            "id": "unresolved:EntityManager#find",
+            "kind": "unknown_framework_target",
+            "className": "EntityManager",
+            "methodName": "find"
+          },
+          "callSite": "em.find(Inventory.class, inventoryID)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#doPost",
+        "method:com.ibm.websphere.samples.pbw.war.ImageServlet#performTask",
+        "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemImageBytes",
+        "method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getInv",
+        "unresolved:EntityManager#find"
+      ]
+    }
+  ]
+}
