@@ -1,16 +1,22 @@
 {
   "benchmark": "sample.daytrader7",
   "dataSourceCount": 6,
-  "chainCount": 90,
+  "chainCount": 98,
   "chains": [
     {
       "id": "chain:sample.daytrader7:1",
       "file": "001-dtbroker3-mdb-on-message.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB#onMessage",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB#onMessage",
-      "reachedNodeCount": 27,
-      "reachedDataSources": [],
-      "pathCount": 21
+      "reachedNodeCount": 145,
+      "reachedDataSources": [
+        "table:accountejb",
+        "table:accountprofileejb",
+        "table:holdingejb",
+        "table:orderejb",
+        "table:quoteejb"
+      ],
+      "pathCount": 117
     },
     {
       "id": "chain:sample.daytrader7:2",
@@ -23,43 +29,39 @@
     },
     {
       "id": "chain:sample.daytrader7:3",
-      "file": "003-test-servlet-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
-      "reachedNodeCount": 12,
-      "reachedDataSources": [],
-      "pathCount": 5
+      "file": "003-market-summary-singleton-update-market-summary.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton#updateMarketSummary",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton#updateMarketSummary",
+      "reachedNodeCount": 25,
+      "reachedDataSources": [
+        "table:quoteejb"
+      ],
+      "pathCount": 25
     },
     {
       "id": "chain:sample.daytrader7:4",
-      "file": "004-test-servlet-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TestServlet#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doPost",
-      "reachedNodeCount": 12,
+      "file": "004-test-servlet-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doGet",
+      "reachedNodeCount": 21,
       "reachedDataSources": [],
-      "pathCount": 5
+      "pathCount": 13
     },
     {
       "id": "chain:sample.daytrader7:5",
-      "file": "005-trade-app-servlet-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doGet",
-      "reachedNodeCount": 303,
-      "reachedDataSources": [
-        "table:accountejb",
-        "table:accountprofileejb",
-        "table:holdingejb",
-        "table:orderejb",
-        "table:quoteejb"
-      ],
-      "pathCount": 241
+      "file": "005-test-servlet-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TestServlet#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TestServlet#doPost",
+      "reachedNodeCount": 21,
+      "reachedDataSources": [],
+      "pathCount": 13
     },
     {
       "id": "chain:sample.daytrader7:6",
-      "file": "006-trade-app-servlet-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doPost",
-      "reachedNodeCount": 303,
+      "file": "006-trade-app-servlet-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doGet",
+      "reachedNodeCount": 299,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb",
@@ -67,14 +69,29 @@
         "table:orderejb",
         "table:quoteejb"
       ],
-      "pathCount": 241
+      "pathCount": 235
     },
     {
       "id": "chain:sample.daytrader7:7",
-      "file": "007-trade-config-servlet-service.json",
+      "file": "007-trade-app-servlet-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeAppServlet#doPost",
+      "reachedNodeCount": 299,
+      "reachedDataSources": [
+        "table:accountejb",
+        "table:accountprofileejb",
+        "table:holdingejb",
+        "table:orderejb",
+        "table:quoteejb"
+      ],
+      "pathCount": 235
+    },
+    {
+      "id": "chain:sample.daytrader7:8",
+      "file": "008-trade-config-servlet-service.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet#service",
-      "reachedNodeCount": 178,
+      "reachedNodeCount": 179,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb",
@@ -83,11 +100,11 @@
         "table:orderejb",
         "table:quoteejb"
       ],
-      "pathCount": 161
+      "pathCount": 162
     },
     {
-      "id": "chain:sample.daytrader7:8",
-      "file": "008-trade-scenario-servlet-do-get.json",
+      "id": "chain:sample.daytrader7:9",
+      "file": "009-trade-scenario-servlet-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet#doGet",
       "reachedNodeCount": 22,
@@ -95,8 +112,8 @@
       "pathCount": 20
     },
     {
-      "id": "chain:sample.daytrader7:9",
-      "file": "009-trade-scenario-servlet-do-post.json",
+      "id": "chain:sample.daytrader7:10",
+      "file": "010-trade-scenario-servlet-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet#doPost",
       "reachedNodeCount": 22,
@@ -104,25 +121,10 @@
       "pathCount": 20
     },
     {
-      "id": "chain:sample.daytrader7:10",
-      "file": "010-portfolio-jsf-sell.json",
+      "id": "chain:sample.daytrader7:11",
+      "file": "011-portfolio-jsf-sell.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF#sell",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF#sell",
-      "reachedNodeCount": 198,
-      "reachedDataSources": [
-        "table:accountejb",
-        "table:accountprofileejb",
-        "table:holdingejb",
-        "table:orderejb",
-        "table:quoteejb"
-      ],
-      "pathCount": 167
-    },
-    {
-      "id": "chain:sample.daytrader7:11",
-      "file": "011-quote-jsf-buy.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF#buy",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF#buy",
       "reachedNodeCount": 193,
       "reachedDataSources": [
         "table:accountejb",
@@ -135,74 +137,73 @@
     },
     {
       "id": "chain:sample.daytrader7:12",
-      "file": "012-trade-app-jsf-login.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#login",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#login",
-      "reachedNodeCount": 69,
+      "file": "012-quote-jsf-buy.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF#buy",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF#buy",
+      "reachedNodeCount": 188,
       "reachedDataSources": [
         "table:accountejb",
-        "table:accountprofileejb"
+        "table:accountprofileejb",
+        "table:holdingejb",
+        "table:orderejb",
+        "table:quoteejb"
       ],
-      "pathCount": 56
+      "pathCount": 156
     },
     {
       "id": "chain:sample.daytrader7:13",
-      "file": "013-trade-app-jsf-register.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#register",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#register",
-      "reachedNodeCount": 86,
+      "file": "013-trade-app-jsf-login.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#login",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#login",
+      "reachedNodeCount": 74,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb"
       ],
-      "pathCount": 68
+      "pathCount": 60
     },
     {
       "id": "chain:sample.daytrader7:14",
-      "file": "014-trade-app-jsf-update-profile.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
-      "reachedNodeCount": 50,
+      "file": "014-trade-app-jsf-register.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#register",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#register",
+      "reachedNodeCount": 89,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb"
       ],
-      "pathCount": 37
+      "pathCount": 70
     },
     {
       "id": "chain:sample.daytrader7:15",
-      "file": "015-trade-app-jsf-logout.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
-      "reachedNodeCount": 34,
+      "file": "015-trade-app-jsf-update-profile.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#updateProfile",
+      "reachedNodeCount": 52,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb"
       ],
-      "pathCount": 20
+      "pathCount": 39
     },
     {
       "id": "chain:sample.daytrader7:16",
-      "file": "016-trade-config-jsf-reset-trade.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
-      "reachedNodeCount": 46,
+      "file": "016-trade-app-jsf-logout.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF#logout",
+      "reachedNodeCount": 36,
       "reachedDataSources": [
         "table:accountejb",
-        "table:accountprofileejb",
-        "table:holdingejb",
-        "table:keygenejb",
-        "table:orderejb",
-        "table:quoteejb"
+        "table:accountprofileejb"
       ],
-      "pathCount": 37
+      "pathCount": 21
     },
     {
       "id": "chain:sample.daytrader7:17",
-      "file": "017-trade-config-jsf-populate-database.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#populateDatabase",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#populateDatabase",
-      "reachedNodeCount": 164,
+      "file": "017-trade-config-jsf-reset-trade.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#resetTrade",
+      "reachedNodeCount": 47,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb",
@@ -211,14 +212,14 @@
         "table:orderejb",
         "table:quoteejb"
       ],
-      "pathCount": 151
+      "pathCount": 38
     },
     {
       "id": "chain:sample.daytrader7:18",
-      "file": "018-trade-config-jsf-build-database-tables.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
-      "reachedNodeCount": 169,
+      "file": "018-trade-config-jsf-populate-database.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#populateDatabase",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#populateDatabase",
+      "reachedNodeCount": 165,
       "reachedDataSources": [
         "table:accountejb",
         "table:accountprofileejb",
@@ -227,11 +228,27 @@
         "table:orderejb",
         "table:quoteejb"
       ],
-      "pathCount": 155
+      "pathCount": 152
     },
     {
       "id": "chain:sample.daytrader7:19",
-      "file": "019-explicit-gc-do-post.json",
+      "file": "019-trade-config-jsf-build-database-tables.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF#buildDatabaseTables",
+      "reachedNodeCount": 170,
+      "reachedDataSources": [
+        "table:accountejb",
+        "table:accountprofileejb",
+        "table:holdingejb",
+        "table:keygenejb",
+        "table:orderejb",
+        "table:quoteejb"
+      ],
+      "pathCount": 156
+    },
+    {
+      "id": "chain:sample.daytrader7:20",
+      "file": "020-explicit-gc-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doPost",
       "reachedNodeCount": 6,
@@ -239,8 +256,8 @@
       "pathCount": 4
     },
     {
-      "id": "chain:sample.daytrader7:20",
-      "file": "020-explicit-gc-do-get.json",
+      "id": "chain:sample.daytrader7:21",
+      "file": "021-explicit-gc-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ExplicitGC#doGet",
       "reachedNodeCount": 5,
@@ -248,92 +265,92 @@
       "pathCount": 4
     },
     {
-      "id": "chain:sample.daytrader7:21",
-      "file": "021-ping-jdbcread-do-post.json",
+      "id": "chain:sample.daytrader7:22",
+      "file": "022-ping-jdbcread-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead#doPost",
-      "reachedNodeCount": 41,
+      "reachedNodeCount": 52,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 29
+      "pathCount": 39
     },
     {
-      "id": "chain:sample.daytrader7:22",
-      "file": "022-ping-jdbcread-do-get.json",
+      "id": "chain:sample.daytrader7:23",
+      "file": "023-ping-jdbcread-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead#doGet",
+      "reachedNodeCount": 51,
+      "reachedDataSources": [
+        "table:quoteejb"
+      ],
+      "pathCount": 39
+    },
+    {
+      "id": "chain:sample.daytrader7:24",
+      "file": "024-ping-jdbcread2-jsp-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doPost",
       "reachedNodeCount": 40,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 29
+      "pathCount": 28
     },
     {
-      "id": "chain:sample.daytrader7:23",
-      "file": "023-ping-jdbcread2-jsp-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doPost",
+      "id": "chain:sample.daytrader7:25",
+      "file": "025-ping-jdbcread2-jsp-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doGet",
       "reachedNodeCount": 39,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 27
-    },
-    {
-      "id": "chain:sample.daytrader7:24",
-      "file": "024-ping-jdbcread2-jsp-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP#doGet",
-      "reachedNodeCount": 38,
-      "reachedDataSources": [
-        "table:quoteejb"
-      ],
-      "pathCount": 27
-    },
-    {
-      "id": "chain:sample.daytrader7:25",
-      "file": "025-ping-jdbcwrite-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doGet",
-      "reachedNodeCount": 62,
-      "reachedDataSources": [
-        "table:quoteejb"
-      ],
-      "pathCount": 49
+      "pathCount": 28
     },
     {
       "id": "chain:sample.daytrader7:26",
-      "file": "026-ping-jdbcwrite-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doPost",
-      "reachedNodeCount": 63,
+      "file": "026-ping-jdbcwrite-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doGet",
+      "reachedNodeCount": 70,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 49
+      "pathCount": 56
     },
     {
       "id": "chain:sample.daytrader7:27",
-      "file": "027-ping-jsonp-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doPost",
-      "reachedNodeCount": 14,
-      "reachedDataSources": [],
-      "pathCount": 12
+      "file": "027-ping-jdbcwrite-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite#doPost",
+      "reachedNodeCount": 71,
+      "reachedDataSources": [
+        "table:quoteejb"
+      ],
+      "pathCount": 56
     },
     {
       "id": "chain:sample.daytrader7:28",
-      "file": "028-ping-jsonp-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doGet",
-      "reachedNodeCount": 13,
+      "file": "028-ping-jsonp-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doPost",
+      "reachedNodeCount": 15,
       "reachedDataSources": [],
-      "pathCount": 12
+      "pathCount": 13
     },
     {
       "id": "chain:sample.daytrader7:29",
-      "file": "029-ping-managed-executor-do-post.json",
+      "file": "029-ping-jsonp-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP#doGet",
+      "reachedNodeCount": 14,
+      "reachedDataSources": [],
+      "pathCount": 13
+    },
+    {
+      "id": "chain:sample.daytrader7:30",
+      "file": "030-ping-managed-executor-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingManagedExecutor#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingManagedExecutor#doPost",
       "reachedNodeCount": 8,
@@ -341,8 +358,17 @@
       "pathCount": 6
     },
     {
-      "id": "chain:sample.daytrader7:30",
-      "file": "030-ping-managed-thread-do-post.json",
+      "id": "chain:sample.daytrader7:31",
+      "file": "031-ping-managed-executor-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingManagedExecutor#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingManagedExecutor#doGet",
+      "reachedNodeCount": 7,
+      "reachedDataSources": [],
+      "pathCount": 6
+    },
+    {
+      "id": "chain:sample.daytrader7:32",
+      "file": "032-ping-managed-thread-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingManagedThread#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingManagedThread#doPost",
       "reachedNodeCount": 10,
@@ -350,26 +376,35 @@
       "pathCount": 8
     },
     {
-      "id": "chain:sample.daytrader7:31",
-      "file": "031-ping-reentry-servlet-do-post.json",
+      "id": "chain:sample.daytrader7:33",
+      "file": "033-ping-managed-thread-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingManagedThread#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingManagedThread#doGet",
+      "reachedNodeCount": 9,
+      "reachedDataSources": [],
+      "pathCount": 8
+    },
+    {
+      "id": "chain:sample.daytrader7:34",
+      "file": "034-ping-reentry-servlet-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doPost",
-      "reachedNodeCount": 19,
+      "reachedNodeCount": 20,
       "reachedDataSources": [],
-      "pathCount": 17
+      "pathCount": 18
     },
     {
-      "id": "chain:sample.daytrader7:32",
-      "file": "032-ping-reentry-servlet-do-get.json",
+      "id": "chain:sample.daytrader7:35",
+      "file": "035-ping-reentry-servlet-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet#doGet",
-      "reachedNodeCount": 18,
+      "reachedNodeCount": 19,
       "reachedDataSources": [],
-      "pathCount": 17
+      "pathCount": 18
     },
     {
-      "id": "chain:sample.daytrader7:33",
-      "file": "033-ping-servlet-do-post.json",
+      "id": "chain:sample.daytrader7:36",
+      "file": "036-ping-servlet-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet#doPost",
       "reachedNodeCount": 7,
@@ -377,8 +412,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:34",
-      "file": "034-ping-servlet-do-get.json",
+      "id": "chain:sample.daytrader7:37",
+      "file": "037-ping-servlet-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet#doGet",
       "reachedNodeCount": 6,
@@ -386,26 +421,26 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:35",
-      "file": "035-ping-servlet2-db-do-post.json",
+      "id": "chain:sample.daytrader7:38",
+      "file": "038-ping-servlet2-db-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB#doPost",
-      "reachedNodeCount": 15,
+      "reachedNodeCount": 17,
       "reachedDataSources": [],
-      "pathCount": 8
+      "pathCount": 10
     },
     {
-      "id": "chain:sample.daytrader7:36",
-      "file": "036-ping-servlet2-db-do-get.json",
+      "id": "chain:sample.daytrader7:39",
+      "file": "039-ping-servlet2-db-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB#doGet",
-      "reachedNodeCount": 14,
+      "reachedNodeCount": 16,
       "reachedDataSources": [],
-      "pathCount": 8
+      "pathCount": 10
     },
     {
-      "id": "chain:sample.daytrader7:37",
-      "file": "037-ping-servlet2-include-do-post.json",
+      "id": "chain:sample.daytrader7:40",
+      "file": "040-ping-servlet2-include-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include#doPost",
       "reachedNodeCount": 7,
@@ -413,8 +448,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:38",
-      "file": "038-ping-servlet2-include-do-get.json",
+      "id": "chain:sample.daytrader7:41",
+      "file": "041-ping-servlet2-include-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include#doGet",
       "reachedNodeCount": 6,
@@ -422,8 +457,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:39",
-      "file": "039-ping-servlet2-include-rcv-do-post.json",
+      "id": "chain:sample.daytrader7:42",
+      "file": "042-ping-servlet2-include-rcv-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2IncludeRcv#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2IncludeRcv#doPost",
       "reachedNodeCount": 2,
@@ -431,8 +466,8 @@
       "pathCount": 1
     },
     {
-      "id": "chain:sample.daytrader7:40",
-      "file": "040-ping-servlet2-include-rcv-do-get.json",
+      "id": "chain:sample.daytrader7:43",
+      "file": "043-ping-servlet2-include-rcv-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2IncludeRcv#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2IncludeRcv#doGet",
       "reachedNodeCount": 1,
@@ -440,26 +475,26 @@
       "pathCount": 1
     },
     {
-      "id": "chain:sample.daytrader7:41",
-      "file": "041-ping-servlet2-jndi-do-post.json",
+      "id": "chain:sample.daytrader7:44",
+      "file": "044-ping-servlet2-jndi-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI#doPost",
-      "reachedNodeCount": 7,
+      "reachedNodeCount": 8,
       "reachedDataSources": [],
-      "pathCount": 5
+      "pathCount": 6
     },
     {
-      "id": "chain:sample.daytrader7:42",
-      "file": "042-ping-servlet2-jndi-do-get.json",
+      "id": "chain:sample.daytrader7:45",
+      "file": "045-ping-servlet2-jndi-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI#doGet",
-      "reachedNodeCount": 6,
+      "reachedNodeCount": 7,
       "reachedDataSources": [],
-      "pathCount": 5
+      "pathCount": 6
     },
     {
-      "id": "chain:sample.daytrader7:43",
-      "file": "043-ping-servlet2-jsp-do-post.json",
+      "id": "chain:sample.daytrader7:46",
+      "file": "046-ping-servlet2-jsp-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doPost",
       "reachedNodeCount": 6,
@@ -467,8 +502,8 @@
       "pathCount": 4
     },
     {
-      "id": "chain:sample.daytrader7:44",
-      "file": "044-ping-servlet2-jsp-do-get.json",
+      "id": "chain:sample.daytrader7:47",
+      "file": "047-ping-servlet2-jsp-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
       "reachedNodeCount": 5,
@@ -476,26 +511,26 @@
       "pathCount": 4
     },
     {
-      "id": "chain:sample.daytrader7:45",
-      "file": "045-ping-servlet2-pdf-do-post.json",
+      "id": "chain:sample.daytrader7:48",
+      "file": "048-ping-servlet2-pdf-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF#doPost",
-      "reachedNodeCount": 13,
+      "reachedNodeCount": 14,
       "reachedDataSources": [],
-      "pathCount": 11
+      "pathCount": 12
     },
     {
-      "id": "chain:sample.daytrader7:46",
-      "file": "046-ping-servlet2-pdf-do-get.json",
+      "id": "chain:sample.daytrader7:49",
+      "file": "049-ping-servlet2-pdf-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF#doGet",
-      "reachedNodeCount": 12,
+      "reachedNodeCount": 13,
       "reachedDataSources": [],
-      "pathCount": 11
+      "pathCount": 12
     },
     {
-      "id": "chain:sample.daytrader7:47",
-      "file": "047-ping-servlet2-servlet-do-post.json",
+      "id": "chain:sample.daytrader7:50",
+      "file": "050-ping-servlet2-servlet-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Servlet#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Servlet#doPost",
       "reachedNodeCount": 6,
@@ -503,8 +538,8 @@
       "pathCount": 4
     },
     {
-      "id": "chain:sample.daytrader7:48",
-      "file": "048-ping-servlet2-servlet-do-get.json",
+      "id": "chain:sample.daytrader7:51",
+      "file": "051-ping-servlet2-servlet-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Servlet#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Servlet#doGet",
       "reachedNodeCount": 5,
@@ -512,44 +547,44 @@
       "pathCount": 4
     },
     {
-      "id": "chain:sample.daytrader7:49",
-      "file": "049-ping-servlet2-servlet-rcv-do-post.json",
+      "id": "chain:sample.daytrader7:52",
+      "file": "052-ping-servlet2-servlet-rcv-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv#doPost",
-      "reachedNodeCount": 7,
+      "reachedNodeCount": 8,
       "reachedDataSources": [],
-      "pathCount": 5
-    },
-    {
-      "id": "chain:sample.daytrader7:50",
-      "file": "050-ping-servlet2-servlet-rcv-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv#doGet",
-      "reachedNodeCount": 6,
-      "reachedDataSources": [],
-      "pathCount": 5
-    },
-    {
-      "id": "chain:sample.daytrader7:51",
-      "file": "051-ping-servlet30-async-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doPost",
-      "reachedNodeCount": 9,
-      "reachedDataSources": [],
-      "pathCount": 8
-    },
-    {
-      "id": "chain:sample.daytrader7:52",
-      "file": "052-ping-servlet30-async-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doGet",
-      "reachedNodeCount": 10,
-      "reachedDataSources": [],
-      "pathCount": 8
+      "pathCount": 6
     },
     {
       "id": "chain:sample.daytrader7:53",
-      "file": "053-ping-servlet31-async-do-post.json",
+      "file": "053-ping-servlet2-servlet-rcv-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv#doGet",
+      "reachedNodeCount": 7,
+      "reachedDataSources": [],
+      "pathCount": 6
+    },
+    {
+      "id": "chain:sample.daytrader7:54",
+      "file": "054-ping-servlet30-async-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doPost",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [],
+      "pathCount": 9
+    },
+    {
+      "id": "chain:sample.daytrader7:55",
+      "file": "055-ping-servlet30-async-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async#doGet",
+      "reachedNodeCount": 11,
+      "reachedDataSources": [],
+      "pathCount": 9
+    },
+    {
+      "id": "chain:sample.daytrader7:56",
+      "file": "056-ping-servlet31-async-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async#doPost",
       "reachedNodeCount": 6,
@@ -557,8 +592,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:54",
-      "file": "054-ping-servlet31-async-do-get.json",
+      "id": "chain:sample.daytrader7:57",
+      "file": "057-ping-servlet31-async-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async#doGet",
       "reachedNodeCount": 7,
@@ -566,8 +601,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:55",
-      "file": "055-ping-servlet31-async-read-do-post.json",
+      "id": "chain:sample.daytrader7:58",
+      "file": "058-ping-servlet31-async-read-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
       "reachedNodeCount": 6,
@@ -575,8 +610,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:56",
-      "file": "056-ping-servlet31-async-read-do-get.json",
+      "id": "chain:sample.daytrader7:59",
+      "file": "059-ping-servlet31-async-read-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
       "reachedNodeCount": 7,
@@ -584,26 +619,53 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:57",
-      "file": "057-ping-servlet-large-content-length-do-post.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doPost",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doPost",
-      "reachedNodeCount": 1,
+      "id": "chain:sample.daytrader7:60",
+      "file": "060-ping-servlet-cdi-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI#doGet",
+      "reachedNodeCount": 9,
       "reachedDataSources": [],
-      "pathCount": 1
+      "pathCount": 6
     },
     {
-      "id": "chain:sample.daytrader7:58",
-      "file": "058-ping-servlet-large-content-length-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doGet",
+      "id": "chain:sample.daytrader7:61",
+      "file": "061-ping-servlet-cdibean-manager-via-cdicurrent-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "reachedNodeCount": 8,
+      "reachedDataSources": [],
+      "pathCount": 6
+    },
+    {
+      "id": "chain:sample.daytrader7:62",
+      "file": "062-ping-servlet-cdibean-manager-via-jndi-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI#doGet",
+      "reachedNodeCount": 8,
+      "reachedDataSources": [],
+      "pathCount": 6
+    },
+    {
+      "id": "chain:sample.daytrader7:63",
+      "file": "063-ping-servlet-large-content-length-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doPost",
       "reachedNodeCount": 2,
       "reachedDataSources": [],
       "pathCount": 1
     },
     {
-      "id": "chain:sample.daytrader7:59",
-      "file": "059-ping-servlet-set-content-length-do-post.json",
+      "id": "chain:sample.daytrader7:64",
+      "file": "064-ping-servlet-large-content-length-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength#doGet",
+      "reachedNodeCount": 3,
+      "reachedDataSources": [],
+      "pathCount": 1
+    },
+    {
+      "id": "chain:sample.daytrader7:65",
+      "file": "065-ping-servlet-set-content-length-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletSetContentLength#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletSetContentLength#doPost",
       "reachedNodeCount": 7,
@@ -611,8 +673,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:60",
-      "file": "060-ping-servlet-set-content-length-do-get.json",
+      "id": "chain:sample.daytrader7:66",
+      "file": "066-ping-servlet-set-content-length-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletSetContentLength#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletSetContentLength#doGet",
       "reachedNodeCount": 6,
@@ -620,8 +682,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:61",
-      "file": "061-ping-servlet-writer-do-post.json",
+      "id": "chain:sample.daytrader7:67",
+      "file": "067-ping-servlet-writer-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter#doPost",
       "reachedNodeCount": 7,
@@ -629,8 +691,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:62",
-      "file": "062-ping-servlet-writer-do-get.json",
+      "id": "chain:sample.daytrader7:68",
+      "file": "068-ping-servlet-writer-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter#doGet",
       "reachedNodeCount": 6,
@@ -638,26 +700,26 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:63",
-      "file": "063-ping-session1-do-post.json",
+      "id": "chain:sample.daytrader7:69",
+      "file": "069-ping-session1-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession1#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession1#doPost",
-      "reachedNodeCount": 12,
-      "reachedDataSources": [],
-      "pathCount": 10
-    },
-    {
-      "id": "chain:sample.daytrader7:64",
-      "file": "064-ping-session1-do-get.json",
-      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession1#doGet",
-      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession1#doGet",
       "reachedNodeCount": 11,
       "reachedDataSources": [],
-      "pathCount": 10
+      "pathCount": 9
     },
     {
-      "id": "chain:sample.daytrader7:65",
-      "file": "065-ping-session2-do-post.json",
+      "id": "chain:sample.daytrader7:70",
+      "file": "070-ping-session1-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession1#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession1#doGet",
+      "reachedNodeCount": 10,
+      "reachedDataSources": [],
+      "pathCount": 9
+    },
+    {
+      "id": "chain:sample.daytrader7:71",
+      "file": "071-ping-session2-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession2#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession2#doPost",
       "reachedNodeCount": 13,
@@ -665,8 +727,8 @@
       "pathCount": 11
     },
     {
-      "id": "chain:sample.daytrader7:66",
-      "file": "066-ping-session2-do-get.json",
+      "id": "chain:sample.daytrader7:72",
+      "file": "072-ping-session2-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession2#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession2#doGet",
       "reachedNodeCount": 12,
@@ -674,8 +736,8 @@
       "pathCount": 11
     },
     {
-      "id": "chain:sample.daytrader7:67",
-      "file": "067-ping-session3-do-post.json",
+      "id": "chain:sample.daytrader7:73",
+      "file": "073-ping-session3-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
       "reachedNodeCount": 17,
@@ -683,8 +745,8 @@
       "pathCount": 15
     },
     {
-      "id": "chain:sample.daytrader7:68",
-      "file": "068-ping-session3-do-get.json",
+      "id": "chain:sample.daytrader7:74",
+      "file": "074-ping-session3-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
       "reachedNodeCount": 16,
@@ -692,30 +754,48 @@
       "pathCount": 15
     },
     {
-      "id": "chain:sample.daytrader7:69",
-      "file": "069-ping-servlet2-entity-do-post.json",
+      "id": "chain:sample.daytrader7:75",
+      "file": "075-ping-upgrade-servlet-do-get.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doGet",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doGet",
+      "reachedNodeCount": 7,
+      "reachedDataSources": [],
+      "pathCount": 5
+    },
+    {
+      "id": "chain:sample.daytrader7:76",
+      "file": "076-ping-upgrade-servlet-do-post.json",
+      "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "reachedNodeCount": 6,
+      "reachedDataSources": [],
+      "pathCount": 5
+    },
+    {
+      "id": "chain:sample.daytrader7:77",
+      "file": "077-ping-servlet2-entity-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity#doPost",
-      "reachedNodeCount": 9,
+      "reachedNodeCount": 18,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 8
+      "pathCount": 16
     },
     {
-      "id": "chain:sample.daytrader7:70",
-      "file": "070-ping-servlet2-entity-do-get.json",
+      "id": "chain:sample.daytrader7:78",
+      "file": "078-ping-servlet2-entity-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity#doGet",
-      "reachedNodeCount": 8,
+      "reachedNodeCount": 17,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 8
+      "pathCount": 16
     },
     {
-      "id": "chain:sample.daytrader7:71",
-      "file": "071-ping-servlet2-mdbqueue-do-post.json",
+      "id": "chain:sample.daytrader7:79",
+      "file": "079-ping-servlet2-mdbqueue-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue#doPost",
       "reachedNodeCount": 22,
@@ -723,8 +803,8 @@
       "pathCount": 20
     },
     {
-      "id": "chain:sample.daytrader7:72",
-      "file": "072-ping-servlet2-mdbqueue-do-get.json",
+      "id": "chain:sample.daytrader7:80",
+      "file": "080-ping-servlet2-mdbqueue-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue#doGet",
       "reachedNodeCount": 21,
@@ -732,8 +812,8 @@
       "pathCount": 20
     },
     {
-      "id": "chain:sample.daytrader7:73",
-      "file": "073-ping-servlet2-mdbtopic-do-post.json",
+      "id": "chain:sample.daytrader7:81",
+      "file": "081-ping-servlet2-mdbtopic-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic#doPost",
       "reachedNodeCount": 22,
@@ -741,8 +821,8 @@
       "pathCount": 20
     },
     {
-      "id": "chain:sample.daytrader7:74",
-      "file": "074-ping-servlet2-mdbtopic-do-get.json",
+      "id": "chain:sample.daytrader7:82",
+      "file": "082-ping-servlet2-mdbtopic-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic#doGet",
       "reachedNodeCount": 21,
@@ -750,74 +830,74 @@
       "pathCount": 20
     },
     {
-      "id": "chain:sample.daytrader7:75",
-      "file": "075-ping-servlet2-session2-cmrone2-many-do-post.json",
+      "id": "chain:sample.daytrader7:83",
+      "file": "083-ping-servlet2-session2-cmrone2-many-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doPost",
-      "reachedNodeCount": 14,
+      "reachedNodeCount": 27,
       "reachedDataSources": [
         "table:accountprofileejb"
       ],
-      "pathCount": 12
+      "pathCount": 23
     },
     {
-      "id": "chain:sample.daytrader7:76",
-      "file": "076-ping-servlet2-session2-cmrone2-many-do-get.json",
+      "id": "chain:sample.daytrader7:84",
+      "file": "084-ping-servlet2-session2-cmrone2-many-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many#doGet",
-      "reachedNodeCount": 13,
+      "reachedNodeCount": 26,
       "reachedDataSources": [
         "table:accountprofileejb"
       ],
-      "pathCount": 12
+      "pathCount": 23
     },
     {
-      "id": "chain:sample.daytrader7:77",
-      "file": "077-ping-servlet2-session2-cmrone2-one-do-post.json",
+      "id": "chain:sample.daytrader7:85",
+      "file": "085-ping-servlet2-session2-cmrone2-one-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One#doPost",
-      "reachedNodeCount": 9,
+      "reachedNodeCount": 17,
       "reachedDataSources": [
         "table:accountprofileejb"
       ],
-      "pathCount": 7
+      "pathCount": 14
     },
     {
-      "id": "chain:sample.daytrader7:78",
-      "file": "078-ping-servlet2-session2-cmrone2-one-do-get.json",
+      "id": "chain:sample.daytrader7:86",
+      "file": "086-ping-servlet2-session2-cmrone2-one-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One#doGet",
-      "reachedNodeCount": 8,
+      "reachedNodeCount": 16,
       "reachedDataSources": [
         "table:accountprofileejb"
       ],
-      "pathCount": 7
+      "pathCount": 14
     },
     {
-      "id": "chain:sample.daytrader7:79",
-      "file": "079-ping-servlet2-session2-entity-do-post.json",
+      "id": "chain:sample.daytrader7:87",
+      "file": "087-ping-servlet2-session2-entity-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity#doPost",
-      "reachedNodeCount": 9,
+      "reachedNodeCount": 19,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 7
+      "pathCount": 16
     },
     {
-      "id": "chain:sample.daytrader7:80",
-      "file": "080-ping-servlet2-session2-entity-do-get.json",
+      "id": "chain:sample.daytrader7:88",
+      "file": "088-ping-servlet2-session2-entity-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity#doGet",
-      "reachedNodeCount": 8,
+      "reachedNodeCount": 18,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 7
+      "pathCount": 16
     },
     {
-      "id": "chain:sample.daytrader7:81",
-      "file": "081-ping-servlet2-session2-entity2-jsp-do-post.json",
+      "id": "chain:sample.daytrader7:89",
+      "file": "089-ping-servlet2-session2-entity2-jsp-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity2JSP#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity2JSP#doPost",
       "reachedNodeCount": 7,
@@ -827,8 +907,8 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:82",
-      "file": "082-ping-servlet2-session2-entity2-jsp-do-get.json",
+      "id": "chain:sample.daytrader7:90",
+      "file": "090-ping-servlet2-session2-entity2-jsp-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity2JSP#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity2JSP#doGet",
       "reachedNodeCount": 6,
@@ -838,26 +918,30 @@
       "pathCount": 5
     },
     {
-      "id": "chain:sample.daytrader7:83",
-      "file": "083-ping-servlet2-session2-entity-collection-do-post.json",
+      "id": "chain:sample.daytrader7:91",
+      "file": "091-ping-servlet2-session2-entity-collection-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection#doPost",
-      "reachedNodeCount": 20,
-      "reachedDataSources": [],
-      "pathCount": 17
+      "reachedNodeCount": 31,
+      "reachedDataSources": [
+        "table:holdingejb"
+      ],
+      "pathCount": 28
     },
     {
-      "id": "chain:sample.daytrader7:84",
-      "file": "084-ping-servlet2-session2-entity-collection-do-get.json",
+      "id": "chain:sample.daytrader7:92",
+      "file": "092-ping-servlet2-session2-entity-collection-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection#doGet",
-      "reachedNodeCount": 19,
-      "reachedDataSources": [],
-      "pathCount": 17
+      "reachedNodeCount": 30,
+      "reachedDataSources": [
+        "table:holdingejb"
+      ],
+      "pathCount": 28
     },
     {
-      "id": "chain:sample.daytrader7:85",
-      "file": "085-ping-servlet2-session-local-do-post.json",
+      "id": "chain:sample.daytrader7:93",
+      "file": "093-ping-servlet2-session-local-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal#doPost",
       "reachedNodeCount": 10,
@@ -865,8 +949,8 @@
       "pathCount": 7
     },
     {
-      "id": "chain:sample.daytrader7:86",
-      "file": "086-ping-servlet2-session-local-do-get.json",
+      "id": "chain:sample.daytrader7:94",
+      "file": "094-ping-servlet2-session-local-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal#doGet",
       "reachedNodeCount": 9,
@@ -874,8 +958,8 @@
       "pathCount": 7
     },
     {
-      "id": "chain:sample.daytrader7:87",
-      "file": "087-ping-servlet2-session-remote-do-post.json",
+      "id": "chain:sample.daytrader7:95",
+      "file": "095-ping-servlet2-session-remote-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote#doPost",
       "reachedNodeCount": 10,
@@ -883,8 +967,8 @@
       "pathCount": 7
     },
     {
-      "id": "chain:sample.daytrader7:88",
-      "file": "088-ping-servlet2-session-remote-do-get.json",
+      "id": "chain:sample.daytrader7:96",
+      "file": "096-ping-servlet2-session-remote-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote#doGet",
       "reachedNodeCount": 9,
@@ -892,26 +976,26 @@
       "pathCount": 7
     },
     {
-      "id": "chain:sample.daytrader7:89",
-      "file": "089-ping-servlet2-two-phase-do-post.json",
+      "id": "chain:sample.daytrader7:97",
+      "file": "097-ping-servlet2-two-phase-do-post.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase#doPost",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase#doPost",
-      "reachedNodeCount": 15,
+      "reachedNodeCount": 25,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 13
+      "pathCount": 22
     },
     {
-      "id": "chain:sample.daytrader7:90",
-      "file": "090-ping-servlet2-two-phase-do-get.json",
+      "id": "chain:sample.daytrader7:98",
+      "file": "098-ping-servlet2-two-phase-do-get.json",
       "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase#doGet",
       "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase#doGet",
-      "reachedNodeCount": 14,
+      "reachedNodeCount": 24,
       "reachedDataSources": [
         "table:quoteejb"
       ],
-      "pathCount": 13
+      "pathCount": 22
     }
   ]
 }

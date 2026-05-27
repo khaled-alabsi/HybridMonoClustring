@@ -1,0 +1,304 @@
+{
+  "id": "chain:sample.daytrader7:47",
+  "fileName": "047-ping-servlet2-jsp-do-get.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+  "reachedNodeCount": 5,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "PingServlet2Jsp",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+    "methodName": "doGet",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+    "line": 61,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>",
+      "kind": "method",
+      "className": "PingBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+      "methodName": "<init>",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingBean.java"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg",
+      "kind": "method",
+      "className": "PingBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+      "methodName": "setMsg"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+      "kind": "method",
+      "className": "PingServlet2Jsp",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+      "line": 61
+    },
+    {
+      "id": "unresolved:HttpServletRequest#setAttribute",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "setAttribute"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#sendError",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "sendError"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg:1831",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "kind": "method",
+        "className": "PingServlet2Jsp",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+        "line": 61
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg",
+        "kind": "method",
+        "className": "PingBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+        "methodName": "setMsg"
+      },
+      "callSite": "ab.setMsg("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->unresolved:HttpServletRequest#setAttribute:1832",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+      "to": "unresolved:HttpServletRequest#setAttribute",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "kind": "method",
+        "className": "PingServlet2Jsp",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+        "line": 61
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#setAttribute",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "setAttribute"
+      },
+      "callSite": "req.setAttribute("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->unresolved:HttpServletResponse#sendError:1833",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+      "to": "unresolved:HttpServletResponse#sendError",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "kind": "method",
+        "className": "PingServlet2Jsp",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+        "line": 61
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#sendError",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "sendError"
+      },
+      "callSite": "res.sendError("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>:1834",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "kind": "method",
+        "className": "PingServlet2Jsp",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+        "line": 61
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>",
+        "kind": "method",
+        "className": "PingBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingBean.java"
+      },
+      "callSite": "new PingBean("
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg:1831"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg:1831",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+            "kind": "method",
+            "className": "PingServlet2Jsp",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+            "line": 61
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg",
+            "kind": "method",
+            "className": "PingBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+            "methodName": "setMsg"
+          },
+          "callSite": "ab.setMsg("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#setMsg"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->unresolved:HttpServletRequest#setAttribute:1832"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->unresolved:HttpServletRequest#setAttribute:1832",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+          "to": "unresolved:HttpServletRequest#setAttribute",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+            "kind": "method",
+            "className": "PingServlet2Jsp",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+            "line": 61
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#setAttribute",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "setAttribute"
+          },
+          "callSite": "req.setAttribute("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "unresolved:HttpServletRequest#setAttribute"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->unresolved:HttpServletResponse#sendError:1833"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->unresolved:HttpServletResponse#sendError:1833",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+          "to": "unresolved:HttpServletResponse#sendError",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+            "kind": "method",
+            "className": "PingServlet2Jsp",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+            "line": 61
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#sendError",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "sendError"
+          },
+          "callSite": "res.sendError("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "unresolved:HttpServletResponse#sendError"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>:1834"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>:1834",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+            "kind": "method",
+            "className": "PingServlet2Jsp",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet2Jsp.java",
+            "line": 61
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>",
+            "kind": "method",
+            "className": "PingBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingBean.java"
+          },
+          "callSite": "new PingBean("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Jsp#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingBean#<init>"
+      ]
+    }
+  ]
+}

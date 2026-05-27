@@ -7,7 +7,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { extractCalls, loadBenchmark, extractBenchmark, BENCHMARKS } from './extract.mjs';
+import { extractCalls, parseFields, loadBenchmark, extractBenchmark, BENCHMARKS } from './extract.mjs';
 
 // ---------------------------------------------------------------------------
 // Expected reachedDataSources for every jpetstore-6 chain.
@@ -161,4 +161,112 @@ test('sanity: simple non-nested calls are still detected', () => {
     calls.some((c) => c.receiver === 'account' && c.method === 'getFavouriteCategoryId'),
     'Expected account.getFavouriteCategoryId',
   );
+});
+
+// ---------------------------------------------------------------------------
+// Regression: parseFields incorrectly reads "return" as a field type on CRLF
+// files. The fieldPattern uses multiline mode which treats \r as a line
+// terminator, allowing "return trade;" to be matched as type="return" name="trade"
+// when the \r\n empty-line case causes the line-context extraction to produce
+// an empty string (lineStart > lineEnd), bypassing the keyword filter.
+// Fix: added !/^[A-Z]/.test(fieldType) guard — Java reference types must start
+// with an uppercase letter, so primitives and keywords are safely excluded.
+// Affected benchmark: sample.daytrader7 DTBroker3MDB.java
+//   fields['trade'] was 'return' instead of 'TradeServices', causing
+//   DTBroker3MDB#onMessage chain to reach no data sources ([]) instead of
+//   the 5 expected trading tables.
+// ---------------------------------------------------------------------------
+test('fix: parseFields handles CRLF line endings - does not map "trade" to "return"', () => {
+  // Reproduces the exact CRLF pattern in DTBroker3MDB.java
+  const classText = [
+    'public class DTBroker3MDB {',
+    '    @EJB',
+    '    private TradeSLSBLocal tradeSLSB;',
+    '',
+    '    public void onMessage(Message message) {',
+    '        TradeServices trade = null;',
+    '        try {',
+    '            trade = getTrade(false);',
+    '            trade.completeOrder(1, true);',
+    '        } catch (Exception e) {}',
+    '    }',
+    '',
+    '    private TradeServices getTrade(boolean direct) throws Exception {',
+    '        TradeServices trade;',
+    '        if (direct) {',
+    '            trade = new TradeDirect();',
+    '        } else {',
+    '            trade = tradeSLSB;',
+    '        }',
+    '        return trade;',
+    '    }',
+    '}',
+  ].join('\r\n'); // CRLF line endings (Windows)
+
+  const fields = parseFields(classText);
+
+  assert.strictEqual(
+    fields['trade'],
+    'TradeServices',
+    `fields['trade'] should be 'TradeServices', got '${fields['trade']}'`,
+  );
+  assert.strictEqual(fields['tradeSLSB'], 'TradeSLSBLocal');
+});
+
+// ---------------------------------------------------------------------------
+// Expected reachedDataSources for key DayTrader business chains.
+// These values were verified by source inspection during chain validation.
+// Chains marked CORRECT-EMPTY legitimately reach no data sources.
+// ---------------------------------------------------------------------------
+const EXPECTED_DAYTRADER_BUSINESS_CHAINS = [
+  // DTBroker3MDB: completes orders → all 5 trading tables (FIX: was [] before CRLF fix)
+  { class: 'DTBroker3MDB',          method: 'onMessage',           tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
+  // DTStreamer3MDB: fires CDI events only, no DB access (CORRECT-EMPTY)
+  { class: 'DTStreamer3MDB',         method: 'onMessage',           tables: [] },
+  // MarketSummarySingleton: queries quoteejb via JPA Criteria API (FIX: was [] before criteriaQuery fix)
+  { class: 'MarketSummarySingleton', method: 'updateMarketSummary', tables: ['table:quoteejb'] },
+  // TradeAppServlet: handles all trading operations
+  { class: 'TradeAppServlet',        method: 'doGet',               tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
+  { class: 'TradeAppServlet',        method: 'doPost',              tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
+  // TradeScenarioServlet: dispatches via RequestDispatcher, no direct DB (CORRECT-EMPTY)
+  { class: 'TradeScenarioServlet',   method: 'doGet',               tables: [] },
+  { class: 'TradeScenarioServlet',   method: 'doPost',              tables: [] },
+  // JSF beans
+  { class: 'PortfolioJSF',          method: 'sell',                tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
+  { class: 'QuoteJSF',              method: 'buy',                 tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
+  { class: 'TradeAppJSF',           method: 'login',               tables: ['table:accountejb','table:accountprofileejb'] },
+  { class: 'TradeAppJSF',           method: 'register',            tables: ['table:accountejb','table:accountprofileejb'] },
+  { class: 'TradeAppJSF',           method: 'updateProfile',       tables: ['table:accountejb','table:accountprofileejb'] },
+  { class: 'TradeAppJSF',           method: 'logout',              tables: ['table:accountejb','table:accountprofileejb'] },
+  // Admin operations touch all 6 tables
+  { class: 'TradeConfigJSF',        method: 'resetTrade',          tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:keygenejb','table:orderejb','table:quoteejb'] },
+  { class: 'TradeConfigJSF',        method: 'populateDatabase',    tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:keygenejb','table:orderejb','table:quoteejb'] },
+  { class: 'TradeConfigJSF',        method: 'buildDatabaseTables', tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:keygenejb','table:orderejb','table:quoteejb'] },
+];
+
+// Integration test: run the full pipeline in-memory and verify 16 key business chains.
+// Guards against regressions in any of the three fixed extractor bugs for DayTrader.
+test('integration: daytrader key business chains have correct reachedDataSources', async () => {
+  const codeql = { available: false, reason: 'test-stub' };
+  const treeSitter = { available: false, reason: 'test-stub' };
+  const context = await loadBenchmark('sample.daytrader7', BENCHMARKS['sample.daytrader7'], codeql, treeSitter);
+  const outputs = extractBenchmark(context);
+
+  const chainByClassMethod = new Map(
+    outputs.chains.chains.map((chain) => [
+      `${chain.actionPoint.className}#${chain.actionPoint.methodName}`,
+      chain,
+    ]),
+  );
+
+  for (const { class: cls, method, tables } of EXPECTED_DAYTRADER_BUSINESS_CHAINS) {
+    const key = `${cls}#${method}`;
+    const chain = chainByClassMethod.get(key);
+    assert.ok(chain, `Missing chain for: ${key}`);
+    assert.deepEqual(
+      [...chain.reachedDataSources].sort(),
+      [...tables].sort(),
+      `${key}: reachedDataSources mismatch`,
+    );
+  }
 });

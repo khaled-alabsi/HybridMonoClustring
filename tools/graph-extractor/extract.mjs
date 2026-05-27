@@ -178,7 +178,9 @@ function parseFields(text) {
     const line = text.slice(lineStart, lineEnd === -1 ? text.length : lineEnd).trim();
     if (/^(?:return|throw|if|for|while|switch)\b/.test(line)) continue;
     const fieldType = cleanType(match[1]);
-    if (!fieldType) continue;
+    // Java reference types always start with uppercase; skip keywords and
+    // primitives that can slip through on CRLF files or inside method bodies.
+    if (!fieldType || !/^[A-Z]/.test(fieldType)) continue;
     fields.set(match[2], fieldType);
   }
 
@@ -356,14 +358,20 @@ function extractGenericActionPoints(context) {
     const isNamed = /@Named(?:\s|\()/.test(unit.text);
     if (!isRest && !isServlet && !isScheduled && !isMessageDriven && !isNamed) continue;
 
-    for (const method of unit.methods.filter((m) => m.visibility === 'public')) {
+    for (const method of unit.methods) {
       const methodAnnotations = new Set(method.annotations);
       const isRestMethod = isRest && ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].some((a) => methodAnnotations.has(a));
-      const entryMethod = /^(doGet|doPost|service|onMessage)$/.test(method.name)
-        || isRestMethod
-        || ['Schedule', 'Scheduled'].some((a) => methodAnnotations.has(a))
-        || (isNamed && isLikelyJsfActionMethod(method));
+      const isScheduledMethod = ['Schedule', 'Scheduled'].some((a) => methodAnnotations.has(a));
+      const isServletEntry = /^(doGet|doPost|service|onMessage)$/.test(method.name);
+      const isJsfAction = isNamed && isLikelyJsfActionMethod(method);
+      const entryMethod = isServletEntry || isRestMethod || isScheduledMethod || isJsfAction;
       if (!entryMethod) continue;
+      // Accept public always; protected for servlet/REST overrides (Java idiom);
+      // any visibility for @Schedule (Java EE fires it even when private).
+      const visibilityOk = method.visibility === 'public'
+        || (method.visibility === 'protected' && (isServletEntry || isRestMethod))
+        || isScheduledMethod;
+      if (!visibilityOk) continue;
       actionPoints.push({
         id: `action:${unit.fqn}#${method.name}`,
         benchmark: context.name,
@@ -586,6 +594,19 @@ function extractJpaDataAccessEdges(unit, method, from, startIndex, entityTableBy
     for (const match of method.body.matchAll(new RegExp(`\\b${receiver}\\s*\\.\\s*createNamedQuery\\s*\\(\\s*"([^"]+)"`, 'g'))) {
       const tableId = tableByNamedQuery.get(match[1]);
       if (tableId) edges.push(jpaDataAccessEdge(from, tableId, unit, method, `namedQuery:${match[1]}`, edges.length + startIndex));
+    }
+    // JPA Criteria API: entityManager.createQuery(criteriaQuery) where the
+    // criteria type is captured from criteriaBuilder.createQuery(Entity.class)
+    // or criteriaQuery.from(Entity.class) elsewhere in the method body.
+    if (new RegExp(`\\b${receiver}\\s*\\.\\s*createQuery\\b`).test(method.body)) {
+      for (const match of method.body.matchAll(/\.\s*createQuery\s*\(\s*(\w+)\s*\.class/g)) {
+        const tableId = entityTableByClass.get(match[1]);
+        if (tableId) edges.push(jpaDataAccessEdge(from, tableId, unit, method, `criteriaQuery:${match[1]}`, edges.length + startIndex));
+      }
+      for (const match of method.body.matchAll(/\.\s*from\s*\(\s*(\w+)\s*\.class/g)) {
+        const tableId = entityTableByClass.get(match[1]);
+        if (tableId) edges.push(jpaDataAccessEdge(from, tableId, unit, method, `criteriaFrom:${match[1]}`, edges.length + startIndex));
+      }
     }
   }
   return edges;
@@ -1202,7 +1223,7 @@ function matchOne(text, pattern) {
   return text.match(pattern)?.[1] ?? null;
 }
 
-export { extractCalls, loadBenchmark, extractBenchmark, BENCHMARKS };
+export { extractCalls, parseFields, loadBenchmark, extractBenchmark, BENCHMARKS };
 
 function rel(filePath) {
   return path.relative(ROOT, filePath);

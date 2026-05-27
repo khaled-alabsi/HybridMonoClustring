@@ -1,0 +1,537 @@
+{
+  "id": "chain:sample.daytrader7:59",
+  "fileName": "059-ping-servlet31-async-read-do-get.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+  "reachedNodeCount": 7,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "PingServlet31AsyncRead",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+    "methodName": "doGet",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+    "line": 117,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+      "kind": "method",
+      "className": "PingServlet31AsyncRead",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+      "line": 117
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "kind": "method",
+      "className": "PingServlet31AsyncRead",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+      "methodName": "doPost",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+      "line": 55
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl",
+      "kind": "method",
+      "className": "PingServlet31AsyncRead",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+      "methodName": "ReadListenerImpl",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getInputStream",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getInputStream"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#startAsync",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "startAsync"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setContentType",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setContentType"
+    },
+    {
+      "id": "unresolved:ServletInputStream#setReadListener",
+      "kind": "unknown_framework_target",
+      "className": "ServletInputStream",
+      "methodName": "setReadListener"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+        "line": 117
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+      },
+      "callSite": "doPost("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletResponse#setContentType:1893",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "to": "unresolved:HttpServletResponse#setContentType",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+        "line": 55
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setContentType",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setContentType"
+      },
+      "callSite": "res.setContentType("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletRequest#startAsync:1894",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "to": "unresolved:HttpServletRequest#startAsync",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+        "line": 55
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#startAsync",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "startAsync"
+      },
+      "callSite": "req.startAsync("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletRequest#getInputStream:1895",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "to": "unresolved:HttpServletRequest#getInputStream",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+        "line": 55
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getInputStream",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getInputStream"
+      },
+      "callSite": "req.getInputStream("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:ServletInputStream#setReadListener:1896",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "to": "unresolved:ServletInputStream#setReadListener",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+        "line": 55
+      },
+      "toNode": {
+        "id": "unresolved:ServletInputStream#setReadListener",
+        "kind": "unknown_framework_target",
+        "className": "ServletInputStream",
+        "methodName": "setReadListener"
+      },
+      "callSite": "input.setReadListener("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl:1897",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+        "line": 55
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl",
+        "kind": "method",
+        "className": "PingServlet31AsyncRead",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+        "methodName": "ReadListenerImpl",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+      },
+      "callSite": "ReadListenerImpl("
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletResponse#setContentType:1893"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 117
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+          },
+          "callSite": "doPost("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletResponse#setContentType:1893",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "to": "unresolved:HttpServletResponse#setContentType",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 55
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setContentType",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setContentType"
+          },
+          "callSite": "res.setContentType("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "unresolved:HttpServletResponse#setContentType"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletRequest#startAsync:1894"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 117
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+          },
+          "callSite": "doPost("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletRequest#startAsync:1894",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "to": "unresolved:HttpServletRequest#startAsync",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 55
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#startAsync",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "startAsync"
+          },
+          "callSite": "req.startAsync("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "unresolved:HttpServletRequest#startAsync"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletRequest#getInputStream:1895"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 117
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+          },
+          "callSite": "doPost("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:HttpServletRequest#getInputStream:1895",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "to": "unresolved:HttpServletRequest#getInputStream",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 55
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getInputStream",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getInputStream"
+          },
+          "callSite": "req.getInputStream("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "unresolved:HttpServletRequest#getInputStream"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:ServletInputStream#setReadListener:1896"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 117
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+          },
+          "callSite": "doPost("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->unresolved:ServletInputStream#setReadListener:1896",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "to": "unresolved:ServletInputStream#setReadListener",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 55
+          },
+          "toNode": {
+            "id": "unresolved:ServletInputStream#setReadListener",
+            "kind": "unknown_framework_target",
+            "className": "ServletInputStream",
+            "methodName": "setReadListener"
+          },
+          "callSite": "input.setReadListener("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "unresolved:ServletInputStream#setReadListener"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl:1897"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost:1907",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 117
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+          },
+          "callSite": "doPost("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl:1897",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java",
+            "line": 55
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl",
+            "kind": "method",
+            "className": "PingServlet31AsyncRead",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+            "methodName": "ReadListenerImpl",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServlet31AsyncRead.java"
+          },
+          "callSite": "ReadListenerImpl("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead#ReadListenerImpl"
+      ]
+    }
+  ]
+}

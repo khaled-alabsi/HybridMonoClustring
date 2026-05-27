@@ -1,0 +1,514 @@
+{
+  "id": "chain:sample.daytrader7:61",
+  "fileName": "061-ping-servlet-cdibean-manager-via-cdicurrent-do-get.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+  "reachedNodeCount": 8,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "PingServletCDIBeanManagerViaCDICurrent",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+    "methodName": "doGet",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+    "line": 38,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+      "kind": "method",
+      "className": "PingCDIBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "methodName": "getBeanMangerViaCDICurrent",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingCDIBean.java",
+      "line": 47
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "kind": "method",
+      "className": "PingServletCDIBeanManagerViaCDICurrent",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+      "methodName": "doGet",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+      "line": 38
+    },
+    {
+      "id": "unresolved:BeanManager#getBeans",
+      "kind": "unknown_framework_target",
+      "className": "BeanManager",
+      "methodName": "getBeans"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getWriter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getWriter"
+    },
+    {
+      "id": "unresolved:PrintWriter#close",
+      "kind": "unknown_framework_target",
+      "className": "PrintWriter",
+      "methodName": "close"
+    },
+    {
+      "id": "unresolved:PrintWriter#flush",
+      "kind": "unknown_framework_target",
+      "className": "PrintWriter",
+      "methodName": "flush"
+    },
+    {
+      "id": "unresolved:PrintWriter#write",
+      "kind": "unknown_framework_target",
+      "className": "PrintWriter",
+      "methodName": "write"
+    },
+    {
+      "id": "unresolved:Set<Bean<?>>#size",
+      "kind": "unknown_framework_target",
+      "className": "Set",
+      "methodName": "size"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:HttpServletResponse#getWriter:1914",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "to": "unresolved:HttpServletResponse#getWriter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "kind": "method",
+        "className": "PingServletCDIBeanManagerViaCDICurrent",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getWriter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getWriter"
+      },
+      "callSite": "response.getWriter("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#write:1915",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "to": "unresolved:PrintWriter#write",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "kind": "method",
+        "className": "PingServletCDIBeanManagerViaCDICurrent",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "unresolved:PrintWriter#write",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "write"
+      },
+      "callSite": "pw.write("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent:1916",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "kind": "method",
+        "className": "PingServletCDIBeanManagerViaCDICurrent",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+        "kind": "method",
+        "className": "PingCDIBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+        "methodName": "getBeanMangerViaCDICurrent"
+      },
+      "callSite": "cdiBean.getBeanMangerViaCDICurrent("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#flush:1917",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "to": "unresolved:PrintWriter#flush",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "kind": "method",
+        "className": "PingServletCDIBeanManagerViaCDICurrent",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "unresolved:PrintWriter#flush",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "flush"
+      },
+      "callSite": "pw.flush("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#close:1918",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+      "to": "unresolved:PrintWriter#close",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "kind": "method",
+        "className": "PingServletCDIBeanManagerViaCDICurrent",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+        "line": 38
+      },
+      "toNode": {
+        "id": "unresolved:PrintWriter#close",
+        "kind": "unknown_framework_target",
+        "className": "PrintWriter",
+        "methodName": "close"
+      },
+      "callSite": "pw.close("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent->unresolved:BeanManager#getBeans:1720",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+      "to": "unresolved:BeanManager#getBeans",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+        "kind": "method",
+        "className": "PingCDIBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+        "methodName": "getBeanMangerViaCDICurrent",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingCDIBean.java",
+        "line": 47
+      },
+      "toNode": {
+        "id": "unresolved:BeanManager#getBeans",
+        "kind": "unknown_framework_target",
+        "className": "BeanManager",
+        "methodName": "getBeans"
+      },
+      "callSite": "beanManager.getBeans("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent->unresolved:Set<Bean<?>>#size:1721",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+      "to": "unresolved:Set<Bean<?>>#size",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+        "kind": "method",
+        "className": "PingCDIBean",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+        "methodName": "getBeanMangerViaCDICurrent",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingCDIBean.java",
+        "line": 47
+      },
+      "toNode": {
+        "id": "unresolved:Set<Bean<?>>#size",
+        "kind": "unknown_framework_target",
+        "className": "Set",
+        "methodName": "size"
+      },
+      "callSite": "beans.size("
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:HttpServletResponse#getWriter:1914"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:HttpServletResponse#getWriter:1914",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+          "to": "unresolved:HttpServletResponse#getWriter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+            "kind": "method",
+            "className": "PingServletCDIBeanManagerViaCDICurrent",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getWriter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getWriter"
+          },
+          "callSite": "response.getWriter("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "unresolved:HttpServletResponse#getWriter"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#write:1915"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#write:1915",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+          "to": "unresolved:PrintWriter#write",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+            "kind": "method",
+            "className": "PingServletCDIBeanManagerViaCDICurrent",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "unresolved:PrintWriter#write",
+            "kind": "unknown_framework_target",
+            "className": "PrintWriter",
+            "methodName": "write"
+          },
+          "callSite": "pw.write("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "unresolved:PrintWriter#write"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#flush:1917"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#flush:1917",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+          "to": "unresolved:PrintWriter#flush",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+            "kind": "method",
+            "className": "PingServletCDIBeanManagerViaCDICurrent",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "unresolved:PrintWriter#flush",
+            "kind": "unknown_framework_target",
+            "className": "PrintWriter",
+            "methodName": "flush"
+          },
+          "callSite": "pw.flush("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "unresolved:PrintWriter#flush"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#close:1918"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->unresolved:PrintWriter#close:1918",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+          "to": "unresolved:PrintWriter#close",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+            "kind": "method",
+            "className": "PingServletCDIBeanManagerViaCDICurrent",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "unresolved:PrintWriter#close",
+            "kind": "unknown_framework_target",
+            "className": "PrintWriter",
+            "methodName": "close"
+          },
+          "callSite": "pw.close("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "unresolved:PrintWriter#close"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent:1916",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent->unresolved:BeanManager#getBeans:1720"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent:1916",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+            "kind": "method",
+            "className": "PingServletCDIBeanManagerViaCDICurrent",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+            "kind": "method",
+            "className": "PingCDIBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+            "methodName": "getBeanMangerViaCDICurrent"
+          },
+          "callSite": "cdiBean.getBeanMangerViaCDICurrent("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent->unresolved:BeanManager#getBeans:1720",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+          "to": "unresolved:BeanManager#getBeans",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+            "kind": "method",
+            "className": "PingCDIBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+            "methodName": "getBeanMangerViaCDICurrent",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingCDIBean.java",
+            "line": 47
+          },
+          "toNode": {
+            "id": "unresolved:BeanManager#getBeans",
+            "kind": "unknown_framework_target",
+            "className": "BeanManager",
+            "methodName": "getBeans"
+          },
+          "callSite": "beanManager.getBeans("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+        "unresolved:BeanManager#getBeans"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent:1916",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent->unresolved:Set<Bean<?>>#size:1721"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent:1916",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+            "kind": "method",
+            "className": "PingServletCDIBeanManagerViaCDICurrent",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingServletCDIBeanManagerViaCDICurrent.java",
+            "line": 38
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+            "kind": "method",
+            "className": "PingCDIBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+            "methodName": "getBeanMangerViaCDICurrent"
+          },
+          "callSite": "cdiBean.getBeanMangerViaCDICurrent("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent->unresolved:Set<Bean<?>>#size:1721",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+          "to": "unresolved:Set<Bean<?>>#size",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+            "kind": "method",
+            "className": "PingCDIBean",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+            "methodName": "getBeanMangerViaCDICurrent",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingCDIBean.java",
+            "line": 47
+          },
+          "toNode": {
+            "id": "unresolved:Set<Bean<?>>#size",
+            "kind": "unknown_framework_target",
+            "className": "Set",
+            "methodName": "size"
+          },
+          "callSite": "beans.size("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean#getBeanMangerViaCDICurrent",
+        "unresolved:Set<Bean<?>>#size"
+      ]
+    }
+  ]
+}

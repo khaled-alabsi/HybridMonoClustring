@@ -19,6 +19,8 @@ The main method notes live in `private-docs/`. Treat those files as research sou
 - `Steps.md` contains the current practical evaluation plan and benchmark list.
 - `benchmarks/` contains vendored open-source monolith benchmark code used for evaluation (see Benchmark Inventory below).
 - `analysis/graphs/` mirrors the benchmark list — one subfolder per benchmark — and stores extracted graphs, action points, dependency chains, and extraction reports produced by the pipeline.
+- `analysis/contexts/` contains a pre-built orientation file for each benchmark (`<benchmark-name>.md`). **Read this before touching a benchmark's source code.** It covers the app's purpose, architecture layers, package map, entry points, key classes, domain vocabulary, and noise catalog.
+- `resources/templates/monolith-context.md` is the template used to create context files.
 - `tools/graph-extractor/` contains the extraction script (`extract.mjs`) that processes benchmark source code into graph artifacts.
 - `private-docs/` contains local draft notes and planning documents that should remain private.
 
@@ -33,6 +35,18 @@ All five benchmarks are vendored under `benchmarks/` as static source snapshots.
 - **`cargotracker`** — Richest in domain-driven design (DDD) concepts; the primary stress test for the domain-hierarchy and semantic-tagging stages of the method. Cloned from `https://github.com/eclipse-ee4j/cargotracker.git`.
 
 The intended evaluation order is: jpetstore-6 → acmeair → plantsbywebsphere → daytrader7 → cargotracker.
+
+## Benchmark Orientation Protocol
+
+Before reading source code in `benchmarks/<name>/`, always read the matching context file first:
+
+```
+analysis/contexts/<benchmark-name>.md
+```
+
+The context file tells you what the app does, which packages matter, where to find entry points, which classes are hubs, and which classes are noise to ignore. Reading source code without the context file wastes time and risks misinterpreting noise as domain logic.
+
+If no context file exists yet for a benchmark, create one using `resources/templates/monolith-context.md` before starting any analysis work on that benchmark.
 
 ## Benchmark Policy
 
@@ -86,3 +100,31 @@ This file is the primary reference for any coding agent working in this reposito
 - Revise the Project Purpose section if the method's steps or scope change.
 
 Do not leave AGENTS.md stale. An outdated AGENTS.md misleads future agents and wastes time.
+
+## ⛔ HARD RULE — Keep Context Files Up to Date (NO EXCEPTIONS)
+
+Context files under `analysis/contexts/` are the primary orientation layer for every agent working on a benchmark. They **must** be treated as living documents.
+
+**You are required to update the matching context file whenever you:**
+
+- Discover that a class, package, or module was misclassified (e.g. something listed as noise that has domain logic, or vice versa).
+- Find a non-obvious architectural detail that took source-code reading to uncover (e.g. a hidden dependency path, a framework quirk, a dual-implementation pattern, an undocumented entry point).
+- Identify a hub class whose role was unclear from the graph alone and had to be confirmed by reading source.
+- Confirm or correct a section that was inferred statically and may be wrong (e.g. a route hint that turned out to be inaccurate, a layer description that misses a delegation step).
+- Add domain vocabulary terms that were discovered during chain analysis or clustering work.
+- Find that a noise entry is more important than labelled, or that a business class should be excluded.
+
+**Do NOT defer these updates.** Update the context file in the same task where you made the discovery. A stale context file will cause the next agent to repeat the same investigation from scratch and potentially reach the wrong conclusion.
+
+**What to add:**
+
+- Hard-won facts that are not obvious from the package structure or class names alone.
+- Corrections to sections that were generated from static analysis and later proven wrong.
+- Short inline notes explaining *why* something is classified the way it is, when the reason is not self-evident.
+
+**What NOT to add:**
+
+- Information that any agent can trivially infer by looking at the package map or graph (no padding).
+- Speculative claims — only write what has been confirmed by source-code reading or test output.
+
+Violating this rule means the next agent starts blind. There are no exceptions.

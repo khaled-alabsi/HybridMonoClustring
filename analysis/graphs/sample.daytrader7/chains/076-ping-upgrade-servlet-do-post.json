@@ -1,0 +1,364 @@
+{
+  "id": "chain:sample.daytrader7:76",
+  "fileName": "076-ping-upgrade-servlet-do-post.json",
+  "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+  "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+  "reachedNodeCount": 6,
+  "reachedDataSources": [],
+  "actionPoint": {
+    "id": "action:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+    "benchmark": "sample.daytrader7",
+    "framework": "java-ee-servlet-jsf-ejb",
+    "kind": "action_point",
+    "className": "PingUpgradeServlet",
+    "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+    "methodName": "doPost",
+    "methodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+    "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+    "line": 42,
+    "annotations": [
+      "Override"
+    ],
+    "detectionSource": "generic-static"
+  },
+  "nodes": [
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "kind": "method",
+      "className": "PingUpgradeServlet",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+      "methodName": "doPost",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+      "line": 42
+    },
+    {
+      "id": "unresolved:HttpServletRequest#getHeader",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "getHeader"
+    },
+    {
+      "id": "unresolved:HttpServletRequest#upgrade",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletRequest",
+      "methodName": "upgrade"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#getWriter",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "getWriter"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setHeader",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setHeader"
+    },
+    {
+      "id": "unresolved:HttpServletResponse#setStatus",
+      "kind": "unknown_framework_target",
+      "className": "HttpServletResponse",
+      "methodName": "setStatus"
+    }
+  ],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletRequest#getHeader:1978",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "to": "unresolved:HttpServletRequest#getHeader",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "kind": "method",
+        "className": "PingUpgradeServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+        "line": 42
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#getHeader",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "getHeader"
+      },
+      "callSite": "req.getHeader("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#setStatus:1979",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "to": "unresolved:HttpServletResponse#setStatus",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "kind": "method",
+        "className": "PingUpgradeServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+        "line": 42
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setStatus",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setStatus"
+      },
+      "callSite": "res.setStatus("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#setHeader:1980",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "to": "unresolved:HttpServletResponse#setHeader",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "kind": "method",
+        "className": "PingUpgradeServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+        "line": 42
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#setHeader",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "setHeader"
+      },
+      "callSite": "res.setHeader("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletRequest#upgrade:1981",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "to": "unresolved:HttpServletRequest#upgrade",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "kind": "method",
+        "className": "PingUpgradeServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+        "line": 42
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletRequest#upgrade",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletRequest",
+        "methodName": "upgrade"
+      },
+      "callSite": "req.upgrade("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#getWriter:1982",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+      "to": "unresolved:HttpServletResponse#getWriter",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "kind": "method",
+        "className": "PingUpgradeServlet",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+        "methodName": "doPost",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+        "line": 42
+      },
+      "toNode": {
+        "id": "unresolved:HttpServletResponse#getWriter",
+        "kind": "unknown_framework_target",
+        "className": "HttpServletResponse",
+        "methodName": "getWriter"
+      },
+      "callSite": "res.getWriter("
+    }
+  ],
+  "paths": [
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletRequest#getHeader:1978"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletRequest#getHeader:1978",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+          "to": "unresolved:HttpServletRequest#getHeader",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+            "kind": "method",
+            "className": "PingUpgradeServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+            "line": 42
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#getHeader",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "getHeader"
+          },
+          "callSite": "req.getHeader("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "unresolved:HttpServletRequest#getHeader"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#setStatus:1979"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#setStatus:1979",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+          "to": "unresolved:HttpServletResponse#setStatus",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+            "kind": "method",
+            "className": "PingUpgradeServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+            "line": 42
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setStatus",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setStatus"
+          },
+          "callSite": "res.setStatus("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "unresolved:HttpServletResponse#setStatus"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#setHeader:1980"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#setHeader:1980",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+          "to": "unresolved:HttpServletResponse#setHeader",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+            "kind": "method",
+            "className": "PingUpgradeServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+            "line": 42
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#setHeader",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "setHeader"
+          },
+          "callSite": "res.setHeader("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "unresolved:HttpServletResponse#setHeader"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletRequest#upgrade:1981"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletRequest#upgrade:1981",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+          "to": "unresolved:HttpServletRequest#upgrade",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+            "kind": "method",
+            "className": "PingUpgradeServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+            "line": 42
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletRequest#upgrade",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletRequest",
+            "methodName": "upgrade"
+          },
+          "callSite": "req.upgrade("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "unresolved:HttpServletRequest#upgrade"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#getWriter:1982"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost->unresolved:HttpServletResponse#getWriter:1982",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+          "to": "unresolved:HttpServletResponse#getWriter",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+            "kind": "method",
+            "className": "PingUpgradeServlet",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingUpgradeServlet.java",
+            "line": 42
+          },
+          "toNode": {
+            "id": "unresolved:HttpServletResponse#getWriter",
+            "kind": "unknown_framework_target",
+            "className": "HttpServletResponse",
+            "methodName": "getWriter"
+          },
+          "callSite": "res.getWriter("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet#doPost",
+        "unresolved:HttpServletResponse#getWriter"
+      ]
+    }
+  ]
+}

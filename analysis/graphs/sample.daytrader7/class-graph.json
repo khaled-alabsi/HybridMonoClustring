@@ -26,6 +26,12 @@
       "classFqn": "com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean"
     },
     {
+      "id": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
+      "kind": "class",
+      "className": "OrderDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.OrderDataBean"
+    },
+    {
       "id": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "kind": "class",
       "className": "QuoteDataBean",
@@ -66,6 +72,12 @@
       "name": "quoteejb"
     },
     {
+      "id": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "kind": "class",
+      "className": "HoldingDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.HoldingDataBean"
+    },
+    {
       "id": "class:com.ibm.websphere.samples.daytrader.util.CompleteOrderThread",
       "kind": "class",
       "className": "CompleteOrderThread",
@@ -82,6 +94,12 @@
       "name": "holdingejb"
     },
     {
+      "id": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "kind": "class",
+      "className": "AccountDataBean",
+      "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountDataBean"
+    },
+    {
       "id": "table:accountejb",
       "kind": "table",
       "name": "accountejb"
@@ -96,24 +114,6 @@
       "kind": "class",
       "className": "AccountProfileDataBean",
       "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean"
-    },
-    {
-      "id": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "kind": "class",
-      "className": "AccountDataBean",
-      "classFqn": "com.ibm.websphere.samples.daytrader.entities.AccountDataBean"
-    },
-    {
-      "id": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
-      "kind": "class",
-      "className": "HoldingDataBean",
-      "classFqn": "com.ibm.websphere.samples.daytrader.entities.HoldingDataBean"
-    },
-    {
-      "id": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
-      "kind": "class",
-      "className": "OrderDataBean",
-      "classFqn": "com.ibm.websphere.samples.daytrader.entities.OrderDataBean"
     },
     {
       "id": "class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB",
@@ -663,7 +663,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.TradeAction",
       "to": "unresolved:InitialContext#lookup",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.TradeAction->class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
@@ -687,7 +687,7 @@
       "source": "static-implementation-bridge",
       "from": "class:com.ibm.websphere.samples.daytrader.TradeServices",
       "to": "class:com.ibm.websphere.samples.daytrader.TradeAction",
-      "weight": 32
+      "weight": 33
     },
     {
       "id": "polymorphic_call:class:com.ibm.websphere.samples.daytrader.TradeServices->class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
@@ -695,7 +695,7 @@
       "source": "static-implementation-bridge",
       "from": "class:com.ibm.websphere.samples.daytrader.TradeServices",
       "to": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "weight": 32
+      "weight": 33
     },
     {
       "id": "polymorphic_call:class:com.ibm.websphere.samples.daytrader.TradeServices->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
@@ -703,31 +703,15 @@
       "source": "static-implementation-bridge",
       "from": "class:com.ibm.websphere.samples.daytrader.TradeServices",
       "to": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "weight": 32
+      "weight": 33
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.TradeAction->unresolved:return#getOrderStatus",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.TradeAction->class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.TradeAction",
-      "to": "unresolved:return#getOrderStatus",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.TradeAction->unresolved:return#getSymbol",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.TradeAction",
-      "to": "unresolved:return#getSymbol",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.TradeAction->unresolved:return#getQuantity",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.TradeAction",
-      "to": "unresolved:return#getQuantity",
-      "weight": 1
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.TradeAction->unresolved:String#length",
@@ -775,14 +759,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean",
       "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "weight": 2
+      "weight": 5
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean->unresolved:return#iterator",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean->unresolved:Collection<QuoteDataBean>#iterator",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean",
-      "to": "unresolved:return#iterator",
+      "to": "unresolved:Collection<QuoteDataBean>#iterator",
       "weight": 2
     },
     {
@@ -791,7 +775,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean",
       "to": "unresolved:JsonObjectBuilder#add",
-      "weight": 9
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean->unresolved:Date#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean",
+      "to": "unresolved:Date#toString",
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean->unresolved:JsonObjectBuilder#build",
@@ -818,11 +810,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect->unresolved:return#iterator",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect->unresolved:Collection<?>#iterator",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect",
-      "to": "unresolved:return#iterator",
+      "to": "unresolved:Collection<?>#iterator",
       "weight": 1
     },
     {
@@ -855,7 +847,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect",
       "to": "unresolved:Connection#prepareStatement",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect->unresolved:PreparedStatement#setString",
@@ -863,7 +855,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect",
       "to": "unresolved:PreparedStatement#setString",
-      "weight": 3
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.KeySequenceDirect->unresolved:PreparedStatement#executeQuery",
@@ -999,7 +991,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:ResultSet#getBigDecimal",
-      "weight": 11
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:ResultSet#getDouble",
@@ -1007,7 +999,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:ResultSet#getDouble",
-      "weight": 5
+      "weight": 4
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.beans.MarketSummaryDataBean",
@@ -1031,7 +1023,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:InitialContext#lookup",
-      "weight": 11
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:UserTransaction#begin",
@@ -1042,20 +1034,20 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getPrice",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getPrice",
-      "weight": 5
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 19
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getOrderFee",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getOrderFee",
-      "weight": 2
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
+      "weight": 13
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:BigDecimal#negate",
@@ -1064,14 +1056,6 @@
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:BigDecimal#negate",
       "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getOrderID",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getOrderID",
-      "weight": 4
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:UserTransaction#commit",
@@ -1095,31 +1079,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:Integer#intValue",
-      "weight": 5
+      "weight": 10
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getQuoteID",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getQuoteID",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getQuantity",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getQuantity",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getHoldingID",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getHoldingID",
-      "weight": 2
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "weight": 6
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:ManagedThreadFactory#newThread",
@@ -1135,14 +1103,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:Thread#start",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:throw#printStackTrace",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:throw#printStackTrace",
       "weight": 1
     },
     {
@@ -1167,7 +1127,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:TextMessage#setStringProperty",
-      "weight": 10
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:TextMessage#setIntProperty",
@@ -1183,7 +1143,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:TextMessage#setBooleanProperty",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:TextMessage#setLongProperty",
@@ -1223,23 +1183,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:PreparedStatement#setInt",
-      "weight": 20
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getOrderType",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getOrderType",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getOrderStatus",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getOrderStatus",
-      "weight": 2
+      "weight": 14
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:String#compareToIgnoreCase",
@@ -1247,7 +1191,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:String#compareToIgnoreCase",
-      "weight": 5
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:ResultSet#getInt",
@@ -1255,7 +1199,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:ResultSet#getInt",
-      "weight": 16
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:ResultSet#getString",
@@ -1263,7 +1207,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:ResultSet#getString",
-      "weight": 15
+      "weight": 7
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.TradeAction",
@@ -1287,7 +1231,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:PreparedStatement#setTimestamp",
-      "weight": 7
+      "weight": 6
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:PreparedStatement#setBigDecimal",
@@ -1295,7 +1239,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:PreparedStatement#setBigDecimal",
-      "weight": 11
+      "weight": 6
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:PreparedStatement#setDouble",
@@ -1303,7 +1247,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:PreparedStatement#setDouble",
-      "weight": 7
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:PreparedStatement#setString",
@@ -1311,7 +1255,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:PreparedStatement#setString",
-      "weight": 33
+      "weight": 18
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:PreparedStatement#executeUpdate",
@@ -1330,6 +1274,14 @@
       "weight": 7
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "weight": 4
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:PreparedStatement#setNull",
       "type": "call",
       "source": "static-fallback",
@@ -1338,12 +1290,12 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#add",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Collection<OrderDataBean>#add",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#add",
-      "weight": 4
+      "to": "unresolved:Collection<OrderDataBean>#add",
+      "weight": 2
     },
     {
       "id": "data_access:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->table:accountejb",
@@ -1354,14 +1306,6 @@
       "weight": 12
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setOrderStatus",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setOrderStatus",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:BigDecimal#setScale",
       "type": "call",
       "source": "static-fallback",
@@ -1370,19 +1314,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "weight": 3
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:throw#getMessage",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Collection<QuoteDataBean>#add",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:throw#getMessage",
+      "to": "unresolved:Collection<QuoteDataBean>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Collection<HoldingDataBean>#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+      "to": "unresolved:Collection<HoldingDataBean>#add",
       "weight": 1
     },
     {
@@ -1399,23 +1343,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getOpen",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getOpen",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getVolume",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getVolume",
-      "weight": 1
+      "weight": 7
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:BigDecimal#equals",
@@ -1450,12 +1378,12 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getSymbol",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:BigDecimal#toString",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getSymbol",
-      "weight": 1
+      "to": "unresolved:BigDecimal#toString",
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:TextMessage#setDoubleProperty",
@@ -1463,7 +1391,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:TextMessage#setDoubleProperty",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:String#equals",
@@ -1474,43 +1402,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "weight": 2
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:ResultSet#getTimestamp",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "to": "unresolved:ResultSet#getTimestamp",
-      "weight": 5
+      "weight": 3
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#getMetaData",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#getMetaData",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#getMetaData",
+      "to": "unresolved:Connection#getMetaData",
       "weight": 1
     },
     {
@@ -1522,11 +1426,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#createStatement",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#createStatement",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#createStatement",
+      "to": "unresolved:Connection#createStatement",
       "weight": 1
     },
     {
@@ -1546,20 +1450,12 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setNewUserCount",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.beans.RunStatsDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setNewUserCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setTradeUserCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setTradeUserCount",
-      "weight": 1
+      "to": "class:com.ibm.websphere.samples.daytrader.beans.RunStatsDataBean",
+      "weight": 13
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:ResultSet#close",
@@ -1570,99 +1466,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setTradeStockCount",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#close",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setTradeStockCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setSumLoginCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setSumLoginCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setSumLogoutCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setSumLogoutCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setHoldingCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setHoldingCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setOrderCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setOrderCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setBuyOrderCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setBuyOrderCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setSellOrderCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setSellOrderCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setCancelledOrderCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setCancelledOrderCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setOpenOrderCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setOpenOrderCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setDeletedOrderCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setDeletedOrderCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->class:com.ibm.websphere.samples.daytrader.beans.RunStatsDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "class:com.ibm.websphere.samples.daytrader.beans.RunStatsDataBean",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#close",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#close",
+      "to": "unresolved:Connection#close",
       "weight": 1
     },
     {
@@ -1674,36 +1482,44 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#setAutoCommit",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#setAutoCommit",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#setAutoCommit",
+      "to": "unresolved:Connection#setAutoCommit",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#commit",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#getTransactionIsolation",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#commit",
+      "to": "unresolved:Connection#getTransactionIsolation",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#rollback",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#commit",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#rollback",
+      "to": "unresolved:Connection#commit",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:return#prepareStatement",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#rollback",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
-      "to": "unresolved:return#prepareStatement",
-      "weight": 2
+      "to": "unresolved:Connection#rollback",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.direct.TradeDirect->unresolved:Connection#prepareStatement",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
+      "to": "unresolved:Connection#prepareStatement",
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->unresolved:Message#getStringProperty",
@@ -1727,7 +1543,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB",
       "to": "unresolved:String#equalsIgnoreCase",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->unresolved:Message#getIntProperty",
@@ -1743,7 +1559,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB",
       "to": "unresolved:Message#getBooleanProperty",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->unresolved:Message#getLongProperty",
@@ -1754,12 +1570,12 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->unresolved:return#completeOrder",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->class:com.ibm.websphere.samples.daytrader.TradeServices",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB",
-      "to": "unresolved:return#completeOrder",
-      "weight": 1
+      "to": "class:com.ibm.websphere.samples.daytrader.TradeServices",
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->class:com.ibm.websphere.samples.daytrader.util.MDBStats",
@@ -1767,7 +1583,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB",
       "to": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->class:com.ibm.websphere.samples.daytrader.util.TimerStat",
@@ -1786,14 +1602,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->unresolved:return#cancelOrder",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB",
-      "to": "unresolved:return#cancelOrder",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTBroker3MDB->class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
       "type": "call",
       "source": "static-constructor-call",
@@ -1807,7 +1615,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTStreamer3MDB",
       "to": "unresolved:Message#getStringProperty",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTStreamer3MDB->unresolved:String#equalsIgnoreCase",
@@ -1815,7 +1623,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTStreamer3MDB",
       "to": "unresolved:String#equalsIgnoreCase",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTStreamer3MDB->unresolved:Message#getLongProperty",
@@ -1831,7 +1639,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.DTStreamer3MDB",
       "to": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.DTStreamer3MDB->class:com.ibm.websphere.samples.daytrader.util.TimerStat",
@@ -1890,6 +1698,22 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton->unresolved:CriteriaBuilder#desc",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton",
+      "to": "unresolved:CriteriaBuilder#desc",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton->unresolved:Root<QuoteDataBean>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton",
+      "to": "unresolved:Root<QuoteDataBean>#get",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton->unresolved:CriteriaQuery<QuoteDataBean>#select",
       "type": "call",
       "source": "static-fallback",
@@ -1919,6 +1743,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton",
       "to": "unresolved:List<QuoteDataBean>#toArray",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton->unresolved:List<QuoteDataBean>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton",
+      "to": "unresolved:List<QuoteDataBean>#size",
       "weight": 1
     },
     {
@@ -1954,6 +1786,14 @@
       "weight": 1
     },
     {
+      "id": "data_access:class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton->table:quoteejb",
+      "type": "data_access",
+      "source": "jpa-static",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton",
+      "to": "table:quoteejb",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.ejb3.MarketSummarySingleton",
       "type": "call",
       "source": "static-fallback",
@@ -1967,7 +1807,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:EntityManager#find",
-      "weight": 16
+      "weight": 14
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
@@ -1975,15 +1815,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
-      "weight": 8
+      "weight": 20
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getPrice",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getPrice",
-      "weight": 5
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 19
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
@@ -1994,19 +1834,19 @@
       "weight": 24
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getBalance",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getBalance",
-      "weight": 2
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "weight": 12
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setBalance",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:BigDecimal#subtract",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setBalance",
+      "to": "unresolved:BigDecimal#subtract",
       "weight": 2
     },
     {
@@ -2034,20 +1874,12 @@
       "weight": 7
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setOrderStatus",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setOrderStatus",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:EntityManager#persist",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:EntityManager#persist",
-      "weight": 6
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
@@ -2058,12 +1890,20 @@
       "weight": 4
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:BigDecimal#add",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "to": "unresolved:BigDecimal#add",
+      "weight": 1
+    },
+    {
       "id": "data_access:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->table:holdingejb",
       "type": "data_access",
       "source": "jpa-static",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "table:holdingejb",
-      "weight": 4
+      "weight": 6
     },
     {
       "id": "data_access:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->table:orderejb",
@@ -2071,7 +1911,7 @@
       "source": "jpa-static",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "table:orderejb",
-      "weight": 5
+      "weight": 7
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:ManagedThreadFactory#newThread",
@@ -2111,7 +1951,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:TextMessage#setStringProperty",
-      "weight": 11
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:TextMessage#setIntProperty",
@@ -2162,14 +2002,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getProfile",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getProfile",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:EntityManager#remove",
       "type": "call",
       "source": "static-fallback",
@@ -2184,14 +2016,6 @@
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "class:com.ibm.websphere.samples.daytrader.TradeAction",
       "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getOrders",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getOrders",
-      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:EntityManager#getCriteriaBuilder",
@@ -2234,20 +2058,28 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:CriteriaBuilder#parameter",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:CriteriaBuilder#parameter",
-      "weight": 3
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:CriteriaBuilder#equal",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:CriteriaBuilder#equal",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:Root<OrderDataBean>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "to": "unresolved:Root<OrderDataBean>#get",
       "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:CriteriaBuilder#parameter",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "to": "unresolved:CriteriaBuilder#parameter",
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:EntityManager#createQuery",
@@ -2263,7 +2095,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:TypedQuery<QuoteDataBean>#setParameter",
-      "weight": 3
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:TypedQuery<QuoteDataBean>#getResultList",
@@ -2274,11 +2106,11 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#iterator",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:List<OrderDataBean>#iterator",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#iterator",
+      "to": "unresolved:List<OrderDataBean>#iterator",
       "weight": 1
     },
     {
@@ -2298,14 +2130,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "weight": 2
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:EntityManager#createNamedQuery",
       "type": "call",
       "source": "static-fallback",
@@ -2319,14 +2143,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:TypedQuery<QuoteDataBean>#getSingleResult",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getOpen",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getOpen",
       "weight": 1
     },
     {
@@ -2354,30 +2170,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setPrice",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setPrice",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setChange",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setChange",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setVolume",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setVolume",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:EntityManager#merge",
       "type": "call",
       "source": "static-fallback",
@@ -2391,6 +2183,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:SessionContext#getBusinessObject",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:Root<HoldingDataBean>#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "to": "unresolved:Root<HoldingDataBean>#get",
       "weight": 1
     },
     {
@@ -2410,86 +2210,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setProfileID",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setProfileID",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setAddress",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setAddress",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setPassword",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setPassword",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setFullName",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setFullName",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setCreditCard",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setCreditCard",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setEmail",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setEmail",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#login",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#login",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#logout",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#logout",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#setProfile",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#setProfile",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "weight": 1
-    },
-    {
       "id": "data_access:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->table:accountejb",
       "type": "data_access",
       "source": "jpa-static",
@@ -2506,27 +2226,19 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:BigDecimal#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "to": "unresolved:BigDecimal#toString",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:TextMessage#setDoubleProperty",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
       "to": "unresolved:TextMessage#setDoubleProperty",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getAccountID",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getAccountID",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean->unresolved:return#getSymbol",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
-      "to": "unresolved:return#getSymbol",
       "weight": 1
     },
     {
@@ -2538,67 +2250,67 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean->unresolved:return#hashCode",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean->unresolved:Integer#hashCode",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "to": "unresolved:return#hashCode",
+      "to": "unresolved:Integer#hashCode",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean->unresolved:return#equals",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean->unresolved:Integer#equals",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
-      "to": "unresolved:return#equals",
+      "to": "unresolved:Integer#equals",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean->unresolved:return#hashCode",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean->unresolved:String#hashCode",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
-      "to": "unresolved:return#hashCode",
+      "to": "unresolved:String#hashCode",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean->unresolved:return#equals",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean->unresolved:String#equals",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
-      "to": "unresolved:return#equals",
+      "to": "unresolved:String#equals",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean->unresolved:return#getSymbol",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
-      "to": "unresolved:return#getSymbol",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean->unresolved:return#hashCode",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean->unresolved:Integer#hashCode",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
-      "to": "unresolved:return#hashCode",
+      "to": "unresolved:Integer#hashCode",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean->unresolved:return#equals",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean->unresolved:Integer#equals",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
-      "to": "unresolved:return#equals",
+      "to": "unresolved:Integer#equals",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean->unresolved:return#getSymbol",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
-      "to": "unresolved:return#getSymbol",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "weight": 1
     },
     {
@@ -2607,38 +2319,38 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
       "to": "unresolved:String#compareToIgnoreCase",
-      "weight": 8
+      "weight": 5
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean->unresolved:return#hashCode",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean->unresolved:Integer#hashCode",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
-      "to": "unresolved:return#hashCode",
+      "to": "unresolved:Integer#hashCode",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean->unresolved:return#equals",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean->unresolved:Integer#equals",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
-      "to": "unresolved:return#equals",
+      "to": "unresolved:Integer#equals",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean->unresolved:return#hashCode",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean->unresolved:String#hashCode",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "to": "unresolved:return#hashCode",
+      "to": "unresolved:String#hashCode",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean->unresolved:return#equals",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean->unresolved:String#equals",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
-      "to": "unresolved:return#equals",
+      "to": "unresolved:String#equals",
       "weight": 1
     },
     {
@@ -2647,7 +2359,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.CompleteOrderThread",
       "to": "unresolved:InitialContext#lookup",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.util.CompleteOrderThread->unresolved:UserTransaction#begin",
@@ -2746,19 +2458,11 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.FinancialUtils->unresolved:return#add",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.util.FinancialUtils->unresolved:BigDecimal#add",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.FinancialUtils",
-      "to": "unresolved:return#add",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.FinancialUtils->unresolved:return#setScale",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.FinancialUtils",
-      "to": "unresolved:return#setScale",
+      "to": "unresolved:BigDecimal#add",
       "weight": 1
     },
     {
@@ -2767,23 +2471,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.FinancialUtils",
       "to": "unresolved:BigDecimal#setScale",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.Log->unresolved:static Logger#log",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.Log",
-      "to": "unresolved:static Logger#log",
-      "weight": 5
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.Log->unresolved:static Logger#severe",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.Log",
-      "to": "unresolved:static Logger#severe",
-      "weight": 1
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.util.Log->unresolved:Throwable#toString",
@@ -2842,67 +2530,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->unresolved:return#getMax",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "to": "unresolved:return#getMax",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->unresolved:return#setMax",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "to": "unresolved:return#setMax",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->unresolved:return#getMin",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "to": "unresolved:return#getMin",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->unresolved:return#setMin",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "to": "unresolved:return#setMin",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->unresolved:return#setCount",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "to": "unresolved:return#setCount",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->unresolved:return#setTotalTime",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
-      "to": "unresolved:return#setTotalTime",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.util.MDBStats->class:com.ibm.websphere.samples.daytrader.util.TimerStat",
       "type": "call",
-      "source": "static-constructor-call",
+      "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.MDBStats",
       "to": "class:com.ibm.websphere.samples.daytrader.util.TimerStat",
-      "weight": 1
+      "weight": 9
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.TradeConfig->unresolved:return#substring",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.util.TradeConfig->unresolved:String#substring",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.TradeConfig",
-      "to": "unresolved:return#substring",
+      "to": "unresolved:String#substring",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.util.TradeConfig->unresolved:String#indexOf",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.util.TradeConfig",
+      "to": "unresolved:String#indexOf",
       "weight": 1
     },
     {
@@ -2911,7 +2559,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.TradeConfig",
       "to": "unresolved:String#compareToIgnoreCase",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.util.TradeConfig->unresolved:Random#nextDouble",
@@ -2930,11 +2578,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.util.TradeConfig->unresolved:return#doubleValue",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.util.TradeConfig->unresolved:BigDecimal#doubleValue",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.TradeConfig",
-      "to": "unresolved:return#doubleValue",
+      "to": "unresolved:BigDecimal#doubleValue",
       "weight": 1
     },
     {
@@ -2975,7 +2623,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.util.TradeConfig",
       "to": "unresolved:String#equalsIgnoreCase",
-      "weight": 14
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.OrdersAlertFilter->unresolved:ServletRequest#getParameter",
@@ -2983,7 +2631,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.OrdersAlertFilter",
       "to": "unresolved:ServletRequest#getParameter",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.OrdersAlertFilter->unresolved:String#trim",
@@ -3007,7 +2655,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.OrdersAlertFilter",
       "to": "unresolved:String#equals",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.OrdersAlertFilter->class:com.ibm.websphere.samples.daytrader.TradeServices",
@@ -3071,7 +2719,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TestServlet",
       "to": "unresolved:PrintWriter#write",
-      "weight": 3
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TestServlet->class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.TestServlet",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TestServlet->unresolved:HttpServletRequest#setAttribute",
@@ -3079,7 +2735,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TestServlet",
       "to": "unresolved:HttpServletRequest#setAttribute",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TestServlet->class:com.ibm.websphere.samples.daytrader.TradeAction",
@@ -3098,19 +2754,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->unresolved:java.util.Enumeration<String>#hasMoreElements",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->unresolved:Enumeration<String>#hasMoreElements",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet",
-      "to": "unresolved:java.util.Enumeration<String>#hasMoreElements",
+      "to": "unresolved:Enumeration<String>#hasMoreElements",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->unresolved:java.util.Enumeration<String>#nextElement",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->unresolved:Enumeration<String>#nextElement",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet",
-      "to": "unresolved:java.util.Enumeration<String>#nextElement",
+      "to": "unresolved:Enumeration<String>#nextElement",
       "weight": 1
     },
     {
@@ -3135,7 +2791,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet",
       "to": "unresolved:HttpServletRequest#getParameter",
-      "weight": 18
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->class:com.ibm.websphere.samples.daytrader.web.TradeServletAction",
@@ -3143,7 +2799,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet",
       "to": "class:com.ibm.websphere.samples.daytrader.web.TradeServletAction",
-      "weight": 15
+      "weight": 13
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->unresolved:String#equals",
@@ -3151,7 +2807,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet",
       "to": "unresolved:String#equals",
-      "weight": 12
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet->unresolved:HttpServletRequest#getSession",
@@ -3175,7 +2831,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeAppServlet",
       "to": "unresolved:String#trim",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB->unresolved:java.io.PrintWriter#println",
@@ -3183,7 +2839,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB",
       "to": "unresolved:java.io.PrintWriter#println",
-      "weight": 32
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB->class:com.ibm.websphere.samples.daytrader.direct.TradeDirect",
@@ -3199,7 +2855,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB",
       "to": "unresolved:java.io.PrintWriter#print",
-      "weight": 4
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB->unresolved:java.io.PrintWriter#flush",
@@ -3210,11 +2866,11 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB->unresolved:throw#toString",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB->class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeBuildDB",
-      "to": "unresolved:throw#toString",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountDataBean",
       "weight": 2
     },
     {
@@ -3295,7 +2951,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
       "to": "unresolved:HttpServletRequest#setAttribute",
-      "weight": 5
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet->class:com.ibm.websphere.samples.daytrader.util.TradeConfig",
@@ -3327,7 +2983,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
       "to": "unresolved:HttpServletRequest#getParameter",
-      "weight": 17
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet->unresolved:String#length",
@@ -3351,7 +3007,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
       "to": "unresolved:String#equals",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet->unresolved:HttpServletResponse#getWriter",
@@ -3375,7 +3031,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
       "to": "unresolved:String#startsWith",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet->unresolved:HttpServletResponse#sendError",
@@ -3383,14 +3039,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.TradeConfigServlet",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -3410,19 +3058,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:java.util.Enumeration<String>#hasMoreElements",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:Enumeration<String>#hasMoreElements",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet",
-      "to": "unresolved:java.util.Enumeration<String>#hasMoreElements",
+      "to": "unresolved:Enumeration<String>#hasMoreElements",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:java.util.Enumeration<String>#nextElement",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:Enumeration<String>#nextElement",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet",
-      "to": "unresolved:java.util.Enumeration<String>#nextElement",
+      "to": "unresolved:Enumeration<String>#nextElement",
       "weight": 1
     },
     {
@@ -3479,7 +3127,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet",
       "to": "unresolved:PrintWriter#println",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:PrintWriter#close",
@@ -3511,6 +3159,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet",
       "to": "unresolved:HttpSession#getAttribute",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:String#startsWith",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet",
+      "to": "unresolved:String#startsWith",
       "weight": 1
     },
     {
@@ -3578,14 +3234,6 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet->unresolved:String#startsWith",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet",
-      "to": "unresolved:String#startsWith",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeServletAction->class:com.ibm.websphere.samples.daytrader.TradeAction",
       "type": "call",
       "source": "static-constructor-call",
@@ -3607,7 +3255,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeServletAction",
       "to": "unresolved:HttpServletRequest#setAttribute",
-      "weight": 27
+      "weight": 11
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeServletAction->unresolved:String#equals",
@@ -3639,7 +3287,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeServletAction",
       "to": "unresolved:HttpServletRequest#getSession",
-      "weight": 3
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeServletAction->unresolved:HttpSession#setAttribute",
@@ -3647,7 +3295,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.TradeServletAction",
       "to": "unresolved:HttpSession#setAttribute",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeServletAction->unresolved:HttpSession#invalidate",
@@ -3706,6 +3354,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeServletAction->class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.TradeServletAction",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeServletAction->unresolved:Collection<QuoteDataBean>#add",
       "type": "call",
       "source": "static-fallback",
@@ -3746,6 +3402,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.TradeWebContextListener->unresolved:Properties#getProperty",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.TradeWebContextListener",
+      "to": "unresolved:Properties#getProperty",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:ExternalContext#getSession",
       "type": "call",
       "source": "static-fallback",
@@ -3759,7 +3423,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
       "to": "unresolved:HttpSession#getAttribute",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->class:com.ibm.websphere.samples.daytrader.TradeAction",
@@ -3770,12 +3434,12 @@
       "weight": 4
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:return#size",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:Collection<?>#size",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
-      "to": "unresolved:return#size",
-      "weight": 1
+      "to": "unresolved:Collection<?>#size",
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:HttpSession#setAttribute",
@@ -3783,15 +3447,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
       "to": "unresolved:HttpSession#setAttribute",
-      "weight": 2
+      "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:return#iterator",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:Collection<?>#iterator",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
-      "to": "unresolved:return#iterator",
-      "weight": 1
+      "to": "unresolved:Collection<?>#iterator",
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:Iterator<?>#hasNext",
@@ -3818,22 +3482,6 @@
       "weight": 9
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:Collection<?>#size",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
-      "to": "unresolved:Collection<?>#size",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:Collection<?>#iterator",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
-      "to": "unresolved:Collection<?>#iterator",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->class:com.ibm.websphere.samples.daytrader.web.jsf.OrderData",
       "type": "call",
       "source": "static-constructor-call",
@@ -3850,19 +3498,19 @@
       "weight": 8
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:return#add",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:BigDecimal#add",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
-      "to": "unresolved:return#add",
+      "to": "unresolved:BigDecimal#add",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:return#setScale",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF->unresolved:BigDecimal#setScale",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.AccountDataJSF",
-      "to": "unresolved:return#setScale",
+      "to": "unresolved:BigDecimal#setScale",
       "weight": 1
     },
     {
@@ -3895,7 +3543,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.JSFLoginFilter",
       "to": "unresolved:String#contains",
-      "weight": 6
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.JSFLoginFilter->unresolved:HttpServletResponse#sendRedirect",
@@ -3911,6 +3559,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.JSFLoginFilter",
       "to": "unresolved:FilterChain#doFilter",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.LoginValidator->unresolved:Object#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.LoginValidator",
+      "to": "unresolved:Object#toString",
       "weight": 1
     },
     {
@@ -3954,11 +3610,11 @@
       "weight": 6
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.MarketSummaryJSF->unresolved:return#iterator",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.MarketSummaryJSF->unresolved:Collection<?>#iterator",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.MarketSummaryJSF",
-      "to": "unresolved:return#iterator",
+      "to": "unresolved:Collection<?>#iterator",
       "weight": 2
     },
     {
@@ -3994,11 +3650,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.MarketSummaryJSF->unresolved:return#setScale",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.MarketSummaryJSF->unresolved:BigDecimal#setScale",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.MarketSummaryJSF",
-      "to": "unresolved:return#setScale",
+      "to": "unresolved:BigDecimal#setScale",
       "weight": 1
     },
     {
@@ -4047,7 +3703,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.OrderDataJSF",
       "to": "class:com.ibm.websphere.samples.daytrader.web.jsf.OrderData",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:ExternalContext#getSession",
@@ -4111,7 +3767,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF",
       "to": "class:com.ibm.websphere.samples.daytrader.web.jsf.HoldingData",
-      "weight": 12
+      "weight": 16
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
@@ -4122,12 +3778,12 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:return#add",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:BigDecimal#add",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF",
-      "to": "unresolved:return#add",
-      "weight": 4
+      "to": "unresolved:BigDecimal#add",
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:BigDecimal#subtract",
@@ -4138,19 +3794,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:return#getRowData",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:ArrayList<HoldingData>#add",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF",
-      "to": "unresolved:return#getRowData",
+      "to": "unresolved:ArrayList<HoldingData>#add",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:return#remove",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:HtmlDataTable#getRowData",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF",
-      "to": "unresolved:return#remove",
+      "to": "unresolved:HtmlDataTable#getRowData",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF->unresolved:ArrayList<HoldingData>#remove",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.PortfolioJSF",
+      "to": "unresolved:ArrayList<HoldingData>#remove",
       "weight": 1
     },
     {
@@ -4194,11 +3858,11 @@
       "weight": 4
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteData->unresolved:return#setScale",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteData->unresolved:BigDecimal#setScale",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteData",
-      "to": "unresolved:return#setScale",
+      "to": "unresolved:BigDecimal#setScale",
       "weight": 1
     },
     {
@@ -4234,27 +3898,27 @@
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:java.util.StringTokenizer#countTokens",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:StringTokenizer#countTokens",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF",
-      "to": "unresolved:java.util.StringTokenizer#countTokens",
+      "to": "unresolved:StringTokenizer#countTokens",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:java.util.StringTokenizer#hasMoreElements",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:StringTokenizer#hasMoreElements",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF",
-      "to": "unresolved:java.util.StringTokenizer#hasMoreElements",
+      "to": "unresolved:StringTokenizer#hasMoreElements",
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:java.util.StringTokenizer#nextToken",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:StringTokenizer#nextToken",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF",
-      "to": "unresolved:java.util.StringTokenizer#nextToken",
+      "to": "unresolved:StringTokenizer#nextToken",
       "weight": 1
     },
     {
@@ -4271,14 +3935,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF",
       "to": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteData",
-      "weight": 9
+      "weight": 10
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:return#getRowData",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF->unresolved:HtmlDataTable#getRowData",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.QuoteJSF",
-      "to": "unresolved:return#getRowData",
+      "to": "unresolved:HtmlDataTable#getRowData",
       "weight": 1
     },
     {
@@ -4327,7 +3991,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
       "to": "unresolved:HttpSession#setAttribute",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF->class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
@@ -4338,19 +4002,19 @@
       "weight": 6
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF->unresolved:return#equals",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF->unresolved:String#equals",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
-      "to": "unresolved:return#equals",
+      "to": "unresolved:String#equals",
       "weight": 2
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF->unresolved:return#length",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF->unresolved:String#length",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.TradeAppJSF",
-      "to": "unresolved:return#length",
+      "to": "unresolved:String#length",
       "weight": 1
     },
     {
@@ -4407,7 +4071,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
       "to": "unresolved:HttpSession#setAttribute",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF->class:com.ibm.websphere.samples.daytrader.beans.RunStatsDataBean",
@@ -4447,7 +4111,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF",
       "to": "unresolved:String#startsWith",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.jsf.TradeConfigJSF->unresolved:ExternalContext#getResourceAsStream",
@@ -4567,14 +4231,30 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead",
       "to": "unresolved:StringBuffer#append",
-      "weight": 4
+      "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -4599,7 +4279,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP",
       "to": "unresolved:HttpServletRequest#setAttribute",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCRead2JSP->unresolved:ServletContext#getRequestDispatcher",
@@ -4647,14 +4327,30 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite",
       "to": "unresolved:StringBuffer#append",
-      "weight": 4
+      "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJDBCWrite",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -4695,7 +4391,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP",
       "to": "unresolved:JsonGenerator#write",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP->unresolved:JsonGenerator#writeEnd",
@@ -4746,6 +4442,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP->unresolved:JsonParser#getString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP",
+      "to": "unresolved:JsonParser#getString",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingJSONP->unresolved:ServletOutputStream#println",
       "type": "call",
       "source": "static-fallback",
@@ -4791,7 +4495,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingManagedExecutor",
       "to": "unresolved:ServletOutputStream#println",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingManagedExecutor->unresolved:ManagedExecutorService#submit",
@@ -4839,7 +4543,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingManagedThread",
       "to": "unresolved:ServletOutputStream#println",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingManagedThread->unresolved:ManagedThreadFactory#newThread",
@@ -4903,7 +4607,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
       "to": "unresolved:HttpServletRequest#getParameter",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet->unresolved:ServletOutputStream#println",
@@ -4911,7 +4615,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
       "to": "unresolved:ServletOutputStream#println",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet->unresolved:HttpServletRequest#getServerName",
@@ -5002,6 +4706,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet",
+      "to": "unresolved:StringBuffer#toString",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingReentryServlet->unresolved:HttpServletResponse#sendError",
       "type": "call",
       "source": "static-fallback",
@@ -5079,14 +4791,22 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB",
       "to": "unresolved:StringBuffer#append",
-      "weight": 3
+      "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2DB",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -5122,11 +4842,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2Include",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
       "weight": 1
     },
     {
@@ -5159,14 +4879,22 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI",
       "to": "unresolved:StringBuffer#append",
-      "weight": 3
+      "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2JNDI",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -5247,6 +4975,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF",
       "to": "unresolved:URLConnection#getInputStream",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF->unresolved:BufferedInputStream#read",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2PDF",
+      "to": "unresolved:BufferedInputStream#read",
       "weight": 1
     },
     {
@@ -5338,6 +5074,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv->class:com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv",
+      "to": "class:com.ibm.websphere.samples.daytrader.web.prims.PingBean",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet2ServletRcv->unresolved:HttpServletResponse#sendError",
       "type": "call",
       "source": "static-fallback",
@@ -5399,6 +5143,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async",
       "to": "unresolved:ServletOutputStream#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async->unresolved:StringBuilder#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet30Async",
+      "to": "unresolved:StringBuilder#toString",
       "weight": 1
     },
     {
@@ -5471,6 +5223,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async",
       "to": "unresolved:Queue<String>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async->unresolved:StringBuilder#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31Async",
+      "to": "unresolved:StringBuilder#toString",
       "weight": 1
     },
     {
@@ -5618,6 +5378,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead->unresolved:StringBuilder#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead",
+      "to": "unresolved:StringBuilder#toString",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServlet31AsyncRead->unresolved:AsyncContext#complete",
       "type": "call",
       "source": "static-fallback",
@@ -5647,7 +5415,23 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI",
       "to": "unresolved:PrintWriter#write",
-      "weight": 3
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI->class:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI",
+      "to": "class:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI->class:com.ibm.websphere.samples.daytrader.web.prims.PingEJBIFace",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI",
+      "to": "class:com.ibm.websphere.samples.daytrader.web.prims.PingEJBIFace",
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDI->unresolved:PrintWriter#flush",
@@ -5679,7 +5463,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
       "to": "unresolved:PrintWriter#write",
-      "weight": 2
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent->class:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent",
+      "to": "class:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaCDICurrent->unresolved:PrintWriter#flush",
@@ -5711,7 +5503,15 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI",
       "to": "unresolved:PrintWriter#write",
-      "weight": 2
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI->class:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI",
+      "to": "class:com.ibm.websphere.samples.daytrader.web.prims.PingCDIBean",
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI->unresolved:PrintWriter#flush",
@@ -5727,6 +5527,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletCDIBeanManagerViaJNDI",
       "to": "unresolved:PrintWriter#close",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength->unresolved:HttpServletRequest#getContentLengthLong",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletLargeContentLength",
+      "to": "unresolved:HttpServletRequest#getContentLengthLong",
       "weight": 1
     },
     {
@@ -5794,11 +5602,11 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingServletWriter",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
       "weight": 1
     },
     {
@@ -5871,7 +5679,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession1",
       "to": "unresolved:PrintWriter#println",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession1->unresolved:HttpServletResponse#sendError",
@@ -5879,14 +5687,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession1",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession1->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession1",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -5946,6 +5746,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2->unresolved:Integer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2",
+      "to": "unresolved:Integer#toString",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2->unresolved:HttpServletResponse#getWriter",
       "type": "call",
       "source": "static-fallback",
@@ -5959,7 +5767,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2",
       "to": "unresolved:PrintWriter#println",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2->unresolved:HttpServletResponse#sendError",
@@ -5967,14 +5775,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession2",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -6015,7 +5815,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
       "to": "unresolved:StringBuffer#append",
-      "weight": 3
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3->unresolved:HttpSession#invalidate",
@@ -6031,6 +5831,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
       "to": "unresolved:PrintWriter#print",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6082,14 +5890,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
-      "to": "unresolved:throw#toString",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3->class:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object",
       "type": "call",
       "source": "static-constructor-call",
@@ -6119,7 +5919,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet",
       "to": "unresolved:HttpServletResponse#setHeader",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingUpgradeServlet->unresolved:HttpServletRequest#upgrade",
@@ -6258,6 +6058,14 @@
       "weight": 6
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingWebSocketJson->unresolved:Integer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.PingWebSocketJson",
+      "to": "unresolved:Integer#toString",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.PingWebSocketJson->unresolved:Session#getAsyncRemote",
       "type": "call",
       "source": "static-fallback",
@@ -6351,7 +6159,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity",
       "to": "unresolved:StringBuffer#append",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity->unresolved:EntityManager#find",
@@ -6362,11 +6170,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6375,14 +6199,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Entity",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -6415,7 +6231,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue",
       "to": "unresolved:StringBuffer#append",
-      "weight": 7
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue->unresolved:ConnectionFactory#createConnection",
@@ -6455,7 +6271,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue",
       "to": "unresolved:TextMessage#setStringProperty",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue->unresolved:TextMessage#setLongProperty",
@@ -6522,11 +6338,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6543,14 +6367,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBQueue",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -6575,7 +6391,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic",
       "to": "unresolved:StringBuffer#append",
-      "weight": 7
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic->unresolved:ConnectionFactory#createConnection",
@@ -6615,7 +6431,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic",
       "to": "unresolved:TextMessage#setStringProperty",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic->unresolved:TextMessage#setLongProperty",
@@ -6682,11 +6498,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6703,14 +6527,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2MDBTopic",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -6735,7 +6551,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
       "to": "unresolved:StringBuffer#append",
-      "weight": 6
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
@@ -6743,6 +6559,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
       "to": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many->unresolved:Collection<?>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+      "to": "unresolved:Collection<?>#size",
       "weight": 1
     },
     {
@@ -6770,11 +6594,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many->class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.OrderDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2Many",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6807,7 +6647,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One",
       "to": "unresolved:StringBuffer#append",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
@@ -6818,11 +6658,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One->class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.AccountProfileDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2CMROne2One",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6855,7 +6711,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity",
       "to": "unresolved:StringBuffer#append",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
@@ -6866,11 +6722,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -6903,7 +6775,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity2JSP",
       "to": "unresolved:HttpServletRequest#setAttribute",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2Entity2JSP->unresolved:ServletContext#getRequestDispatcher",
@@ -6951,7 +6823,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection",
       "to": "unresolved:StringBuffer#append",
-      "weight": 4
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
@@ -6959,6 +6831,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection",
       "to": "class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection->unresolved:Collection<?>#size",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection",
+      "to": "unresolved:Collection<?>#size",
       "weight": 1
     },
     {
@@ -6986,11 +6866,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection->class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.HoldingDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2Session2EntityCollection",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -7023,7 +6919,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal",
       "to": "unresolved:StringBuffer#append",
-      "weight": 6
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBLocal",
@@ -7042,11 +6938,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -7055,14 +6959,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionLocal",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -7095,7 +6991,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote",
       "to": "unresolved:StringBuffer#append",
-      "weight": 6
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBRemote",
@@ -7114,11 +7010,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote->unresolved:PrintWriter#println",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -7127,14 +7031,6 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote",
       "to": "unresolved:HttpServletResponse#sendError",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote->unresolved:throw#toString",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2SessionRemote",
-      "to": "unresolved:throw#toString",
       "weight": 1
     },
     {
@@ -7167,7 +7063,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase",
       "to": "unresolved:StringBuffer#append",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase->class:com.ibm.websphere.samples.daytrader.ejb3.TradeSLSBBean",
@@ -7178,11 +7074,27 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase->unresolved:java.io.PrintWriter#println",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase->class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase",
-      "to": "unresolved:java.io.PrintWriter#println",
+      "to": "class:com.ibm.websphere.samples.daytrader.entities.QuoteDataBean",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase->unresolved:PrintWriter#println",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase",
+      "to": "unresolved:PrintWriter#println",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase->unresolved:StringBuffer#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.prims.ejb3.PingServlet2TwoPhase",
+      "to": "unresolved:StringBuffer#toString",
       "weight": 1
     },
     {
@@ -7194,20 +7106,12 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.ActionDecoder->unresolved:return#doDecoding",
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.ActionDecoder->class:com.ibm.websphere.samples.daytrader.web.websocket.ActionMessage",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.ActionDecoder",
-      "to": "unresolved:return#doDecoding",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.ActionDecoder->class:com.ibm.websphere.samples.daytrader.web.websocket.ActionMessage",
-      "type": "call",
-      "source": "static-constructor-call",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.ActionDecoder",
       "to": "class:com.ibm.websphere.samples.daytrader.web.websocket.ActionMessage",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.ActionMessage->unresolved:JsonParser#hasNext",
@@ -7242,27 +7146,19 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder->unresolved:return#setKey",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder",
-      "to": "unresolved:return#setKey",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder->unresolved:return#setValue",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder",
-      "to": "unresolved:return#setValue",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder->class:com.ibm.websphere.samples.daytrader.web.websocket.JsonMessage",
       "type": "call",
-      "source": "static-constructor-call",
+      "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder",
       "to": "class:com.ibm.websphere.samples.daytrader.web.websocket.JsonMessage",
+      "weight": 3
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder->unresolved:JsonObject#getString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.JsonDecoder",
+      "to": "unresolved:JsonObject#getString",
       "weight": 1
     },
     {
@@ -7503,7 +7399,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList",
       "to": "unresolved:JsonObjectBuilder#add",
-      "weight": 3
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList->unresolved:Message#getStringProperty",
@@ -7511,7 +7407,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList",
       "to": "unresolved:Message#getStringProperty",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList->unresolved:BigDecimal#setScale",
@@ -7519,6 +7415,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList",
       "to": "unresolved:BigDecimal#setScale",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList->unresolved:BigDecimal#toString",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.daytrader.web.websocket.RecentStockChangeList",
+      "to": "unresolved:BigDecimal#toString",
       "weight": 1
     },
     {
