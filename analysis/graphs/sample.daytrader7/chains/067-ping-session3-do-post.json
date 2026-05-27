@@ -3,7 +3,7 @@
   "fileName": "067-ping-session3-do-post.json",
   "actionPointId": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
   "rootMethodId": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
-  "reachedNodeCount": 16,
+  "reachedNodeCount": 17,
   "reachedDataSources": [],
   "actionPoint": {
     "id": "action:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -39,6 +39,14 @@
       "methodName": "doPost",
       "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3.java",
       "line": 55
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>",
+      "kind": "method",
+      "className": "PingSession3Object",
+      "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object",
+      "methodName": "<init>",
+      "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3Object.java"
     },
     {
       "id": "unresolved:HttpServletRequest#getParameter",
@@ -127,7 +135,7 @@
   ],
   "edges": [
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
       "type": "call",
       "source": "static-fallback",
       "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -153,7 +161,7 @@
       "callSite": "doGet("
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#getWriter:1630",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#getWriter:2146",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -177,7 +185,7 @@
       "callSite": "response.getWriter()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setContentType:1631",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setContentType:2147",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -201,7 +209,7 @@
       "callSite": "response.setContentType(\"text/html\")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getSession:1632",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getSession:2148",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -225,7 +233,7 @@
       "callSite": "request.getSession(true)"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getParameter:1633",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getParameter:2149",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -249,7 +257,7 @@
       "callSite": "request.getParameter(\"num_objects\")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:1634",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:2150",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -273,7 +281,7 @@
       "callSite": "outputBuffer.append(\"<html><head> Session object size set to \" + NUM_OBJECTS + \"K bytes </head><body></body></html>\")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#invalidate:1635",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#invalidate:2151",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -297,7 +305,7 @@
       "callSite": "session.invalidate()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#print:1636",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#print:2152",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -321,7 +329,7 @@
       "callSite": "out.print(outputBuffer.toString()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#close:1637",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#close:2153",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -345,7 +353,7 @@
       "callSite": "out.close()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#getAttribute:1638",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#getAttribute:2154",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -369,7 +377,7 @@
       "callSite": "session.getAttribute(\"sessiontest.sessionData\")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#setAttribute:1639",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#setAttribute:2155",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -393,7 +401,7 @@
       "callSite": "session.setAttribute(\"sessiontest.sessionData\", sessionData)"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setHeader:1640",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setHeader:2156",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -417,7 +425,7 @@
       "callSite": "response.setHeader(\"SessionTrackingTest-largeSessionData\", num_bytes + \"bytes\")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:1641",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:2157",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -441,7 +449,7 @@
       "callSite": "outputBuffer\r\n                    .append(\"<html><head><title>Session Large Data Test</title></head><body><HR><BR><FONT size=\\\"+2\\\" color=\\\"#000066\\\">HTTP Session Test 3: Large Data<BR></FONT><FONT size=\\\"+1\\\" color=\\\"#000066\\\">Init time: \")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:1642",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:2158",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -465,7 +473,7 @@
       "callSite": "outputBuffer.append(\"<B>Hit Count: \")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#println:1643",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#println:2159",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -489,7 +497,7 @@
       "callSite": "out.println(outputBuffer.toString()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#sendError:1644",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#sendError:2160",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -513,7 +521,7 @@
       "callSite": "response.sendError(500, \"PingSession3.doGet(...)"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:throw#toString:1645",
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:throw#toString:2161",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -535,17 +543,42 @@
         "methodName": "toString"
       },
       "callSite": "e.toString()"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>:2162",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+      "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+        "kind": "method",
+        "className": "PingSession3",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
+        "methodName": "doGet",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3.java",
+        "line": 69
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>",
+        "kind": "method",
+        "className": "PingSession3Object",
+        "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3Object.java"
+      },
+      "callSite": "new PingSession3Object("
     }
   ],
   "paths": [
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#getWriter:1630"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#getWriter:2146"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -571,7 +604,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#getWriter:1630",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#getWriter:2146",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -603,12 +636,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setContentType:1631"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setContentType:2147"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -634,7 +667,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setContentType:1631",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setContentType:2147",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -666,12 +699,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getSession:1632"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getSession:2148"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -697,7 +730,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getSession:1632",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getSession:2148",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -729,12 +762,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getParameter:1633"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getParameter:2149"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -760,7 +793,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getParameter:1633",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletRequest#getParameter:2149",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -792,12 +825,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:1634"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:2150"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -823,7 +856,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:1634",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:StringBuffer#append:2150",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -855,12 +888,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#invalidate:1635"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#invalidate:2151"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -886,7 +919,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#invalidate:1635",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#invalidate:2151",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -918,12 +951,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#print:1636"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#print:2152"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -949,7 +982,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#print:1636",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#print:2152",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -981,12 +1014,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#close:1637"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#close:2153"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1012,7 +1045,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#close:1637",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#close:2153",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1044,12 +1077,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#getAttribute:1638"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#getAttribute:2154"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1075,7 +1108,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#getAttribute:1638",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#getAttribute:2154",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1107,12 +1140,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#setAttribute:1639"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#setAttribute:2155"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1138,7 +1171,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#setAttribute:1639",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpSession#setAttribute:2155",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1170,12 +1203,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setHeader:1640"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setHeader:2156"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1201,7 +1234,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setHeader:1640",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#setHeader:2156",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1233,12 +1266,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#println:1643"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#println:2159"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1264,7 +1297,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#println:1643",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:PrintWriter#println:2159",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1296,12 +1329,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#sendError:1644"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#sendError:2160"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1327,7 +1360,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#sendError:1644",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:HttpServletResponse#sendError:2160",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1359,12 +1392,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
-        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:throw#toString:1645"
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:throw#toString:2161"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:1629",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
@@ -1390,7 +1423,7 @@
           "callSite": "doGet("
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:throw#toString:1645",
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->unresolved:throw#toString:2161",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1418,6 +1451,70 @@
         "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
         "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
         "unresolved:throw#toString"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+        "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>:2162"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet:2145",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
+            "kind": "method",
+            "className": "PingSession3",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
+            "methodName": "doPost",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3.java",
+            "line": 55
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+            "kind": "method",
+            "className": "PingSession3",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3.java",
+            "line": 69
+          },
+          "callSite": "doGet("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet->method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>:2162",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+          "to": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+            "kind": "method",
+            "className": "PingSession3",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3",
+            "methodName": "doGet",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3.java",
+            "line": 69
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>",
+            "kind": "method",
+            "className": "PingSession3Object",
+            "classFqn": "com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.daytrader7/daytrader-ee7-web/src/main/java/com/ibm/websphere/samples/daytrader/web/prims/PingSession3Object.java"
+          },
+          "callSite": "new PingSession3Object("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doPost",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3#doGet",
+        "method:com.ibm.websphere.samples.daytrader.web.prims.PingSession3Object#<init>"
       ]
     }
   ]

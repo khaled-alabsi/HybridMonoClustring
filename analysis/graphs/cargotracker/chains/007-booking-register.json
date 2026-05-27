@@ -3,7 +3,7 @@
   "fileName": "007-booking-register.json",
   "actionPointId": "action:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
   "rootMethodId": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
-  "reachedNodeCount": 22,
+  "reachedNodeCount": 28,
   "reachedDataSources": [
     "table:cargo",
     "table:location"
@@ -40,6 +40,15 @@
       "line": 27
     },
     {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+      "kind": "method",
+      "className": "Cargo",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+      "methodName": "<init>",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+      "line": 82
+    },
+    {
       "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId",
       "kind": "method",
       "className": "Cargo",
@@ -61,6 +70,30 @@
       "methodName": "store"
     },
     {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>",
+      "kind": "method",
+      "className": "RouteSpecification",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "methodName": "<init>",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/RouteSpecification.java"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin",
+      "kind": "method",
+      "className": "RouteSpecification",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+      "methodName": "getOrigin",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/RouteSpecification.java"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>",
+      "kind": "method",
+      "className": "TrackingId",
+      "classFqn": "org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+      "methodName": "<init>",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/TrackingId.java"
+    },
+    {
       "id": "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString",
       "kind": "method",
       "className": "TrackingId",
@@ -73,6 +106,15 @@
       "className": "LocationRepository",
       "classFqn": "org.eclipse.cargotracker.domain.model.location.LocationRepository",
       "methodName": "find"
+    },
+    {
+      "id": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+      "kind": "method",
+      "className": "UnLocode",
+      "classFqn": "org.eclipse.cargotracker.domain.model.location.UnLocode",
+      "methodName": "<init>",
+      "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/location/UnLocode.java",
+      "line": 34
     },
     {
       "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
@@ -179,11 +221,17 @@
       "kind": "unknown_framework_target",
       "className": "String",
       "methodName": "substring"
+    },
+    {
+      "id": "unresolved:String#toUpperCase",
+      "kind": "unknown_framework_target",
+      "className": "String",
+      "methodName": "toUpperCase"
     }
   ],
   "edges": [
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:String#equals:468",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:String#equals:543",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -207,7 +255,7 @@
       "callSite": "originUnlocode.equals(destinationUnlocode)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -231,7 +279,7 @@
       "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesMessage#setSeverity:471",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesMessage#setSeverity:546",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -255,7 +303,7 @@
       "callSite": "message.setSeverity(FacesMessage.SEVERITY_ERROR)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesContext#addMessage:472",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesContext#addMessage:547",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -279,7 +327,7 @@
       "callSite": "context.addMessage(null, message)"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -302,7 +350,7 @@
       "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -326,7 +374,7 @@
       "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString:359",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString:414",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -350,7 +398,32 @@
       "callSite": "trackingId.getIdString()"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>:415",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+        "kind": "method",
+        "className": "DefaultBookingServiceFacade",
+        "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+        "methodName": "bookNewCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java",
+        "line": 50
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+        "kind": "method",
+        "className": "UnLocode",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.UnLocode",
+        "methodName": "<init>",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/location/UnLocode.java"
+      },
+      "callSite": "new UnLocode("
+    },
+    {
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -371,6 +444,30 @@
         "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java"
       },
       "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>->unresolved:String#toUpperCase:264",
+      "type": "call",
+      "source": "static-fallback",
+      "unresolved": true,
+      "from": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+      "to": "unresolved:String#toUpperCase",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+        "kind": "method",
+        "className": "UnLocode",
+        "classFqn": "org.eclipse.cargotracker.domain.model.location.UnLocode",
+        "methodName": "<init>",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/location/UnLocode.java",
+        "line": 34
+      },
+      "toNode": {
+        "id": "unresolved:String#toUpperCase",
+        "kind": "unknown_framework_target",
+        "className": "String",
+        "methodName": "toUpperCase"
+      },
+      "callSite": "countryAndLocation.toUpperCase()"
     },
     {
       "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId:0",
@@ -517,6 +614,57 @@
       "callSite": "cargo.getTrackingId()"
     },
     {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>:10",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+        "kind": "method",
+        "className": "DefaultBookingService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+        "methodName": "bookNewCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java",
+        "line": 27
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>",
+        "kind": "method",
+        "className": "RouteSpecification",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+        "methodName": "<init>",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/RouteSpecification.java"
+      },
+      "callSite": "new RouteSpecification("
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>:11",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+        "kind": "method",
+        "className": "DefaultBookingService",
+        "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+        "methodName": "bookNewCargo",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java",
+        "line": 27
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "<init>",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+        "line": 82
+      },
+      "callSite": "new Cargo("
+    },
+    {
       "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId:1",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
@@ -588,7 +736,7 @@
       "callSite": "locationRepository.find(destinationUnLocode)"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:20",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:22",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
@@ -611,7 +759,7 @@
       "callSite": "locationRepository.find(unLocode)"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:218",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:249",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
@@ -634,7 +782,7 @@
       "callSite": "locationRepository.find(unlocode)"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:326",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:376",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
@@ -657,7 +805,7 @@
       "callSite": "locationRepository.find(new UnLocode(edge.getFromUnLocode()"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:328",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:378",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
@@ -680,7 +828,7 @@
       "callSite": "locationRepository.find(new UnLocode(edge.getToUnLocode()"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:422",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:489",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
@@ -703,7 +851,7 @@
       "callSite": "locationRepository.find(new UnLocode(legDTO.getFromUnLocode()"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:424",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:491",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find",
@@ -750,7 +898,32 @@
       "callSite": "cargoRepository.store(cargo)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->unresolved:String#substring:301",
+      "id": "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>->method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin:123",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+        "kind": "method",
+        "className": "Cargo",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+        "methodName": "<init>",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+        "line": 82
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin",
+        "kind": "method",
+        "className": "RouteSpecification",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+        "methodName": "getOrigin",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/RouteSpecification.java"
+      },
+      "callSite": "routeSpecification.getOrigin()"
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->unresolved:String#substring:348",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -774,7 +947,32 @@
       "callSite": "random.substring(0, random.indexOf(\"-\")"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:306",
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>:349",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+      "to": "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>",
+      "fromNode": {
+        "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+        "kind": "method",
+        "className": "JpaCargoRepository",
+        "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+        "methodName": "nextTrackingId",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+        "line": 61
+      },
+      "toNode": {
+        "id": "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>",
+        "kind": "method",
+        "className": "TrackingId",
+        "classFqn": "org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+        "methodName": "<init>",
+        "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/TrackingId.java"
+      },
+      "callSite": "new TrackingId("
+    },
+    {
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:355",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -798,7 +996,7 @@
       "callSite": "entityManager\n        .createNamedQuery(\"Location.findByUnLocode\", Location.class)"
     },
     {
-      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:307",
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:356",
       "type": "data_access",
       "source": "jpa-static",
       "operation": "namedQuery:Location.findByUnLocode",
@@ -820,7 +1018,7 @@
       }
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:296",
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:343",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -844,7 +1042,7 @@
       "callSite": "cargo.getItinerary()"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:297",
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:344",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -868,7 +1066,7 @@
       "callSite": "entityManager.persist(leg)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:298",
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:345",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -892,7 +1090,7 @@
       "callSite": "entityManager.persist(cargo)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:299",
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:346",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -916,7 +1114,7 @@
       "callSite": "cargoUpdated.fireAsync(cargo)"
     },
     {
-      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:300",
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:347",
       "type": "data_access",
       "source": "jpa-static",
       "operation": "cargo",
@@ -941,11 +1139,11 @@
   "paths": [
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:String#equals:468"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:String#equals:543"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:String#equals:468",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:String#equals:543",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -976,11 +1174,11 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesMessage#setSeverity:471"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesMessage#setSeverity:546"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesMessage#setSeverity:471",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesMessage#setSeverity:546",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1011,11 +1209,11 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesContext#addMessage:472"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesContext#addMessage:547"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesContext#addMessage:472",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->unresolved:FacesContext#addMessage:547",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1046,13 +1244,13 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString:359"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString:414"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -1076,7 +1274,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -1099,7 +1297,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString:359",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#getIdString:414",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -1132,15 +1330,14 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
-        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->unresolved:Logger#log:8"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>:415",
+        "call:method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>->unresolved:String#toUpperCase:264"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -1164,7 +1361,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -1187,7 +1384,121 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>:415",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+            "kind": "method",
+            "className": "UnLocode",
+            "classFqn": "org.eclipse.cargotracker.domain.model.location.UnLocode",
+            "methodName": "<init>",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/location/UnLocode.java"
+          },
+          "callSite": "new UnLocode("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>->unresolved:String#toUpperCase:264",
+          "type": "call",
+          "source": "static-fallback",
+          "unresolved": true,
+          "from": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+          "to": "unresolved:String#toUpperCase",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+            "kind": "method",
+            "className": "UnLocode",
+            "classFqn": "org.eclipse.cargotracker.domain.model.location.UnLocode",
+            "methodName": "<init>",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/location/UnLocode.java",
+            "line": 34
+          },
+          "toNode": {
+            "id": "unresolved:String#toUpperCase",
+            "kind": "unknown_framework_target",
+            "className": "String",
+            "methodName": "toUpperCase"
+          },
+          "callSite": "countryAndLocation.toUpperCase()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.domain.model.location.UnLocode#<init>",
+        "unresolved:String#toUpperCase"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->unresolved:Logger#log:8"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+            "kind": "method",
+            "className": "Booking",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.Booking",
+            "methodName": "register",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/web/Booking.java",
+            "line": 148
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -1211,7 +1522,7 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -1269,15 +1580,15 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
         "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#getTrackingId:9"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -1301,7 +1612,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -1324,7 +1635,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -1348,7 +1659,7 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -1406,17 +1717,15 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
-        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:2",
-        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
-        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:307"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>:10"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -1440,7 +1749,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -1463,7 +1772,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -1487,7 +1796,147 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "org.eclipse.cargotracker.application.BookingService",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java"
+          },
+          "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>:10",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java",
+            "line": 27
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>",
+            "kind": "method",
+            "className": "RouteSpecification",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+            "methodName": "<init>",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/RouteSpecification.java"
+          },
+          "callSite": "new RouteSpecification("
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#<init>"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:2",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:356"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+            "kind": "method",
+            "className": "Booking",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.Booking",
+            "methodName": "register",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/web/Booking.java",
+            "line": 148
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "org.eclipse.cargotracker.application.BookingService",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -1558,7 +2007,7 @@
           "callSite": "locationRepository.find(originUnLocode)"
         },
         {
-          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:307",
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->table:location:356",
           "type": "data_access",
           "source": "jpa-static",
           "operation": "namedQuery:Location.findByUnLocode",
@@ -1593,17 +2042,17 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
         "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:6",
         "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
-        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:300"
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:347"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -1627,7 +2076,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -1650,7 +2099,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -1674,7 +2123,7 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -1745,7 +2194,7 @@
           "callSite": "cargoRepository.store(cargo)"
         },
         {
-          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:300",
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->table:cargo:347",
           "type": "data_access",
           "source": "jpa-static",
           "operation": "cargo",
@@ -1780,17 +2229,16 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
-        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId:0",
-        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId:1",
-        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->unresolved:String#substring:301"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>:11",
+        "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>->method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin:123"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -1814,7 +2262,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -1837,7 +2285,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -1861,7 +2309,174 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "org.eclipse.cargotracker.application.BookingService",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java"
+          },
+          "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>:11",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java",
+            "line": 27
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "<init>",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+            "line": 82
+          },
+          "callSite": "new Cargo("
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>->method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin:123",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+            "kind": "method",
+            "className": "Cargo",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.Cargo",
+            "methodName": "<init>",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/Cargo.java",
+            "line": 82
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin",
+            "kind": "method",
+            "className": "RouteSpecification",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.RouteSpecification",
+            "methodName": "getOrigin",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/RouteSpecification.java"
+          },
+          "callSite": "routeSpecification.getOrigin()"
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.Cargo#<init>",
+        "method:org.eclipse.cargotracker.domain.model.cargo.RouteSpecification#getOrigin"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId:0",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId:1",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->unresolved:String#substring:348"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+            "kind": "method",
+            "className": "Booking",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.Booking",
+            "methodName": "register",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/web/Booking.java",
+            "line": 148
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "org.eclipse.cargotracker.application.BookingService",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -1932,7 +2547,7 @@
           "callSite": "cargoRepository.nextTrackingId()"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->unresolved:String#substring:301",
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->unresolved:String#substring:348",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -1969,17 +2584,17 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
-        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:2",
-        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
-        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:306"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId:0",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId:1",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>:349"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -2003,7 +2618,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -2026,7 +2641,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -2050,7 +2665,197 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "org.eclipse.cargotracker.application.BookingService",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java"
+          },
+          "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId:0",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingService",
+            "classFqn": "org.eclipse.cargotracker.application.internal.DefaultBookingService",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/application/internal/DefaultBookingService.java",
+            "line": 27
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "nextTrackingId"
+          },
+          "callSite": "cargoRepository.nextTrackingId()"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId:1",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId",
+          "to": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId",
+            "kind": "method",
+            "className": "CargoRepository",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.CargoRepository",
+            "methodName": "nextTrackingId"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "nextTrackingId",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 61
+          },
+          "callSite": "cargoRepository.nextTrackingId()"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId->method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>:349",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+          "to": "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+            "kind": "method",
+            "className": "JpaCargoRepository",
+            "classFqn": "org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository",
+            "methodName": "nextTrackingId",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java",
+            "line": 61
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>",
+            "kind": "method",
+            "className": "TrackingId",
+            "classFqn": "org.eclipse.cargotracker.domain.model.cargo.TrackingId",
+            "methodName": "<init>",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/domain/model/cargo/TrackingId.java"
+          },
+          "callSite": "new TrackingId("
+        }
+      ],
+      "nodeIds": [
+        "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+        "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+        "method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo",
+        "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#nextTrackingId",
+        "method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#nextTrackingId",
+        "method:org.eclipse.cargotracker.domain.model.cargo.TrackingId#<init>"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
+        "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find:2",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.location.LocationRepository#find->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find:3",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:355"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
+            "kind": "method",
+            "className": "Booking",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.web.Booking",
+            "methodName": "register",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/web/Booking.java",
+            "line": 148
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+          "type": "polymorphic_call",
+          "source": "static-implementation-bridge",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "BookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade",
+            "methodName": "bookNewCargo"
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java"
+          },
+          "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
+        },
+        {
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+          "to": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+          "fromNode": {
+            "id": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
+            "kind": "method",
+            "className": "DefaultBookingServiceFacade",
+            "classFqn": "org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade",
+            "methodName": "bookNewCargo",
+            "file": "benchmarks/cargotracker/src/main/java/org/eclipse/cargotracker/interfaces/booking/facade/internal/DefaultBookingServiceFacade.java",
+            "line": 50
+          },
+          "toNode": {
+            "id": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
+            "kind": "method",
+            "className": "BookingService",
+            "classFqn": "org.eclipse.cargotracker.application.BookingService",
+            "methodName": "bookNewCargo"
+          },
+          "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
+        },
+        {
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -2121,7 +2926,7 @@
           "callSite": "locationRepository.find(originUnLocode)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:306",
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaLocationRepository#find->unresolved:EntityManager#createNamedQuery:355",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -2158,17 +2963,17 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
         "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:6",
         "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
-        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:296"
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:343"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -2192,7 +2997,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -2215,7 +3020,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -2239,7 +3044,7 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -2310,7 +3115,7 @@
           "callSite": "cargoRepository.store(cargo)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:296",
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:return#getItinerary:343",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -2347,17 +3152,17 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
         "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:6",
         "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
-        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:297"
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:344"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -2381,7 +3186,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -2404,7 +3209,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -2428,7 +3233,7 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -2499,7 +3304,7 @@
           "callSite": "cargoRepository.store(cargo)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:297",
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:EntityManager#persist:344",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -2536,17 +3341,17 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
-        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
-        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
-        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
+        "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
+        "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
+        "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
         "call:method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store:6",
         "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#store->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store:7",
-        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:299"
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:346"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:469",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register->method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo:544",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
@@ -2570,7 +3375,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:470",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo:545",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.BookingServiceFacade#bookNewCargo",
@@ -2593,7 +3398,7 @@
           "callSite": "bookingServiceFacade.bookNewCargo(originUnlocode, destinationUnlocode, arrivalDeadline)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:357",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo->method:org.eclipse.cargotracker.application.BookingService#bookNewCargo:412",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.facade.internal.DefaultBookingServiceFacade#bookNewCargo",
@@ -2617,7 +3422,7 @@
           "callSite": "bookingService.bookNewCargo(\n            new UnLocode(origin)"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:358",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.application.BookingService#bookNewCargo->method:org.eclipse.cargotracker.application.internal.DefaultBookingService#bookNewCargo:413",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.application.BookingService#bookNewCargo",
@@ -2688,7 +3493,7 @@
           "callSite": "cargoRepository.store(cargo)"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:299",
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#store->unresolved:Event<Cargo>#fireAsync:346",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,

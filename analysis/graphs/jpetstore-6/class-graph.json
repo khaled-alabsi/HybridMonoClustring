@@ -8,6 +8,12 @@
       "classFqn": "org.mybatis.jpetstore.domain.Cart"
     },
     {
+      "id": "class:org.mybatis.jpetstore.domain.Item",
+      "kind": "class",
+      "className": "Item",
+      "classFqn": "org.mybatis.jpetstore.domain.Item"
+    },
+    {
       "id": "class:org.mybatis.jpetstore.domain.CartItem",
       "kind": "class",
       "className": "CartItem",
@@ -18,12 +24,6 @@
       "kind": "class",
       "className": "Category",
       "classFqn": "org.mybatis.jpetstore.domain.Category"
-    },
-    {
-      "id": "class:org.mybatis.jpetstore.domain.Item",
-      "kind": "class",
-      "className": "Item",
-      "classFqn": "org.mybatis.jpetstore.domain.Item"
     },
     {
       "id": "class:org.mybatis.jpetstore.domain.LineItem",
@@ -240,12 +240,20 @@
       "weight": 3
     },
     {
+      "id": "call:class:org.mybatis.jpetstore.domain.Cart->class:org.mybatis.jpetstore.domain.Item",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.mybatis.jpetstore.domain.Cart",
+      "to": "class:org.mybatis.jpetstore.domain.Item",
+      "weight": 1
+    },
+    {
       "id": "call:class:org.mybatis.jpetstore.domain.Cart->class:org.mybatis.jpetstore.domain.CartItem",
       "type": "call",
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.domain.Cart",
       "to": "class:org.mybatis.jpetstore.domain.CartItem",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "call:class:org.mybatis.jpetstore.domain.Cart->unresolved:Map<String, CartItem>#put",
@@ -309,7 +317,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.domain.LineItem",
       "to": "class:org.mybatis.jpetstore.domain.CartItem",
-      "weight": 2
+      "weight": 4
     },
     {
       "id": "call:class:org.mybatis.jpetstore.domain.Order->class:org.mybatis.jpetstore.domain.Account",
@@ -349,6 +357,14 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.domain.Order",
       "to": "unresolved:List<LineItem>#size",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.mybatis.jpetstore.domain.Order->class:org.mybatis.jpetstore.domain.LineItem",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:org.mybatis.jpetstore.domain.Order",
+      "to": "class:org.mybatis.jpetstore.domain.LineItem",
       "weight": 1
     },
     {
@@ -480,6 +496,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:org.mybatis.jpetstore.service.AccountService->class:org.mybatis.jpetstore.domain.Account",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.mybatis.jpetstore.service.AccountService",
+      "to": "class:org.mybatis.jpetstore.domain.Account",
+      "weight": 1
+    },
+    {
       "id": "data_access:method:org.mybatis.jpetstore.mapper.AccountMapper#updateSignon->table:signon",
       "type": "data_access",
       "source": "mybatis-xml",
@@ -517,7 +541,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.CatalogService",
       "to": "class:org.mybatis.jpetstore.mapper.ProductMapper",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProduct->table:product",
@@ -549,6 +573,14 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.CatalogService",
       "to": "unresolved:List<Product>#addAll",
+      "weight": 1
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#searchProductList->table:product",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "from": "method:org.mybatis.jpetstore.mapper.ProductMapper#searchProductList",
+      "to": "table:product",
       "weight": 1
     },
     {
@@ -629,7 +661,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.OrderService",
       "to": "unresolved:Map<String, Object>#put",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "call:class:org.mybatis.jpetstore.service.OrderService->class:org.mybatis.jpetstore.mapper.ItemMapper",
@@ -637,7 +669,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.OrderService",
       "to": "class:org.mybatis.jpetstore.mapper.ItemMapper",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "data_access:method:org.mybatis.jpetstore.mapper.ItemMapper#updateInventoryQuantity->table:inventory",
@@ -672,12 +704,20 @@
       "weight": 1
     },
     {
+      "id": "call:class:org.mybatis.jpetstore.service.OrderService->unresolved:return#getOrderId",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.mybatis.jpetstore.service.OrderService",
+      "to": "unresolved:return#getOrderId",
+      "weight": 1
+    },
+    {
       "id": "call:class:org.mybatis.jpetstore.service.OrderService->class:org.mybatis.jpetstore.mapper.LineItemMapper",
       "type": "call",
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.OrderService",
       "to": "class:org.mybatis.jpetstore.mapper.LineItemMapper",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "data_access:method:org.mybatis.jpetstore.mapper.LineItemMapper#insertLineItem->table:lineitem",
@@ -709,6 +749,14 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.OrderService",
       "to": "unresolved:return#setLineItems",
+      "weight": 1
+    },
+    {
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.LineItemMapper#getLineItemsByOrderId->table:lineitem",
+      "type": "data_access",
+      "source": "mybatis-xml",
+      "from": "method:org.mybatis.jpetstore.mapper.LineItemMapper#getLineItemsByOrderId",
+      "to": "table:lineitem",
       "weight": 1
     },
     {
@@ -757,7 +805,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.OrderService",
       "to": "class:org.mybatis.jpetstore.domain.Sequence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "data_access:method:org.mybatis.jpetstore.mapper.SequenceMapper#updateSequence->table:sequence",
@@ -781,7 +829,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.web.actions.AccountActionBean",
       "to": "class:org.mybatis.jpetstore.domain.Account",
-      "weight": 6
+      "weight": 12
     },
     {
       "id": "call:class:org.mybatis.jpetstore.web.actions.AccountActionBean->class:org.mybatis.jpetstore.service.AccountService",
@@ -821,7 +869,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.web.actions.CartActionBean",
       "to": "class:org.mybatis.jpetstore.domain.Cart",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "call:class:org.mybatis.jpetstore.web.actions.CartActionBean->class:org.mybatis.jpetstore.service.CatalogService",
@@ -853,6 +901,14 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.web.actions.CartActionBean",
       "to": "class:org.mybatis.jpetstore.domain.CartItem",
+      "weight": 1
+    },
+    {
+      "id": "call:class:org.mybatis.jpetstore.web.actions.CartActionBean->unresolved:HttpServletRequest#getParameter",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.mybatis.jpetstore.web.actions.CartActionBean",
+      "to": "unresolved:HttpServletRequest#getParameter",
       "weight": 1
     },
     {
@@ -888,12 +944,20 @@
       "weight": 1
     },
     {
+      "id": "call:class:org.mybatis.jpetstore.web.actions.CatalogActionBean->unresolved:String#toLowerCase",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:org.mybatis.jpetstore.web.actions.CatalogActionBean",
+      "to": "unresolved:String#toLowerCase",
+      "weight": 1
+    },
+    {
       "id": "call:class:org.mybatis.jpetstore.web.actions.OrderActionBean->class:org.mybatis.jpetstore.domain.Order",
       "type": "call",
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.web.actions.OrderActionBean",
       "to": "class:org.mybatis.jpetstore.domain.Order",
-      "weight": 4
+      "weight": 6
     },
     {
       "id": "call:class:org.mybatis.jpetstore.web.actions.OrderActionBean->unresolved:HttpSession#getAttribute",
@@ -901,7 +965,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.web.actions.OrderActionBean",
       "to": "unresolved:HttpSession#getAttribute",
-      "weight": 5
+      "weight": 4
     },
     {
       "id": "call:class:org.mybatis.jpetstore.web.actions.OrderActionBean->class:org.mybatis.jpetstore.service.OrderService",
@@ -917,7 +981,7 @@
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.web.actions.OrderActionBean",
       "to": "class:org.mybatis.jpetstore.web.actions.AccountActionBean",
-      "weight": 2
+      "weight": 4
     },
     {
       "id": "call:class:org.mybatis.jpetstore.web.actions.OrderActionBean->class:org.mybatis.jpetstore.web.actions.CartActionBean",

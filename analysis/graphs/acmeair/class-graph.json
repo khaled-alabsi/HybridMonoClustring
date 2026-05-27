@@ -122,16 +122,16 @@
       "classFqn": "com.acmeair.reporter.parser.OverallResults"
     },
     {
-      "id": "class:com.acmeair.reporter.parser.ResultParserHelper",
-      "kind": "class",
-      "className": "ResultParserHelper",
-      "classFqn": "com.acmeair.reporter.parser.ResultParserHelper"
-    },
-    {
       "id": "class:com.acmeair.reporter.parser.IndividualChartResults",
       "kind": "class",
       "className": "IndividualChartResults",
       "classFqn": "com.acmeair.reporter.parser.IndividualChartResults"
+    },
+    {
+      "id": "class:com.acmeair.reporter.parser.ResultParserHelper",
+      "kind": "class",
+      "className": "ResultParserHelper",
+      "classFqn": "com.acmeair.reporter.parser.ResultParserHelper"
     },
     {
       "id": "class:com.acmeair.reporter.util.Messages",
@@ -266,6 +266,12 @@
       "classFqn": "com.acmeair.wxs.entities.BookingImpl"
     },
     {
+      "id": "class:com.acmeair.wxs.entities.CustomerSessionImpl",
+      "kind": "class",
+      "className": "CustomerSessionImpl",
+      "classFqn": "com.acmeair.wxs.entities.CustomerSessionImpl"
+    },
+    {
       "id": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
       "kind": "class",
       "className": "MongoConnectionManager",
@@ -284,16 +290,16 @@
       "classFqn": "com.acmeair.wxs.entities.FlightPKImpl"
     },
     {
-      "id": "class:com.acmeair.wxs.entities.CustomerSessionImpl",
-      "kind": "class",
-      "className": "CustomerSessionImpl",
-      "classFqn": "com.acmeair.wxs.entities.CustomerSessionImpl"
-    },
-    {
       "id": "class:com.acmeair.wxs.service.BookingServiceImpl",
       "kind": "class",
       "className": "BookingServiceImpl",
       "classFqn": "com.acmeair.wxs.service.BookingServiceImpl"
+    },
+    {
+      "id": "class:com.acmeair.entities.BookingPK",
+      "kind": "class",
+      "className": "BookingPK",
+      "classFqn": "com.acmeair.entities.BookingPK"
     },
     {
       "id": "class:com.acmeair.entities.FlightPK",
@@ -356,10 +362,28 @@
       "classFqn": "com.acmeair.web.BookingsREST"
     },
     {
+      "id": "class:com.acmeair.web.dto.BookingReceiptInfo",
+      "kind": "class",
+      "className": "BookingReceiptInfo",
+      "classFqn": "com.acmeair.web.dto.BookingReceiptInfo"
+    },
+    {
+      "id": "class:com.acmeair.web.dto.BookingInfo",
+      "kind": "class",
+      "className": "BookingInfo",
+      "classFqn": "com.acmeair.web.dto.BookingInfo"
+    },
+    {
       "id": "class:com.acmeair.web.CustomerREST",
       "kind": "class",
       "className": "CustomerREST",
       "classFqn": "com.acmeair.web.CustomerREST"
+    },
+    {
+      "id": "class:com.acmeair.web.dto.CustomerInfo",
+      "kind": "class",
+      "className": "CustomerInfo",
+      "classFqn": "com.acmeair.web.dto.CustomerInfo"
     },
     {
       "id": "class:com.acmeair.web.FlightsREST",
@@ -372,6 +396,12 @@
       "kind": "class",
       "className": "TripLegInfo",
       "classFqn": "com.acmeair.web.dto.TripLegInfo"
+    },
+    {
+      "id": "class:com.acmeair.web.dto.TripFlightOptions",
+      "kind": "class",
+      "className": "TripFlightOptions",
+      "classFqn": "com.acmeair.web.dto.TripFlightOptions"
     },
     {
       "id": "class:com.acmeair.web.LoginREST",
@@ -398,16 +428,10 @@
       "classFqn": "com.acmeair.web.dto.AddressInfo"
     },
     {
-      "id": "class:com.acmeair.web.dto.BookingInfo",
+      "id": "class:com.acmeair.web.dto.BookingPKInfo",
       "kind": "class",
-      "className": "BookingInfo",
-      "classFqn": "com.acmeair.web.dto.BookingInfo"
-    },
-    {
-      "id": "class:com.acmeair.web.dto.CustomerInfo",
-      "kind": "class",
-      "className": "CustomerInfo",
-      "classFqn": "com.acmeair.web.dto.CustomerInfo"
+      "className": "BookingPKInfo",
+      "classFqn": "com.acmeair.web.dto.BookingPKInfo"
     },
     {
       "id": "class:com.acmeair.web.dto.FlightInfo",
@@ -420,6 +444,12 @@
       "kind": "class",
       "className": "FlightSegmentInfo",
       "classFqn": "com.acmeair.web.dto.FlightSegmentInfo"
+    },
+    {
+      "id": "class:com.acmeair.web.dto.FlightPKInfo",
+      "kind": "class",
+      "className": "FlightPKInfo",
+      "classFqn": "com.acmeair.web.dto.FlightPKInfo"
     },
     {
       "id": "table:airportcodemappingimpl",
@@ -643,7 +673,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.loader.Loader",
       "to": "class:com.acmeair.loader.FlightLoader",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.loader.Loader->class:com.acmeair.loader.CustomerLoader",
@@ -651,7 +681,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.loader.Loader",
       "to": "class:com.acmeair.loader.CustomerLoader",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "call:class:com.acmeair.loader.Loader->unresolved:Properties#getProperty",
@@ -707,7 +737,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.reporter.ReportGenerator",
       "to": "class:com.acmeair.reporter.parser.component.JmeterSummariserParser",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "call:class:com.acmeair.reporter.ReportGenerator->unresolved:ArrayList<String>#add",
@@ -739,7 +769,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.reporter.ReportGenerator",
       "to": "class:com.acmeair.reporter.parser.component.JmeterJTLParser",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.reporter.ReportGenerator->unresolved:List<Object>#size",
@@ -771,7 +801,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.reporter.ReportGenerator",
       "to": "class:com.acmeair.reporter.parser.component.NmonParser",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "call:class:com.acmeair.reporter.ReportGenerator->unresolved:ArrayList<IndividualChartResults>#size",
@@ -1214,6 +1244,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.acmeair.reporter.parser.ResultParser->class:com.acmeair.reporter.parser.IndividualChartResults",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.reporter.parser.ResultParser",
+      "to": "class:com.acmeair.reporter.parser.IndividualChartResults",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.reporter.parser.ResultParser->unresolved:return#getMultipleChartTitle",
       "type": "call",
       "source": "static-fallback",
@@ -1276,6 +1314,14 @@
       "from": "class:com.acmeair.reporter.parser.ResultParserHelper",
       "to": "unresolved:ArrayList<Double>#get",
       "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.reporter.parser.component.JmeterJTLParser->class:com.acmeair.reporter.parser.component.JtlTotals",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.reporter.parser.component.JmeterJTLParser",
+      "to": "class:com.acmeair.reporter.parser.component.JtlTotals",
+      "weight": 10
     },
     {
       "id": "call:class:com.acmeair.reporter.parser.component.JmeterJTLParser->unresolved:Collection<File>#iterator",
@@ -1398,14 +1444,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.acmeair.reporter.parser.component.JmeterJTLParser->class:com.acmeair.reporter.parser.component.JtlTotals",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.reporter.parser.component.JmeterJTLParser",
-      "to": "class:com.acmeair.reporter.parser.component.JtlTotals",
-      "weight": 7
-    },
-    {
       "id": "call:class:com.acmeair.reporter.parser.component.JmeterJTLParser->unresolved:String#isEmpty",
       "type": "call",
       "source": "static-fallback",
@@ -1435,7 +1473,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.reporter.parser.component.JmeterSummariserParser",
       "to": "class:com.acmeair.reporter.parser.IndividualChartResults",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "call:class:com.acmeair.reporter.parser.component.JmeterSummariserParser->unresolved:String#indexOf",
@@ -1627,7 +1665,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.reporter.parser.component.NmonParser",
       "to": "class:com.acmeair.reporter.parser.IndividualChartResults",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "call:class:com.acmeair.reporter.parser.component.NmonParser->unresolved:String#startsWith",
@@ -1742,12 +1780,28 @@
       "weight": 3
     },
     {
+      "id": "call:class:com.acmeair.morphia.DatastoreFactory->class:com.acmeair.morphia.BigDecimalConverter",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.DatastoreFactory",
+      "to": "class:com.acmeair.morphia.BigDecimalConverter",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.DatastoreFactory->class:com.acmeair.morphia.BigIntegerConverter",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.DatastoreFactory",
+      "to": "class:com.acmeair.morphia.BigIntegerConverter",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.morphia.entities.BookingImpl->class:com.acmeair.entities.Flight",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.acmeair.morphia.entities.BookingImpl",
       "to": "class:com.acmeair.entities.Flight",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "polymorphic_call:class:com.acmeair.entities.Flight->class:com.acmeair.morphia.entities.FlightImpl",
@@ -1771,7 +1825,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.morphia.entities.BookingImpl",
       "to": "class:com.acmeair.entities.Customer",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "polymorphic_call:class:com.acmeair.entities.Customer->class:com.acmeair.morphia.entities.CustomerImpl",
@@ -2046,6 +2100,14 @@
       "weight": 5
     },
     {
+      "id": "call:class:com.acmeair.morphia.services.BookingServiceImpl->class:com.acmeair.wxs.entities.BookingImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.BookingServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.BookingImpl",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.morphia.services.BookingServiceImpl->unresolved:Datastore#find",
       "type": "call",
       "source": "static-fallback",
@@ -2110,6 +2172,22 @@
       "weight": 3
     },
     {
+      "id": "call:class:com.acmeair.morphia.services.CustomerServiceImpl->class:com.acmeair.wxs.entities.CustomerImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.CustomerServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.CustomerImpl",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.CustomerServiceImpl->class:com.acmeair.wxs.entities.CustomerAddressImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.CustomerServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.CustomerAddressImpl",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.morphia.services.CustomerServiceImpl->unresolved:Query<CustomerSessionImpl>#get",
       "type": "call",
       "source": "static-fallback",
@@ -2134,6 +2212,14 @@
       "weight": 2
     },
     {
+      "id": "call:class:com.acmeair.morphia.services.CustomerServiceImpl->class:com.acmeair.wxs.entities.CustomerSessionImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.CustomerServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.CustomerSessionImpl",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.morphia.services.FlightServiceImpl->unresolved:Datastore#find",
       "type": "call",
       "source": "static-fallback",
@@ -2156,6 +2242,14 @@
       "from": "class:com.acmeair.morphia.services.FlightServiceImpl",
       "to": "unresolved:Query<FlightSegmentImpl>#get",
       "weight": 3
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.FlightServiceImpl->class:com.acmeair.wxs.entities.FlightSegmentImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.FlightServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.FlightSegmentImpl",
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.morphia.services.FlightServiceImpl->unresolved:return#getFlightName",
@@ -2198,12 +2292,156 @@
       "weight": 3
     },
     {
+      "id": "call:class:com.acmeair.morphia.services.FlightServiceImpl->class:com.acmeair.wxs.entities.AirportCodeMappingImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.FlightServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.AirportCodeMappingImpl",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.morphia.services.FlightServiceImpl->class:com.acmeair.service.KeyGenerator",
       "type": "call",
       "source": "static-fallback",
       "from": "class:com.acmeair.morphia.services.FlightServiceImpl",
       "to": "class:com.acmeair.service.KeyGenerator",
       "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.FlightServiceImpl->class:com.acmeair.wxs.entities.FlightImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.FlightServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.FlightImpl",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#info",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:static Logger#info",
+      "weight": 8
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Properties#load",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:Properties#load",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Properties#getProperty",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:Properties#getProperty",
+      "weight": 16
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#severe",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:static Logger#severe",
+      "weight": 10
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:JSONObject#keySet",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:JSONObject#keySet",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:JSONObject#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:JSONObject#get",
+      "weight": 6
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:JSONArray#get",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:JSONArray#get",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#fine",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:static Logger#fine",
+      "weight": 4
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Morphia#getMapper",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:Morphia#getMapper",
+      "weight": 2
+    },
+    {
+      "id": "data_access:class:com.acmeair.morphia.services.util.MongoConnectionManager->external_endpoint:mongodb",
+      "type": "data_access",
+      "source": "static-external-resource-field",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "external_endpoint:mongodb",
+      "weight": 10
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Morphia#createDatastore",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:Morphia#createDatastore",
+      "weight": 4
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#warning",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:static Logger#warning",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:MongoClient#getDB",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:MongoClient#getDB",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:MongoClientOptions.Builder#build",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:MongoClientOptions.Builder#build",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:DB#getName",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "unresolved:DB#getName",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->class:com.acmeair.morphia.BigDecimalConverter",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
+      "to": "class:com.acmeair.morphia.BigDecimalConverter",
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:AtomicReference<MongoConnectionManager>#get",
@@ -2219,126 +2457,6 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
       "to": "unresolved:AtomicReference<MongoConnectionManager>#set",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#info",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:static Logger#info",
-      "weight": 4
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Properties#load",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:Properties#load",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Properties#getProperty",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:Properties#getProperty",
-      "weight": 8
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#severe",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:static Logger#severe",
-      "weight": 5
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:JSONObject#keySet",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:JSONObject#keySet",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:JSONObject#get",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:JSONObject#get",
-      "weight": 3
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:JSONArray#get",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:JSONArray#get",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#fine",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:static Logger#fine",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Morphia#getMapper",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:Morphia#getMapper",
-      "weight": 1
-    },
-    {
-      "id": "data_access:class:com.acmeair.morphia.services.util.MongoConnectionManager->external_endpoint:mongodb",
-      "type": "data_access",
-      "source": "static-external-resource-field",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "external_endpoint:mongodb",
-      "weight": 6
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:Morphia#createDatastore",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:Morphia#createDatastore",
-      "weight": 2
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:static Logger#warning",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:static Logger#warning",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:MongoClient#getDB",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:MongoClient#getDB",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:MongoClientOptions.Builder#build",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:MongoClientOptions.Builder#build",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.morphia.services.util.MongoConnectionManager->unresolved:DB#getName",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.morphia.services.util.MongoConnectionManager",
-      "to": "unresolved:DB#getName",
       "weight": 1
     },
     {
@@ -2363,7 +2481,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.entities.BookingImpl",
       "to": "class:com.acmeair.entities.Customer",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "call:class:com.acmeair.wxs.entities.BookingImpl->class:com.acmeair.wxs.entities.FlightImpl",
@@ -2371,15 +2489,15 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.entities.BookingImpl",
       "to": "class:com.acmeair.wxs.entities.FlightImpl",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "call:class:com.acmeair.wxs.entities.BookingImpl->class:com.acmeair.wxs.entities.BookingPKImpl",
       "type": "call",
-      "source": "static-fallback",
+      "source": "static-constructor-call",
       "from": "class:com.acmeair.wxs.entities.BookingImpl",
       "to": "class:com.acmeair.wxs.entities.BookingPKImpl",
-      "weight": 3
+      "weight": 5
     },
     {
       "id": "call:class:com.acmeair.wxs.entities.BookingImpl->unresolved:Object#getClass",
@@ -2496,10 +2614,10 @@
     {
       "id": "call:class:com.acmeair.wxs.entities.FlightImpl->class:com.acmeair.wxs.entities.FlightPKImpl",
       "type": "call",
-      "source": "static-fallback",
+      "source": "static-constructor-call",
       "from": "class:com.acmeair.wxs.entities.FlightImpl",
       "to": "class:com.acmeair.wxs.entities.FlightPKImpl",
-      "weight": 5
+      "weight": 7
     },
     {
       "id": "call:class:com.acmeair.wxs.entities.FlightImpl->unresolved:Object#getClass",
@@ -2619,7 +2737,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.service.BookingServiceImpl",
       "to": "class:com.acmeair.wxs.entities.FlightPKImpl",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.wxs.service.BookingServiceImpl->class:com.acmeair.service.CustomerService",
@@ -2643,7 +2761,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.service.BookingServiceImpl",
       "to": "class:com.acmeair.wxs.entities.BookingImpl",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.wxs.service.BookingServiceImpl->unresolved:ObjectGrid#getSession",
@@ -2715,6 +2833,14 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.service.BookingServiceImpl",
       "to": "unresolved:static Logger#finer",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.wxs.service.BookingServiceImpl->class:com.acmeair.entities.BookingPK",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.BookingServiceImpl",
+      "to": "class:com.acmeair.entities.BookingPK",
       "weight": 1
     },
     {
@@ -2902,6 +3028,22 @@
       "weight": 2
     },
     {
+      "id": "call:class:com.acmeair.wxs.service.CustomerServiceImpl->class:com.acmeair.wxs.entities.CustomerImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.CustomerServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.CustomerImpl",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.wxs.service.CustomerServiceImpl->class:com.acmeair.wxs.entities.CustomerAddressImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.CustomerServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.CustomerAddressImpl",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.wxs.service.CustomerServiceImpl->unresolved:ObjectMap#update",
       "type": "call",
       "source": "static-fallback",
@@ -2924,6 +3066,14 @@
       "from": "class:com.acmeair.wxs.service.CustomerServiceImpl",
       "to": "unresolved:ObjectMap#remove",
       "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.wxs.service.CustomerServiceImpl->class:com.acmeair.wxs.entities.CustomerSessionImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.CustomerServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.CustomerSessionImpl",
+      "weight": 1
     },
     {
       "id": "call:class:com.acmeair.wxs.service.FlightServiceImpl->unresolved:static Logger#severe",
@@ -3094,6 +3244,14 @@
       "weight": 2
     },
     {
+      "id": "call:class:com.acmeair.wxs.service.FlightServiceImpl->class:com.acmeair.wxs.entities.FlightSegmentImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.FlightServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.FlightSegmentImpl",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.acmeair.wxs.service.FlightServiceImpl->unresolved:return#add",
       "type": "call",
       "source": "static-fallback",
@@ -3134,6 +3292,14 @@
       "weight": 3
     },
     {
+      "id": "call:class:com.acmeair.wxs.service.FlightServiceImpl->class:com.acmeair.wxs.entities.AirportCodeMappingImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.FlightServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.AirportCodeMappingImpl",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.wxs.service.FlightServiceImpl->class:com.acmeair.service.KeyGenerator",
       "type": "call",
       "source": "static-fallback",
@@ -3163,6 +3329,14 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.service.FlightServiceImpl",
       "to": "unresolved:HashSet<Flight>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.wxs.service.FlightServiceImpl->class:com.acmeair.wxs.entities.FlightImpl",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.wxs.service.FlightServiceImpl",
+      "to": "class:com.acmeair.wxs.entities.FlightImpl",
       "weight": 1
     },
     {
@@ -3254,6 +3428,30 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:InitialContext#lookup",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
+      "to": "unresolved:InitialContext#lookup",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:Logger#warning",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
+      "to": "unresolved:Logger#warning",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:AtomicReference<ObjectGrid>#set",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
+      "to": "unresolved:AtomicReference<ObjectGrid>#set",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:AtomicReference<WXSSessionManager>#get",
       "type": "call",
       "source": "static-fallback",
@@ -3267,30 +3465,6 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
       "to": "unresolved:AtomicReference<WXSSessionManager>#set",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:InitialContext#lookup",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
-      "to": "unresolved:InitialContext#lookup",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:Logger#warning",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
-      "to": "unresolved:Logger#warning",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.wxs.utils.WXSSessionManager->unresolved:AtomicReference<ObjectGrid>#set",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.wxs.utils.WXSSessionManager",
-      "to": "unresolved:AtomicReference<ObjectGrid>#set",
       "weight": 1
     },
     {
@@ -3654,6 +3828,70 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:String#replace",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:String#replace",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:javax.naming.Context#lookup",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:javax.naming.Context#lookup",
+      "weight": 6
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#info",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:Logger#info",
+      "weight": 21
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#severe",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:Logger#severe",
+      "weight": 7
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#fine",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:Logger#fine",
+      "weight": 7
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:JSONObject#keySet",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:JSONObject#keySet",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:String#startsWith",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:String#startsWith",
+      "weight": 16
+    },
+    {
+      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#warning",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.acmeair.service.ServiceLocator",
+      "to": "unresolved:Logger#warning",
+      "weight": 4
+    },
+    {
       "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:AtomicReference<ServiceLocator>#get",
       "type": "call",
       "source": "static-fallback",
@@ -3668,70 +3906,6 @@
       "from": "class:com.acmeair.service.ServiceLocator",
       "to": "unresolved:AtomicReference<ServiceLocator>#set",
       "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#info",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:Logger#info",
-      "weight": 12
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#severe",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:Logger#severe",
-      "weight": 5
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:String#replace",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:String#replace",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:javax.naming.Context#lookup",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:javax.naming.Context#lookup",
-      "weight": 3
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#fine",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:Logger#fine",
-      "weight": 6
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:JSONObject#keySet",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:JSONObject#keySet",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:String#startsWith",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:String#startsWith",
-      "weight": 8
-    },
-    {
-      "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:Logger#warning",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.service.ServiceLocator",
-      "to": "unresolved:Logger#warning",
-      "weight": 3
     },
     {
       "id": "call:class:com.acmeair.service.ServiceLocator->unresolved:BeanManager#getBeans",
@@ -3878,6 +4052,22 @@
       "weight": 5
     },
     {
+      "id": "call:class:com.acmeair.web.BookingsREST->class:com.acmeair.web.dto.BookingReceiptInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.BookingsREST",
+      "to": "class:com.acmeair.web.dto.BookingReceiptInfo",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.web.BookingsREST->class:com.acmeair.web.dto.BookingInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.BookingsREST",
+      "to": "class:com.acmeair.web.dto.BookingInfo",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.acmeair.web.BookingsREST->unresolved:List<BookingInfo>#add",
       "type": "call",
       "source": "static-fallback",
@@ -3910,6 +4100,14 @@
       "weight": 3
     },
     {
+      "id": "call:class:com.acmeair.web.CustomerREST->class:com.acmeair.web.dto.CustomerInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.CustomerREST",
+      "to": "class:com.acmeair.web.dto.CustomerInfo",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.acmeair.web.CustomerREST->class:com.acmeair.entities.Customer",
       "type": "call",
       "source": "static-fallback",
@@ -3939,7 +4137,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.FlightsREST",
       "to": "class:com.acmeair.web.dto.TripLegInfo",
-      "weight": 20
+      "weight": 22
     },
     {
       "id": "call:class:com.acmeair.web.FlightsREST->unresolved:ArrayList<TripLegInfo>#add",
@@ -3963,6 +4161,14 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.FlightsREST",
       "to": "unresolved:return#setTripFlights",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.web.FlightsREST->class:com.acmeair.web.dto.TripFlightOptions",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.FlightsREST",
+      "to": "class:com.acmeair.web.dto.TripFlightOptions",
       "weight": 2
     },
     {
@@ -4091,7 +4297,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.AddressInfo",
       "to": "class:com.acmeair.entities.CustomerAddress",
-      "weight": 6
+      "weight": 12
     },
     {
       "id": "call:class:com.acmeair.web.dto.AddressInfo->unresolved:Object#getClass",
@@ -4115,7 +4321,15 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.BookingInfo",
       "to": "class:com.acmeair.entities.Booking",
-      "weight": 4
+      "weight": 8
+    },
+    {
+      "id": "call:class:com.acmeair.web.dto.BookingInfo->class:com.acmeair.web.dto.BookingPKInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.dto.BookingInfo",
+      "to": "class:com.acmeair.web.dto.BookingPKInfo",
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.web.dto.CustomerInfo->class:com.acmeair.entities.Customer",
@@ -4123,7 +4337,15 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.CustomerInfo",
       "to": "class:com.acmeair.entities.Customer",
-      "weight": 8
+      "weight": 16
+    },
+    {
+      "id": "call:class:com.acmeair.web.dto.CustomerInfo->class:com.acmeair.web.dto.AddressInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.dto.CustomerInfo",
+      "to": "class:com.acmeair.web.dto.AddressInfo",
+      "weight": 3
     },
     {
       "id": "call:class:com.acmeair.web.dto.CustomerInfo->unresolved:Object#getClass",
@@ -4131,14 +4353,6 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.CustomerInfo",
       "to": "unresolved:Object#getClass",
-      "weight": 1
-    },
-    {
-      "id": "call:class:com.acmeair.web.dto.CustomerInfo->class:com.acmeair.web.dto.AddressInfo",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.acmeair.web.dto.CustomerInfo",
-      "to": "class:com.acmeair.web.dto.AddressInfo",
       "weight": 1
     },
     {
@@ -4155,7 +4369,23 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.FlightInfo",
       "to": "class:com.acmeair.entities.Flight",
-      "weight": 10
+      "weight": 20
+    },
+    {
+      "id": "call:class:com.acmeair.web.dto.FlightInfo->class:com.acmeair.web.dto.FlightSegmentInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.dto.FlightInfo",
+      "to": "class:com.acmeair.web.dto.FlightSegmentInfo",
+      "weight": 2
+    },
+    {
+      "id": "call:class:com.acmeair.web.dto.FlightInfo->class:com.acmeair.web.dto.FlightPKInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.dto.FlightInfo",
+      "to": "class:com.acmeair.web.dto.FlightPKInfo",
+      "weight": 2
     },
     {
       "id": "call:class:com.acmeair.web.dto.FlightSegmentInfo->class:com.acmeair.entities.FlightSegment",
@@ -4163,7 +4393,7 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.FlightSegmentInfo",
       "to": "class:com.acmeair.entities.FlightSegment",
-      "weight": 4
+      "weight": 8
     },
     {
       "id": "call:class:com.acmeair.web.dto.TripLegInfo->unresolved:List<FlightInfo>#add",
@@ -4171,6 +4401,14 @@
       "source": "static-fallback",
       "from": "class:com.acmeair.web.dto.TripLegInfo",
       "to": "unresolved:List<FlightInfo>#add",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.acmeair.web.dto.TripLegInfo->class:com.acmeair.web.dto.FlightInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.acmeair.web.dto.TripLegInfo",
+      "to": "class:com.acmeair.web.dto.FlightInfo",
       "weight": 1
     },
     {

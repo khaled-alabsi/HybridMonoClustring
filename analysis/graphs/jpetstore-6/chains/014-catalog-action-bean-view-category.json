@@ -68,7 +68,7 @@
   ],
   "edges": [
     {
-      "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:154",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:175",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory",
@@ -89,10 +89,10 @@
         "classFqn": "org.mybatis.jpetstore.service.CatalogService",
         "methodName": "getProductListByCategory"
       },
-      "callSite": "catalogService.getProductListByCategory(categoryId)"
+      "callSite": "catalogService.getProductListByCategory("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getCategory:155",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getCategory:176",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory",
@@ -113,10 +113,10 @@
         "classFqn": "org.mybatis.jpetstore.service.CatalogService",
         "methodName": "getCategory"
       },
-      "callSite": "catalogService.getCategory(categoryId)"
+      "callSite": "catalogService.getCategory("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:80",
+      "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:87",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
@@ -137,10 +137,10 @@
         "classFqn": "org.mybatis.jpetstore.mapper.ProductMapper",
         "methodName": "getProductListByCategory"
       },
-      "callSite": "productMapper.getProductListByCategory(categoryId)"
+      "callSite": "productMapper.getProductListByCategory("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getCategory->method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory:76",
+      "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getCategory->method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory:83",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.service.CatalogService#getCategory",
@@ -161,10 +161,10 @@
         "classFqn": "org.mybatis.jpetstore.mapper.CategoryMapper",
         "methodName": "getCategory"
       },
-      "callSite": "categoryMapper.getCategory(categoryId)"
+      "callSite": "categoryMapper.getCategory("
     },
     {
-      "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:81",
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:88",
       "type": "data_access",
       "source": "mybatis-xml",
       "operation": "select",
@@ -183,7 +183,7 @@
       }
     },
     {
-      "id": "data_access:method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory->table:category:77",
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory->table:category:84",
       "type": "data_access",
       "source": "mybatis-xml",
       "operation": "select",
@@ -205,13 +205,13 @@
   "paths": [
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:154",
-        "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:80",
-        "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:81"
+        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:175",
+        "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:87",
+        "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:88"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:154",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory:175",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory",
@@ -232,10 +232,10 @@
             "classFqn": "org.mybatis.jpetstore.service.CatalogService",
             "methodName": "getProductListByCategory"
           },
-          "callSite": "catalogService.getProductListByCategory(categoryId)"
+          "callSite": "catalogService.getProductListByCategory("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:80",
+          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory->method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory:87",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.service.CatalogService#getProductListByCategory",
@@ -256,10 +256,10 @@
             "classFqn": "org.mybatis.jpetstore.mapper.ProductMapper",
             "methodName": "getProductListByCategory"
           },
-          "callSite": "productMapper.getProductListByCategory(categoryId)"
+          "callSite": "productMapper.getProductListByCategory("
         },
         {
-          "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:81",
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory->table:product:88",
           "type": "data_access",
           "source": "mybatis-xml",
           "operation": "select",
@@ -287,13 +287,13 @@
     },
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getCategory:155",
-        "call:method:org.mybatis.jpetstore.service.CatalogService#getCategory->method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory:76",
-        "data_access:method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory->table:category:77"
+        "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getCategory:176",
+        "call:method:org.mybatis.jpetstore.service.CatalogService#getCategory->method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory:83",
+        "data_access:method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory->table:category:84"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getCategory:155",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory->method:org.mybatis.jpetstore.service.CatalogService#getCategory:176",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.CatalogActionBean#viewCategory",
@@ -314,10 +314,10 @@
             "classFqn": "org.mybatis.jpetstore.service.CatalogService",
             "methodName": "getCategory"
           },
-          "callSite": "catalogService.getCategory(categoryId)"
+          "callSite": "catalogService.getCategory("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getCategory->method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory:76",
+          "id": "call:method:org.mybatis.jpetstore.service.CatalogService#getCategory->method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory:83",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.service.CatalogService#getCategory",
@@ -338,10 +338,10 @@
             "classFqn": "org.mybatis.jpetstore.mapper.CategoryMapper",
             "methodName": "getCategory"
           },
-          "callSite": "categoryMapper.getCategory(categoryId)"
+          "callSite": "categoryMapper.getCategory("
         },
         {
-          "id": "data_access:method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory->table:category:77",
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.CategoryMapper#getCategory->table:category:84",
           "type": "data_access",
           "source": "mybatis-xml",
           "operation": "select",

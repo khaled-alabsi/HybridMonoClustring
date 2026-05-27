@@ -6,11 +6,11 @@
 - Framework profile: `java-ee-servlet-jsf-ejb`
 - Runtime execution: not used
 - Java files scanned: 108
-- Resource files scanned: 11
+- Resource files scanned: 16
 - Action points: 90
-- Method graph edges: 1910
-- Class graph edges: 819
-- Data tables: 5
+- Method graph edges: 2432
+- Class graph edges: 865
+- Data tables: 6
 - Chain files: 90
 
 ## Tool Status

@@ -3,7 +3,7 @@
   "fileName": "008-account-bean-perform-register.json",
   "actionPointId": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
   "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
-  "reachedNodeCount": 1,
+  "reachedNodeCount": 13,
   "reachedDataSources": [],
   "actionPoint": {
     "id": "action:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
@@ -21,17 +21,1049 @@
   },
   "nodes": [
     {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "<init>",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+      "line": 89
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setAddr1"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setAddr2"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setAddrCity"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setAddrState"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setAddrZip"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setCustomerID"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setFirstName"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setLastName"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setPassword"
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone",
+      "kind": "method",
+      "className": "Customer",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+      "methodName": "setPhone"
+    },
+    {
       "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
-      "kind": "unknown_framework_target"
+      "kind": "method",
+      "className": "AccountBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+      "methodName": "performRegister",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+      "line": 222
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>",
+      "kind": "method",
+      "className": "LoginInfo",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.LoginInfo",
+      "methodName": "<init>",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/LoginInfo.java"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>:535",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+      "to": "method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performRegister",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 222
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>",
+        "kind": "method",
+        "className": "LoginInfo",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.LoginInfo",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/LoginInfo.java"
+      },
+      "callSite": "new LoginInfo("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "kind": "method",
+        "className": "AccountBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+        "methodName": "performRegister",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+        "line": 222
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+      },
+      "callSite": "new Customer("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID:221",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setCustomerID"
+      },
+      "callSite": "this.setCustomerID(key)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword:222",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setPassword"
+      },
+      "callSite": "this.setPassword(password)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName:223",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setFirstName"
+      },
+      "callSite": "this.setFirstName(firstName)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName:224",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setLastName"
+      },
+      "callSite": "this.setLastName(lastName)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1:225",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setAddr1"
+      },
+      "callSite": "this.setAddr1(addr1)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2:226",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setAddr2"
+      },
+      "callSite": "this.setAddr2(addr2)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity:227",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setAddrCity"
+      },
+      "callSite": "this.setAddrCity(addrCity)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState:228",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setAddrState"
+      },
+      "callSite": "this.setAddrState(addrState)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip:229",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setAddrZip"
+      },
+      "callSite": "this.setAddrZip(addrZip)"
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone:230",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+      "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+        "line": 89
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone",
+        "kind": "method",
+        "className": "Customer",
+        "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+        "methodName": "setPhone"
+      },
+      "callSite": "this.setPhone(phone)"
+    }
+  ],
   "paths": [
     {
-      "edgeIds": [],
-      "edges": [],
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>:535"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>:535",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>",
+            "kind": "method",
+            "className": "LoginInfo",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.LoginInfo",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/LoginInfo.java"
+          },
+          "callSite": "new LoginInfo("
+        }
+      ],
       "nodeIds": [
-        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister"
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.war.LoginInfo#<init>"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID:221"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID:221",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setCustomerID"
+          },
+          "callSite": "this.setCustomerID(key)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setCustomerID"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword:222"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword:222",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setPassword"
+          },
+          "callSite": "this.setPassword(password)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPassword"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName:223"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName:223",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setFirstName"
+          },
+          "callSite": "this.setFirstName(firstName)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setFirstName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName:224"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName:224",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setLastName"
+          },
+          "callSite": "this.setLastName(lastName)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setLastName"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1:225"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1:225",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setAddr1"
+          },
+          "callSite": "this.setAddr1(addr1)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr1"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2:226"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2:226",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setAddr2"
+          },
+          "callSite": "this.setAddr2(addr2)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddr2"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity:227"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity:227",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setAddrCity"
+          },
+          "callSite": "this.setAddrCity(addrCity)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrCity"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState:228"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState:228",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setAddrState"
+          },
+          "callSite": "this.setAddrState(addrState)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrState"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip:229"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip:229",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setAddrZip"
+          },
+          "callSite": "this.setAddrZip(addrZip)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setAddrZip"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+        "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone:230"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister->method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>:536",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+            "kind": "method",
+            "className": "AccountBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean",
+            "methodName": "performRegister",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/AccountBean.java",
+            "line": 222
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java"
+          },
+          "callSite": "new Customer("
+        },
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>->method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone:230",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+          "to": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/Customer.java",
+            "line": 89
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone",
+            "kind": "method",
+            "className": "Customer",
+            "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer",
+            "methodName": "setPhone"
+          },
+          "callSite": "this.setPhone(phone)"
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.AccountBean#performRegister",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#<init>",
+        "method:com.ibm.websphere.samples.pbw.jpa.Customer#setPhone"
       ]
     }
   ]

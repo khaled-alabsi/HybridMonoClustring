@@ -71,7 +71,7 @@
   ],
   "edges": [
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:513",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
@@ -95,7 +95,7 @@
       "callSite": "cargoRepository.findAll()"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:442",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:514",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -119,7 +119,7 @@
       "callSite": "broadcaster.register(eventSink)"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:443",
+      "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:515",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -143,7 +143,7 @@
       "callSite": "logger.log(Level.FINEST, \"SSE event sink registered.\")"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:432",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
@@ -166,7 +166,7 @@
       "callSite": "cargoRepository.findAll()"
     },
     {
-      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:374",
+      "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:435",
       "type": "polymorphic_call",
       "source": "static-implementation-bridge",
       "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
@@ -189,7 +189,7 @@
       "callSite": "cargoRepository\n        .findAll()"
     },
     {
-      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:294",
+      "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:341",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -213,7 +213,7 @@
       "callSite": "entityManager.createNamedQuery(\"Cargo.findAll\", Cargo.class)"
     },
     {
-      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:295",
+      "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:342",
       "type": "data_access",
       "source": "jpa-static",
       "operation": "namedQuery:Cargo.findAll",
@@ -238,11 +238,11 @@
   "paths": [
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:442"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:514"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:442",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:SseBroadcaster#register:514",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -273,11 +273,11 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:443"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:515"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:443",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->unresolved:Logger#log:515",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -308,13 +308,13 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
-        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
-        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:295"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:513",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:432",
+        "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:342"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:513",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
@@ -338,7 +338,7 @@
           "callSite": "cargoRepository.findAll()"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:432",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
@@ -361,7 +361,7 @@
           "callSite": "cargoRepository.findAll()"
         },
         {
-          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:295",
+          "id": "data_access:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->table:cargo:342",
           "type": "data_access",
           "source": "jpa-static",
           "operation": "namedQuery:Cargo.findAll",
@@ -392,13 +392,13 @@
     },
     {
       "edgeIds": [
-        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
-        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
-        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:294"
+        "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:513",
+        "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:432",
+        "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:341"
       ],
       "edges": [
         {
-          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:441",
+          "id": "call:method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking->method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll:513",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.eclipse.cargotracker.interfaces.booking.sse.RealtimeCargoTrackingService#tracking",
@@ -422,7 +422,7 @@
           "callSite": "cargoRepository.findAll()"
         },
         {
-          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:371",
+          "id": "polymorphic_call:method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll->method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll:432",
           "type": "polymorphic_call",
           "source": "static-implementation-bridge",
           "from": "method:org.eclipse.cargotracker.domain.model.cargo.CargoRepository#findAll",
@@ -445,7 +445,7 @@
           "callSite": "cargoRepository.findAll()"
         },
         {
-          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:294",
+          "id": "call:method:org.eclipse.cargotracker.infrastructure.persistence.jpa.JpaCargoRepository#findAll->unresolved:EntityManager#createNamedQuery:341",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,

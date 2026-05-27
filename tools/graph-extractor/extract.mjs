@@ -35,7 +35,7 @@ const BENCHMARKS = {
     path: 'benchmarks/sample.daytrader7',
     framework: 'java-ee-servlet-jsf-ejb',
     javaGlob: 'benchmarks/sample.daytrader7/**/src/main/java/**/*.java',
-    resourceGlob: 'benchmarks/sample.daytrader7/**/src/main/{resources,webapp}/**/*.{xml,properties,yml,yaml}',
+    resourceGlob: 'benchmarks/sample.daytrader7/**/src/main/{resources,webapp}/**/*.{xml,properties,yml,yaml,ddl,sql}',
   },
   cargotracker: {
     path: 'benchmarks/cargotracker',
@@ -47,14 +47,17 @@ const BENCHMARKS = {
 
 const ACCESSOR_PREFIXES = ['get', 'set', 'is'];
 const IGNORE_ACTION_METHODS = new Set(['clear']);
+const JSF_ACTION_METHOD_NAMES = new Set(['submit']);
 const JAVA_KEYWORDS = new Set([
   'if', 'for', 'while', 'switch', 'return', 'new', 'throw', 'catch', 'try', 'else', 'do', 'synchronized',
 ]);
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
 
 async function main() {
   const requested = process.argv.slice(2);
@@ -139,7 +142,7 @@ function parseJavaUnit(filePath, text, treeSitter) {
   const fqn = packageName ? `${packageName}.${className}` : className;
   const annotations = [...text.matchAll(/^\s*@([\w.]+)(?:\([^)]*\))?/gm)].map((m) => m[1].split('.').pop());
   const fields = parseFields(text);
-  const methods = parseMethods(text);
+  const methods = parseMethods(text, className);
   let treeSitterParsed = false;
   if (treeSitter.available) {
     try {
@@ -222,8 +225,29 @@ function parseParams(paramsText) {
   return params;
 }
 
-function parseMethods(text) {
+function parseMethods(text, className) {
   const methods = [];
+  const constructorPattern = /(?:^|\n)(\s*(?:@\w+(?:\([^)]*\))?\s*)*)(?:(public|protected|private)\s+)?(?:\/\*.*?\*\/\s*)?\bCONSTRUCTOR_NAME\s*\(([^{};]*?)\)\s*(?:throws\s+[\w.,\s]+?)?\s*\{/g;
+  const actualConstructorPattern = new RegExp(constructorPattern.source.replace('CONSTRUCTOR_NAME', escapeRegex(className)), 'g');
+  let constructorMatch;
+  while ((constructorMatch = actualConstructorPattern.exec(text))) {
+    const openBrace = actualConstructorPattern.lastIndex - 1;
+    const closeBrace = findMatchingBrace(text, openBrace);
+    if (closeBrace < 0) continue;
+    const annotations = [...constructorMatch[1].matchAll(/@(\w+)/g)].map((m) => m[1]);
+    methods.push({
+      name: '<init>',
+      visibility: constructorMatch[2] ?? 'package',
+      returnType: '',
+      params: [...parseParams(constructorMatch[3])].map(([name, type]) => ({ name, type })),
+      annotations,
+      line: lineOf(text, constructorMatch.index),
+      body: text.slice(openBrace + 1, closeBrace),
+      constructor: true,
+    });
+    actualConstructorPattern.lastIndex = closeBrace + 1;
+  }
+
   const methodPattern = /(?:^|\n)(\s*(?:@\w+(?:\([^)]*\))?\s*)*)(?:(public|protected|private)\s+)?(?:\/\*.*?\*\/\s*)?([\w.$<>\[\], ?]+)\s+(\w+)\s*\(([^{};]*?)\)\s*(?:throws\s+[\w.,\s]+?)?\s*\{/g;
   let match;
   while ((match = methodPattern.exec(text))) {
@@ -363,13 +387,14 @@ function isLikelyJsfActionMethod(method) {
   if (method.declarationOnly) return false;
   if (ACCESSOR_PREFIXES.some((prefix) => method.name.startsWith(prefix))) return false;
   if (IGNORE_ACTION_METHODS.has(method.name)) return false;
-  return method.returnType === 'String' || method.name.startsWith('perform');
+  return method.returnType === 'String' || method.name.startsWith('perform') || JSF_ACTION_METHOD_NAMES.has(method.name);
 }
 
 function extractFallbackMethodEdges(context, dataSources) {
   const edges = [];
   const implementationsByType = buildImplementationsByType(context);
   const externalDataSourceByType = buildExternalDataSourceByType(dataSources);
+  const messageConsumersByDestination = buildMessageConsumersByDestination(context);
   const entityTableByClass = new Map(dataSources.entities.map((entity) => [entity.className, entity.tableId]));
   const tableByNamedQuery = new Map((dataSources.namedQueries ?? []).map((query) => [query.name, query.tableId]));
   const mapperStatementByMethod = new Map();
@@ -464,7 +489,25 @@ function extractFallbackMethodEdges(context, dataSources) {
         }
       }
 
+      for (const call of extractConstructorCalls(method.body)) {
+        const targetUnit = context.byClass.get(call.className);
+        if (!targetUnit) continue;
+        const target = methodId(targetUnit.fqn, '<init>');
+        edges.push({
+          id: edgeId('call', from, target, edges.length),
+          type: 'call',
+          source: 'static-constructor-call',
+          from,
+          to: target,
+          fromNode: methodNode(unit, method),
+          toNode: { id: target, kind: 'method', className: targetUnit.className, classFqn: targetUnit.fqn, methodName: '<init>', file: targetUnit.filePath },
+          callSite: call.raw,
+        });
+      }
+
       edges.push(...extractJpaDataAccessEdges(unit, method, from, edges.length, entityTableByClass, tableByNamedQuery));
+      edges.push(...extractJdbcDataAccessEdges(unit, method, from, edges.length, dataSources));
+      edges.push(...extractMessageTriggerEdges(unit, method, from, edges.length, messageConsumersByDestination));
 
       for (const call of extractSameClassCalls(method.body, unit, method)) {
         const target = methodId(unit.fqn, call.method);
@@ -561,6 +604,55 @@ function jpaDataAccessEdge(from, tableId, unit, method, operation, index) {
   };
 }
 
+function extractJdbcDataAccessEdges(unit, method, from, startIndex, dataSources) {
+  const tableIds = new Set();
+  const sqlConstants = extractSqlConstants(unit.text);
+
+  for (const sqlText of extractJavaStringTexts(method.body)) {
+    for (const table of extractSqlTables(sqlText)) tableIds.add(`table:${table}`);
+  }
+
+  for (const match of method.body.matchAll(/\b(?:getStatement|prepareStatement)\s*\(\s*(?:\w+\s*,\s*)?(\w+)/g)) {
+    const sqlText = sqlConstants.get(match[1]);
+    if (!sqlText) continue;
+    for (const table of extractSqlTables(sqlText)) tableIds.add(`table:${table}`);
+  }
+
+  if (method.name === 'recreateDBTables' && /\bexecuteUpdate\s*\(\s*\(?\s*String\s*\)?\s*sqlBuffer\s*\[/.test(method.body)) {
+    for (const table of dataSources.tables) tableIds.add(table.id);
+  }
+
+  return [...tableIds]
+    .filter((tableId) => dataSources.tables.some((table) => table.id === tableId))
+    .sort()
+    .map((tableId, index) => ({
+      id: edgeId('data_access', from, tableId, startIndex + index),
+      type: 'data_access',
+      source: 'jdbc-static-sql',
+      operation: 'sql',
+      from,
+      to: tableId,
+      fromNode: methodNode(unit, method),
+      toNode: { id: tableId, kind: 'table', name: tableId.replace(/^table:/, '') },
+    }));
+}
+
+function extractSqlConstants(text) {
+  const constants = new Map();
+  const assignmentPattern = /\bString\s+(\w+)\s*=\s*([\s\S]*?);/g;
+  for (const match of text.matchAll(assignmentPattern)) {
+    const sqlText = extractJavaStringTexts(match[2]).join(' ');
+    if (extractSqlTables(sqlText).length) constants.set(match[1], sqlText);
+  }
+  return constants;
+}
+
+function extractJavaStringTexts(text) {
+  return [...text.matchAll(/"((?:\\.|[^"\\])*)"/g)]
+    .map((match) => match[1].replace(/\\"/g, '"'))
+    .filter(Boolean);
+}
+
 function buildImplementationsByType(context) {
   const implementationsByType = new Map();
   for (const unit of context.javaUnits) {
@@ -593,12 +685,71 @@ function buildExternalDataSourceByType(dataSources) {
   return byType;
 }
 
+function buildMessageConsumersByDestination(context) {
+  const consumersByDestination = new Map();
+  for (const unit of context.javaUnits) {
+    if (!/@MessageDriven\s*\(/.test(unit.text)) continue;
+    const destination = matchOne(unit.text, /propertyName\s*=\s*"destinationLookup"[\s\S]*?propertyValue\s*=\s*"([^"]+)"/);
+    const onMessage = unit.methods.find((method) => method.name === 'onMessage');
+    if (!destination || !onMessage) continue;
+    if (!consumersByDestination.has(destination)) consumersByDestination.set(destination, []);
+    consumersByDestination.get(destination).push({ unit, method: onMessage });
+  }
+  return consumersByDestination;
+}
+
+function extractMessageTriggerEdges(unit, method, from, startIndex, consumersByDestination) {
+  const edges = [];
+  const destinationsByField = extractResourceDestinations(unit.text);
+  if (!destinationsByField.size) return edges;
+
+  for (const match of method.body.matchAll(/\.send\s*\(\s*(\w+)\s*,/g)) {
+    const destination = destinationsByField.get(match[1]);
+    if (!destination) continue;
+    for (const consumer of consumersByDestination.get(destination) ?? []) {
+      const to = methodId(consumer.unit.fqn, consumer.method.name);
+      edges.push({
+        id: edgeId('message_trigger', from, to, edges.length + startIndex),
+        type: 'message_trigger',
+        source: 'static-jms-destination-bridge',
+        destination,
+        from,
+        to,
+        fromNode: methodNode(unit, method),
+        toNode: methodNode(consumer.unit, consumer.method),
+        callSite: match[0],
+      });
+    }
+  }
+  return edges;
+}
+
+function extractResourceDestinations(text) {
+  const destinationsByField = new Map();
+  const resourcePattern = /@Resource\s*\([^)]*lookup\s*=\s*"([^"]+)"[^)]*\)\s*(?:private|protected|public)?\s*[\w.$<>?, ]+\s+(\w+)\s*;/g;
+  for (const match of text.matchAll(resourcePattern)) {
+    destinationsByField.set(match[2], match[1]);
+  }
+  return destinationsByField;
+}
+
 function extractCalls(body) {
   const calls = [];
-  const callPattern = /\b(\w+)\s*\.\s*(\w+)\s*\(([^)]*)\)/g;
+  // Use open-paren-only pattern so that calls nested inside another call's
+  // argument list (e.g. outer(inner(x))) are not consumed by the outer match.
+  const callPattern = /\b(\w+)\s*\.\s*(\w+)\s*\(/g;
   for (const match of body.matchAll(callPattern)) {
     if (JAVA_KEYWORDS.has(match[1])) continue;
-    calls.push({ receiver: match[1], method: match[2], args: match[3], raw: match[0] });
+    calls.push({ receiver: match[1], method: match[2], args: '', raw: match[0] });
+  }
+  return calls;
+}
+
+function extractConstructorCalls(body) {
+  const calls = [];
+  const constructorPattern = /\bnew\s+([A-Z]\w*)\s*\(/g;
+  for (const match of body.matchAll(constructorPattern)) {
+    calls.push({ className: match[1], raw: match[0] });
   }
   return calls;
 }
@@ -633,10 +784,9 @@ function extractDataSources(context) {
   const mappers = [];
   const namedQueries = [];
   const xmlFiles = context.resourceUnits.filter((unit) => unit.filePath.endsWith('.xml'));
-  const sqlFiles = context.resourceUnits.filter((unit) => unit.filePath.endsWith('.sql'));
 
-  for (const sql of sqlFiles) {
-    for (const match of sql.text.matchAll(/\bcreate\s+table\s+([`"\[]?)([\w.]+)\1/gi)) {
+  for (const resource of context.resourceUnits) {
+    for (const match of resource.text.matchAll(/\bcreate\s+table\s+([`"\[]?)([\w.]+)\1/gi)) {
       tables.add(match[2].toLowerCase());
     }
   }
@@ -979,11 +1129,66 @@ function simpleType(type) {
   return cleanType(type).replace(/<.*>/, '').split('.').pop();
 }
 
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function findMatchingBrace(text, openIndex) {
   let depth = 0;
+  let state = 'code';
   for (let i = openIndex; i < text.length; i += 1) {
-    if (text[i] === '{') depth += 1;
-    if (text[i] === '}') depth -= 1;
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (state === 'line-comment') {
+      if (char === '\n') state = 'code';
+      continue;
+    }
+    if (state === 'block-comment') {
+      if (char === '*' && next === '/') {
+        state = 'code';
+        i += 1;
+      }
+      continue;
+    }
+    if (state === 'string') {
+      if (char === '\\') {
+        i += 1;
+      } else if (char === '"') {
+        state = 'code';
+      }
+      continue;
+    }
+    if (state === 'char') {
+      if (char === '\\') {
+        i += 1;
+      } else if (char === "'") {
+        state = 'code';
+      }
+      continue;
+    }
+
+    if (char === '/' && next === '/') {
+      state = 'line-comment';
+      i += 1;
+      continue;
+    }
+    if (char === '/' && next === '*') {
+      state = 'block-comment';
+      i += 1;
+      continue;
+    }
+    if (char === '"') {
+      state = 'string';
+      continue;
+    }
+    if (char === "'") {
+      state = 'char';
+      continue;
+    }
+
+    if (char === '{') depth += 1;
+    if (char === '}') depth -= 1;
     if (depth === 0) return i;
   }
   return -1;
@@ -996,6 +1201,8 @@ function lineOf(text, index) {
 function matchOne(text, pattern) {
   return text.match(pattern)?.[1] ?? null;
 }
+
+export { extractCalls, loadBenchmark, extractBenchmark, BENCHMARKS };
 
 function rel(filePath) {
   return path.relative(ROOT, filePath);

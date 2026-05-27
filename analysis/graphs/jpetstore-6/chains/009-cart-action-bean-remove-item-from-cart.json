@@ -67,7 +67,7 @@
   ],
   "edges": [
     {
-      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:147",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:166",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -88,10 +88,10 @@
         "className": "String",
         "methodName": "trim"
       },
-      "callSite": "workingItemId.trim()"
+      "callSite": "workingItemId.trim("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
@@ -112,10 +112,10 @@
         "classFqn": "org.mybatis.jpetstore.domain.Cart",
         "methodName": "removeItemById"
       },
-      "callSite": "cart.removeItemById(workingItemId)"
+      "callSite": "cart.removeItemById("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:11",
+      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:13",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -136,10 +136,10 @@
         "className": "Map",
         "methodName": "remove"
       },
-      "callSite": "itemMap.remove(itemId)"
+      "callSite": "itemMap.remove("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:12",
+      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:14",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -160,10 +160,10 @@
         "className": "List",
         "methodName": "remove"
       },
-      "callSite": "itemList.remove(cartItem)"
+      "callSite": "itemList.remove("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:13",
+      "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:15",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
@@ -184,17 +184,17 @@
         "classFqn": "org.mybatis.jpetstore.domain.CartItem",
         "methodName": "getItem"
       },
-      "callSite": "cartItem.getItem()"
+      "callSite": "cartItem.getItem("
     }
   ],
   "paths": [
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:147"
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:166"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:147",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->unresolved:String#trim:166",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -215,7 +215,7 @@
             "className": "String",
             "methodName": "trim"
           },
-          "callSite": "workingItemId.trim()"
+          "callSite": "workingItemId.trim("
         }
       ],
       "nodeIds": [
@@ -225,12 +225,12 @@
     },
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
-        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:11"
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
+        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:13"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
@@ -251,10 +251,10 @@
             "classFqn": "org.mybatis.jpetstore.domain.Cart",
             "methodName": "removeItemById"
           },
-          "callSite": "cart.removeItemById(workingItemId)"
+          "callSite": "cart.removeItemById("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:11",
+          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:Map<String, CartItem>#remove:13",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -275,7 +275,7 @@
             "className": "Map",
             "methodName": "remove"
           },
-          "callSite": "itemMap.remove(itemId)"
+          "callSite": "itemMap.remove("
         }
       ],
       "nodeIds": [
@@ -286,12 +286,12 @@
     },
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
-        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:12"
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
+        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:14"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
@@ -312,10 +312,10 @@
             "classFqn": "org.mybatis.jpetstore.domain.Cart",
             "methodName": "removeItemById"
           },
-          "callSite": "cart.removeItemById(workingItemId)"
+          "callSite": "cart.removeItemById("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:12",
+          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->unresolved:List<CartItem>#remove:14",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -336,7 +336,7 @@
             "className": "List",
             "methodName": "remove"
           },
-          "callSite": "itemList.remove(cartItem)"
+          "callSite": "itemList.remove("
         }
       ],
       "nodeIds": [
@@ -347,12 +347,12 @@
     },
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
-        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:13"
+        "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
+        "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:15"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:148",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart->method:org.mybatis.jpetstore.domain.Cart#removeItemById:167",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.CartActionBean#removeItemFromCart",
@@ -373,10 +373,10 @@
             "classFqn": "org.mybatis.jpetstore.domain.Cart",
             "methodName": "removeItemById"
           },
-          "callSite": "cart.removeItemById(workingItemId)"
+          "callSite": "cart.removeItemById("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:13",
+          "id": "call:method:org.mybatis.jpetstore.domain.Cart#removeItemById->method:org.mybatis.jpetstore.domain.CartItem#getItem:15",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.domain.Cart#removeItemById",
@@ -397,7 +397,7 @@
             "classFqn": "org.mybatis.jpetstore.domain.CartItem",
             "methodName": "getItem"
           },
-          "callSite": "cartItem.getItem()"
+          "callSite": "cartItem.getItem("
         }
       ],
       "nodeIds": [

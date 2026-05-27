@@ -7,11 +7,11 @@
 - Runtime execution: not used
 - Java files scanned: 104
 - Resource files scanned: 8
-- Action points: 10
-- Method graph edges: 629
-- Class graph edges: 280
+- Action points: 11
+- Method graph edges: 722
+- Class graph edges: 331
 - Data tables: 7
-- Chain files: 10
+- Chain files: 11
 
 ## Tool Status
 

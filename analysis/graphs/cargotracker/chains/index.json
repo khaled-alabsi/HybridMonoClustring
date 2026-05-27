@@ -1,19 +1,19 @@
 {
   "benchmark": "cargotracker",
   "dataSourceCount": 7,
-  "chainCount": 10,
+  "chainCount": 11,
   "chains": [
     {
       "id": "chain:cargotracker:1",
       "file": "001-cargo-handled-consumer-on-message.json",
       "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
       "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.CargoHandledConsumer#onMessage",
-      "reachedNodeCount": 25,
+      "reachedNodeCount": 29,
       "reachedDataSources": [
         "table:cargo",
         "table:handlingevent"
       ],
-      "pathCount": 14
+      "pathCount": 16
     },
     {
       "id": "chain:cargotracker:2",
@@ -29,14 +29,14 @@
       "file": "003-handling-event-registration-attempt-consumer-on-message.json",
       "actionPointId": "action:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
       "rootMethodId": "method:org.eclipse.cargotracker.infrastructure.messaging.jms.HandlingEventRegistrationAttemptConsumer#onMessage",
-      "reachedNodeCount": 29,
+      "reachedNodeCount": 59,
       "reachedDataSources": [
         "table:cargo",
         "table:handlingevent",
         "table:location",
         "table:voyage"
       ],
-      "pathCount": 16
+      "pathCount": 33
     },
     {
       "id": "chain:cargotracker:4",
@@ -72,25 +72,25 @@
       "file": "007-booking-register.json",
       "actionPointId": "action:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
       "rootMethodId": "method:org.eclipse.cargotracker.interfaces.booking.web.Booking#register",
-      "reachedNodeCount": 22,
+      "reachedNodeCount": 28,
       "reachedDataSources": [
         "table:cargo",
         "table:location"
       ],
-      "pathCount": 13
+      "pathCount": 17
     },
     {
       "id": "chain:cargotracker:8",
       "file": "008-itinerary-selection-assign-itinerary.json",
       "actionPointId": "action:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection#assignItinerary",
       "rootMethodId": "method:org.eclipse.cargotracker.interfaces.booking.web.ItinerarySelection#assignItinerary",
-      "reachedNodeCount": 57,
+      "reachedNodeCount": 65,
       "reachedDataSources": [
         "table:cargo",
         "table:location",
         "table:voyage"
       ],
-      "pathCount": 29
+      "pathCount": 35
     },
     {
       "id": "chain:cargotracker:9",
@@ -103,12 +103,31 @@
     },
     {
       "id": "chain:cargotracker:10",
-      "file": "010-handling-report-service-submit-report.json",
+      "file": "010-event-logger-submit.json",
+      "actionPointId": "action:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#submit",
+      "rootMethodId": "method:org.eclipse.cargotracker.interfaces.handling.mobile.EventLogger#submit",
+      "reachedNodeCount": 67,
+      "reachedDataSources": [
+        "table:cargo",
+        "table:handlingevent",
+        "table:location",
+        "table:voyage"
+      ],
+      "pathCount": 37
+    },
+    {
+      "id": "chain:cargotracker:11",
+      "file": "011-handling-report-service-submit-report.json",
       "actionPointId": "action:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService#submitReport",
       "rootMethodId": "method:org.eclipse.cargotracker.interfaces.handling.rest.HandlingReportService#submitReport",
-      "reachedNodeCount": 8,
-      "reachedDataSources": [],
-      "pathCount": 5
+      "reachedNodeCount": 69,
+      "reachedDataSources": [
+        "table:cargo",
+        "table:handlingevent",
+        "table:location",
+        "table:voyage"
+      ],
+      "pathCount": 39
     }
   ]
 }

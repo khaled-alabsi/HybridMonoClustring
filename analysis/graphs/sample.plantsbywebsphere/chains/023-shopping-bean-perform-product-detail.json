@@ -3,7 +3,7 @@
   "fileName": "023-shopping-bean-perform-product-detail.json",
   "actionPointId": "action:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
   "rootMethodId": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
-  "reachedNodeCount": 5,
+  "reachedNodeCount": 6,
   "reachedDataSources": [
     "table:inventory"
   ],
@@ -30,6 +30,14 @@
       "methodName": "getItemInventory",
       "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java",
       "line": 91
+    },
+    {
+      "id": "method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>",
+      "kind": "method",
+      "className": "ProductBean",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.ProductBean",
+      "methodName": "<init>",
+      "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ProductBean.java"
     },
     {
       "id": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
@@ -61,7 +69,7 @@
   ],
   "edges": [
     {
-      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:FacesContext#getExternalContext:610",
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:FacesContext#getExternalContext:757",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -85,7 +93,7 @@
       "callSite": "facesContext.getExternalContext()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:ExternalContext#getRequestParameterMap:611",
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:ExternalContext#getRequestParameterMap:758",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -109,7 +117,7 @@
       "callSite": "externalContext.getRequestParameterMap()"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:612",
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:759",
       "type": "call",
       "source": "static-fallback",
       "from": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
@@ -133,7 +141,32 @@
       "callSite": "catalog.getItemInventory(requestParams.get(\"itemID\")"
     },
     {
-      "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->unresolved:EntityManager#find:37",
+      "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>:760",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+      "to": "method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>",
+      "fromNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+        "kind": "method",
+        "className": "ShoppingBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ShoppingBean",
+        "methodName": "performProductDetail",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ShoppingBean.java",
+        "line": 77
+      },
+      "toNode": {
+        "id": "method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>",
+        "kind": "method",
+        "className": "ProductBean",
+        "classFqn": "com.ibm.websphere.samples.pbw.war.ProductBean",
+        "methodName": "<init>",
+        "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ProductBean.java"
+      },
+      "callSite": "new ProductBean("
+    },
+    {
+      "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->unresolved:EntityManager#find:38",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -157,7 +190,7 @@
       "callSite": "em.find(Inventory.class, inventoryID)"
     },
     {
-      "id": "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->table:inventory:38",
+      "id": "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->table:inventory:39",
       "type": "data_access",
       "source": "jpa-static",
       "operation": "find",
@@ -182,11 +215,11 @@
   "paths": [
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:FacesContext#getExternalContext:610"
+        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:FacesContext#getExternalContext:757"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:FacesContext#getExternalContext:610",
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:FacesContext#getExternalContext:757",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -217,11 +250,11 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:ExternalContext#getRequestParameterMap:611"
+        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:ExternalContext#getRequestParameterMap:758"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:ExternalContext#getRequestParameterMap:611",
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->unresolved:ExternalContext#getRequestParameterMap:758",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -252,12 +285,12 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:612",
-        "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->table:inventory:38"
+        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:759",
+        "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->table:inventory:39"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:612",
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:759",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
@@ -281,7 +314,7 @@
           "callSite": "catalog.getItemInventory(requestParams.get(\"itemID\")"
         },
         {
-          "id": "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->table:inventory:38",
+          "id": "data_access:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->table:inventory:39",
           "type": "data_access",
           "source": "jpa-static",
           "operation": "find",
@@ -311,12 +344,48 @@
     },
     {
       "edgeIds": [
-        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:612",
-        "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->unresolved:EntityManager#find:37"
+        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>:760"
       ],
       "edges": [
         {
-          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:612",
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>:760",
+          "type": "call",
+          "source": "static-constructor-call",
+          "from": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+          "to": "method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>",
+          "fromNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+            "kind": "method",
+            "className": "ShoppingBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ShoppingBean",
+            "methodName": "performProductDetail",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ShoppingBean.java",
+            "line": 77
+          },
+          "toNode": {
+            "id": "method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>",
+            "kind": "method",
+            "className": "ProductBean",
+            "classFqn": "com.ibm.websphere.samples.pbw.war.ProductBean",
+            "methodName": "<init>",
+            "file": "benchmarks/sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/ProductBean.java"
+          },
+          "callSite": "new ProductBean("
+        }
+      ],
+      "nodeIds": [
+        "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
+        "method:com.ibm.websphere.samples.pbw.war.ProductBean#<init>"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:759",
+        "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->unresolved:EntityManager#find:38"
+      ],
+      "edges": [
+        {
+          "id": "call:method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail->method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory:759",
           "type": "call",
           "source": "static-fallback",
           "from": "method:com.ibm.websphere.samples.pbw.war.ShoppingBean#performProductDetail",
@@ -340,7 +409,7 @@
           "callSite": "catalog.getItemInventory(requestParams.get(\"itemID\")"
         },
         {
-          "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->unresolved:EntityManager#find:37",
+          "id": "call:method:com.ibm.websphere.samples.pbw.bean.CatalogMgr#getItemInventory->unresolved:EntityManager#find:38",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,

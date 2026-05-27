@@ -3,7 +3,7 @@
   "fileName": "018-order-action-bean-list-orders.json",
   "actionPointId": "action:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
   "rootMethodId": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
-  "reachedNodeCount": 4,
+  "reachedNodeCount": 5,
   "reachedDataSources": [
     "table:orders",
     "table:orderstatus"
@@ -41,6 +41,13 @@
       "line": 108
     },
     {
+      "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount",
+      "kind": "method",
+      "className": "AccountActionBean",
+      "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+      "methodName": "getAccount"
+    },
+    {
       "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
       "kind": "method",
       "className": "OrderActionBean",
@@ -58,7 +65,7 @@
   ],
   "edges": [
     {
-      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->unresolved:HttpSession#getAttribute:164",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->unresolved:HttpSession#getAttribute:186",
       "type": "call",
       "source": "static-fallback",
       "unresolved": true,
@@ -79,10 +86,10 @@
         "className": "HttpSession",
         "methodName": "getAttribute"
       },
-      "callSite": "session.getAttribute(\"/actions/Account.action\")"
+      "callSite": "session.getAttribute("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:165",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:187",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
@@ -103,10 +110,34 @@
         "classFqn": "org.mybatis.jpetstore.service.OrderService",
         "methodName": "getOrdersByUsername"
       },
-      "callSite": "orderService.getOrdersByUsername(accountBean.getAccount()"
+      "callSite": "orderService.getOrdersByUsername("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:113",
+      "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount:188",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+      "to": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount",
+      "fromNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+        "kind": "method",
+        "className": "OrderActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+        "methodName": "listOrders",
+        "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+        "line": 106
+      },
+      "toNode": {
+        "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount",
+        "kind": "method",
+        "className": "AccountActionBean",
+        "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+        "methodName": "getAccount"
+      },
+      "callSite": "accountBean.getAccount("
+    },
+    {
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:125",
       "type": "call",
       "source": "static-fallback",
       "from": "method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername",
@@ -127,10 +158,10 @@
         "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
         "methodName": "getOrdersByUsername"
       },
-      "callSite": "orderMapper.getOrdersByUsername(username)"
+      "callSite": "orderMapper.getOrdersByUsername("
     },
     {
-      "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orders:114",
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orders:126",
       "type": "data_access",
       "source": "mybatis-xml",
       "operation": "select",
@@ -149,7 +180,7 @@
       }
     },
     {
-      "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orderstatus:115",
+      "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orderstatus:127",
       "type": "data_access",
       "source": "mybatis-xml",
       "operation": "select",
@@ -171,11 +202,11 @@
   "paths": [
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->unresolved:HttpSession#getAttribute:164"
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->unresolved:HttpSession#getAttribute:186"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->unresolved:HttpSession#getAttribute:164",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->unresolved:HttpSession#getAttribute:186",
           "type": "call",
           "source": "static-fallback",
           "unresolved": true,
@@ -196,7 +227,7 @@
             "className": "HttpSession",
             "methodName": "getAttribute"
           },
-          "callSite": "session.getAttribute(\"/actions/Account.action\")"
+          "callSite": "session.getAttribute("
         }
       ],
       "nodeIds": [
@@ -206,13 +237,48 @@
     },
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:165",
-        "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:113",
-        "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orders:114"
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount:188"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:165",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount:188",
+          "type": "call",
+          "source": "static-fallback",
+          "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+          "to": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount",
+          "fromNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+            "kind": "method",
+            "className": "OrderActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.OrderActionBean",
+            "methodName": "listOrders",
+            "file": "benchmarks/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java",
+            "line": 106
+          },
+          "toNode": {
+            "id": "method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount",
+            "kind": "method",
+            "className": "AccountActionBean",
+            "classFqn": "org.mybatis.jpetstore.web.actions.AccountActionBean",
+            "methodName": "getAccount"
+          },
+          "callSite": "accountBean.getAccount("
+        }
+      ],
+      "nodeIds": [
+        "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
+        "method:org.mybatis.jpetstore.web.actions.AccountActionBean#getAccount"
+      ]
+    },
+    {
+      "edgeIds": [
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:187",
+        "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:125",
+        "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orders:126"
+      ],
+      "edges": [
+        {
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:187",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
@@ -233,10 +299,10 @@
             "classFqn": "org.mybatis.jpetstore.service.OrderService",
             "methodName": "getOrdersByUsername"
           },
-          "callSite": "orderService.getOrdersByUsername(accountBean.getAccount()"
+          "callSite": "orderService.getOrdersByUsername("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:113",
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:125",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername",
@@ -257,10 +323,10 @@
             "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
             "methodName": "getOrdersByUsername"
           },
-          "callSite": "orderMapper.getOrdersByUsername(username)"
+          "callSite": "orderMapper.getOrdersByUsername("
         },
         {
-          "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orders:114",
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orders:126",
           "type": "data_access",
           "source": "mybatis-xml",
           "operation": "select",
@@ -288,13 +354,13 @@
     },
     {
       "edgeIds": [
-        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:165",
-        "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:113",
-        "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orderstatus:115"
+        "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:187",
+        "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:125",
+        "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orderstatus:127"
       ],
       "edges": [
         {
-          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:165",
+          "id": "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders->method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername:187",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.web.actions.OrderActionBean#listOrders",
@@ -315,10 +381,10 @@
             "classFqn": "org.mybatis.jpetstore.service.OrderService",
             "methodName": "getOrdersByUsername"
           },
-          "callSite": "orderService.getOrdersByUsername(accountBean.getAccount()"
+          "callSite": "orderService.getOrdersByUsername("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:113",
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername->method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername:125",
           "type": "call",
           "source": "static-fallback",
           "from": "method:org.mybatis.jpetstore.service.OrderService#getOrdersByUsername",
@@ -339,10 +405,10 @@
             "classFqn": "org.mybatis.jpetstore.mapper.OrderMapper",
             "methodName": "getOrdersByUsername"
           },
-          "callSite": "orderMapper.getOrdersByUsername(username)"
+          "callSite": "orderMapper.getOrdersByUsername("
         },
         {
-          "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orderstatus:115",
+          "id": "data_access:method:org.mybatis.jpetstore.mapper.OrderMapper#getOrdersByUsername->table:orderstatus:127",
           "type": "data_access",
           "source": "mybatis-xml",
           "operation": "select",

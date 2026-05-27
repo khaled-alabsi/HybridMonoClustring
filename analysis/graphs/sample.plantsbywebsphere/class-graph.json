@@ -36,15 +36,15 @@
       "classFqn": "com.ibm.websphere.samples.pbw.bean.CustomerMgr"
     },
     {
-      "id": "table:customer",
-      "kind": "table",
-      "name": "customer"
-    },
-    {
       "id": "class:com.ibm.websphere.samples.pbw.jpa.Customer",
       "kind": "class",
       "className": "Customer",
       "classFqn": "com.ibm.websphere.samples.pbw.jpa.Customer"
+    },
+    {
+      "id": "table:customer",
+      "kind": "table",
+      "name": "customer"
     },
     {
       "id": "class:com.ibm.websphere.samples.pbw.bean.MailerBean",
@@ -68,6 +68,12 @@
       "kind": "class",
       "className": "EMailMessage",
       "classFqn": "com.ibm.websphere.samples.pbw.bean.EMailMessage"
+    },
+    {
+      "id": "class:com.ibm.websphere.samples.pbw.bean.MailerAppException",
+      "kind": "class",
+      "className": "MailerAppException",
+      "classFqn": "com.ibm.websphere.samples.pbw.bean.MailerAppException"
     },
     {
       "id": "class:com.ibm.websphere.samples.pbw.bean.PopulateDBBean",
@@ -94,6 +100,12 @@
       "classFqn": "com.ibm.websphere.samples.pbw.bean.SuppliersBean"
     },
     {
+      "id": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "kind": "class",
+      "className": "Inventory",
+      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Inventory"
+    },
+    {
       "id": "table:orderitem",
       "kind": "table",
       "name": "orderitem"
@@ -102,12 +114,6 @@
       "id": "table:supplier",
       "kind": "table",
       "name": "supplier"
-    },
-    {
-      "id": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
-      "kind": "class",
-      "className": "Inventory",
-      "classFqn": "com.ibm.websphere.samples.pbw.jpa.Inventory"
     },
     {
       "id": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
@@ -150,6 +156,12 @@
       "kind": "class",
       "className": "AccountBean",
       "classFqn": "com.ibm.websphere.samples.pbw.war.AccountBean"
+    },
+    {
+      "id": "class:com.ibm.websphere.samples.pbw.war.LoginInfo",
+      "kind": "class",
+      "className": "LoginInfo",
+      "classFqn": "com.ibm.websphere.samples.pbw.war.LoginInfo"
     },
     {
       "id": "class:com.ibm.websphere.samples.pbw.war.ShoppingBean",
@@ -261,7 +273,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.bean.BackOrderMgr",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.BackOrder",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.BackOrderMgr->unresolved:EntityManager#find",
@@ -424,6 +436,14 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.pbw.bean.CustomerMgr->class:com.ibm.websphere.samples.pbw.jpa.Customer",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.bean.CustomerMgr",
+      "to": "class:com.ibm.websphere.samples.pbw.jpa.Customer",
+      "weight": 2
+    },
+    {
       "id": "data_access:class:com.ibm.websphere.samples.pbw.bean.CustomerMgr->table:customer",
       "type": "data_access",
       "source": "jpa-static",
@@ -520,14 +540,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:com.ibm.websphere.samples.pbw.bean.CustomerMgr->class:com.ibm.websphere.samples.pbw.jpa.Customer",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.pbw.bean.CustomerMgr",
-      "to": "class:com.ibm.websphere.samples.pbw.jpa.Customer",
-      "weight": 1
-    },
-    {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.MailerBean->unresolved:EntityManager#find",
       "type": "call",
       "source": "static-fallback",
@@ -581,7 +593,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.bean.MailerBean",
       "to": "class:com.ibm.websphere.samples.pbw.bean.EMailMessage",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.MailerBean->unresolved:MimeMessage#setFrom",
@@ -645,6 +657,14 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.bean.MailerBean",
       "to": "unresolved:MimeMessage#setSentDate",
+      "weight": 1
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.pbw.bean.MailerBean->class:com.ibm.websphere.samples.pbw.bean.MailerAppException",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.bean.MailerBean",
+      "to": "class:com.ibm.websphere.samples.pbw.bean.MailerAppException",
       "weight": 1
     },
     {
@@ -720,6 +740,22 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.pbw.bean.ResetDBBean->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.bean.ResetDBBean",
+      "to": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "weight": 1
+    },
+    {
+      "id": "data_access:class:com.ibm.websphere.samples.pbw.bean.ResetDBBean->table:orderitem",
+      "type": "data_access",
+      "source": "jdbc-static-sql",
+      "from": "class:com.ibm.websphere.samples.pbw.bean.ResetDBBean",
+      "to": "table:orderitem",
+      "weight": 2
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.ResetDBBean->unresolved:EntityManager#createNamedQuery",
       "type": "call",
       "source": "static-fallback",
@@ -773,14 +809,6 @@
       "source": "jpa-static",
       "from": "class:com.ibm.websphere.samples.pbw.bean.ResetDBBean",
       "to": "table:customer",
-      "weight": 1
-    },
-    {
-      "id": "data_access:class:com.ibm.websphere.samples.pbw.bean.ResetDBBean->table:orderitem",
-      "type": "data_access",
-      "source": "jpa-static",
-      "from": "class:com.ibm.websphere.samples.pbw.bean.ResetDBBean",
-      "to": "table:orderitem",
       "weight": 1
     },
     {
@@ -885,7 +913,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean->unresolved:Collection<OrderItem>#add",
@@ -910,6 +938,14 @@
       "from": "class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean",
       "to": "unresolved:EntityManager#flush",
       "weight": 2
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean->class:com.ibm.websphere.samples.pbw.jpa.Order",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean",
+      "to": "class:com.ibm.websphere.samples.pbw.jpa.Order",
+      "weight": 1
     },
     {
       "id": "data_access:class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean->table:inventory",
@@ -949,7 +985,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.BackOrder",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.ShoppingCartBean->unresolved:EntityManager#lock",
@@ -1064,12 +1100,20 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.pbw.bean.SuppliersBean->class:com.ibm.websphere.samples.pbw.jpa.Supplier",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.bean.SuppliersBean",
+      "to": "class:com.ibm.websphere.samples.pbw.jpa.Supplier",
+      "weight": 8
+    },
+    {
       "id": "data_access:class:com.ibm.websphere.samples.pbw.bean.SuppliersBean->table:supplier",
       "type": "data_access",
       "source": "jpa-static",
       "from": "class:com.ibm.websphere.samples.pbw.bean.SuppliersBean",
       "to": "table:supplier",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.SuppliersBean->unresolved:Collection<Supplier>#iterator",
@@ -1094,14 +1138,6 @@
       "from": "class:com.ibm.websphere.samples.pbw.bean.SuppliersBean",
       "to": "unresolved:Iterator<Supplier>#next",
       "weight": 1
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.pbw.bean.SuppliersBean->class:com.ibm.websphere.samples.pbw.jpa.Supplier",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.pbw.bean.SuppliersBean",
-      "to": "class:com.ibm.websphere.samples.pbw.jpa.Supplier",
-      "weight": 7
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.bean.SuppliersBean->unresolved:EntityManager#createNamedQuery",
@@ -1133,7 +1169,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.jpa.Order",
       "to": "unresolved:StringBuffer#replace",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.jpa.Order->class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
@@ -1141,7 +1177,23 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.jpa.Order",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
-      "weight": 4
+      "weight": 8
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.pbw.jpa.OrderItem->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
+      "to": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "weight": 12
+    },
+    {
+      "id": "call:class:com.ibm.websphere.samples.pbw.jpa.OrderItem->unresolved:return#getOrderID",
+      "type": "call",
+      "source": "static-fallback",
+      "from": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
+      "to": "unresolved:return#getOrderID",
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.jpa.OrderItem->unresolved:String#equals",
@@ -1158,22 +1210,6 @@
       "from": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
       "to": "unresolved:String#hashCode",
       "weight": 2
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.pbw.jpa.OrderItem->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
-      "to": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
-      "weight": 6
-    },
-    {
-      "id": "call:class:com.ibm.websphere.samples.pbw.jpa.OrderItem->unresolved:return#getOrderID",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:com.ibm.websphere.samples.pbw.jpa.OrderItem",
-      "to": "unresolved:return#getOrderID",
-      "weight": 1
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.jpa.OrderItem->unresolved:return#getSellDate",
@@ -1317,7 +1353,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.utils.Util",
       "to": "class:com.ibm.websphere.samples.pbw.utils.ListProperties",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.utils.Util->unresolved:StringTokenizer#countTokens",
@@ -1384,6 +1420,14 @@
       "weight": 4
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.pbw.war.AccountBean->class:com.ibm.websphere.samples.pbw.war.LoginInfo",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.war.AccountBean",
+      "to": "class:com.ibm.websphere.samples.pbw.war.LoginInfo",
+      "weight": 4
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.AccountBean->class:com.ibm.websphere.samples.pbw.bean.CustomerMgr",
       "type": "call",
       "source": "static-fallback",
@@ -1405,7 +1449,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.AccountBean",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.Customer",
-      "weight": 24
+      "weight": 25
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.AccountBean->unresolved:FacesContext#getApplication",
@@ -1605,7 +1649,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.AccountBean",
       "to": "class:com.ibm.websphere.samples.pbw.war.OrderInfo",
-      "weight": 1
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.AccountBean->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
@@ -1773,7 +1817,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.AdminServlet",
       "to": "class:com.ibm.websphere.samples.pbw.war.Populate",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.AdminServlet->unresolved:HttpServletRequest#getParameterValues",
@@ -1837,7 +1881,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.AdminServlet",
       "to": "class:com.ibm.websphere.samples.pbw.war.BackOrderItem",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.AdminServlet->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
@@ -1877,7 +1921,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.BackOrderItem",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.BackOrder",
-      "weight": 7
+      "weight": 14
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.HelpBean->class:com.ibm.websphere.samples.pbw.bean.ResetDBBean",
@@ -1941,7 +1985,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.OrderInfo",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.Order",
-      "weight": 16
+      "weight": 32
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.Populate->unresolved:String#getPath",
@@ -2016,6 +2060,22 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.pbw.war.Populate->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.war.Populate",
+      "to": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
+      "weight": 1
+    },
+    {
+      "id": "data_access:class:com.ibm.websphere.samples.pbw.war.Populate->table:orderitem",
+      "type": "data_access",
+      "source": "jdbc-static-sql",
+      "from": "class:com.ibm.websphere.samples.pbw.war.Populate",
+      "to": "table:orderitem",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.ProductBean->unresolved:String#equals",
       "type": "call",
       "source": "static-fallback",
@@ -2037,7 +2097,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.ShoppingBean",
       "to": "class:com.ibm.websphere.samples.pbw.war.ProductBean",
-      "weight": 1
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.ShoppingBean->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
@@ -2045,7 +2105,7 @@
       "source": "static-fallback",
       "from": "class:com.ibm.websphere.samples.pbw.war.ShoppingBean",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.ShoppingBean->unresolved:return#addItem",
@@ -2120,12 +2180,20 @@
       "weight": 1
     },
     {
+      "id": "call:class:com.ibm.websphere.samples.pbw.war.ShoppingBean->class:com.ibm.websphere.samples.pbw.war.ShoppingItem",
+      "type": "call",
+      "source": "static-constructor-call",
+      "from": "class:com.ibm.websphere.samples.pbw.war.ShoppingBean",
+      "to": "class:com.ibm.websphere.samples.pbw.war.ShoppingItem",
+      "weight": 1
+    },
+    {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.ShoppingItem->class:com.ibm.websphere.samples.pbw.jpa.Inventory",
       "type": "call",
-      "source": "static-fallback",
+      "source": "static-constructor-call",
       "from": "class:com.ibm.websphere.samples.pbw.war.ShoppingItem",
       "to": "class:com.ibm.websphere.samples.pbw.jpa.Inventory",
-      "weight": 39
+      "weight": 41
     },
     {
       "id": "call:class:com.ibm.websphere.samples.pbw.war.ValidatePasswords->unresolved:UIComponent#getAttributes",
