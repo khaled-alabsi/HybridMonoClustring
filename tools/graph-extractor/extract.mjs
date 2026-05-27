@@ -513,6 +513,39 @@ function extractFallbackMethodEdges(context, dataSources) {
         });
       }
 
+      // Detect chained method calls on constructor return values: new X().method()
+      // [^)]* only matches when constructor args have no nested parens, which
+      // covers the common zero-arg and simple-arg cases.
+      for (const call of extractConstructorChainCalls(method.body)) {
+        const targetUnit = context.byClass.get(call.className);
+        if (!targetUnit) continue;
+        const target = methodId(targetUnit.fqn, call.method);
+        edges.push({
+          id: edgeId('call', from, target, edges.length),
+          type: 'call',
+          source: 'static-constructor-chain-call',
+          from,
+          to: target,
+          fromNode: methodNode(unit, method),
+          toNode: { id: target, kind: 'method', className: targetUnit.className, classFqn: targetUnit.fqn, methodName: call.method, file: targetUnit.filePath },
+          callSite: call.raw,
+        });
+        for (const implUnit of implementationsByType.get(targetUnit.className) ?? []) {
+          if (!implUnit.methods.some((candidate) => candidate.name === call.method)) continue;
+          const implTarget = methodId(implUnit.fqn, call.method);
+          edges.push({
+            id: edgeId('polymorphic_call', target, implTarget, edges.length),
+            type: 'polymorphic_call',
+            source: 'static-implementation-bridge',
+            from: target,
+            to: implTarget,
+            fromNode: { id: target, kind: 'method', className: targetUnit.className, classFqn: targetUnit.fqn, methodName: call.method },
+            toNode: { id: implTarget, kind: 'method', className: implUnit.className, classFqn: implUnit.fqn, methodName: call.method, file: implUnit.filePath },
+            callSite: call.raw,
+          });
+        }
+      }
+
       edges.push(...extractJpaDataAccessEdges(unit, method, from, edges.length, entityTableByClass, tableByNamedQuery));
       edges.push(...extractJdbcDataAccessEdges(unit, method, from, edges.length, dataSources));
       edges.push(...extractMessageTriggerEdges(unit, method, from, edges.length, messageConsumersByDestination));
@@ -771,6 +804,20 @@ function extractConstructorCalls(body) {
   const constructorPattern = /\bnew\s+([A-Z]\w*)\s*\(/g;
   for (const match of body.matchAll(constructorPattern)) {
     calls.push({ className: match[1], raw: match[0] });
+  }
+  return calls;
+}
+
+/**
+ * Detect method calls chained directly onto a constructor:  new X(...).method(
+ * [^)]* limits constructor arg matching to no nested parens, which covers the
+ * common zero-arg and simple-arg patterns (e.g. new TradeAction().createQuote).
+ */
+function extractConstructorChainCalls(body) {
+  const calls = [];
+  const pattern = /\bnew\s+([A-Z]\w*)\s*\([^)]*\)\s*\.\s*(\w+)\s*\(/g;
+  for (const match of body.matchAll(pattern)) {
+    calls.push({ className: match[1], method: match[2], raw: match[0] });
   }
   return calls;
 }
@@ -1223,7 +1270,7 @@ function matchOne(text, pattern) {
   return text.match(pattern)?.[1] ?? null;
 }
 
-export { extractCalls, parseFields, loadBenchmark, extractBenchmark, BENCHMARKS };
+export { extractCalls, parseFields, extractConstructorChainCalls, loadBenchmark, extractBenchmark, BENCHMARKS };
 
 function rel(filePath) {
   return path.relative(ROOT, filePath);

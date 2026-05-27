@@ -7,7 +7,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { extractCalls, parseFields, loadBenchmark, extractBenchmark, BENCHMARKS } from './extract.mjs';
+import { extractCalls, parseFields, extractConstructorChainCalls, loadBenchmark, extractBenchmark, BENCHMARKS } from './extract.mjs';
 
 // ---------------------------------------------------------------------------
 // Expected reachedDataSources for every jpetstore-6 chain.
@@ -225,6 +225,9 @@ const EXPECTED_DAYTRADER_BUSINESS_CHAINS = [
   { class: 'DTStreamer3MDB',         method: 'onMessage',           tables: [] },
   // MarketSummarySingleton: queries quoteejb via JPA Criteria API (FIX: was [] before criteriaQuery fix)
   { class: 'MarketSummarySingleton', method: 'updateMarketSummary', tables: ['table:quoteejb'] },
+  // TestServlet: creates test quotes via new TradeAction().createQuote() → all 5 tables (FIX: was [] before constructor-chain fix)
+  { class: 'TestServlet',           method: 'doGet',               tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
+  { class: 'TestServlet',           method: 'doPost',              tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
   // TradeAppServlet: handles all trading operations
   { class: 'TradeAppServlet',        method: 'doGet',               tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
   { class: 'TradeAppServlet',        method: 'doPost',              tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
@@ -245,6 +248,24 @@ const EXPECTED_DAYTRADER_BUSINESS_CHAINS = [
 ];
 
 // Integration test: run the full pipeline in-memory and verify 16 key business chains.
+// Guards against regression in extractConstructorChainCalls: new X().method() pattern.
+test('fix: extractConstructorChainCalls detects method call chained on constructor result', () => {
+  // Covers: new TradeAction().createQuote("s:" + i, ...) — the pattern used by TestServlet#performTask
+  const body = `
+    for (int i = 1; i <= 10; i++) {
+      AccountDataBean a = new TradeAction().createQuote("s:" + i, "Company " + i, new BigDecimal(i * 1.1));
+      out.println(a.toString());
+    }
+  `;
+  const calls = extractConstructorChainCalls(body);
+  // Should detect TradeAction().createQuote — constructor with no args
+  const tradeActionCall = calls.find((c) => c.className === 'TradeAction' && c.method === 'createQuote');
+  assert.ok(tradeActionCall, 'Should detect new TradeAction().createQuote(...)');
+  // Should NOT create a false detection for BigDecimal (no chained call after it)
+  const bigDecimalCall = calls.find((c) => c.className === 'BigDecimal');
+  assert.ok(!bigDecimalCall, 'Should not detect new BigDecimal(...) as chained call (no method after it)');
+});
+
 // Guards against regressions in any of the three fixed extractor bugs for DayTrader.
 test('integration: daytrader key business chains have correct reachedDataSources', async () => {
   const codeql = { available: false, reason: 'test-stub' };

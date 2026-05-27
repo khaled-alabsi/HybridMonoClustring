@@ -9,7 +9,7 @@
 - Resource files scanned: 14
 - Action points: 21
 - Method graph edges: 205
-- Class graph edges: 98
+- Class graph edges: 95
 - Data tables: 13
 - Chain files: 21
 

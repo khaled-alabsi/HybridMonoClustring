@@ -640,20 +640,12 @@
       "weight": 1
     },
     {
-      "id": "call:class:org.mybatis.jpetstore.service.OrderService->unresolved:return#setOrderId",
+      "id": "call:class:org.mybatis.jpetstore.service.OrderService->class:org.mybatis.jpetstore.domain.Order",
       "type": "call",
       "source": "static-fallback",
       "from": "class:org.mybatis.jpetstore.service.OrderService",
-      "to": "unresolved:return#setOrderId",
-      "weight": 1
-    },
-    {
-      "id": "call:class:org.mybatis.jpetstore.service.OrderService->unresolved:return#getLineItems",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:org.mybatis.jpetstore.service.OrderService",
-      "to": "unresolved:return#getLineItems",
-      "weight": 2
+      "to": "class:org.mybatis.jpetstore.domain.Order",
+      "weight": 5
     },
     {
       "id": "call:class:org.mybatis.jpetstore.service.OrderService->unresolved:Map<String, Object>#put",
@@ -704,14 +696,6 @@
       "weight": 1
     },
     {
-      "id": "call:class:org.mybatis.jpetstore.service.OrderService->unresolved:return#getOrderId",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:org.mybatis.jpetstore.service.OrderService",
-      "to": "unresolved:return#getOrderId",
-      "weight": 1
-    },
-    {
       "id": "call:class:org.mybatis.jpetstore.service.OrderService->class:org.mybatis.jpetstore.mapper.LineItemMapper",
       "type": "call",
       "source": "static-fallback",
@@ -741,14 +725,6 @@
       "source": "mybatis-xml",
       "from": "method:org.mybatis.jpetstore.mapper.OrderMapper#getOrder",
       "to": "table:orderstatus",
-      "weight": 1
-    },
-    {
-      "id": "call:class:org.mybatis.jpetstore.service.OrderService->unresolved:return#setLineItems",
-      "type": "call",
-      "source": "static-fallback",
-      "from": "class:org.mybatis.jpetstore.service.OrderService",
-      "to": "unresolved:return#setLineItems",
       "weight": 1
     },
     {

@@ -36,6 +36,13 @@
       "methodName": "setQuantity"
     },
     {
+      "id": "method:org.mybatis.jpetstore.domain.Order#getLineItems",
+      "kind": "method",
+      "className": "Order",
+      "classFqn": "org.mybatis.jpetstore.domain.Order",
+      "methodName": "getLineItems"
+    },
+    {
       "id": "method:org.mybatis.jpetstore.domain.Order#getOrderId",
       "kind": "method",
       "className": "Order",
@@ -48,6 +55,13 @@
       "className": "Order",
       "classFqn": "org.mybatis.jpetstore.domain.Order",
       "methodName": "getUsername"
+    },
+    {
+      "id": "method:org.mybatis.jpetstore.domain.Order#setLineItems",
+      "kind": "method",
+      "className": "Order",
+      "classFqn": "org.mybatis.jpetstore.domain.Order",
+      "methodName": "setLineItems"
     },
     {
       "id": "method:org.mybatis.jpetstore.mapper.ItemMapper#getInventoryQuantity",
@@ -107,18 +121,6 @@
       "kind": "unknown_framework_target",
       "className": "HttpSession",
       "methodName": "getAttribute"
-    },
-    {
-      "id": "unresolved:return#getLineItems",
-      "kind": "unknown_framework_target",
-      "className": "return",
-      "methodName": "getLineItems"
-    },
-    {
-      "id": "unresolved:return#setLineItems",
-      "kind": "unknown_framework_target",
-      "className": "return",
-      "methodName": "setLineItems"
     }
   ],
   "edges": [
@@ -267,12 +269,11 @@
       "callSite": "orderMapper.getOrder("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->unresolved:return#setLineItems:118",
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->method:org.mybatis.jpetstore.domain.Order#setLineItems:118",
       "type": "call",
       "source": "static-fallback",
-      "unresolved": true,
       "from": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
-      "to": "unresolved:return#setLineItems",
+      "to": "method:org.mybatis.jpetstore.domain.Order#setLineItems",
       "fromNode": {
         "id": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
         "kind": "method",
@@ -283,9 +284,10 @@
         "line": 86
       },
       "toNode": {
-        "id": "unresolved:return#setLineItems",
-        "kind": "unknown_framework_target",
-        "className": "return",
+        "id": "method:org.mybatis.jpetstore.domain.Order#setLineItems",
+        "kind": "method",
+        "className": "Order",
+        "classFqn": "org.mybatis.jpetstore.domain.Order",
         "methodName": "setLineItems"
       },
       "callSite": "order.setLineItems("
@@ -315,12 +317,11 @@
       "callSite": "lineItemMapper.getLineItemsByOrderId("
     },
     {
-      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->unresolved:return#getLineItems:121",
+      "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->method:org.mybatis.jpetstore.domain.Order#getLineItems:121",
       "type": "call",
       "source": "static-fallback",
-      "unresolved": true,
       "from": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
-      "to": "unresolved:return#getLineItems",
+      "to": "method:org.mybatis.jpetstore.domain.Order#getLineItems",
       "fromNode": {
         "id": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
         "kind": "method",
@@ -331,9 +332,10 @@
         "line": 86
       },
       "toNode": {
-        "id": "unresolved:return#getLineItems",
-        "kind": "unknown_framework_target",
-        "className": "return",
+        "id": "method:org.mybatis.jpetstore.domain.Order#getLineItems",
+        "kind": "method",
+        "className": "Order",
+        "classFqn": "org.mybatis.jpetstore.domain.Order",
         "methodName": "getLineItems"
       },
       "callSite": "order.getLineItems("
@@ -852,7 +854,7 @@
     {
       "edgeIds": [
         "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#viewOrder->method:org.mybatis.jpetstore.service.OrderService#getOrder:200",
-        "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->unresolved:return#setLineItems:118"
+        "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->method:org.mybatis.jpetstore.domain.Order#setLineItems:118"
       ],
       "edges": [
         {
@@ -880,12 +882,11 @@
           "callSite": "orderService.getOrder("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->unresolved:return#setLineItems:118",
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->method:org.mybatis.jpetstore.domain.Order#setLineItems:118",
           "type": "call",
           "source": "static-fallback",
-          "unresolved": true,
           "from": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
-          "to": "unresolved:return#setLineItems",
+          "to": "method:org.mybatis.jpetstore.domain.Order#setLineItems",
           "fromNode": {
             "id": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
             "kind": "method",
@@ -896,9 +897,10 @@
             "line": 86
           },
           "toNode": {
-            "id": "unresolved:return#setLineItems",
-            "kind": "unknown_framework_target",
-            "className": "return",
+            "id": "method:org.mybatis.jpetstore.domain.Order#setLineItems",
+            "kind": "method",
+            "className": "Order",
+            "classFqn": "org.mybatis.jpetstore.domain.Order",
             "methodName": "setLineItems"
           },
           "callSite": "order.setLineItems("
@@ -907,7 +909,7 @@
       "nodeIds": [
         "method:org.mybatis.jpetstore.web.actions.OrderActionBean#viewOrder",
         "method:org.mybatis.jpetstore.service.OrderService#getOrder",
-        "unresolved:return#setLineItems"
+        "method:org.mybatis.jpetstore.domain.Order#setLineItems"
       ]
     },
     {
@@ -995,7 +997,7 @@
     {
       "edgeIds": [
         "call:method:org.mybatis.jpetstore.web.actions.OrderActionBean#viewOrder->method:org.mybatis.jpetstore.service.OrderService#getOrder:200",
-        "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->unresolved:return#getLineItems:121"
+        "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->method:org.mybatis.jpetstore.domain.Order#getLineItems:121"
       ],
       "edges": [
         {
@@ -1023,12 +1025,11 @@
           "callSite": "orderService.getOrder("
         },
         {
-          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->unresolved:return#getLineItems:121",
+          "id": "call:method:org.mybatis.jpetstore.service.OrderService#getOrder->method:org.mybatis.jpetstore.domain.Order#getLineItems:121",
           "type": "call",
           "source": "static-fallback",
-          "unresolved": true,
           "from": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
-          "to": "unresolved:return#getLineItems",
+          "to": "method:org.mybatis.jpetstore.domain.Order#getLineItems",
           "fromNode": {
             "id": "method:org.mybatis.jpetstore.service.OrderService#getOrder",
             "kind": "method",
@@ -1039,9 +1040,10 @@
             "line": 86
           },
           "toNode": {
-            "id": "unresolved:return#getLineItems",
-            "kind": "unknown_framework_target",
-            "className": "return",
+            "id": "method:org.mybatis.jpetstore.domain.Order#getLineItems",
+            "kind": "method",
+            "className": "Order",
+            "classFqn": "org.mybatis.jpetstore.domain.Order",
             "methodName": "getLineItems"
           },
           "callSite": "order.getLineItems("
@@ -1050,7 +1052,7 @@
       "nodeIds": [
         "method:org.mybatis.jpetstore.web.actions.OrderActionBean#viewOrder",
         "method:org.mybatis.jpetstore.service.OrderService#getOrder",
-        "unresolved:return#getLineItems"
+        "method:org.mybatis.jpetstore.domain.Order#getLineItems"
       ]
     },
     {
