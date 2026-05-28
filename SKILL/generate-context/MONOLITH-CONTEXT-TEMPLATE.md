@@ -117,3 +117,40 @@ Include a one-phrase rationale so no agent second-guesses the exclusion.
 - `{{package.or.ClassName}}` — {{reason, e.g. "security filter, applies globally"}}
 - `{{package.or.ClassName}}` — {{reason, e.g. "properties/config loader, infrastructure concern"}}
 - `{{package.or.ClassName}}` — {{reason, e.g. "serialization helper, no business logic"}}
+
+---
+
+## 10. Business API Surface
+
+The canonical service interface (or equivalent facade) that defines all business operations.  
+List every method grouped by domain. These are the natural decomposition cut-points.
+
+**{{Domain group}}** (touches `{{table/store names}}`):
+- `{{methodSignature}}` — {{one-line description}}
+- `{{methodSignature}}` — {{one-line description}}
+
+**{{Domain group}}** (touches `{{table/store names}}`):
+- `{{methodSignature}}` — {{one-line description}}
+- `{{methodSignature}}` — {{one-line description}}
+
+<!-- Omit this section if the app has no single service interface or the API surface cannot be
+     determined without runtime instrumentation. -->
+
+---
+
+## 11. Operation → Data Scope
+
+Derived from chain analysis (`reachedDataSources` in chain files). Maps each entry-point operation to the data stores it actually touches. This is the primary clustering signal.
+
+**{{Group label}}** ({{N}} stores: `{{store1}}`, `{{store2}}`):
+- `{{ClassName.method()}}` — {{node count}} nodes, stores: {{store list}}
+- `{{ClassName.method()}}` — {{node count}} nodes, stores: {{store list}}
+
+**{{Group label}}** ({{N}} stores: `{{store1}}`):
+- `{{ClassName.method()}}` — {{node count}} nodes, stores: {{store list}}
+
+**No data store access**:
+- `{{ClassName.method()}}` — {{node count}} nodes; {{reason, e.g. "chain truncated by RequestDispatcher"}}
+
+**Implication for decomposition:**  
+{{2–4 sentences describing the microservice candidates suggested by the data-scope boundary.}}

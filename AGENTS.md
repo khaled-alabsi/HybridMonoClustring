@@ -17,10 +17,19 @@ The main method notes live in `private-docs/`. Treat those files as research sou
 ## Repository Layout
 
 - `Steps.md` contains the current practical evaluation plan and benchmark list.
+- `SKILL/graph/` contains graph-pipeline reference materials:
+  - `CHAIN_VALIDATION_SKILL.md` — skill for validating individual chain files against source code.
+  - `GRAPH_EXTRACTION_PLAN.md` — full static extraction plan (tools, per-app rules, algorithm, output schema).
+  - `GRAPH_REQUIREMENTS.md` — canonical requirements for graph extraction outputs.
+- `SKILL/decomposing/` contains decomposition-pipeline skills (all phases):
+  - `PHASE1-EXTRACTION-SKILL.md` — skill for running Phase 1 extraction and validating all outputs end-to-end, including sub-agent chain-validation batches.
+  - `PHASE2-HARDENING-SKILL.md` — skill for executing Phase 2 (Graph Hardening & Semantic Enrichment) end-to-end, including sub-agent batch instructions.
+  - `decomposition-plan.md` — generic phase-by-phase decomposition plan template (jpetstore-6 examples inline).
 - `benchmarks/` contains vendored open-source monolith benchmark code used for evaluation (see Benchmark Inventory below).
 - `analysis/graphs/` mirrors the benchmark list — one subfolder per benchmark — and stores extracted graphs, action points, dependency chains, and extraction reports produced by the pipeline.
-- `analysis/contexts/` contains a pre-built orientation file for each benchmark (`<benchmark-name>.md`). **Read this before touching a benchmark's source code.** It covers the app's purpose, architecture layers, package map, entry points, key classes, domain vocabulary, and noise catalog.
-- `resources/templates/monolith-context.md` is the template used to create context files.
+- `SKILL/contexts/` contains a pre-built orientation file for each benchmark (`<benchmark-name>.md`). **Read this before touching a benchmark's source code.** It covers the app's purpose, architecture layers, package map, entry points, key classes, domain vocabulary, and noise catalog.
+- `SKILL/generate-context/MONOLITH-CONTEXT-TEMPLATE.md` is the template used to create context files.
+- `SKILL/generate-context/GENERATE-CONTEXT-SKILL.md` — skill for generating a new `SKILL/contexts/<benchmark>.md` file end-to-end.
 - `tools/graph-extractor/` contains the extraction script (`extract.mjs`) that processes benchmark source code into graph artifacts.
 - `private-docs/` contains local draft notes and planning documents that should remain private.
 
@@ -41,12 +50,12 @@ The intended evaluation order is: jpetstore-6 → acmeair → plantsbywebsphere 
 Before reading source code in `benchmarks/<name>/`, always read the matching context file first:
 
 ```
-analysis/contexts/<benchmark-name>.md
+SKILL/contexts/<benchmark-name>.md
 ```
 
 The context file tells you what the app does, which packages matter, where to find entry points, which classes are hubs, and which classes are noise to ignore. Reading source code without the context file wastes time and risks misinterpreting noise as domain logic.
 
-If no context file exists yet for a benchmark, create one using `resources/templates/monolith-context.md` before starting any analysis work on that benchmark.
+If no context file exists yet for a benchmark, create one by following `SKILL/generate-context/GENERATE-CONTEXT-SKILL.md` (which uses the template at `SKILL/generate-context/MONOLITH-CONTEXT-TEMPLATE.md`) before starting any analysis work on that benchmark.
 
 ## Benchmark Policy
 
@@ -103,7 +112,7 @@ Do not leave AGENTS.md stale. An outdated AGENTS.md misleads future agents and w
 
 ## ⛔ HARD RULE — Keep Context Files Up to Date (NO EXCEPTIONS)
 
-Context files under `analysis/contexts/` are the primary orientation layer for every agent working on a benchmark. They **must** be treated as living documents.
+Context files under `SKILL/contexts/` are the primary orientation layer for every agent working on a benchmark. They **must** be treated as living documents.
 
 **You are required to update the matching context file whenever you:**
 
