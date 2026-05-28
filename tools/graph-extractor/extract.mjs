@@ -208,10 +208,14 @@ function parseDeclaration(text, filePath) {
   };
 }
 
+// Strip Java line comments (// ...) and block comments (slash-star ... star-slash)
+// while preserving string literals, so SQL strings inside comments are not mistakenly
+// detected as active SQL.
 function stripJavaComments(text) {
-  return text
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/\/\/.*$/gm, '');
+  return text.replace(/"(?:\\.|[^"\\])*"|\/\/[^\n]*|\/\*[\s\S]*?\*\//g, (match) => {
+    if (match.startsWith('"')) return match; // preserve string literals
+    return match.replace(/[^\n]/g, ' ');     // erase comment chars, keep newlines
+  });
 }
 
 function parseParams(paramsText) {
@@ -661,12 +665,13 @@ function jpaDataAccessEdge(from, tableId, unit, method, operation, index) {
 function extractJdbcDataAccessEdges(unit, method, from, startIndex, dataSources) {
   const tableIds = new Set();
   const sqlConstants = extractSqlConstants(unit.text);
+  const bodyNoComments = stripJavaComments(method.body);
 
-  for (const sqlText of extractJavaStringTexts(method.body)) {
+  for (const sqlText of extractJavaStringTexts(bodyNoComments)) {
     for (const table of extractSqlTables(sqlText)) tableIds.add(`table:${table}`);
   }
 
-  for (const match of method.body.matchAll(/\b(?:getStatement|prepareStatement)\s*\(\s*(?:\w+\s*,\s*)?(\w+)/g)) {
+  for (const match of bodyNoComments.matchAll(/\b(?:getStatement|prepareStatement)\s*\(\s*(?:\w+\s*,\s*)?(\w+)/g)) {
     const sqlText = sqlConstants.get(match[1]);
     if (!sqlText) continue;
     for (const table of extractSqlTables(sqlText)) tableIds.add(`table:${table}`);
@@ -1270,7 +1275,7 @@ function matchOne(text, pattern) {
   return text.match(pattern)?.[1] ?? null;
 }
 
-export { extractCalls, parseFields, extractConstructorChainCalls, loadBenchmark, extractBenchmark, BENCHMARKS };
+export { extractCalls, parseFields, extractConstructorChainCalls, stripJavaComments, loadBenchmark, extractBenchmark, BENCHMARKS };
 
 function rel(filePath) {
   return path.relative(ROOT, filePath);

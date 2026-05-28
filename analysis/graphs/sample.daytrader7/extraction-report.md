@@ -8,7 +8,7 @@
 - Java files scanned: 108
 - Resource files scanned: 16
 - Action points: 98
-- Method graph edges: 2220
+- Method graph edges: 2219
 - Class graph edges: 853
 - Data tables: 6
 - Chain files: 98

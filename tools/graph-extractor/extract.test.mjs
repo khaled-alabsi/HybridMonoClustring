@@ -7,7 +7,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { extractCalls, parseFields, extractConstructorChainCalls, loadBenchmark, extractBenchmark, BENCHMARKS } from './extract.mjs';
+import { extractCalls, parseFields, extractConstructorChainCalls, stripJavaComments, loadBenchmark, extractBenchmark, BENCHMARKS } from './extract.mjs';
 
 // ---------------------------------------------------------------------------
 // Expected reachedDataSources for every jpetstore-6 chain.
@@ -241,13 +241,31 @@ const EXPECTED_DAYTRADER_BUSINESS_CHAINS = [
   { class: 'TradeAppJSF',           method: 'register',            tables: ['table:accountejb','table:accountprofileejb'] },
   { class: 'TradeAppJSF',           method: 'updateProfile',       tables: ['table:accountejb','table:accountprofileejb'] },
   { class: 'TradeAppJSF',           method: 'logout',              tables: ['table:accountejb','table:accountprofileejb'] },
-  // Admin operations touch all 6 tables
-  { class: 'TradeConfigJSF',        method: 'resetTrade',          tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:keygenejb','table:orderejb','table:quoteejb'] },
+  // Admin operations: populateDatabase and buildDatabaseTables touch all 6 tables; resetTrade only touches 5 (keygenejb delete is commented out in TradeDirect)
+  { class: 'TradeConfigJSF',        method: 'resetTrade',          tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:orderejb','table:quoteejb'] },
   { class: 'TradeConfigJSF',        method: 'populateDatabase',    tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:keygenejb','table:orderejb','table:quoteejb'] },
   { class: 'TradeConfigJSF',        method: 'buildDatabaseTables', tables: ['table:accountejb','table:accountprofileejb','table:holdingejb','table:keygenejb','table:orderejb','table:quoteejb'] },
 ];
 
 // Integration test: run the full pipeline in-memory and verify 16 key business chains.
+// Guards against regression in stripJavaComments: SQL table names in comments must not be detected.
+test('fix: stripJavaComments removes // line comments and /* */ block comments but preserves strings', () => {
+  // Simulates the TradeDirect#resetTrade commented-out SQL that caused chain 017 FP
+  const body = `
+    // stmt = getStatement(conn, "delete from keygenejb");
+    String url = "http://example.com/api";
+    String sql = "delete from accountejb";
+    /* stmt = getStatement(conn, "delete from holdingejb"); */
+  `;
+  const stripped = stripJavaComments(body);
+  // Commented-out table names must not appear as string literals
+  assert.ok(!stripped.includes('"delete from keygenejb"'), 'Should strip // comment containing SQL string');
+  assert.ok(!stripped.includes('"delete from holdingejb"'), 'Should strip /* */ comment containing SQL string');
+  // Active string literals and strings with // inside them must be preserved
+  assert.ok(stripped.includes('"http://example.com/api"'), 'Should preserve string literal containing //');
+  assert.ok(stripped.includes('"delete from accountejb"'), 'Should preserve active SQL string literal');
+});
+
 // Guards against regression in extractConstructorChainCalls: new X().method() pattern.
 test('fix: extractConstructorChainCalls detects method call chained on constructor result', () => {
   // Covers: new TradeAction().createQuote("s:" + i, ...) — the pattern used by TestServlet#performTask
